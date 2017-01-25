@@ -20,9 +20,10 @@ Meet the team:
 
 1. John Lam [[@jlam1]] (https://github.com/jlam1) - ***Project Manager*** & ***Code Architecture & Lead Programmer***
     
-2. King Lo	[[@onik1992]] (https://github.com/onik1992) - ***Testing Lead*** 
+2. King Lo	[[@onik1992]]
+(https://github.com/onik1992) - ***Testing Lead*** 
 
-3. 
+3. Caleb Sears [[@CalebCrosbySears]] (https://github.com/CalebCrosbySears) - ***UI/UX design*** & ***Client liaison***
 
 4. 
     
