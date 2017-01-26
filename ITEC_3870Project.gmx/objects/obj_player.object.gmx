@@ -35,8 +35,8 @@ speed to be added or subtracted.*/
 grav = 0.2;
 hspd = 0;
 vspd = 0;
-jspd = 7;
-mspd = 4;
+jspd = 6;
+mspd = 3;
 image_speed = 0;
 </string>
           </argument>
@@ -171,29 +171,56 @@ y += vspd;
             <kind>1</kind>
             <string>/// Sprite Operations
 
-/* If the player's 'hspd' is greater than 0 (moving
-right) then the player sprite's image_xscale is set
-to 1 (they'll face right), if the player's 'hspd' is
-less than 0 (moving left) then the player sprite's 
-image_xscale is set to -1 (they'll face left) and if
-the 'hspd' is 0, then the image_speed will be set to 
-0 and the player sprite will stay facing the way it was
-one frame ago.
+/* The player's sprite will turn left and right
+depending on whether or not 'mvmt' is -1 or 1.
+If the player is on the ground and moving, its 
+sprite_index will be set to his running animation
+(spr_boy1). If not, the player's sprite will be the 
+first frame of his running animation, standing still
+(frame 1 of spr_boy1). If the player is not on the ground,
+and their 'vspd' is less than 0 (jumping) then the
+player's sprite_index is set to 'spr_boy1_jump'.
+Otherwise, the player's sprite will be set to the
+'spr_boy1_fall' animation. Then, if the sprite_index is 
+one less than its image_number, then the image_speed becomes
+zero so the fall animation doesn't repeat.
 */
 
-if(hspd &gt; 0)
+if(mvmt != 0)
 {
-    image_xscale = 1;
-    image_speed = 0.2;  
+    image_xscale = mvmt;
 }
-else if(hspd &lt; 0)
+
+if(place_meeting(x, y + 1, obj_obstacle))
 {
-    image_xscale = -1;
-    image_speed = 0.2;  
+    if(mvmt != 0)
+    {
+        sprite_index = spr_boy1;
+        image_speed = 0.2;
+    }
+    else
+    {
+        sprite_index = spr_boy1;
+        image_speed = 0;
+        image_index = 0;
+    }
 }
 else
 {
-    image_index = 0;
+    if(vspd &lt; 0)
+    {
+        sprite_index = spr_boy1_jump;
+        image_speed = 0;
+    }
+    else
+    {
+        sprite_index = spr_boy1_fall;
+        image_speed = 0.2;
+        if(image_index = image_number - 1)
+        {
+            image_speed = 0;
+        }
+    }
 }
 </string>
           </argument>

@@ -12,6 +12,8 @@
     <sprite>sprites\spr_playertest</sprite>
     <sprite>sprites\spr_obstacletest</sprite>
     <sprite>sprites\spr_atom_test1</sprite>
+    <sprite>sprites\spr_boy1_jump</sprite>
+    <sprite>sprites\spr_boy1_fall</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
