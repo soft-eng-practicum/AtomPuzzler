@@ -25,7 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//points on destroy
+            <string>/// Points on Destroy
+
 global.points += 10;
 </string>
           </argument>
@@ -49,7 +50,8 @@ global.points += 10;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///atom on collion destroy
+            <string>/// Atom on Collion Destroy
+
 instance_destroy();
 </string>
           </argument>

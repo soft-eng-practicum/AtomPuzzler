@@ -25,7 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///instantiate points
+            <string>///Instantiate Points
+
 global.points = 0;
 </string>
           </argument>
@@ -49,7 +50,7 @@ global.points = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///draw points text
+            <string>/// Draw Points Text
 
 draw_set_color(c_blue);
 draw_text(550, 20, global.points);
