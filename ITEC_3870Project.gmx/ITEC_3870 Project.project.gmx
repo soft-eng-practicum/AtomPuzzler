@@ -11,12 +11,15 @@
     <sprite>sprites\spr_grass1</sprite>
     <sprite>sprites\spr_playertest</sprite>
     <sprite>sprites\spr_obstacletest</sprite>
+    <sprite>sprites\spr_atom_test1</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
   <objects name="objects">
     <object>objects\obj_player</object>
     <object>objects\obj_obstacle</object>
+    <object>objects\obj_score</object>
+    <object>objects\obj_atom_test1</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm1</room>
