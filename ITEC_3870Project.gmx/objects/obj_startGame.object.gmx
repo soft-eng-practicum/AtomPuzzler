@@ -28,7 +28,7 @@
             <string>/// Go to the first level
 
 
-room_goto_next();
+room_goto(rm1);
 </string>
           </argument>
         </arguments>

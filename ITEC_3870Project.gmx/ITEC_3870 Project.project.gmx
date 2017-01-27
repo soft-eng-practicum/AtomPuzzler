@@ -62,6 +62,8 @@
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_mainMenu</room>
+    <room>rooms\rm_option</room>
+    <room>rooms\rm_scoreBoard</room>
     <room>rooms\rm1</room>
     <room>rooms\rm2</room>
     <room>rooms\rm3</room>
@@ -69,4 +71,9 @@
   <help>
     <rtf>help.rtf</rtf>
   </help>
+  <TutorialState>
+    <IsTutorial>0</IsTutorial>
+    <TutorialName></TutorialName>
+    <TutorialPage>0</TutorialPage>
+  </TutorialState>
 </assets>
