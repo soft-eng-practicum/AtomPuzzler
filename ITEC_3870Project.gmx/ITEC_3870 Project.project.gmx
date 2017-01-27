@@ -30,6 +30,7 @@
       <sprite>sprites\spr_scoreBoard</sprite>
       <sprite>sprites\spr_option</sprite>
       <sprite>sprites\spr_gender</sprite>
+      <sprite>sprites\spr_backToMain</sprite>
     </sprites>
   </sprites>
   <backgrounds name="background"/>
@@ -58,6 +59,7 @@
       <object>objects\obj_option</object>
       <object>objects\obj_scoreBoard</object>
       <object>objects\obj_gender</object>
+      <object>objects\obj_backToMain</object>
     </objects>
   </objects>
   <rooms name="rooms">
