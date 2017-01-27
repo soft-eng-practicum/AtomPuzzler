@@ -44,6 +44,7 @@
     </objects>
     <object>objects\obj_score</object>
     <object>objects\obj_door</object>
+    <object>objects\obj_timer</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm1</room>

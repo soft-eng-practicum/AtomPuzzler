@@ -255,12 +255,14 @@ if(keyboard_check(vk_down))
         // TEMPORARY
         global.points += 100;
         // TEMPORARY
+        obj_timer.stop = true;
     }
     else
     {
         // TEMPORARY
         global.points -= 50;
         // TEMPORARY
+        obj_timer.stop = true;
     }
 }
 </string>
