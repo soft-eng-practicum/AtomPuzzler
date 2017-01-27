@@ -51,6 +51,7 @@
     <room>rooms\rm1</room>
     <room>rooms\rm2</room>
     <room>rooms\rm3</room>
+    <room>rooms\rm4</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
