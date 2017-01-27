@@ -25,7 +25,12 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>room_goto_next();
+            <string>///Room bahavior, checks if next room exists then executes code
+
+if room_exists(room_next(room)) {
+    room_goto_next();
+}
+
 </string>
           </argument>
         </arguments>
