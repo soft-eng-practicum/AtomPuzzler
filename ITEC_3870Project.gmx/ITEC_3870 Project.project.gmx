@@ -50,7 +50,7 @@
   <rooms name="rooms">
     <room>rooms\rm1</room>
     <room>rooms\rm2</room>
-    <room>rooms\room2</room>
+    <room>rooms\rm3</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
