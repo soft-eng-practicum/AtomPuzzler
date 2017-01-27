@@ -37,6 +37,8 @@ hspd = 0;
 vspd = 0;
 jspd = 6;
 mspd = 3;
+total_charge = 0;
+total_symbol = "";
 image_speed = 0;
 </string>
           </argument>
@@ -227,6 +229,71 @@ else
         </arguments>
       </action>
     </event>
+    <event eventtype="4" ename="obj_door">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Interact with the Door
+
+if(keyboard_check(vk_down))
+{
+    if(total_charge = global.correct_charge &amp;&amp; ord(total_symbol) = ord(global.correct_symbol))
+    {
+        // TEMPORARY
+        global.points += 100;
+        // TEMPORARY
+    }
+    else
+    {
+        // TEMPORARY
+        global.points -= 50;
+        // TEMPORARY
+    }
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="obj_atom_test1">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Adds Values from Received Atom
+
+total_charge += instance_nearest(x, y, obj_atom_test1).charge;
+total_symbol += instance_nearest(x, y, obj_atom_test1).symbol;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="7" enumb="0">
       <action>
         <libid>1</libid>
@@ -247,6 +314,37 @@ else
             <string>/// Wrap the Room for Player
 
 move_wrap(true, false, rm1);
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Draw Self and Charge
+draw_self();
+
+draw_set_color(c_blue);
+
+// TEMPORARY
+draw_text(550, 60, total_charge);
+draw_text(550, 100, total_symbol);
+// TEMPORARY
 </string>
           </argument>
         </arguments>
