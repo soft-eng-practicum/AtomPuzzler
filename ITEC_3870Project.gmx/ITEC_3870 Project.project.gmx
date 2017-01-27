@@ -51,14 +51,8 @@
     <room>rooms\rm1</room>
     <room>rooms\rm2</room>
     <room>rooms\rm3</room>
-    <room>rooms\rm4</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
   </help>
-  <TutorialState>
-    <IsTutorial>0</IsTutorial>
-    <TutorialName></TutorialName>
-    <TutorialPage>0</TutorialPage>
-  </TutorialState>
 </assets>
