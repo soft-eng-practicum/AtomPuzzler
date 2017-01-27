@@ -27,7 +27,16 @@
             <kind>1</kind>
             <string>///Instantiate Points
 
+//points for gettting atoms
 global.points = 0;
+
+//initial points per room. use this value to decrease score.
+global.roomPoints = 500;
+
+//total points display after game ends
+global.totalPoints = 0;
+
+
 </string>
           </argument>
         </arguments>
@@ -54,6 +63,8 @@ global.points = 0;
 
 draw_set_color(c_blue);
 draw_text(550, 20, global.points);
+draw_text(550, 40, global.roomPoints);
+draw_text(550, 60, global.totalPoints);
 </string>
           </argument>
         </arguments>
