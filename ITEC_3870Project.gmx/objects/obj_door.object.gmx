@@ -27,7 +27,7 @@
             <kind>1</kind>
             <string>///Room bahavior, checks if next room exists then executes code
 
-if room_exists(room_next(room)) {
+if ( room_exists(room_next(room)) &amp;&amp; keyboard_check( vk_up )) {
     room_goto_next();
 }
 
