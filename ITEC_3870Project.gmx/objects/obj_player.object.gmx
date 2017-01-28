@@ -252,16 +252,10 @@ if(keyboard_check(vk_down))
 {
     if(total_charge = global.correct_charge &amp;&amp; ord(total_symbol) = ord(global.correct_symbol))
     {
-        // TEMPORARY
-        global.points += 100;
-        // TEMPORARY
         obj_timer.stop = true;
     }
     else
     {
-        // TEMPORARY
-        global.points -= 50;
-        // TEMPORARY
         obj_timer.stop = true;
     }
 }
