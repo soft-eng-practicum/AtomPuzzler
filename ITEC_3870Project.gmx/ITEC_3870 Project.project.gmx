@@ -35,6 +35,9 @@
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
+  <fonts name="fonts">
+    <font>fonts\font_Default</font>
+  </fonts>
   <objects name="objects">
     <objects name="player_obj">
       <object>objects\obj_player</object>
@@ -61,6 +64,7 @@
       <object>objects\obj_gender</object>
       <object>objects\obj_backToMain</object>
     </objects>
+    <object>objects\obj_dialogue</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_mainMenu</room>
