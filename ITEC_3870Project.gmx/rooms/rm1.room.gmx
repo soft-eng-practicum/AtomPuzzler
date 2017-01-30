@@ -11,7 +11,7 @@
   <colour>12632256</colour>
   <showcolour>-1</showcolour>
   <code>/// Initialize Variables
-
+global.message[0] = "Create H2O";
 global.correct_charge = 0;
 global.correct_symbol = "HHO";</code>
   <enableViews>0</enableViews>
@@ -89,6 +89,7 @@ global.correct_symbol = "HHO";</code>
     <instance objName="obj_atom_o" x="292" y="264" name="inst_79A87B40" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_atom_na" x="292" y="416" name="inst_721392CE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_timer" x="36" y="28" name="inst_4413AEF2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_dialogue" x="128" y="92" name="inst_602FB0E7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>
