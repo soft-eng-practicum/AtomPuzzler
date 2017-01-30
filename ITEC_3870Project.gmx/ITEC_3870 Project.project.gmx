@@ -41,6 +41,7 @@
   <objects name="objects">
     <objects name="player_obj">
       <object>objects\obj_player</object>
+      <object>objects\obj_girl1</object>
     </objects>
     <objects name="obstacle_obj">
       <object>objects\obj_obstacle</object>
@@ -57,7 +58,6 @@
     <object>objects\obj_door</object>
     <object>objects\obj_timer</object>
     <objects name="obj_mainMenu">
-      <object>objects\obj_mainMenu</object>
       <object>objects\obj_startGame</object>
       <object>objects\obj_option</object>
       <object>objects\obj_scoreBoard</object>

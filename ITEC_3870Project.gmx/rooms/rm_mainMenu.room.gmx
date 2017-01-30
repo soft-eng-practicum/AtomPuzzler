@@ -52,7 +52,6 @@
   </views>
   <instances>
     <instance objName="obj_player" x="64" y="384" name="inst_C6221A65" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_mainMenu" x="32" y="224" name="inst_21DE9A2D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_startGame" x="64" y="288" name="inst_CE00D00E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_obstacle" x="0" y="448" name="inst_B921D4F2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_obstacle" x="32" y="448" name="inst_4C5E58D8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
