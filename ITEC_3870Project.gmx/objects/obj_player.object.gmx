@@ -4,7 +4,7 @@
   <solid>0</solid>
   <visible>-1</visible>
   <depth>0</depth>
-  <persistent>0</persistent>
+  <persistent>-1</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
@@ -37,6 +37,10 @@ hspd = 0;
 vspd = 0;
 jspd = 6;
 mspd = 3;
+spr = "boy1"
+spr_run = spr_boy1;
+spr_jump = spr_boy1_jump;
+spr_fall = spr_boy1_fall;
 total_charge = 0;
 total_symbol = "";
 image_speed = 0;
@@ -171,6 +175,58 @@ y += vspd;
         <arguments>
           <argument>
             <kind>1</kind>
+            <string>/// Change Character
+/*
+if(spr = "boy1")
+{
+        spr_run = spr_boy1;
+        spr_jump = spr_boy1_jump;
+        spr_fall = spr_boy1_fall;
+    }
+    else if(spr = "girl1")
+    {
+        spr_run = spr_girl1;
+        spr_jump = spr_girl1_jump;
+        spr_fall = spr_girl1_fall;
+    }
+*/
+switch(spr)
+{
+    case "boy1":
+    {
+        spr_run = spr_boy1;
+        spr_jump = spr_boy1_jump;
+        spr_fall = spr_boy1_fall;
+        break;
+    }
+    case "girl1":
+    {
+        spr_run = spr_girl1;
+        spr_jump = spr_girl1_jump;
+        spr_fall = spr_girl1_fall;
+        break;
+    }
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
             <string>/// Sprite Operations
 
 /* The player's sprite will turn left and right
@@ -197,12 +253,12 @@ if(place_meeting(x, y + 1, obj_obstacle))
 {
     if(mvmt != 0)
     {
-        sprite_index = spr_boy1;
+        sprite_index = spr_run;
         image_speed = 0.2;
     }
     else
     {
-        sprite_index = spr_boy1;
+        sprite_index = spr_run;
         image_speed = 0;
         image_index = 0;
     }
@@ -211,12 +267,12 @@ else
 {
     if(vspd &lt; 0)
     {
-        sprite_index = spr_boy1_jump;
+        sprite_index = spr_jump;
         image_speed = 0;
     }
     else
     {
-        sprite_index = spr_boy1_fall;
+        sprite_index = spr_fall;
         image_speed = 0.2;
         if(image_index = image_number - 1)
         {
@@ -224,31 +280,6 @@ else
         }
     }
 }
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="4" ename="obj_gender">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>/// destroy this object when change gender
-
-instance_destroy();
 </string>
           </argument>
         </arguments>

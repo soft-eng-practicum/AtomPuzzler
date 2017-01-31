@@ -211,12 +211,12 @@ else
 {
     if(vspd &lt; 0)
     {
-        sprite_index = spr_boy1_jump;
+        sprite_index = spr_girl1_jump;
         image_speed = 0;
     }
     else
     {
-        sprite_index = spr_boy1_fall;
+        sprite_index = spr_girl1_fall;
         image_speed = 0.2;
         if(image_index = image_number - 1)
         {
