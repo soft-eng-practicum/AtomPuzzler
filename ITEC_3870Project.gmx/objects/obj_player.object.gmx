@@ -227,9 +227,7 @@ switch(spr)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (global.pause) exit;
-
-/// Sprite Operations
+            <string>/// Sprite Operations
 
 /* The player's sprite will turn left and right
 depending on whether or not 'mvmt' is -1 or 1.
