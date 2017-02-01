@@ -34,6 +34,10 @@ done = false;
 
 //declare alarm timer (in seconds)
 alarm[0] = room_speed * 1;
+
+//declare win/lose condition messages
+global.win_message = "You win";
+global.lose_message = "You lose";
 </string>
           </argument>
         </arguments>
