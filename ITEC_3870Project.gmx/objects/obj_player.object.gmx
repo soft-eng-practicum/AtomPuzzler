@@ -227,7 +227,9 @@ switch(spr)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Sprite Operations
+            <string>if (global.pause) exit;
+
+/// Sprite Operations
 
 /* The player's sprite will turn left and right
 depending on whether or not 'mvmt' is -1 or 1.
@@ -304,14 +306,23 @@ else
             <kind>1</kind>
             <string>/// Interact with the Door
 
+/* TODO (as of 2/1/2017): 
+1. pause all instances of objects in room: timer, score, player, any moving objects (platforms, orbs, etc)
+2. display win/lose condition messages
+3. if win/lose, enable the option to retry or move to next room
+4. unpause game then proceed
+*/
+
 if(keyboard_check(vk_down))
 {
     if(total_charge = global.correct_charge &amp;&amp; ord(total_symbol) = ord(global.correct_symbol))
     {
+        global.message[0] = global.win_message;
         obj_timer.stop = true;
     }
     else
     {
+        global.message[0] = global.lose_message;
         obj_timer.stop = true;
     }
 }
