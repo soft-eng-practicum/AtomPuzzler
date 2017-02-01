@@ -313,7 +313,7 @@ else
 
 if(keyboard_check(vk_down))
 {
-    if(total_charge = global.correct_charge &amp;&amp; ord(total_symbol) = ord(global.correct_symbol))
+    if(total_charge = global.correct_charge &amp;&amp; scr_hashcode(total_symbol) = scr_hashcode(global.correct_symbol))
     {
         global.message[0] = global.win_message;
         obj_timer.stop = true;
@@ -323,6 +323,12 @@ if(keyboard_check(vk_down))
         global.message[0] = global.lose_message;
         obj_timer.stop = true;
     }
+}
+
+if ( room_exists(room_next(room)) &amp;&amp; keyboard_check( vk_up )) {
+    room_goto_next();
+    x = 32;
+    y = 320;
 }
 </string>
           </argument>

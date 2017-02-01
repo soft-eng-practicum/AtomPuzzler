@@ -35,8 +35,6 @@ global.roomPoints = 500;
 
 //total points display after game ends
 global.totalPoints = 0;
-
-
 </string>
           </argument>
         </arguments>

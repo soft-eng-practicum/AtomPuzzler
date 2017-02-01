@@ -44,13 +44,15 @@
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
+  <scripts name="scripts">
+    <script>scripts\scr_hashcode.gml</script>
+  </scripts>
   <fonts name="fonts">
     <font>fonts\font_Default</font>
   </fonts>
   <objects name="objects">
     <objects name="player_obj">
       <object>objects\obj_player</object>
-      <object>objects\obj_girl1</object>
     </objects>
     <objects name="obstacle_obj">
       <object>objects\obj_obstacle</object>
