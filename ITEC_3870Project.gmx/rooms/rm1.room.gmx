@@ -89,6 +89,7 @@ global.correct_symbol = "HHO";</code>
     <instance objName="obj_atom_na" x="292" y="416" name="inst_721392CE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_timer" x="36" y="28" name="inst_4413AEF2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_dialogue" x="128" y="92" name="inst_602FB0E7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_pause" x="4" y="4" name="inst_20332B39" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>
