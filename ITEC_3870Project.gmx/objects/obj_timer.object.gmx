@@ -55,7 +55,9 @@ h = ""
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Timer Calculations
+            <string>if (global.pause) exit;
+
+/// Timer Calculations
 
 if(!stop)
 {
