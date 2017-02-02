@@ -32,6 +32,7 @@
 whenever jump is used, and 'mspd' is the horizontal movement 
 speed to be added or subtracted.*/
 
+inventory = ds_list_create();
 grav = 0.2;
 hspd = 0;
 vspd = 0;
@@ -304,13 +305,6 @@ else
             <kind>1</kind>
             <string>/// Interact with the Door
 
-/* TODO (as of 2/1/2017): 
-1. pause all instances of objects in room: timer, score, player, any moving objects (platforms, orbs, etc)
-2. display win/lose condition messages
-3. if win/lose, enable the option to retry or move to next room
-4. unpause game then proceed
-*/
-
 if(keyboard_check(vk_down))
 {
     if(total_charge = global.correct_charge &amp;&amp; ord(total_symbol) = ord(global.correct_symbol))
@@ -325,11 +319,55 @@ if(keyboard_check(vk_down))
     }
 }
 
+//Resets inventory and player's position then goes to next room if available.
 if (room_exists(room_next(room)) &amp;&amp; keyboard_check( vk_up )) 
 {
+    ds_list_clear(inventory);
     room_goto_next();
     x = 32;
     y = 320;
+}
+
+//check if both list have same array size
+//check both index in order for same values
+if(keyboard_check(vk_f1)) 
+{
+    room_array_size = ds_list_size(global.room_list);
+    inventory_size = ds_list_size(inventory);
+    
+    inventoryCheck = false;
+    
+    if(room_array_size == inventory_size) 
+    {
+        for(i = 0; i &lt; inventory_size; i++) 
+        {
+            if(ds_list_find_value(inventory, i) == ds_list_find_value(global.room_list, i))
+            {
+                inventoryCheck = true;
+            }
+            else
+            {
+                inventoryCheck = false;
+                break;
+            }            
+        }
+        
+        if(inventoryCheck == true)
+        {
+            global.message[0] = global.win_message;
+            obj_timer.stop = true;
+        }
+        else
+        {
+            global.message[0] = global.lose_message;
+            obj_timer.stop = true;
+        }
+    }
+    else 
+    {
+        global.message[0] = "Array Size does not match";
+        obj_timer.stop = true;
+    }
 }
 </string>
           </argument>
@@ -357,6 +395,9 @@ if (room_exists(room_next(room)) &amp;&amp; keyboard_check( vk_up ))
 
 total_charge += instance_nearest(x, y, obj_atom_test1).charge;
 total_symbol += instance_nearest(x, y, obj_atom_test1).symbol;
+
+ds_list_add(inventory, instance_nearest(x, y, obj_atom_test1).symbol);
+ds_list_sort(inventory, true);
 </string>
           </argument>
         </arguments>
@@ -410,9 +451,18 @@ draw_self();
 draw_set_color(c_blue);
 
 // TEMPORARY
-draw_text(550, 60, total_charge);
-draw_text(550, 100, total_symbol);
+//draw_text(550, 60, total_charge);
+//draw_text(550, 100, total_symbol);
 // TEMPORARY
+
+
+//Temporary, prints out list size for testing purposes
+draw_text(450, 100, "inventory size: " + string(ds_list_size(inventory)));
+
+//Prints array of values in inventory list
+for(i = 0; i &lt; ds_list_size(inventory); i++) {
+    draw_text(600, 160 + (15 * i), ds_list_find_value(inventory, i));
+}
 </string>
           </argument>
         </arguments>

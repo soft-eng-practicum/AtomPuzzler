@@ -25,8 +25,12 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///move right
-hspeed+=0.0324
+            <string>/// Adds Values from Received Atom
+
+total_charge += instance_nearest(x, y, obj_atom_test1).charge;
+total_symbol += instance_nearest(x, y, obj_atom_test1).symbol;
+
+ds_list_add(inv, global.correct_symbol);
 </string>
           </argument>
         </arguments>

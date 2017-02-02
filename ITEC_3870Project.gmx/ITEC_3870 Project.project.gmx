@@ -44,7 +44,6 @@
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
-  <scripts name="scripts"/>
   <fonts name="fonts">
     <font>fonts\font_Default</font>
   </fonts>
@@ -80,6 +79,7 @@
     </objects>
     <object>objects\obj_dialogue</object>
     <object>objects\obj_highScores</object>
+    <object>objects\obj_room_list</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_mainMenu</room>
