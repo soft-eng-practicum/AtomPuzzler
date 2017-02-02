@@ -6,7 +6,7 @@
   <depth>0</depth>
   <persistent>-1</persistent>
   <parentName>&lt;undefined&gt;</parentName>
-  <maskName>&lt;undefined&gt;</maskName>
+  <maskName>spr_playertest</maskName>
   <events>
     <event eventtype="0" enumb="0">
       <action>
@@ -40,6 +40,7 @@ spr_run = spr_boy1;
 spr_jump = spr_boy1_jump;
 spr_fall = spr_boy1_fall;
 image_speed = 0;
+depth = -3;
 
 // Mechanic Variables
 total_charge = 0;
@@ -66,7 +67,7 @@ inventory = ds_list_create();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Player Inputs
+            <string>/// Player Inputs and Physics Calculations
 
 /* 'key_right', 'key_left' and 'key_jump' are all variable 
 place holders for the player's inputs. When the player presses
@@ -130,7 +131,6 @@ if(place_meeting(x + hspd, y, obj_obstacle))
     hspd = 0;
 }
 x += hspd;
-
 
 // Pixel Perfect Vertical Collisions
 

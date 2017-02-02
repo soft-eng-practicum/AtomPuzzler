@@ -29,6 +29,7 @@
 
 // Movement Variables
 hspd = 0;
+vspd = 0;
 mspd = 1;
 </string>
           </argument>
@@ -54,6 +55,10 @@ mspd = 1;
             <kind>1</kind>
             <string>/// Move the Platform
 
+if(place_meeting(x + hspd, y, obj_player))
+{
+    obj_player.x += hspd;
+}
 x += hspd;
 </string>
           </argument>
