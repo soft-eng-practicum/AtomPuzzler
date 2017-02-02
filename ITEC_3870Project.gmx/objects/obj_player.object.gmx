@@ -30,6 +30,7 @@
 // Physics Variables
 grav = 0.2;
 hspd = 0;
+hspd_platform = 0;
 vspd = 0;
 jspd = 6;
 mspd = 3;
@@ -122,15 +123,18 @@ plus their 'hspd'. This ensures we get as close to the obstacle as possible,
 without going into the obstacle. 
 */
 
-if(place_meeting(x + hspd, y, obj_obstacle))
+var hspd_final = hspd + hspd_platform;
+hspd_platform = 0;
+if(place_meeting(x + hspd_final, y, obj_obstacle))
 {
-    while(!place_meeting(x + sign(hspd), y, obj_obstacle))
+    while(!place_meeting(x + sign(hspd_final), y, obj_obstacle))
     {
-        x += sign(hspd);
+        x += sign(hspd_final);
     }
     hspd = 0;
+    hspd_final = 0;
 }
-x += hspd;
+x += hspd_final;
 
 // Pixel Perfect Vertical Collisions
 

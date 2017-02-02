@@ -60,6 +60,11 @@ if(place_meeting(x + hspd, y, obj_player))
     obj_player.x += hspd;
 }
 x += hspd;
+
+if(place_meeting(x, y - 1, obj_player))
+{
+    obj_player.hspd_platform = hspd;
+}
 </string>
           </argument>
         </arguments>
