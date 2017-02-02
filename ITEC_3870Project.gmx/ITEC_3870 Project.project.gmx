@@ -79,6 +79,7 @@
     </objects>
     <object>objects\obj_dialogue</object>
     <object>objects\obj_highScores</object>
+    <object>objects\obj_room_list</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_mainMenu</room>
