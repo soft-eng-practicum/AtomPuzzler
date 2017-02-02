@@ -27,9 +27,7 @@
             <kind>1</kind>
             <string>///Display the high scores
 
-
 draw_highscore(64, 32, 576, 320);
-
 </string>
           </argument>
         </arguments>

@@ -27,8 +27,11 @@
             <kind>1</kind>
             <string>/// Initialize Variables
 
+// Mechanic Variables
 charge = 0;
 symbol = "";
+
+// Sprite Variables
 image_speed = 0.003;
 </string>
           </argument>
@@ -54,7 +57,9 @@ image_speed = 0.003;
             <kind>1</kind>
             <string>/// Points on Destroy
 
+// TEMPORARY
 global.points += 10;
+// TEMPORARY
 </string>
           </argument>
         </arguments>

@@ -27,6 +27,7 @@
             <kind>1</kind>
             <string>/// Create Collision Checker
 
+// Mechanic Variables
 touch = true;
 </string>
           </argument>
@@ -88,6 +89,7 @@ the touch variable is true, it will change
 their sprites accordingly and set the touch
 variable to false.
 */
+
 if(touch)
 {
     switch(obj_player.spr)

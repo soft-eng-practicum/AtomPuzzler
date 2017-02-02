@@ -27,7 +27,6 @@
             <kind>1</kind>
             <string>/// Initialize Variables
 
-
 event_inherited();
 charge = -2;
 symbol = "O";

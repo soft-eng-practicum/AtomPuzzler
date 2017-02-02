@@ -25,15 +25,15 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Instantiate Points
+            <string>/// Initialize Points
 
-//points for gettting atoms
+// Points for gettting atoms
 global.points = 0;
 
-//initial points per room. use this value to decrease score.
+// Initial points per room. use this value to decrease score.
 global.roomPoints = 500;
 
-//total points display after game ends
+// Total points display after game ends
 global.totalPoints = 0;
 </string>
           </argument>

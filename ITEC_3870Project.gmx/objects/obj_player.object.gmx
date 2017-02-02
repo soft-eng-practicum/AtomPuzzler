@@ -27,24 +27,23 @@
             <kind>1</kind>
             <string>/// Initialize Player Variables
 
-/*'grav' is gravity, 'hspd' is horizontal speed container,
-'vspd' is vertical speed container, 'jspd' is the jump speed
-whenever jump is used, and 'mspd' is the horizontal movement 
-speed to be added or subtracted.*/
-
-inventory = ds_list_create();
+// Physics Variables
 grav = 0.2;
 hspd = 0;
 vspd = 0;
 jspd = 6;
 mspd = 3;
+
+// Sprite Variables
 spr = "boy1"
 spr_run = spr_boy1;
 spr_jump = spr_boy1_jump;
 spr_fall = spr_boy1_fall;
-total_charge = 0;
-total_symbol = "";
 image_speed = 0;
+
+// Mechanic Variables
+total_charge = 0;
+inventory = ds_list_create();
 </string>
           </argument>
         </arguments>
@@ -177,20 +176,8 @@ y += vspd;
           <argument>
             <kind>1</kind>
             <string>/// Change Character
-/*
-if(spr = "boy1")
-{
-        spr_run = spr_boy1;
-        spr_jump = spr_boy1_jump;
-        spr_fall = spr_boy1_fall;
-    }
-    else if(spr = "girl1")
-    {
-        spr_run = spr_girl1;
-        spr_jump = spr_girl1_jump;
-        spr_fall = spr_girl1_fall;
-    }
-*/
+
+// Checks Case for Character
 switch(spr)
 {
     case "boy1":
@@ -305,20 +292,7 @@ else
             <kind>1</kind>
             <string>/// Interact with the Door
 
-if(keyboard_check(vk_down))
-{
-    if(total_charge = global.correct_charge &amp;&amp; ord(total_symbol) = ord(global.correct_symbol))
-    {
-        global.message[0] = global.win_message;
-        obj_timer.stop = true;
-    }
-    else
-    {
-        global.message[0] = global.lose_message;
-        obj_timer.stop = true;
-    }
-}
-
+//MUST EVENTUALLY BECOME ONE COMMAND
 //Resets inventory and player's position then goes to next room if available.
 if (room_exists(room_next(room)) &amp;&amp; keyboard_check( vk_up )) 
 {
@@ -328,8 +302,8 @@ if (room_exists(room_next(room)) &amp;&amp; keyboard_check( vk_up ))
     y = 320;
 }
 
-//check if both list have same array size
-//check both index in order for same values
+// Check if both list have same array size
+// Check both index in order for same values
 if(keyboard_check(vk_f1)) 
 {
     room_array_size = ds_list_size(global.room_list);
@@ -352,7 +326,7 @@ if(keyboard_check(vk_f1))
             }            
         }
         
-        if(inventoryCheck == true)
+        if(inventoryCheck &amp;&amp; total_charge = global.correct_charge)
         {
             global.message[0] = global.win_message;
             obj_timer.stop = true;
@@ -369,6 +343,7 @@ if(keyboard_check(vk_f1))
         obj_timer.stop = true;
     }
 }
+//MUST EVENTUALLY BECOME ONE COMMAND
 </string>
           </argument>
         </arguments>
@@ -393,9 +368,8 @@ if(keyboard_check(vk_f1))
             <kind>1</kind>
             <string>/// Adds Values from Received Atom
 
+// Win/ Lose Conditions
 total_charge += instance_nearest(x, y, obj_atom_test1).charge;
-total_symbol += instance_nearest(x, y, obj_atom_test1).symbol;
-
 ds_list_add(inventory, instance_nearest(x, y, obj_atom_test1).symbol);
 ds_list_sort(inventory, true);
 </string>
@@ -446,21 +420,16 @@ move_wrap(true, false, rm1);
           <argument>
             <kind>1</kind>
             <string>/// Draw Self and Charge
+
 draw_self();
-
 draw_set_color(c_blue);
-
-// TEMPORARY
-//draw_text(550, 60, total_charge);
-//draw_text(550, 100, total_symbol);
-// TEMPORARY
-
 
 //Temporary, prints out list size for testing purposes
 draw_text(450, 100, "inventory size: " + string(ds_list_size(inventory)));
 
 //Prints array of values in inventory list
-for(i = 0; i &lt; ds_list_size(inventory); i++) {
+for(i = 0; i &lt; ds_list_size(inventory); i++) 
+{
     draw_text(600, 160 + (15 * i), ds_list_find_value(inventory, i));
 }
 </string>

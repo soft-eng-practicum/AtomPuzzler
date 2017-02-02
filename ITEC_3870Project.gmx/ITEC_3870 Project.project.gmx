@@ -61,7 +61,6 @@
     </objects>
     <objects name="atom_obj">
       <object>objects\obj_atom_test1</object>
-      <object>objects\obj_atom_neg1</object>
       <object>objects\obj_atom_test2</object>
       <object>objects\obj_atom_h</object>
       <object>objects\obj_atom_o</object>
@@ -79,7 +78,6 @@
     </objects>
     <object>objects\obj_dialogue</object>
     <object>objects\obj_highScores</object>
-    <object>objects\obj_room_list</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_mainMenu</room>

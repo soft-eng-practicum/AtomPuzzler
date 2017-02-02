@@ -13,7 +13,15 @@
   <code>/// Initialize Variables
 global.message[0] = "Create NaOH";
 global.correct_charge = 0;
-global.correct_symbol = "NaOH";</code>
+
+// Clear the previous list
+ds_list_clear(global.room_list);
+
+// Add values to list
+ds_list_add(global.room_list, "H", "O", "Na");
+
+// Sort list
+ds_list_sort(global.room_list, true);</code>
   <enableViews>0</enableViews>
   <clearViewBackground>-1</clearViewBackground>
   <clearDisplayBuffer>-1</clearDisplayBuffer>

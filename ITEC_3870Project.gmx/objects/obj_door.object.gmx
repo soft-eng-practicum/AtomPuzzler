@@ -27,6 +27,7 @@
             <kind>1</kind>
             <string>/// Initialize Variables
 
+// Sprite Variables
 depth = 5;
 </string>
           </argument>
