@@ -4,7 +4,7 @@
   <solid>0</solid>
   <visible>-1</visible>
   <depth>0</depth>
-  <persistent>0</persistent>
+  <persistent>-1</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
@@ -31,7 +31,7 @@
 global.points = 0;
 
 // Initial points per room. use this value to decrease score.
-global.roomPoints = 500;
+global.roomPoints = 0;
 
 // Total points display after game ends
 global.totalPoints = 0;
@@ -61,7 +61,9 @@ global.totalPoints = 0;
 
 draw_set_color(c_blue);
 draw_text(550, 20, global.points);
-draw_text(550, 40, global.roomPoints);
+
+draw_text(550, 40, round(global.roomPoints));
+
 draw_text(550, 60, global.totalPoints);
 </string>
           </argument>

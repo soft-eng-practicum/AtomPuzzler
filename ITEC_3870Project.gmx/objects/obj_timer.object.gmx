@@ -64,16 +64,17 @@ if(!stop)
     sec += 1;
     sec %= (rmspd * 60);
     
+    global.roomPoints += .1;
+    global.roomPoints %= (rmspd * 60);
     // Decreases the room points over time
-    global.roomPoints -= .1;
-    if(global.roomPoints &lt; 100)
+    if(global.roomPoints &gt; 500)
     {
-        global.roomPoints = 100;
+        global.roomPoints = 500;
     }
+    
     if(sec == 0)
     {
         mn += 1;
-
     }
     
     if(mn &gt; 59)

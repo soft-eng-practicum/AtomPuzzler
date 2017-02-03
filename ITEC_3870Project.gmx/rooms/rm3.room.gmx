@@ -72,7 +72,6 @@
     <instance objName="obj_obstacle" x="584" y="464" name="inst_FA7B8DE9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_obstacle" x="616" y="464" name="inst_47BAA511" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_obstacle" x="648" y="464" name="inst_398783A3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_score" x="552" y="20" name="inst_8D89D4FB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_timer" x="36" y="28" name="inst_4413AEF2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_obstacle" x="240" y="344" name="inst_413AAE2B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_obstacle" x="268" y="344" name="inst_24C027C9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
