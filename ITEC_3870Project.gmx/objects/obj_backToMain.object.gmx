@@ -27,6 +27,7 @@
             <kind>1</kind>
             <string>/// Return the Player to Main Menu
 
+global.totalPoints = 0;
 room_goto(rm_mainMenu);
 </string>
           </argument>

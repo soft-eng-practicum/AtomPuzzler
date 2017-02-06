@@ -464,9 +464,10 @@ move_wrap(true, false, rm1);
             <string>/// Draw Self and Charge
 
 draw_self();
-draw_set_color(c_blue);
 
+/*
 //Temporary, prints out list size for testing purposes
+draw_set_color(c_blue);
 draw_text(450, 100, "inventory size: " + string(ds_list_size(inventory)));
 
 //Prints array of values in inventory list
@@ -474,6 +475,7 @@ for(i = 0; i &lt; ds_list_size(inventory); i++)
 {
     draw_text(600, 160 + (15 * i), ds_list_find_value(inventory, i));
 }
+*/
 </string>
           </argument>
         </arguments>
