@@ -36,3 +36,10 @@ git commit -m "I fixed the merge conflict."
 git push
 git checkout master
 git merge newBranch
+git status
+git add -A
+git commit -m "Raised moving platform height in order for player to stand under."
+git pull
+git push
+git pull
+git pull
