@@ -29,6 +29,10 @@
 
 global.totalPoints = 0;
 room_goto(rm_mainMenu);
+
+// Play the select sound effect
+
+audio_play_sound(sfx_Select, 0, false);
 </string>
           </argument>
         </arguments>

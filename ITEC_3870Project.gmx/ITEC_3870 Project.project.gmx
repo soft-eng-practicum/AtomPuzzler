@@ -130,7 +130,6 @@
     </objects>
     <object>objects\obj_dialogue</object>
     <object>objects\obj_highScores</object>
-    <object>objects\obj_Music</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_mainMenu</room>

@@ -80,9 +80,11 @@ instance_create(x, y, obj_atom_test2)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Atom on Collion Destroy
+            <string>/// Atom on Collion Destroy and play sound Effect
 
 instance_destroy();
+
+audio_play_sound(sfx_atomCollide, 0, false);
 </string>
           </argument>
         </arguments>

@@ -28,6 +28,10 @@
             <string>/// Go to the first level
 
 room_goto(rm1);
+
+// Play the select sound effect
+
+audio_play_sound(sfx_Select, 0, false);
 </string>
           </argument>
         </arguments>

@@ -28,6 +28,10 @@
             <string>///go to the option room
 
 room_goto(rm_option);
+
+// Play the select sound effect
+
+audio_play_sound(sfx_Select, 0, false);
 </string>
           </argument>
         </arguments>
