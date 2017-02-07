@@ -4,7 +4,14 @@
     <Config>Configs\Default</Config>
   </Configs>
   <NewExtensions/>
-  <sounds name="sound"/>
+  <sounds name="sound">
+    <sound>sound\sfx_Select</sound>
+    <sound>sound\sfx_atomCollide</sound>
+    <sound>sound\sfx_jump</sound>
+    <sound>sound\sfx_next_Level</sound>
+    <sound>sound\sfx_F_Alarm</sound>
+    <sound>sound\music_AtomPuzzlerTheme</sound>
+  </sounds>
   <sprites name="sprites">
     <sprites name="player_spr">
       <sprite>sprites\spr_boy1</sprite>
@@ -123,6 +130,7 @@
     </objects>
     <object>objects\obj_dialogue</object>
     <object>objects\obj_highScores</object>
+    <object>objects\obj_Music</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_mainMenu</room>

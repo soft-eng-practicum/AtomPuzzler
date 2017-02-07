@@ -84,6 +84,16 @@ key_right = keyboard_check(vk_right);
 key_left = -keyboard_check(vk_left);
 key_jump = keyboard_check_pressed(vk_space);
 
+
+/* If key_jump is true, then the sound effect for jumping will be played.
+*/
+
+if (key_jump == true) 
+{
+    sound_play(sfx_jump);
+}
+
+
 // Use Player Inputs
 
 /* 'mvmt' will be used as the number to represent whether or not 
