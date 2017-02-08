@@ -25,7 +25,9 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>switch(room)
+            <string>/// Change Tiles
+
+switch(room)
 {
     case(rm_mainMenu || rm_option || rm_scoreBoard || rm1 || rm3):
     {
