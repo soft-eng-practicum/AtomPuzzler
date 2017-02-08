@@ -67,7 +67,7 @@ complete = false;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Play Music ///
+            <string>/// Play Music
 
 // This will play the audio and set its priorty level to be higher than all other sounds
 // because the player is persistant, the audio will continue to play.

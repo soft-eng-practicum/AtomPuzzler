@@ -41,7 +41,8 @@
     </sprites>
     <sprites name="platform">
       <sprite>sprites\spr_movingPlatform</sprite>
-      <sprite>sprites\spr_grass1</sprite>
+      <sprite>sprites\spr_tile1</sprite>
+      <sprite>sprites\spr_tile2</sprite>
       <sprites name="movingDirection">
         <sprite>sprites\spr_left</sprite>
         <sprite>sprites\spr_right</sprite>
@@ -49,8 +50,9 @@
     </sprites>
   </sprites>
   <backgrounds name="background">
-    <background>background\bg_grassWall</background>
+    <background>background\bg_rock1</background>
     <background>background\bg_mainMenu</background>
+    <background>background\bg_rock2</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
