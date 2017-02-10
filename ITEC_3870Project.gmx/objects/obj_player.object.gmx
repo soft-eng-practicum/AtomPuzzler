@@ -95,7 +95,7 @@ audio_play_sound(music_AtomPuzzlerTheme, 1, true);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Player Inputs and Physics Calculations
+            <string>/// Player Inputs and Physics Calculations (Keyboard)
 
 /* 'key_right', 'key_left' and 'key_jump' are all variable 
 place holders for the player's inputs. When the player presses
@@ -108,7 +108,7 @@ REMEMBER: these checks happen every frame of the game.
 
 key_right = keyboard_check(vk_right);
 key_left = -keyboard_check(vk_left);
-key_jump = keyboard_check_pressed(vk_space);
+key_jump = keyboard_check_pressed(vk_space) || device_mouse_check_button_pressed(0, mb_right);
 
 
 /* If key_jump is true, then the sound effect for jumping will be played.
