@@ -38,6 +38,7 @@
       <sprite>sprites\spr_option</sprite>
       <sprite>sprites\spr_gender</sprite>
       <sprite>sprites\spr_backToMain</sprite>
+      <sprite>sprites\spr_test</sprite>
     </sprites>
     <sprites name="platform">
       <sprite>sprites\spr_movingPlatform</sprite>
@@ -127,16 +128,23 @@
       <object>objects\obj_startGame</object>
       <object>objects\obj_option</object>
       <object>objects\obj_scoreBoard</object>
+      <object>objects\obj_test</object>
       <object>objects\obj_gender</object>
       <object>objects\obj_backToMain</object>
     </objects>
     <object>objects\obj_dialogue</object>
     <object>objects\obj_highScores</object>
+    <objects name="obj_testing">
+      <object>objects\obj_testScore</object>
+      <object>objects\obj_testingDialog</object>
+    </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_mainMenu</room>
     <room>rooms\rm_option</room>
     <room>rooms\rm_scoreBoard</room>
+    <room>rooms\rm_test</room>
+    <room>rooms\rm_test2</room>
     <room>rooms\rm1</room>
     <room>rooms\rm2</room>
     <room>rooms\rm3</room>
