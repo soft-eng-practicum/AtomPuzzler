@@ -344,8 +344,18 @@ if (room_exists(room_next(room)) &amp;&amp; keyboard_check(vk_up))
     room_goto_next();
     x = 32;
     y = 320;
-    
+    if(debug_mode)
+    {
+        show_debug_message("You have sucessfully moved to the next room");
+        show_message("You have sucessfully moved to the next room");
+    }
     audio_play_sound(sfx_next_Level, 0, 0);
+}
+
+if(!room_exists(room_next(room) &amp;&amp; keyboard_check(vk_up) &amp;&amp; debug_mode))
+{
+    show_debug_message("Next room does not exist");
+    show_message("Next room does not exist");
 }
 
 // Check if both list have same array size
@@ -465,6 +475,11 @@ for(i = 0; i &lt; ds_list_size(global.room_list); i++)
     if(instance_nearest(x, y, obj_atom_test1).symbol = ds_list_find_value(global.room_list, i))
     {
         global.points += 200;
+        if(debug_mode)
+        {
+            show_message("You have picked the right atom. Adding 200 points to score");
+            show_debug_message("You have picked the right atom. Adding 200 points to score");
+        }       
         complete = true;
     }
     if(complete)

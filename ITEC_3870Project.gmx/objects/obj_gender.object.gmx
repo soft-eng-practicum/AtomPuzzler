@@ -98,12 +98,22 @@ if(touch)
         {
             obj_player.spr = "girl1";
             touch = false;
+            if(debug_mode)
+            {
+                show_message("Changed to the female character");
+                show_debug_message("Changed to the female character");
+            }
             break;
         }
         case "girl1":
         {
             obj_player.spr = "boy1";
             touch = false;
+            if(debug_mode)
+            {
+                show_message("Changed to the male character");
+                show_debug_message("Changed to the male character");
+            }
             break;
         }
     }
