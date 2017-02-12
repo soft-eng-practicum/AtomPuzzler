@@ -82,6 +82,8 @@
     <instance objName="obj_movingPlatform" x="516" y="256" name="inst_10BEBF7A" locked="0" code="" scaleX="3.25" scaleY="2.25" colour="4294967295" rotation="0"/>
     <instance objName="obj_left" x="568" y="252" name="inst_EDD529BD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_right" x="124" y="252" name="inst_4437C114" locked="0" code="" scaleX="1" scaleY="1.25" colour="4294967295" rotation="0"/>
+    <instance objName="obj_atom_o" x="180" y="76" name="inst_62C72E18" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_atom_o" x="720" y="148" name="inst_B74BBCEA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>
