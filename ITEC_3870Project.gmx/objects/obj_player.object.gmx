@@ -352,11 +352,13 @@ if (room_exists(room_next(room)) &amp;&amp; keyboard_check(vk_up))
     audio_play_sound(sfx_next_Level, 0, 0);
 }
 
-if(!room_exists(room_next(room) &amp;&amp; keyboard_check(vk_up) &amp;&amp; debug_mode))
+else if (!room_exists(room_next(room)) &amp;&amp; keyboard_check(vk_up) &amp;&amp; debug_mode)
 {
     show_debug_message("Next room does not exist");
     show_message("Next room does not exist");
 }
+
+else{}
 
 // Check if both list have same array size
 // Check both index in order for same values
@@ -424,10 +426,10 @@ if(keyboard_check(vk_f2))
 
 
 //testing door object in test room
-if(room == rm_test2 &amp;&amp; keyboard_check(vk_up))
+if(room == rm_test2 &amp;&amp; keyboard_check(vk_up) &amp;&amp; room_exists(room_next(next)))
 {
-  //  room_goto(rm_test);
-    room_goto_next();
+    room_goto(rm_test);
+   // room_goto_next();
     show_debug_message("You have sucessfully moved to the First Testing Room");
     show_message("You have sucessfully moved to the First Testing Room");
     x = 32;

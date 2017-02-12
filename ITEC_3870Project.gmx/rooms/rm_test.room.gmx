@@ -3,8 +3,8 @@
   <caption></caption>
   <width>640</width>
   <height>480</height>
-  <vsnap>1</vsnap>
-  <hsnap>1</hsnap>
+  <vsnap>32</vsnap>
+  <hsnap>32</hsnap>
   <isometric>0</isometric>
   <speed>60</speed>
   <persistent>0</persistent>
@@ -164,6 +164,11 @@ ds_list_sort(global.room_list, true);</code>
     <instance objName="obj_atom_na" x="408" y="348" name="inst_47B91301" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_testScore" x="559" y="35" name="inst_D5A9109D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_atom_h" x="509" y="161" name="inst_143EDA13" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_obstacle" x="576" y="320" name="inst_532AF23F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_obstacle" x="544" y="320" name="inst_6B8CE567" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_obstacle" x="512" y="320" name="inst_B393178C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_timer" x="32" y="32" name="inst_3E831116" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_dialogue" x="64" y="256" name="inst_2D902F69" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

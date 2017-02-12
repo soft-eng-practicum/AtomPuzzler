@@ -61,6 +61,7 @@ global.totalPoints = 0;
 
     draw_set_color(c_blue);
     draw_text(300, 20, "Current Points per atoms: " + string(global.points));
+    draw_text(300, 40, "Total score" + string(global.totalPoints));
 </string>
           </argument>
         </arguments>
