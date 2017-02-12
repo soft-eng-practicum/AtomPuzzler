@@ -240,7 +240,7 @@
     <option_html5_facebook_enable>0</option_html5_facebook_enable>
     <option_html5_flurry_enable>0</option_html5_flurry_enable>
     <option_html5_flurry_id></option_html5_flurry_id>
-    <option_html5_foldername>html5game</option_html5_foldername>
+    <option_html5_foldername>Atom Puzzler</option_html5_foldername>
     <option_html5_generate_spotify_app>0</option_html5_generate_spotify_app>
     <option_html5_google_analytics_enable>0</option_html5_google_analytics_enable>
     <option_html5_google_tracking_id></option_html5_google_tracking_id>
@@ -258,7 +258,7 @@
     <option_html5_texture_page>256</option_html5_texture_page>
     <option_html5_use_test_ads>0</option_html5_use_test_ads>
     <option_html5_usebuiltinparticles>True</option_html5_usebuiltinparticles>
-    <option_html5_usesplash>False</option_html5_usesplash>
+    <option_html5_usesplash>True</option_html5_usesplash>
     <option_icon>nil</option_icon>
     <option_in_app_purchase_sandbox_mode>0</option_in_app_purchase_sandbox_mode>
     <option_information></option_information>
@@ -558,7 +558,7 @@
     <option_windows_runner_finished>Configs\Default\windows\Runner_finish.bmp</option_windows_runner_finished>
     <option_windows_runner_header>Configs\Default\windows\Runner_header.bmp</option_windows_runner_header>
     <option_windows_save_location>0</option_windows_save_location>
-    <option_windows_sleep_margin>1</option_windows_sleep_margin>
+    <option_windows_sleep_margin>30</option_windows_sleep_margin>
     <option_windows_splash_background_colour>#000000</option_windows_splash_background_colour>
     <option_windows_splash_screen>Configs\Default\windows\splash.png</option_windows_splash_screen>
     <option_windows_steam_app_id>0</option_windows_steam_app_id>

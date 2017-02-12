@@ -54,6 +54,7 @@
     <background>background\bg_rock1</background>
     <background>background\bg_mainMenu</background>
     <background>background\bg_rock2</background>
+    <background>background\splash_moc2</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
@@ -138,8 +139,10 @@
       <object>objects\obj_testScore</object>
       <object>objects\obj_testingDialog</object>
     </objects>
+    <object>objects\obj_splashTimer</object>
   </objects>
   <rooms name="rooms">
+    <room>rooms\rm_splashScreen</room>
     <room>rooms\rm_mainMenu</room>
     <room>rooms\rm_option</room>
     <room>rooms\rm_scoreBoard</room>
