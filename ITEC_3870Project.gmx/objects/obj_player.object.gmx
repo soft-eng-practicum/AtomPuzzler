@@ -346,6 +346,7 @@ if (room_exists(room_next(room)) &amp;&amp; keyboard_check(vk_up))
     y = 320;
     if(debug_mode)
     {
+      //  assert_equal(room_next(room), room_goto_next(), "Go to next room");
         show_debug_message("You have sucessfully moved to the next room");
         show_message("You have sucessfully moved to the next room");
     }

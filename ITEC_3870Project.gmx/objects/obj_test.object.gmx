@@ -8,6 +8,35 @@
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
+    <event eventtype="0" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if(!debug_mode)
+{
+    image_alpha = 0;
+    instance_deactivate_object(x);
+   // show_message("Run the game in debug mode.");
+   // game_end();
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="4" ename="obj_player">
       <action>
         <libid>1</libid>
@@ -25,8 +54,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>
-if(debug_mode)
+            <string>if(debug_mode)
 {
 /// go to the test room
 
@@ -37,11 +65,10 @@ room_goto(rm_test);
 audio_play_sound(sfx_Select, 0, false);
 }
 
-if (!debug_mode)
-    {
-    show_message("Run the game in debug mode.");
-    game_end();
-    }
+
+    
+
+
 </string>
           </argument>
         </arguments>
