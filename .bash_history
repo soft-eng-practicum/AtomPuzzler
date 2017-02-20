@@ -60,3 +60,26 @@ git pull
 cd D:/documents/code/atompuzzler
 git pull
 git status
+git pull
+git add -A
+git commit -m "Testing new game inputs for phone for new usability."
+git push
+cd D:/documents/code/atompuzzlerpages
+git status
+git status
+git pull
+cd D:/documents/code/atompuzzlerpages
+git status
+git pull
+git pull
+git pull
+cd D:/documents/code/atompuzzlerpages
+git pull
+git status
+git add -A
+git status
+git commit -m "Test to see if Pages will work."
+git status
+git add -A
+git commit -m "Updated to see if Pages will work."
+git push
