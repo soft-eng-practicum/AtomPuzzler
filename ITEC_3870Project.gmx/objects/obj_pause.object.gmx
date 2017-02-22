@@ -25,13 +25,15 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>global.pause = 0;
+            <string>///Pause variables
+paused = false;
+scrn = -1;
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="8" enumb="0">
+    <event eventtype="3" enumb="0">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -48,46 +50,74 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (global.pause)
+            <string>///Pause function
+
+/*
+When paused, it creates a screenshot of the game and 
+deactivates parent object "par_pausable".
+*/
+
+if(keyboard_check_pressed(ord('P'))) 
 {
-    draw_set_colour(c_black);
-    draw_set_alpha(0.7);
-    draw_rectangle(0, 0, room_width, room_height, 0);
-    draw_set_halign(fa_center);
-    draw_set_font(font_Default);
+    paused = !paused;
+    
+    if(paused) 
+    {
+        scrn = sprite_create_from_surface(application_surface, view_xview, view_yview, view_wport, view_hport, false, true, 0, 0);
+        audio_pause_sound(music_AtomPuzzlerTheme);
+        instance_deactivate_object(par_pausable);
+    }
+
+    else
+    {
+        sprite_delete(scrn);
+        audio_resume_sound(music_AtomPuzzlerTheme);
+        instance_activate_object(par_pausable);
+    }
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="64">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Show options when paused
+//todo create pause banner for feedback score
+
+if(paused)
+{
+    width = display_get_gui_width();
+    height = display_get_gui_height();
+    
+    draw_sprite(scrn, 0, 0, 0);
+    draw_set_alpha(0.5);
+        draw_rectangle(0, 0, width, height, false);
     draw_set_alpha(1);
-    draw_text(room_width/2, room_height/2, "Game Paused");
-    draw_set_colour(c_black);
-}
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="9" enumb="27">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>if (global.pause == 0) 
-{
-    global.pause = 1;
-}
-else
-{
-    global.pause = 0;
+    
+    draw_set_halign(fa_center);
+        draw_set_valign(fa_middle);
+            //instance_create(width/2, height/2, obj_banner);
+            //instance_create(room_width/2 - 120, room_height/2 - 120, obj_pause_menu);
+            draw_text(width/2, height/2, "PAUSED");
+            //draw_text(width/2, height/2 + 25, "[C]ontinue [R]estart [M]ain Menu [Q]uit");
+        draw_set_valign(-1);
+    draw_set_halign(-1); 
 }
 </string>
           </argument>
