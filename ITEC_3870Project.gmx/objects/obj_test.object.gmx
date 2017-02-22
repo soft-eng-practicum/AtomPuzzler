@@ -25,7 +25,9 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(!debug_mode)
+            <string>/// Hide Test Block
+
+if(!debug_mode)
 {
     image_alpha = 0;
     instance_deactivate_object(x);
@@ -54,7 +56,9 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(debug_mode)
+            <string>/// Take to Testing Room
+
+if(debug_mode)
 {
 /// go to the test room
 
