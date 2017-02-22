@@ -83,3 +83,49 @@ git status
 git add -A
 git commit -m "Updated to see if Pages will work."
 git push
+git status
+cd D:/documents/code/atompuzzlerpages
+git status
+git status
+cd D:/documents/code/atompuzzler
+git status
+git add -A
+git pull
+git add -A
+git status
+git commit -m "Fixed the obj_obstacle step event to accurately change the sprites from room to room."
+git push
+cd D:/documents/code/atompuzzlerpages
+git status
+git add -A
+git commit -m "Fixed the obj_obstacle step event to accurately change the sprites from room to room."
+git pull
+git push
+git add -A
+git status
+git push
+git status
+git commit -m "Fixed the obj_obstacle step event to accurately change the sprites from room to room."
+git push
+git add -A
+git status
+git commit -m "Attempting to fix HTML5 index."
+git push
+git pull
+cd D:/documents/code/atompuzzler
+git status
+git status
+git status
+cd D:/documents/code/atompuzzlerpages
+git status
+git pull
+git add -A
+git commit -m "Trying to fix Pages HTML5."
+git push
+git pull
+git status
+git add -A
+git commit -m "Fixing Pages."
+git push
+git status
+git pull
