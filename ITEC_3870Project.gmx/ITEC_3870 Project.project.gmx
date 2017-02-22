@@ -142,6 +142,10 @@
       <object>objects\obj_testingDialog</object>
     </objects>
     <object>objects\obj_splashTimer</object>
+    <objects name="Pausing">
+      <object>objects\obj_pause</object>
+      <object>objects\par_pausable</object>
+    </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_splashScreen</room>
