@@ -45,8 +45,11 @@ depth = -3;
 
 // Mechanic Variables
 total_charge = 0;
-inventory = ds_list_create();
+global.inventory = ds_list_create();
+is_winning = false;
 complete = false;
+paused = false;
+scrn = -1;
 </string>
           </argument>
         </arguments>
@@ -331,85 +334,67 @@ else
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Interact with the Door
+            <string>/// Door Collision Event
+/*
+Checks for both lists: room and player's inventory.
+Checks sizes of both lists, then checks for the content within list.
+If the content within the player's inventory matches the room's list, then give correct feedback and move to next room and vice versa.
+*/
 
-//MUST EVENTUALLY BECOME ONE COMMAND
-//Resets inventory and player's position then goes to next room if available.
-//Also plays the next level sound effect.
-if (room_exists(room_next(room)) &amp;&amp; keyboard_check(vk_up))
+if(keyboard_check_released(vk_up)) 
 {
-    ds_list_clear(inventory);
-    global.points = 0;
-    global.roomPoints = 0;
-    room_goto_next();
-    x = 32;
-    y = 320;
-    if(debug_mode)
-    {
-      //  assert_equal(room_next(room), room_goto_next(), "Go to next room");
-        show_debug_message("You have sucessfully moved to the next room");
-        show_message("You have sucessfully moved to the next room");
-    }
-    audio_play_sound(sfx_next_Level, 0, 0);
-}
-
-else if (!room_exists(room_next(room)) &amp;&amp; keyboard_check(vk_up) &amp;&amp; debug_mode)
-{
-    show_debug_message("Next room does not exist");
-    show_message("Next room does not exist");
-}
-
-else{}
-
-// Check if both list have same array size
-// Check both index in order for same values
-if(keyboard_check_released(vk_f1)) 
-{
+    //Set variables for size of lists
     room_array_size = ds_list_size(global.room_list);
-    inventory_size = ds_list_size(inventory);
+    inventory_size = ds_list_size(global.inventory);
     
-    inventoryCheck = false;
+    //Boolean set to false by default
+    inventory_check = false;
     
+    //Compare size of both lists
     if(room_array_size == inventory_size) 
     {
+        //Compare and match list by index, if content doesn't match then break loop
         for(i = 0; i &lt; inventory_size; i++) 
         {
-            if(ds_list_find_value(inventory, i) = ds_list_find_value(global.room_list, i))
+            if(ds_list_find_value(global.inventory, i) = ds_list_find_value(global.room_list, i))
             {
-                inventoryCheck = true;
+                inventory_check = true;
             }
             else
             {
-                inventoryCheck = false;
+                inventory_check = false;
                 break;
             }            
         }
         
-        if(inventoryCheck &amp;&amp; total_charge = global.correct_charge)
+        //Win
+        if(inventory_check)
         {
-            global.message[0] = global.win_message;
+            is_winning = true;
+            instance_create(0, 0, obj_win);
             global.totalPoints = global.points - round(global.roomPoints) + global.totalPoints;
             obj_timer.stop = true;
         }
+        
+        //Lose
         else
-        {
-            global.message[0] = global.lose_message;
+        {   
+            is_winning = false;
+            instance_create(0, 0, obj_gameover);
             global.points -= 100;
             global.totalPoints = global.points - round(global.roomPoints) + global.totalPoints;
             obj_timer.stop = true;
         }
     }
+    
+    //Size does not match therefore lose
     else 
     {
-        global.message[0] = "Array Size does not match";
+        is_winning = false;
+        instance_create(0, 0, obj_gameover);
         obj_timer.stop = true;
     }
 }
-//MUST EVENTUALLY BECOME ONE COMMAND
-
-
-
-
 
 //Colliding door in room 3 for testing purposes
 
@@ -425,6 +410,138 @@ if(keyboard_check(vk_f2))
    room_goto(rm_scoreBoard);
 }
 
+/*
+//testing door object in test room
+if(room == rm_test2 &amp;&amp; keyboard_check(vk_up) &amp;&amp; room_exists(room_next(next)))
+{
+    room_goto(rm_test);
+   // room_goto_next();
+    show_debug_message("You have sucessfully moved to the First Testing Room");
+    show_message("You have sucessfully moved to the First Testing Room");
+    x = 32;
+    y = 320;
+}
+if(room == rm_test &amp;&amp; keyboard_check(vk_up) &amp;&amp; room_exists(room_next(room)))
+{
+    room_goto_next();
+    show_debug_message("You have sucessfully moved to the next room");
+    show_message("You have sucessfully moved to the next room");
+    x = 32;
+    y = 320;
+}
+*/
+
+
+/*
+if (room_exists(room_next(room)) &amp;&amp; keyboard_check(vk_up))
+{
+    ds_list_clear(global.inventory);
+    global.points = 0;
+    global.roomPoints = 0;
+    room_goto_next();
+    x = 32;
+    y = 320;
+    
+    if(debug_mode)
+    {
+      //  assert_equal(room_next(room), room_goto_next(), "Go to next room");
+        show_debug_message("You have sucessfully moved to the next room");
+        show_message("You have sucessfully moved to the next room");
+    }
+    audio_play_sound(sfx_next_Level, 0, 0);
+}
+
+
+else if (!room_exists(room_next(room)) &amp;&amp; keyboard_check(vk_up) &amp;&amp; debug_mode)
+{
+    show_debug_message("Next room does not exist");
+    show_message("Next room does not exist");
+}
+
+else{}
+
+*/
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Next Room Event Handler
+/*
+Clears inventory, reset points and roompoints, go to next existing room 
+and set character position. Makes sound when entering door.
+*/
+
+//Goto next existing room when you win
+
+/*
+if(is_winning &amp;&amp; room_exists(room_next(room)))
+{
+    ds_list_clear(global.inventory);
+    global.points = 0;
+    global.roomPoints = 0;
+    room_goto_next();
+    x = 32;
+    y = 320;
+    is_winning = false;
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Debug test code for room and output the debug messages.
+if (room_exists(room_next(room)) &amp;&amp; keyboard_check(vk_up))
+{
+    if(debug_mode)
+    {
+      //  assert_equal(room_next(room), room_goto_next(), "Go to next room");
+        show_debug_message("You have sucessfully moved to the next room");
+        show_message("You have sucessfully moved to the next room");
+    }
+}
+
+else if (!room_exists(room_next(room)) &amp;&amp; keyboard_check(vk_up) &amp;&amp; debug_mode)
+{
+    show_debug_message("Next room does not exist");
+    show_message("Next room does not exist");
+}
+
+else
+{
+
+}
 
 //testing door object in test room
 if(room == rm_test2 &amp;&amp; keyboard_check(vk_up) &amp;&amp; room_exists(room_next(next)))
@@ -470,8 +587,8 @@ if(room == rm_test &amp;&amp; keyboard_check(vk_up) &amp;&amp; room_exists(room_
 
 // Win/ Lose Conditions
 total_charge += instance_nearest(x, y, obj_atom_test1).charge;
-ds_list_add(inventory, instance_nearest(x, y, obj_atom_test1).symbol);
-ds_list_sort(inventory, true);
+ds_list_add(global.inventory, instance_nearest(x, y, obj_atom_test1).symbol);
+ds_list_sort(global.inventory, true);
 complete = false;
 
 for(i = 0; i &lt; ds_list_size(global.room_list); i++)
@@ -490,6 +607,40 @@ for(i = 0; i &lt; ds_list_size(global.room_list); i++)
     {
         break;
     }
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="5" enumb="32">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Press Spacebar after winning to continue
+
+if(is_winning &amp;&amp; room_exists(room_next(room)))
+{
+    ds_list_clear(global.inventory);
+    global.points = 0;
+    global.roomPoints = 0;
+    room_goto_next();
+    x = 32;
+    y = 320;
+    is_winning = false;
 }
 </string>
           </argument>
@@ -553,6 +704,66 @@ for(i = 0; i &lt; ds_list_size(inventory); i++)
     draw_text(600, 160 + (15 * i), ds_list_find_value(inventory, i));
 }
 */
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="9" enumb="82">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Restart Room
+/*
+Checks if player has both collected the right atoms and checks if the inventory size is not 0
+*/
+
+if(!is_winning &amp;&amp; (ds_list_size(global.inventory) != 0))
+{
+    x = 32;
+    y = 415;
+    ds_list_clear(global.inventory);
+    room_restart();
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="9" enumb="36">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Go to Main Menu
+x = 32;
+y = 415;
+room_goto(rm_mainMenu);
 </string>
           </argument>
         </arguments>

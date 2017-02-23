@@ -4,10 +4,34 @@
   <solid>0</solid>
   <visible>-1</visible>
   <depth>0</depth>
-  <persistent>-1</persistent>
+  <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
+    <event eventtype="0" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Set depth
+depth = -1000
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="8" enumb="0">
       <action>
         <libid>1</libid>
@@ -25,14 +49,18 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_set_color(c_blue);
+            <string>///Draw text lose
 
-draw_text(200, 100, "room list size: " + string(ds_list_size(global.room_list)));
+draw_set_halign(fa_center);
+draw_set_valign(fa_middle);
+draw_set_color(c_black);
 
-for(i = 0; i &lt; ds_list_size(global.room_list); i++)
-{
-    draw_text(200, 160 + (15 * i), ds_list_find_value(global.room_list, i));
-}
+draw_set_font(font_large);
+draw_text(room_width/2, room_height/2, "Game Over");
+
+draw_set_font(font_small);
+draw_text(room_width/2, room_height/2 + 40, "Press R to restart");
+
 </string>
           </argument>
         </arguments>

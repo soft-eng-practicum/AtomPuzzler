@@ -103,6 +103,8 @@
     </scripts>
   </scripts>
   <fonts name="fonts">
+    <font>fonts\font_small</font>
+    <font>fonts\font_large</font>
     <font>fonts\font_Default</font>
   </fonts>
   <objects name="objects">
@@ -145,6 +147,12 @@
     <objects name="Pausing">
       <object>objects\obj_pause</object>
       <object>objects\par_pausable</object>
+    </objects>
+    <objects name="Feedback Text">
+      <object>objects\obj_gameover</object>
+      <object>objects\obj_win</object>
+      <object>objects\obj_inventory</object>
+      <object>objects\obj_room_list</object>
     </objects>
   </objects>
   <rooms name="rooms">
