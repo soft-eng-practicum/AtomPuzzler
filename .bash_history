@@ -133,3 +133,33 @@ git status
 git add -A
 git commit -m "Added small comment changes for better legibility."
 git pull
+git status
+git pull
+git add -A
+git commit -m "These changes were from John and something strange happened with the commits and pulls, I believe."
+git pull
+git pull
+git pull
+git add -
+git add -A
+git status
+git pull
+git commit -m "Fixed merge conflicts."
+git pull
+git pull
+git add -A
+git status
+git pull
+git checkout -b
+git checkout -b master
+git commit -m "Fixed merge conflicts."
+git pull
+git push
+git status
+git add -A
+git commit -m "Cleaned up the UI menuing in the Objects Section."
+git push
+git add -A
+git status
+git commit -m "Corrected spr_atom_h color and made the Sprite Section's organization more legible."
+git push
