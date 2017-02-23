@@ -129,3 +129,7 @@ git commit -m "Fixing Pages."
 git push
 git status
 git pull
+git status
+git add -A
+git commit -m "Added small comment changes for better legibility."
+git pull
