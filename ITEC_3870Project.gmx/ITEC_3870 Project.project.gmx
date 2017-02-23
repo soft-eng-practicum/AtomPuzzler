@@ -34,6 +34,7 @@
       <sprite>sprites\spr_atom_na</sprite>
       <sprite>sprites\spr_atom_c</sprite>
       <sprite>sprites\spr_atom_n</sprite>
+      <sprite>sprites\spr_atom_f</sprite>
     </sprites>
     <sprites name="Main Menu">
       <sprite>sprites\sp_startGame</sprite>
