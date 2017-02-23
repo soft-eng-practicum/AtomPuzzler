@@ -54,7 +54,7 @@ scrn = -1;
 
 /*
 When paused, it creates a screenshot of the game and 
-deactivates parent object "par_pausable".
+deactivates object "par_pausable".
 */
 
 if(keyboard_check_pressed(ord('P'))) 
