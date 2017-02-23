@@ -13,7 +13,11 @@
     <sound>sound\music_AtomPuzzlerTheme</sound>
   </sounds>
   <sprites name="sprites">
-    <sprites name="player_spr">
+    <sprites name="Room">
+      <sprite>sprites\spr_level_banner</sprite>
+      <sprite>sprites\spr_door_test1</sprite>
+    </sprites>
+    <sprites name="Player">
       <sprite>sprites\spr_boy1</sprite>
       <sprite>sprites\spr_girl1</sprite>
       <sprite>sprites\spr_boy1_jump</sprite>
@@ -22,17 +26,14 @@
       <sprite>sprites\spr_girl1_fall</sprite>
       <sprite>sprites\spr_girl1_jump</sprite>
     </sprites>
-    <sprite>sprites\spr_obstacletest</sprite>
-    <sprites name="atom_spr">
+    <sprites name="Atom">
       <sprite>sprites\spr_atom_h</sprite>
       <sprite>sprites\spr_atom_test1</sprite>
       <sprite>sprites\spr_atom_test2</sprite>
       <sprite>sprites\spr_atom_o</sprite>
       <sprite>sprites\spr_atom_na</sprite>
     </sprites>
-    <sprite>sprites\spr_door_test1</sprite>
-    <sprite>sprites\spr_level_banner</sprite>
-    <sprites name="spr_main">
+    <sprites name="Main Menu">
       <sprite>sprites\sp_startGame</sprite>
       <sprite>sprites\spr_scoreBoard</sprite>
       <sprite>sprites\spr_option</sprite>
@@ -40,8 +41,9 @@
       <sprite>sprites\spr_backToMain</sprite>
       <sprite>sprites\spr_test</sprite>
     </sprites>
-    <sprites name="platform">
+    <sprites name="Platforms and Obstacles">
       <sprite>sprites\spr_movingPlatform</sprite>
+      <sprite>sprites\spr_obstacletest</sprite>
       <sprite>sprites\spr_tile1</sprite>
       <sprite>sprites\spr_tile2</sprite>
       <sprites name="movingDirection">
