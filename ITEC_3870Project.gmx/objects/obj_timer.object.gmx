@@ -35,6 +35,8 @@ hr = 0;
 s = "";
 m = "";
 h = ""
+
+x = xstart;
 </string>
           </argument>
         </arguments>

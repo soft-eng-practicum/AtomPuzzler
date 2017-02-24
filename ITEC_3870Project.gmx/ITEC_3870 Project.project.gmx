@@ -63,6 +63,7 @@
   </backgrounds>
   <paths name="paths">
     <path>paths\atom</path>
+    <path>paths\path1</path>
   </paths>
   <scripts name="scripts">
     <script>scripts\assertEquals.gml</script>
@@ -120,6 +121,7 @@
       <object>objects\obj_dialogue</object>
       <object>objects\obj_highScores</object>
       <object>objects\obj_splashTimer</object>
+      <object>objects\obj_storeTime</object>
     </objects>
   </objects>
   <rooms name="rooms">
