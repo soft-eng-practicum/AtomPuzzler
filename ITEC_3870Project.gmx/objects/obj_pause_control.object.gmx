@@ -25,9 +25,12 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Pause variables
+            <string>///Initialized Variables
+
 paused = false;
 scrn = -1;
+
+toggle = true;
 </string>
           </argument>
         </arguments>
@@ -50,33 +53,26 @@ scrn = -1;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Pause function
+            <string>///Step event
 
-/*
-When paused, it creates a screenshot of the game and 
-deactivates object "par_pausable".
-*/
-
-if(keyboard_check_pressed(ord('P'))) 
+if(global.is_winning &amp;&amp; toggle)
 {
-    paused = !paused;
-    
-    if(paused) 
-    {
-        scr_pause()
-    }
+    scr_pause();
+    paused = true;
+}
 
-    else
-    {
-        scr_unpause()
-    }
+if(!toggle)
+{
+    scr_unpause();
+    toggle = true;
+    paused = false;
 }
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="8" enumb="64">
+    <event eventtype="8" enumb="0">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -93,12 +89,78 @@ if(keyboard_check_pressed(ord('P')))
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Show options when paused
-//todo create pause banner for feedback score
+            <string>///Draw to screen
 
 if(paused)
 {
     scr_draw_gui_pause();
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="9" enumb="82">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Restart Room
+/*
+Checks if player has both collected the right atoms and checks if the inventory size is not 0
+*/
+
+if(!global.is_winning &amp;&amp; (ds_list_size(global.inventory) != 0))
+{
+    x = 32;
+    y = 415;
+    ds_list_clear(global.inventory);
+    room_restart();
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="9" enumb="32">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Press Spacebar after winning to continue
+
+if(global.is_winning &amp;&amp; room_exists(room_next(room)))
+{
+    ds_list_clear(global.inventory);
+    global.points = 0;
+    global.roomPoints = 0;
+    room_goto_next();
+    global.is_winning = false;
+    toggle = false;
 }
 </string>
           </argument>
