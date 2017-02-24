@@ -12,9 +12,9 @@ draw_set_alpha(1);
 
 draw_set_halign(fa_center);
     draw_set_valign(fa_middle);
-        //instance_create(width/2, height/2, obj_banner);
-        //instance_create(room_width/2 - 120, room_height/2 - 120, obj_pause_menu);
-        draw_text(width/2, height/2, "PAUSED");
-        //draw_text(width/2, height/2 + 25, "[C]ontinue [R]estart [M]ain Menu [Q]uit");
+        //instance_create(x, y, obj_banner);
+        //instance_create(x - 120, y - 120, obj_pause_menu);
+        draw_text_outlined(width/2, height/2, "PAUSED", c_white, c_black);
+        //draw_text(x, y + 25, "[C]ontinue [R]estart [M]ain Menu [Q]uit");
     draw_set_valign(-1);
 draw_set_halign(-1);
