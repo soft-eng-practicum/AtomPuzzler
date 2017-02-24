@@ -67,6 +67,9 @@
   </paths>
   <scripts name="scripts">
     <script>scripts\assertEquals.gml</script>
+    <script>scripts\scr_pause.gml</script>
+    <script>scripts\scr_unpause.gml</script>
+    <script>scripts\scr_draw_gui_pause.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\font_small</font>
@@ -107,6 +110,7 @@
     <objects name="Pausing">
       <object>objects\obj_pause</object>
       <object>objects\par_pausable</object>
+      <object>objects\obj_pause_control</object>
     </objects>
     <objects name="Feedback Text">
       <object>objects\obj_gameover</object>
@@ -115,9 +119,9 @@
       <object>objects\obj_room_list</object>
     </objects>
     <objects name="Room">
-      <object>objects\obj_score</object>
       <object>objects\obj_door</object>
       <object>objects\obj_timer</object>
+      <object>objects\obj_score</object>
       <object>objects\obj_dialogue</object>
       <object>objects\obj_highScores</object>
       <object>objects\obj_splashTimer</object>
