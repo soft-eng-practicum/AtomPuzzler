@@ -163,3 +163,16 @@ git add -A
 git status
 git commit -m "Corrected spr_atom_h color and made the Sprite Section's organization more legible."
 git push
+git status
+git status
+git add -A
+git commit -m "Corrected spr_atom_h, spr_atom_na, and spr_atom_o color to better match requirements."
+git push
+git status
+git add -A
+git commit -m "Added new sprites for atoms to better match requirements."
+git push
+git add -A
+git status
+git commit -m "Added new sprites for atoms to better match requirements."
+git push

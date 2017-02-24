@@ -27,14 +27,14 @@
       <sprite>sprites\spr_girl1_jump</sprite>
     </sprites>
     <sprites name="Atom">
+      <sprite>sprites\spr_atom_c</sprite>
+      <sprite>sprites\spr_atom_f</sprite>
       <sprite>sprites\spr_atom_h</sprite>
+      <sprite>sprites\spr_atom_n</sprite>
+      <sprite>sprites\spr_atom_na</sprite>
+      <sprite>sprites\spr_atom_o</sprite>
       <sprite>sprites\spr_atom_test1</sprite>
       <sprite>sprites\spr_atom_test2</sprite>
-      <sprite>sprites\spr_atom_o</sprite>
-      <sprite>sprites\spr_atom_na</sprite>
-      <sprite>sprites\spr_atom_c</sprite>
-      <sprite>sprites\spr_atom_n</sprite>
-      <sprite>sprites\spr_atom_f</sprite>
     </sprites>
     <sprites name="Main Menu">
       <sprite>sprites\sp_startGame</sprite>
