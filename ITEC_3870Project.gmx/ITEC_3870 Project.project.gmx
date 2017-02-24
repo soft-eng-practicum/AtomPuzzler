@@ -58,6 +58,7 @@
     </sprites>
   </sprites>
   <backgrounds name="background">
+    <background>background\labBackground</background>
     <background>background\bg_rock1</background>
     <background>background\bg_mainMenu</background>
     <background>background\bg_rock2</background>
