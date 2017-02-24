@@ -114,10 +114,11 @@ key_left = -keyboard_check(vk_left);
 key_jump = keyboard_check_pressed(vk_space) || device_mouse_check_button_pressed(0, mb_right);
 
 
-/* If key_jump is true, then the sound effect for jumping will be played.
+/* If key_jump is true and the player is on the ground, 
+    then the sound effect for jumping will be played.
 */
 
-if (key_jump == true) 
+if (key_jump == true &amp;&amp; vspd == 0) 
 {
     audio_play_sound(sfx_jump, 0, false);
 }
