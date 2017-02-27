@@ -176,3 +176,11 @@ git add -A
 git status
 git commit -m "Added new sprites for atoms to better match requirements."
 git push
+git status
+git pull
+git add -A
+git pull
+git commit -m "This should still be the same, but it says that something is different."
+git pull
+git pull
+git status
