@@ -1,4 +1,10 @@
+<p align="center">
+<img src ="https://github.com/soft-eng-practicum/AtomPuzzler/tree/master/ITEC_3870Project.gmx/background/images/splash_moc2.png">
+</p>
+
 # AtomPuzzler
+[![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://opensource.org/licenses/MIT)
+
 
 **Team Name:** teamBackRow
 
