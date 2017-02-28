@@ -184,3 +184,10 @@ git commit -m "This should still be the same, but it says that something is diff
 git pull
 git pull
 git status
+git status
+git add -A
+git commit -m "Pushed to update essential scripts. Not so sure where that came from. Seems important."
+git push
+git pull
+git pull
+git push
