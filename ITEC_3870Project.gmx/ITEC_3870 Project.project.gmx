@@ -77,7 +77,12 @@
       <script>scripts\draw_sprite_shadow.gml</script>
     </scripts>
     <scripts name="Testing">
+      <script>scripts\intializeTestValues.gml</script>
       <script>scripts\assertEquals.gml</script>
+      <script>scripts\pass.gml</script>
+      <script>scripts\fail.gml</script>
+      <script>scripts\run_test.gml</script>
+      <script>scripts\draw_test.gml</script>
     </scripts>
     <scripts name="Pause">
       <script>scripts\scr_draw_gui_pause.gml</script>
@@ -118,8 +123,10 @@
       <object>objects\obj_backToMain</object>
     </objects>
     <objects name="Testing">
-      <object>objects\obj_testScore</object>
+      <object>objects\obj_passTest</object>
+      <object>objects\obj_unitTest</object>
       <object>objects\obj_testingDialog</object>
+      <object>objects\obj_failedTest</object>
     </objects>
     <objects name="Pausing">
       <object>objects\obj_pause</object>
