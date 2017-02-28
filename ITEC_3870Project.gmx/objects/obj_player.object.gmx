@@ -522,6 +522,27 @@ if(is_winning &amp;&amp; room_exists(room_next(room)))
           <argument>
             <kind>1</kind>
             <string>///Debug test code for room and output the debug messages.
+
+//testing door object in test room
+if(room == rm_test2 &amp;&amp; keyboard_check(vk_up))
+{
+    room_goto(rm_test);
+   // room_goto_next();
+    show_debug_message("You have sucessfully moved to the First Testing Room");
+    show_message("You have sucessfully moved to the First Testing Room");
+    x = 32;
+    y = 320;
+}
+if(room == rm_test &amp;&amp; keyboard_check(vk_up) &amp;&amp; room_exists(room_next(room)))
+{
+    room_goto_next();
+    show_debug_message("You have sucessfully moved to the next room");
+    show_message("You have sucessfully moved to the next room");
+    x = 32;
+    y = 320;
+}
+
+
 if (room_exists(room_next(room)) &amp;&amp; keyboard_check(vk_up))
 {
     if(debug_mode)
@@ -543,24 +564,7 @@ else
 
 }
 
-//testing door object in test room
-if(room == rm_test2 &amp;&amp; keyboard_check(vk_up) &amp;&amp; room_exists(room_next(next)))
-{
-    room_goto(rm_test);
-   // room_goto_next();
-    show_debug_message("You have sucessfully moved to the First Testing Room");
-    show_message("You have sucessfully moved to the First Testing Room");
-    x = 32;
-    y = 320;
-}
-if(room == rm_test &amp;&amp; keyboard_check(vk_up) &amp;&amp; room_exists(room_next(room)))
-{
-    room_goto_next();
-    show_debug_message("You have sucessfully moved to the next room");
-    show_message("You have sucessfully moved to the next room");
-    x = 32;
-    y = 320;
-}
+
 </string>
           </argument>
         </arguments>

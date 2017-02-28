@@ -60,9 +60,13 @@ if(!debug_mode)
 
 if(debug_mode)
 {
-/// go to the test room
 
+window_set_size(840, 480);
+obj_player.x = 32;
+obj_player.y = 320
+/// go to the test room
 room_goto(rm_test);
+
 
 // Play the select sound effect
 
