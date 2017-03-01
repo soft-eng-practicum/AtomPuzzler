@@ -8,8 +8,8 @@ var len = argument6;
 //Draw text shadow
 draw_set_colour(argument4);
 draw_set_alpha(argument7);
-var shadow_x = xx+lengthdir_x(len, dir);
-var shadow_y = yy+lengthdir_y(len, dir);
+var shadow_x = xx + lengthdir_x(len, dir);
+var shadow_y = yy + lengthdir_y(len, dir);
 draw_text(shadow_x, shadow_y, str);
 
 //Draw text

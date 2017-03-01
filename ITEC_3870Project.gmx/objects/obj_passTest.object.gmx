@@ -28,6 +28,7 @@
             <string>///test example
 
 num = 100;
+
 assertEquals("Test random num", 100, num);
 
 instance_destroy();

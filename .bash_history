@@ -191,3 +191,7 @@ git push
 git pull
 git pull
 git push
+git status
+git add -A
+git commit -m "Bash History update"
+git pull
