@@ -7,5 +7,9 @@ test_count = 0;
 pass_count = 0;
 fail_count = 0;
 
+<<<<<<< HEAD
 testBoolean = false;
+=======
+test_plan = "1.." + string(test_count);
+>>>>>>> refs/remotes/origin/master
 test_lines = "";
