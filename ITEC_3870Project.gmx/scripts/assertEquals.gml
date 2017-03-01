@@ -4,20 +4,22 @@
                     (Test objects, obj_atom, x)
 */
 
-ar = argument_count;
 description = argument0;
 expected = argument1;
 actual = argument2;
 
 if(expected == actual)
 {
+    obj_unitTest.pass_count +=1;
+    obj_unitTest.test_count+=1;
     pass(); 
 }
 else
 {
-  description += " #  EXPECTED: "+string(expected)+". ACTUAL WAS: "+string(actual);
-  obj_unitTest.failing_tests[obj_unitTest.fail_count] = description;
-  fail(description);
+    obj_unitTest.fail_count += 1;
+    obj_unitTest.test_count += 1;
+    description += " #EXPECTED: "+string(expected)+". ACTUAL WAS: "+string(actual);
+    fail(description);
 }
 
 

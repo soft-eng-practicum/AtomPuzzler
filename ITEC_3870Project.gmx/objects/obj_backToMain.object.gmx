@@ -57,6 +57,9 @@ audio_play_sound(sfx_Select, 0, false);
 if(debug_mode)
 {
 window_set_size(640,480);
+surface_resize(application_surface,640,480);
+obj_player.x = 600;
+obj_player.y = 400;
 with(obj_unitTest){
 instance_destroy();
 }

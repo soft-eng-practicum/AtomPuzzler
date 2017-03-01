@@ -3,6 +3,6 @@
 */
 with(obj_unitTest)
   {
-  result[test_count] = c_green;
-  test_lines += "#Pass";
+  testBoolean = true;
+  test_lines = "#Pass";
   }
