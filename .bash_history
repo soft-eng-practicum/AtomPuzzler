@@ -195,3 +195,7 @@ git status
 git add -A
 git commit -m "Bash History update"
 git pull
+git status
+git add -A
+git commit -m "Made some code more legible."
+git push

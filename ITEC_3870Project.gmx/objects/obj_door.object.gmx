@@ -27,6 +27,9 @@
             <kind>1</kind>
             <string>/// Initialize Variables
 
+// Mechanic Variables
+doorExit = true;
+
 // Sprite Variables
 depth = 5;
 </string>
