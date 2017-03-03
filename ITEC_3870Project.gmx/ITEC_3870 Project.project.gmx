@@ -81,8 +81,9 @@
       <script>scripts\assertEquals.gml</script>
       <script>scripts\pass.gml</script>
       <script>scripts\fail.gml</script>
-      <script>scripts\run_test.gml</script>
       <script>scripts\draw_test.gml</script>
+      <script>scripts\failedTest.gml</script>
+      <script>scripts\passedTest.gml</script>
     </scripts>
     <scripts name="Pause">
       <script>scripts\scr_draw_gui_pause.gml</script>

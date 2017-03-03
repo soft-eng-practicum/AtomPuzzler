@@ -8,9 +8,8 @@
 
 with(obj_unitTest)
 {
+testBoolean = false;
 description = argument[0];
-obj_unitTest.result[obj_unitTest.test_count] = c_red;
-obj_unitTest.fail_count += 1;
-test_lines += "#Failed: ";
-test_lines += description;
+test_lines = "#Failed: " + description;
+
 }
