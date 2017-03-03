@@ -199,3 +199,12 @@ git status
 git add -A
 git commit -m "Made some code more legible."
 git push
+git status
+git add -A
+git status
+git status
+git commit -m "Fixed infinite points door glitch."
+git push
+git pull
+git status
+git push
