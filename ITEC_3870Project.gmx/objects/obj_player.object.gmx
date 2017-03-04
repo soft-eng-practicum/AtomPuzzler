@@ -570,6 +570,29 @@ else
           </argument>
         </arguments>
       </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Sorts list
+scr_sort_list(global.inventory);
+scr_sort_list(global.room_list);
+</string>
+          </argument>
+        </arguments>
+      </action>
     </event>
     <event eventtype="4" ename="obj_atom_test1">
       <action>
@@ -593,7 +616,7 @@ else
 // Win/ Lose Conditions
 total_charge += instance_nearest(x, y, obj_atom_test1).charge;
 ds_list_add(global.inventory, instance_nearest(x, y, obj_atom_test1).symbol);
-ds_list_sort(global.inventory, true);
+//ds_list_sort(global.inventory, true);
 complete = false;
 
 for(i = 0; i &lt; ds_list_size(global.room_list); i++)
