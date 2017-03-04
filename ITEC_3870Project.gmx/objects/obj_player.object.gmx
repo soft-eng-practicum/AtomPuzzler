@@ -334,14 +334,14 @@ else
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Door Collision Event
+            <string>/// Door Collision Event for room type 1
 /*
 Checks for both lists: room and player's inventory.
 Checks sizes of both lists, then checks for the content within list.
 If the content within the player's inventory matches the room's list, then give correct feedback and move to next room and vice versa.
 */
 
-if(keyboard_check_released(vk_up) &amp;&amp; instance_nearest(x, y, obj_door).doorExit) 
+if(keyboard_check_released(vk_up) &amp;&amp; instance_nearest(x, y, obj_door).doorExit &amp;&amp; global.room_type == 1) 
 {
     //Set variables for size of lists
     room_array_size = ds_list_size(global.room_list);
@@ -498,6 +498,80 @@ else
             <string>///Sorts list on door collide
 scr_sort_list(global.inventory);
 scr_sort_list(global.room_list);
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Lab Room Event
+
+if(keyboard_check_released(vk_up) &amp;&amp; instance_nearest(x, y, obj_door).doorExit &amp;&amp; global.room_type == -1) 
+{
+    //Set variables for size of lists
+    room_array_size = ds_list_size(global.room_list);
+    inventory_size = ds_list_size(global.inventory);
+    
+    //Boolean set to false by default
+    inventory_check = false;
+    
+    //Compare size of both lists
+    if(room_array_size == inventory_size) 
+    {
+        //Compare and match list by index, if content doesn't match then break loop
+        for(i = 0; i &lt; inventory_size; i++) 
+        {
+            if(ds_list_find_value(global.inventory, i) = ds_list_find_value(global.room_list, i))
+            {
+                inventory_check = true;
+            }
+            else
+            {
+                inventory_check = false;
+                break;
+            }            
+        }
+        
+        //Win
+        if(inventory_check)
+        {
+            is_winning = true;
+            instance_create(0, 0, obj_win);
+            global.totalPoints = global.points - round(global.roomPoints) + global.totalPoints + 100;
+            with(instance_nearest(x, y, obj_door)) doorExit = false;
+        }
+        
+        //Lose
+        else
+        {   
+            is_winning = false;
+            instance_create(0, 0, obj_gameover);
+            global.points -= 100;
+            global.totalPoints = global.points - round(global.roomPoints) + global.totalPoints;
+        }
+    }
+    
+    //Size does not match therefore lose
+    else 
+    {
+        is_winning = false;
+        instance_create(0, 0, obj_gameover);
+    }
+}
 </string>
           </argument>
         </arguments>
@@ -674,6 +748,16 @@ if(!is_winning || (ds_list_size(global.inventory) != 0))
     room_restart();
     
 }
+
+if(!is_winning || (ds_list_size(global.inventory) != 0) &amp;&amp; global.room_type == -1)
+{
+    x = 32;
+    y = 300;
+    ds_list_clear(global.inventory);
+    room_restart();
+    
+}
+
 </string>
           </argument>
         </arguments>
