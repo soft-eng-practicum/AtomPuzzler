@@ -114,22 +114,22 @@ if(mn &lt; 10)
 {
     if(sec &lt; (10 * rmspd))
     {
-        draw_text(50, 50, string("0") + string(hr) + string(":0") + string(mn) + string(":0") + string(sec / rmspd))
+        draw_text_outlined(50, 50, string("0") + string(mn) + string(":0") + string(sec / rmspd), c_white, c_black)
     }
     else
     {
-        draw_text(50, 50, string("0") + string(hr) + string(":0") + string(mn) + string(":") + string(sec / rmspd))
+        draw_text_outlined(50, 50, string("0") + string(mn) + string(":") + string(sec / rmspd), c_white, c_black)
     }
 }
 else
 {
     if (sec &lt; (10 * rmspd))
     {
-        draw_text(50, 50, string("0") + string(hr) + string(":") + string(mn) + string(":0") + string(sec / rmspd))
+        draw_text_outlined(50, 50, string(":") + string(mn) + string(":0") + string(sec / rmspd), c_white, c_black)
     }
     else
     {
-        draw_text(50, 50, string("0") + string(hr) + string(":") + string(mn) + string(":") + string(sec / rmspd))
+        draw_text_outlined(50, 50, string(":") + string(mn) + string(":") + string(sec / rmspd), c_white, c_black)
     }
 }
 </string>

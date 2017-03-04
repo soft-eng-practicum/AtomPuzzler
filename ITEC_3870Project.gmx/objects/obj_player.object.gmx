@@ -334,45 +334,6 @@ else
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Next Room Event Handler
-/*
-Clears inventory, reset points and roompoints, go to next existing room 
-and set character position. Makes sound when entering door.
-*/
-
-//Goto next existing room when you win
-
-/*
-if(is_winning &amp;&amp; room_exists(room_next(room)))
-{
-    ds_list_clear(global.inventory);
-    global.points = 0;
-    global.roomPoints = 0;
-    room_goto_next();
-    x = 32;
-    y = 320;
-    is_winning = false;
-}
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
             <string>/// Door Collision Event
 /*
 Checks for both lists: room and player's inventory.
@@ -449,58 +410,6 @@ if(keyboard_check(vk_f2))
    //puts the player back to the main room
    room_goto(rm_scoreBoard);
 }
-
-/*
-//testing door object in test room
-if(room == rm_test2 &amp;&amp; keyboard_check(vk_up) &amp;&amp; room_exists(room_next(next)))
-{
-    room_goto(rm_test);
-   // room_goto_next();
-    show_debug_message("You have sucessfully moved to the First Testing Room");
-    show_message("You have sucessfully moved to the First Testing Room");
-    x = 32;
-    y = 320;
-}
-if(room == rm_test &amp;&amp; keyboard_check(vk_up) &amp;&amp; room_exists(room_next(room)))
-{
-    room_goto_next();
-    show_debug_message("You have sucessfully moved to the next room");
-    show_message("You have sucessfully moved to the next room");
-    x = 32;
-    y = 320;
-}
-*/
-
-
-/*
-if (room_exists(room_next(room)) &amp;&amp; keyboard_check(vk_up))
-{
-    ds_list_clear(global.inventory);
-    global.points = 0;
-    global.roomPoints = 0;
-    room_goto_next();
-    x = 32;
-    y = 320;
-    
-    if(debug_mode)
-    {
-      //  assert_equal(room_next(room), room_goto_next(), "Go to next room");
-        show_debug_message("You have sucessfully moved to the next room");
-        show_message("You have sucessfully moved to the next room");
-    }
-    audio_play_sound(sfx_next_Level, 0, 0);
-}
-
-
-else if (!room_exists(room_next(room)) &amp;&amp; keyboard_check(vk_up) &amp;&amp; debug_mode)
-{
-    show_debug_message("Next room does not exist");
-    show_message("Next room does not exist");
-}
-
-else{}
-
-*/
 
 </string>
           </argument>
@@ -586,7 +495,7 @@ else
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Sorts list
+            <string>///Sorts list on door collide
 scr_sort_list(global.inventory);
 scr_sort_list(global.room_list);
 </string>
@@ -613,10 +522,8 @@ scr_sort_list(global.room_list);
             <kind>1</kind>
             <string>/// Adds Values from Received Atom
 
-// Win/ Lose Conditions
 total_charge += instance_nearest(x, y, obj_atom_test1).charge;
 ds_list_add(global.inventory, instance_nearest(x, y, obj_atom_test1).symbol);
-//ds_list_sort(global.inventory, true);
 complete = false;
 
 for(i = 0; i &lt; ds_list_size(global.room_list); i++)
