@@ -11,6 +11,7 @@
   <colour>12632256</colour>
   <showcolour>-1</showcolour>
   <code>/// Initialize Variables
+global.room_type = 1;
 global.message[0] = "Create H2O";
 global.correct_charge = 0;
 
