@@ -37,6 +37,8 @@
       <sprite>sprites\spr_atom_o</sprite>
       <sprite>sprites\spr_atom_test1</sprite>
       <sprite>sprites\spr_atom_test2</sprite>
+      <sprite>sprites\spr_lewis_correct</sprite>
+      <sprite>sprites\spr_lewis_incorrect</sprite>
     </sprites>
     <sprites name="Main Menu">
       <sprite>sprites\sp_startGame</sprite>
@@ -104,20 +106,14 @@
     <objects name="Player">
       <object>objects\obj_player</object>
     </objects>
-    <objects name="Obstacle">
-      <object>objects\obj_obstacle</object>
-      <object>objects\obj_movingPlatform</object>
-      <objects name="direction_obj">
-        <object>objects\obj_left</object>
-        <object>objects\obj_right</object>
-      </objects>
-    </objects>
     <objects name="Atom">
-      <object>objects\obj_atom_test1</object>
+      <object>objects\obj_lew_correct</object>
+      <object>objects\obj_lew_incorrect</object>
       <object>objects\obj_atom_test2</object>
       <object>objects\obj_atom_h</object>
       <object>objects\obj_atom_o</object>
       <object>objects\obj_atom_na</object>
+      <object>objects\obj_atom_test1</object>
     </objects>
     <objects name="Main Menu">
       <object>objects\obj_startGame</object>
@@ -127,22 +123,18 @@
       <object>objects\obj_gender</object>
       <object>objects\obj_backToMain</object>
     </objects>
-    <objects name="Testing">
-      <object>objects\obj_passTest</object>
-      <object>objects\obj_unitTest</object>
-      <object>objects\obj_testingDialog</object>
-      <object>objects\obj_failedTest</object>
+    <objects name="Obstacle">
+      <object>objects\obj_obstacle</object>
+      <object>objects\obj_movingPlatform</object>
+      <objects name="direction_obj">
+        <object>objects\obj_left</object>
+        <object>objects\obj_right</object>
+      </objects>
     </objects>
     <objects name="Pausing">
       <object>objects\obj_pause</object>
       <object>objects\par_pausable</object>
       <object>objects\obj_pause_control</object>
-    </objects>
-    <objects name="Feedback Text">
-      <object>objects\obj_gameover</object>
-      <object>objects\obj_win</object>
-      <object>objects\obj_inventory</object>
-      <object>objects\obj_room_list</object>
     </objects>
     <objects name="Room">
       <object>objects\obj_door</object>
@@ -153,6 +145,19 @@
       <object>objects\obj_splashTimer</object>
       <object>objects\obj_storeTime</object>
     </objects>
+    <objects name="Testing">
+      <object>objects\obj_passTest</object>
+      <object>objects\obj_unitTest</object>
+      <object>objects\obj_testingDialog</object>
+      <object>objects\obj_failedTest</object>
+    </objects>
+    <objects name="Text Feedback">
+      <object>objects\obj_gameover</object>
+      <object>objects\obj_win</object>
+      <object>objects\obj_inventory</object>
+      <object>objects\obj_room_list</object>
+      <object>objects\obj_lewis_text</object>
+    </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_splashScreen</room>
@@ -162,7 +167,9 @@
     <room>rooms\rm_test</room>
     <room>rooms\rm_test2</room>
     <room>rooms\rm1</room>
+    <room>rooms\rm1_lab</room>
     <room>rooms\rm2</room>
+    <room>rooms\rm2_lab</room>
     <room>rooms\rm3</room>
   </rooms>
   <constants number="10">
