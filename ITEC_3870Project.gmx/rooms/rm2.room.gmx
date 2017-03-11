@@ -11,7 +11,7 @@
   <colour>12632256</colour>
   <showcolour>-1</showcolour>
   <code>/// Initialize Variables
-global.message[0] = "Create NaOH";
+global.message[0] = "Create sodium hydroxide.";
 global.correct_charge = 0;
 
 // Clear the previous list
