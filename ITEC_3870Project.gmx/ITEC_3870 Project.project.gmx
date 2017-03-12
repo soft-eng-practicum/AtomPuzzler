@@ -39,6 +39,7 @@
       <sprite>sprites\spr_atom_test2</sprite>
       <sprite>sprites\spr_lewis_correct</sprite>
       <sprite>sprites\spr_lewis_incorrect</sprite>
+      <sprite>sprites\spr_lewis_h2o_correct</sprite>
     </sprites>
     <sprites name="Main Menu">
       <sprite>sprites\sp_startGame</sprite>
@@ -58,6 +59,8 @@
         <sprite>sprites\spr_right</sprite>
       </sprites>
     </sprites>
+    <sprite>sprites\spr_lewis_h2o_incorrect1</sprite>
+    <sprite>sprites\spr_lewis_h2o_incorrect2</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\labBackground</background>
@@ -107,10 +110,13 @@
       <object>objects\obj_player</object>
     </objects>
     <objects name="Atom">
+      <object>objects\obj_lew_h2o_incorrect2</object>
       <object>objects\obj_lew_correct</object>
+      <object>objects\obj_lew_h2o_correct</object>
       <object>objects\obj_lew_incorrect</object>
       <object>objects\obj_atom_test2</object>
       <object>objects\obj_atom_h</object>
+      <object>objects\obj_lew_h2o_incorrect1</object>
       <object>objects\obj_atom_o</object>
       <object>objects\obj_atom_na</object>
       <object>objects\obj_atom_test1</object>

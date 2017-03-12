@@ -3,8 +3,8 @@
   <caption></caption>
   <width>640</width>
   <height>480</height>
-  <vsnap>32</vsnap>
-  <hsnap>32</hsnap>
+  <vsnap>1</vsnap>
+  <hsnap>1</hsnap>
   <isometric>0</isometric>
   <speed>60</speed>
   <persistent>0</persistent>
@@ -96,6 +96,9 @@ ds_list_add(global.room_list, "1");</code>
     <instance objName="obj_lew_incorrect" x="160" y="224" name="inst_12B728BC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_lew_incorrect" x="480" y="224" name="inst_B3090890" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_lew_correct" x="320" y="224" name="inst_DC5CAAFE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_lew_h2o_correct" x="320" y="157" name="inst_82EF92A0" locked="0" code="" scaleX="0.956250011920929" scaleY="0.949685513973236" colour="4294967295" rotation="0"/>
+    <instance objName="obj_lew_h2o_incorrect1" x="158" y="157" name="inst_FE5F5B71" locked="0" code="" scaleX="0.949999988079071" scaleY="0.939999997615814" colour="4294967295" rotation="0"/>
+    <instance objName="obj_lew_h2o_incorrect2" x="483" y="157" name="inst_6C7CE150" locked="0" code="" scaleX="0.949685513973236" scaleY="0.949685513973236" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>
