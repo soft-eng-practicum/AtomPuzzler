@@ -31,6 +31,9 @@ event_inherited();
 symbol = "-1";
 points = -100;
 
+// Sprite Variables
+
+sprite_index = spr_lewis_blank;
 </string>
           </argument>
         </arguments>

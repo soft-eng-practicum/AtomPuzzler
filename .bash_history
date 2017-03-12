@@ -208,3 +208,9 @@ git push
 git pull
 git status
 git push
+git status
+git pull
+git status
+git add -A
+git commit -m "Changed dialogue for objectives in rooms 1 and 2."
+git push
