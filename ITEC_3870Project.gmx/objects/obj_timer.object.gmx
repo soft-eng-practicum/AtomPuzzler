@@ -108,6 +108,7 @@ if(!stop)
             <kind>1</kind>
             <string>/// Draw Timer
 
+draw_set_halign(fa_left);
 draw_set_color(c_blue);
 
 if(mn &lt; 10)

@@ -29,7 +29,7 @@
 
 switch(room)
 {
-    case(rm_splashScreen || rm_mainMenu || rm_option || rm_scoreBoard || rm1 || rm3 || rm_test || rm_test2):
+    case(rm_splashScreen || rm_mainMenu || rm_option || rm_scoreBoard || rm1 || rm3 ):
     {
         sprite_index = spr_tile1;
         break;
