@@ -128,6 +128,38 @@ if(debug_mode)
         <arguments>
           <argument>
             <kind>1</kind>
+            <string>///Test for the correct Lewis Structure
+
+if(debug_mode)
+{
+    with(obj_player)
+    {
+        //change obj_door to the lewis object
+        if(place_meeting(x, y, obj_door)) 
+        {
+        }
+    }
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
             <string>///Test for the correct list to go through the next door
 if(debug_mode)
 {
@@ -161,7 +193,7 @@ if(debug_mode)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Test for the correct Lewis Structure
+            <string>/// Test score calculation
 
 if(debug_mode)
 {

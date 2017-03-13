@@ -334,103 +334,6 @@ else
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Door Collision Event for room type 1
-/*
-Checks for both lists: room and player's inventory.
-Checks sizes of both lists, then checks for the content within list.
-If the content within the player's inventory matches the room's list, then give correct feedback and move to next room and vice versa.
-*/
-
-if(keyboard_check_released(vk_up) &amp;&amp; instance_nearest(x, y, obj_door).doorExit &amp;&amp; global.room_type == 1) 
-{
-    //Set variables for size of lists
-    room_array_size = ds_list_size(global.room_list);
-    inventory_size = ds_list_size(global.inventory);
-    
-    //Boolean set to false by default
-    inventory_check = false;
-    
-    //Compare size of both lists
-    if(room_array_size == inventory_size) 
-    {
-        //Compare and match list by index, if content doesn't match then break loop
-        for(i = 0; i &lt; inventory_size; i++) 
-        {
-            if(ds_list_find_value(global.inventory, i) = ds_list_find_value(global.room_list, i))
-            {
-                inventory_check = true;
-            }
-            else
-            {
-                inventory_check = false;
-                break;
-            }            
-        }
-        
-        //Win
-        if(inventory_check)
-        {
-            is_winning = true;
-            instance_create(0, 0, obj_win);
-            global.totalPoints = global.points - round(global.roomPoints) + global.totalPoints;
-            obj_timer.stop = true;
-            with(instance_nearest(x, y, obj_door)) doorExit = false;
-        }
-        
-        //Lose
-        else
-        {   
-            is_winning = false;
-            instance_create(0, 0, obj_gameover);
-            global.points -= 100;
-            global.totalPoints = global.points - round(global.roomPoints) + global.totalPoints;
-            obj_timer.stop = true;
-        }
-    }
-    
-    //Size does not match therefore lose
-    else 
-    {
-        is_winning = false;
-        instance_create(0, 0, obj_gameover);
-        obj_timer.stop = true;
-    }
-}
-
-//Colliding door in room 3 for testing purposes
-
-if(keyboard_check(vk_f2))
-{
-   //stores the player name 
-   name = get_string("Please enter your name:","");
-   
-   //puts score in to the score board
-   highscore_add(name, global.totalPoints);
-   
-   //puts the player back to the main room
-   room_goto(rm_scoreBoard);
-}
-
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
             <string>///Debug test code for room and output the debug messages.
 
 /*if (room_exists(room_next(room)) &amp;&amp; keyboard_check(vk_up))
@@ -553,6 +456,103 @@ if(keyboard_check_released(vk_up) &amp;&amp; instance_nearest(x, y, obj_door).do
         instance_create(0, 0, obj_gameover);
     }
 }
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Door Collision Event for room type 1
+/*
+Checks for both lists: room and player's inventory.
+Checks sizes of both lists, then checks for the content within list.
+If the content within the player's inventory matches the room's list, then give correct feedback and move to next room and vice versa.
+*/
+
+if(keyboard_check_released(vk_up) &amp;&amp; instance_nearest(x, y, obj_door).doorExit &amp;&amp; global.room_type == 1) 
+{
+    //Set variables for size of lists
+    room_array_size = ds_list_size(global.room_list);
+    inventory_size = ds_list_size(global.inventory);
+    
+    //Boolean set to false by default
+    inventory_check = false;
+    
+    //Compare size of both lists
+    if(room_array_size == inventory_size) 
+    {
+        //Compare and match list by index, if content doesn't match then break loop
+        for(i = 0; i &lt; inventory_size; i++) 
+        {
+            if(ds_list_find_value(global.inventory, i) = ds_list_find_value(global.room_list, i))
+            {
+                inventory_check = true;
+            }
+            else
+            {
+                inventory_check = false;
+                break;
+            }            
+        }
+        
+        //Win
+        if(inventory_check)
+        {
+            is_winning = true;
+            instance_create(0, 0, obj_win);
+            global.totalPoints = global.points - round(global.roomPoints) + global.totalPoints;
+            obj_timer.stop = true;
+            with(instance_nearest(x, y, obj_door)) doorExit = false;
+        }
+        
+        //Lose
+        else
+        {   
+            is_winning = false;
+            instance_create(0, 0, obj_gameover);
+            global.points -= 100;
+            global.totalPoints = global.points - round(global.roomPoints) + global.totalPoints;
+            obj_timer.stop = true;
+        }
+    }
+    
+    //Size does not match therefore lose
+    else 
+    {
+        is_winning = false;
+        instance_create(0, 0, obj_gameover);
+        obj_timer.stop = true;
+    }
+}
+
+//Colliding door in room 3 for testing purposes
+
+if(keyboard_check(vk_f2))
+{
+   //stores the player name 
+   name = get_string("Please enter your name:","");
+   
+   //puts score in to the score board
+   highscore_add(name, global.totalPoints);
+   
+   //puts the player back to the main room
+   room_goto(rm_scoreBoard);
+}
+
 </string>
           </argument>
         </arguments>
