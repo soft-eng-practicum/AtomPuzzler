@@ -59,6 +59,7 @@
     <sprites name="Platforms and Obstacles">
       <sprite>sprites\spr_movingPlatform</sprite>
       <sprite>sprites\spr_obstacletest</sprite>
+      <sprite>sprites\spr_tile3</sprite>
       <sprite>sprites\spr_tile1</sprite>
       <sprite>sprites\spr_tile2</sprite>
       <sprites name="movingDirection">
