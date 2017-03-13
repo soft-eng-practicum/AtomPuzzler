@@ -31,14 +31,14 @@ event_inherited();
 charge = -2;
 symbol = "O";
 
-if(room = rm3)
+/*if(room = rm3)
 {
     path_start(atom, 1, path_action_restart, true);
     if (image_alpha &gt; 0) 
     {
         image_alpha -= 0.01;
     }
-}
+}*/
 </string>
           </argument>
         </arguments>

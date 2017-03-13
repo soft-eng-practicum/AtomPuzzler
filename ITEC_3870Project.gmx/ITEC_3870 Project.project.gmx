@@ -183,7 +183,6 @@
     <room>rooms\rm1_lab</room>
     <room>rooms\rm2</room>
     <room>rooms\rm2_lab</room>
-    <room>rooms\rm3</room>
   </rooms>
   <constants number="10">
     <constant name="GMASSERT_MODE">GMASSERT_MODE_ENABLED</constant>
