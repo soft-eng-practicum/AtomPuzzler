@@ -43,6 +43,9 @@
       <sprite>sprites\spr_lewis_h2o_incorrect2</sprite>
       <sprite>sprites\spr_lewis_h2o_correct</sprite>
       <sprite>sprites\spr_lewis_blank</sprite>
+      <sprite>sprites\spr_lewis_naoh_correct</sprite>
+      <sprite>sprites\spr_lewis_naoh_incorrect1</sprite>
+      <sprite>sprites\spr_lewis_naoh_incorrect2</sprite>
     </sprites>
     <sprites name="Main Menu">
       <sprite>sprites\sp_startGame</sprite>
@@ -111,16 +114,19 @@
       <object>objects\obj_player</object>
     </objects>
     <objects name="Atom">
-      <object>objects\obj_lew_h2o_incorrect2</object>
+      <object>objects\obj_atom_h</object>
+      <object>objects\obj_atom_na</object>
+      <object>objects\obj_atom_o</object>
+      <object>objects\obj_atom_test1</object>
+      <object>objects\obj_atom_test2</object>
       <object>objects\obj_lew_correct</object>
       <object>objects\obj_lew_h2o_correct</object>
-      <object>objects\obj_lew_incorrect</object>
-      <object>objects\obj_atom_test2</object>
-      <object>objects\obj_atom_h</object>
       <object>objects\obj_lew_h2o_incorrect1</object>
-      <object>objects\obj_atom_o</object>
-      <object>objects\obj_atom_na</object>
-      <object>objects\obj_atom_test1</object>
+      <object>objects\obj_lew_h2o_incorrect2</object>
+      <object>objects\obj_lew_incorrect</object>
+      <object>objects\obj_lew_naoh_correct</object>
+      <object>objects\obj_lew_naoh_incorrect1</object>
+      <object>objects\obj_lew_naoh_incorrect2</object>
     </objects>
     <objects name="Main Menu">
       <object>objects\obj_startGame</object>
