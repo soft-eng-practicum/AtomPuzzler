@@ -82,7 +82,7 @@ height_pane2 = 160;
             <string>///Test for picking up the correct atom
 if(debug_mode)
 {
-    with(obj_player)
+    with(obj_player) 
     {
         if(place_meeting(x,y, obj_atom_h))
         {
