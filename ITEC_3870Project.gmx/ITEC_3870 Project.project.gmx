@@ -46,6 +46,7 @@
       <sprite>sprites\spr_lewis_naoh_correct</sprite>
       <sprite>sprites\spr_lewis_naoh_incorrect1</sprite>
       <sprite>sprites\spr_lewis_naoh_incorrect2</sprite>
+      <sprite>sprites\spr_atom_fe</sprite>
     </sprites>
     <sprites name="Main Menu">
       <sprite>sprites\sp_startGame</sprite>
@@ -127,6 +128,7 @@
       <object>objects\obj_lew_naoh_correct</object>
       <object>objects\obj_lew_naoh_incorrect1</object>
       <object>objects\obj_lew_naoh_incorrect2</object>
+      <object>objects\object43</object>
     </objects>
     <objects name="Main Menu">
       <object>objects\obj_startGame</object>

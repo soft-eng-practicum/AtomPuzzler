@@ -25,10 +25,12 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Pulls values from the intializeTestValues script
+            <string>///Initialize values for GUI
 if(debug_mode)
 {
-intializeTestValues();
+depth = -100;
+width_pane2 = 350;
+height_pane2 = 160;
 }
 </string>
           </argument>
@@ -50,12 +52,10 @@ intializeTestValues();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Initialize values for GUI
+            <string>///Pulls values from the intializeTestValues script
 if(debug_mode)
 {
-depth = -100;
-width_pane2 = 350;
-height_pane2 = 160;
+intializeTestValues();
 }
 </string>
           </argument>
@@ -164,12 +164,13 @@ if(debug_mode)
 if(debug_mode)
 {
     with(obj_player)
-    {
+    { 
+    // incomplete test... need to look for the string value ex: HHO
         if(place_meeting(x, y, obj_door) &amp;&amp; keyboard_check_released(vk_up))
         {
             assertEquals("Winning List", 
-                        ds_list_read(global.room_list), 
-                        ds_list_read(global.inventory));
+                        ds_list_find_value(global.room_list, i), 
+                        ds_list_find_value(global.inventory, i));
         }
     }
 }
@@ -199,7 +200,7 @@ if(debug_mode)
 {
     with(obj_player)
     {
-        //change obj_door to the lewis object
+        
         if(place_meeting(x, y, obj_door)) 
         {
         }
