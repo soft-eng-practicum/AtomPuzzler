@@ -35,6 +35,7 @@
       <sprite>sprites\spr_atom_n</sprite>
       <sprite>sprites\spr_atom_na</sprite>
       <sprite>sprites\spr_atom_o</sprite>
+      <sprite>sprites\spr_atom_Fe</sprite>
       <sprite>sprites\spr_atom_test1</sprite>
       <sprite>sprites\spr_atom_test2</sprite>
       <sprite>sprites\spr_lewis_correct</sprite>
