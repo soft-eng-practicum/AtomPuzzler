@@ -12,14 +12,17 @@
   <showcolour>-1</showcolour>
   <code>/// Initialize Variables
 global.room_type = 1;
-global.message[0] = "Create H2O.";
+global.message[0] = "Create H2O";
 global.correct_charge = 0;
 
 // Create list
 global.room_list = ds_list_create();
 
 // Add values to list
-ds_list_add(global.room_list, "H", "O", "H");</code>
+ds_list_add(global.room_list, "H", "O", "H");
+
+//Stop timer
+obj_timer.stop = true;</code>
   <enableViews>0</enableViews>
   <clearViewBackground>-1</clearViewBackground>
   <clearDisplayBuffer>-1</clearDisplayBuffer>
