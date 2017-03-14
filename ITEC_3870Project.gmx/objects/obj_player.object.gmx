@@ -402,7 +402,7 @@ scr_sort_list(global.room_list);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Lab Room Event
+            <string>///Door Collision Event for Room Type Lab
 
 if(keyboard_check_released(vk_up) &amp;&amp; instance_nearest(x, y, obj_door).doorExit &amp;&amp; global.room_type == -1) 
 {
@@ -476,7 +476,7 @@ if(keyboard_check_released(vk_up) &amp;&amp; instance_nearest(x, y, obj_door).do
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Door Collision Event for room type 1
+            <string>/// Door Collision Event for Room Type Normal
 /*
 Checks for both lists: room and player's inventory.
 Checks sizes of both lists, then checks for the content within list.

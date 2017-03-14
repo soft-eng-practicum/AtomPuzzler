@@ -32,12 +32,64 @@ timer = 0;
 cutoff = 0;
 done = false;
 
-// Declare alarm timer (in seconds)
+// Declare alarm timer (in seconds) and toggle variable
 alarm[0] = room_speed * 1;
+alarm[1] = room_speed * 3;
+alarm[2] = room_speed * 6;
 
 // Declare win/lose condition messages
 global.win_message = "You win";
 global.lose_message = "You lose";
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="2">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Do Nothing
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="1">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Message destroy
+
+instance_destroy();
+
 </string>
           </argument>
         </arguments>
@@ -60,7 +112,45 @@ global.lose_message = "You lose";
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Do Nothing
+            <string>///Do Nothing
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="3" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Alarm[2] Event Handler
+
+if(alarm[2] = 4) 
+{
+    keyboard_key_press(vk_space);
+    keyboard_key_press(ord('P'));
+    keyboard_key_release(ord('P'));
+}
+
+if(alarm[2] = -1) 
+{
+    keyboard_key_press(vk_space);
+    keyboard_key_press(ord('P'));
+    keyboard_key_release(ord('P'));
+}
+
 </string>
           </argument>
         </arguments>
@@ -83,7 +173,7 @@ global.lose_message = "You lose";
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Delayed words event
+            <string>///Delayed words event on alarm[0]
 
 /*
 Alarm is placed before message appears to create a delay.
