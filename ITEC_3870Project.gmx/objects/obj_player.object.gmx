@@ -102,9 +102,6 @@ audio_play_sound(music_AtomPuzzlerTheme, 1, true);
             <kind>1</kind>
             <string>/// Player Inputs and Physics Calculations (Keyboard)
 
-if(toggle == 0)
-{
-
 /* 'key_right', 'key_left' and 'key_jump' are all variable 
 place holders for the player's inputs. When the player presses
 left or right, the 'keyboard_check's for left and right will 
@@ -114,10 +111,12 @@ check to see if 'vk_space' was only just pressed.
 REMEMBER: these checks happen every frame of the game.
 */
 
-key_right = keyboard_check(vk_right);
-key_left = -keyboard_check(vk_left);
-key_jump = keyboard_check_pressed(vk_space) || device_mouse_check_button_pressed(0, mb_right);
-
+if(toggle == 0)
+{
+    key_right = keyboard_check(vk_right);
+    key_left = -keyboard_check(vk_left);
+    key_jump = keyboard_check_pressed(vk_space) || device_mouse_check_button_pressed(0, mb_right);
+}
 
 /* If key_jump is true, then the sound effect for jumping will be played.
 */
@@ -204,9 +203,6 @@ if(place_meeting(x, y + vspd, obj_obstacle))
     vspd = 0;
 }
 y += vspd;
-
-
-}
 </string>
           </argument>
         </arguments>
@@ -345,6 +341,7 @@ else
             <string>///Sorts list on door collide
 scr_sort_list(global.inventory);
 scr_sort_list(global.room_list);
+
 </string>
           </argument>
         </arguments>
@@ -640,7 +637,6 @@ for(i = 0; i &lt; ds_list_size(global.room_list); i++)
             <kind>1</kind>
             <string>///Press Spacebar after winning to continue
 
-
 if(is_winning &amp;&amp; room_exists(room_next(room)))
 {
     ds_list_clear(global.inventory);
@@ -650,7 +646,7 @@ if(is_winning &amp;&amp; room_exists(room_next(room)))
     toggle = 0;
     x = 32;
     y = 320;
-    is_winning = false;  
+    is_winning = false;
 }
 </string>
           </argument>

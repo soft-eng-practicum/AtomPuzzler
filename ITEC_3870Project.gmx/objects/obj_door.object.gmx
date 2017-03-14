@@ -60,7 +60,7 @@ depth = 5;
             <string>///Set image speed on obj_player.is_winning
 
 if(obj_player.is_winning) {
-    image_speed = 0.12;
+    image_speed = 0.05;
 }
 </string>
           </argument>

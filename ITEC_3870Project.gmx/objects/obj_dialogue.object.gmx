@@ -33,13 +33,10 @@ cutoff = 0;
 done = false;
 
 // Declare alarm timer (in seconds) and toggle variable
-alarm[0] = room_speed * 1;
-alarm[1] = room_speed * 3;
-alarm[2] = room_speed * 6;
+alarm[0] = room_speed;      //message speed
+alarm[1] = room_speed * 3;  //display message 2
+alarm[2] = room_speed * 4   //timer toggle
 
-// Declare win/lose condition messages
-global.win_message = "You win";
-global.lose_message = "You lose";
 </string>
           </argument>
         </arguments>
@@ -63,7 +60,6 @@ global.lose_message = "You lose";
           <argument>
             <kind>1</kind>
             <string>///Do Nothing
-
 </string>
           </argument>
         </arguments>
@@ -86,9 +82,7 @@ global.lose_message = "You lose";
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Message destroy
-
-instance_destroy();
+            <string>///Do Nothing
 
 </string>
           </argument>
@@ -135,22 +129,50 @@ instance_destroy();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Alarm[2] Event Handler
+            <string>///Toggles on_start_level variable
+/*
+    Pauses timer and player actions on level start
+    Destroys dialogue object when player presses 'ENTER'
+*/
 
-if(alarm[2] = 4) 
+if(global.room_type != -1)
 {
-    keyboard_key_press(vk_space);
-    keyboard_key_press(ord('P'));
-    keyboard_key_release(ord('P'));
+    obj_timer.stop = true;
+    obj_player.toggle = -1;
 }
 
-if(alarm[2] = -1) 
+if(keyboard_check_pressed(vk_enter) &amp;&amp; global.room_type != -1 &amp;&amp; alarm[2] == -1)
 {
-    keyboard_key_press(vk_space);
-    keyboard_key_press(ord('P'));
-    keyboard_key_release(ord('P'));
+    with(obj_dialogue) instance_destroy();
+    obj_timer.stop = false;
+    obj_player.toggle = 0;
 }
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Alarm[2] event
 
+if(alarm[2] == -1 &amp;&amp; global.room_type == -1)
+{
+    with(obj_dialogue) instance_destroy();
+}
 </string>
           </argument>
         </arguments>
@@ -173,7 +195,36 @@ if(alarm[2] = -1)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Delayed words event on alarm[0]
+            <string>///Draw tinted box for problem text
+
+width = display_get_gui_width();
+height = display_get_gui_height();
+
+draw_set_alpha(0.7);
+    draw_set_color(c_black);
+    draw_rectangle(0, 100, width, 150, false);
+draw_set_alpha(1);
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Delayed char by char event on alarm[0]
 
 /*
 Alarm is placed before message appears to create a delay.
@@ -194,6 +245,10 @@ line        -&gt; changes line position. The higher the value the more the line 
 draw_set_font(font_Default);
 draw_set_halign(fa_center);
 draw_set_valign(fa_middle);
+
+//Width and Height Variables
+width = display_get_gui_width();
+height = display_get_gui_height();
 
 // Get array length
 message_end = array_length_1d(global.message);
@@ -246,15 +301,47 @@ if(alarm[0] = -1)
             
             i -= length;
             
-            draw_text_outlined(x+(space*charWidth), y+(13*line), string_char_at(global.message[message_current], i), c_white, c_black);
+            draw_text_outlined(width/6 + (space*charWidth), 125, string_char_at(global.message[message_current], i), c_white, c_black);
             
             space++;
             i++;
         }
-
-        // draw_text(textX, textY, global.message[message_current]);
-           
     }
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Draw message and tinted box for normal room
+
+if(alarm[1] = -1 &amp;&amp; global.room_type == 1)
+{
+width = display_get_gui_width();
+height = display_get_gui_height();
+
+draw_set_alpha(0.7);
+    draw_set_color(c_black);
+    draw_rectangle(0, 150, width, 200, false);
+draw_set_alpha(1);
+
+draw_text_outlined(width/2, 175, "Press ENTER to continue", c_white, c_black);
+
 }
 </string>
           </argument>
