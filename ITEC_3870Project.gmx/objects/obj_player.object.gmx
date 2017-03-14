@@ -50,6 +50,7 @@ is_winning = false;
 complete = false;
 paused = false;
 scrn = -1;
+attempts = 0;
 </string>
           </argument>
         </arguments>
@@ -99,6 +100,9 @@ audio_play_sound(music_AtomPuzzlerTheme, 1, true);
           <argument>
             <kind>1</kind>
             <string>/// Player Inputs and Physics Calculations (Keyboard)
+
+if(obj_pause_control.toggle == 0)
+{
 
 /* 'key_right', 'key_left' and 'key_jump' are all variable 
 place holders for the player's inputs. When the player presses
@@ -199,6 +203,9 @@ if(place_meeting(x, y + vspd, obj_obstacle))
     vspd = 0;
 }
 y += vspd;
+
+
+}
 </string>
           </argument>
         </arguments>
@@ -334,128 +341,9 @@ else
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Debug test code for room and output the debug messages.
-
-/*if (room_exists(room_next(room)) &amp;&amp; keyboard_check(vk_up))
-{
-    if(debug_mode)
-    {
-        room_goto_next();
-        x = 
-        show_debug_message("You have sucessfully moved to the next room");
-        show_message("You have sucessfully moved to the next room");
-    }
-}
-
-else if (!room_exists(room_next(room)) &amp;&amp; keyboard_check(vk_up) &amp;&amp; debug_mode)
-{
-    show_debug_message("Next room does not exist");
-    show_message("Next room does not exist");
-}
-
-else
-{
-
-}
-*/
-
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
             <string>///Sorts list on door collide
 scr_sort_list(global.inventory);
 scr_sort_list(global.room_list);
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Door Collision Event for Room Type Lab
-
-if(keyboard_check_released(vk_up) &amp;&amp; instance_nearest(x, y, obj_door).doorExit &amp;&amp; global.room_type == -1) 
-{
-    //Set variables for size of lists
-    room_array_size = ds_list_size(global.room_list);
-    inventory_size = ds_list_size(global.inventory);
-    
-    //Boolean set to false by default
-    inventory_check = false;
-    
-    //Compare size of both lists
-    if(room_array_size == inventory_size) 
-    {
-        //Compare and match list by index, if content doesn't match then break loop
-        for(i = 0; i &lt; inventory_size; i++) 
-        {
-            if(ds_list_find_value(global.inventory, i) = ds_list_find_value(global.room_list, i))
-            {
-                inventory_check = true;
-            }
-            else
-            {
-                inventory_check = false;
-                break;
-            }            
-        }
-        
-        //Win
-        if(inventory_check)
-        {
-            is_winning = true;
-            instance_create(0, 0, obj_win);
-            global.totalPoints = global.points - round(global.roomPoints) + global.totalPoints + 100;
-            with(instance_nearest(x, y, obj_door)) doorExit = false;
-        }
-        
-        //Lose
-        else
-        {   
-            is_winning = false;
-            instance_create(0, 0, obj_gameover);
-            global.points -= 100;
-            global.totalPoints = global.points - round(global.roomPoints) + global.totalPoints;
-        }
-    }
-    
-    //Size does not match therefore lose
-    else 
-    {
-        is_winning = false;
-        instance_create(0, 0, obj_gameover);
-    }
-}
 </string>
           </argument>
         </arguments>
@@ -518,25 +406,32 @@ if(keyboard_check_released(vk_up) &amp;&amp; instance_nearest(x, y, obj_door).do
             global.totalPoints = global.points - round(global.roomPoints) + global.totalPoints;
             obj_timer.stop = true;
             with(instance_nearest(x, y, obj_door)) doorExit = false;
+            obj_pause_control.toggle = -1;
         }
         
         //Lose
-        else
+        if(!inventory_check &amp;&amp; attempts == 0)
         {   
             is_winning = false;
             instance_create(0, 0, obj_gameover);
             global.points -= 100;
             global.totalPoints = global.points - round(global.roomPoints) + global.totalPoints;
             obj_timer.stop = true;
+            obj_pause_control.toggle = -1;
+            attempts++;
         }
     }
     
     //Size does not match therefore lose
-    else 
+    if(!inventory_check &amp;&amp; attempts == 0) 
     {
         is_winning = false;
         instance_create(0, 0, obj_gameover);
+        global.points -= 100;
+        global.totalPoints = global.points - round(global.roomPoints) + global.totalPoints;
         obj_timer.stop = true;
+        obj_pause_control.toggle = -1;
+        attempts++;
     }
 }
 if(room = room_last)
@@ -550,6 +445,136 @@ if(room = room_last)
     //puts the player back to the main room
     room_goto(rm_scoreBoard);
 }
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Door Collision Event for Room Type Lab
+
+/* 
+The reason why there is duplicate code for separate room types is that Lab rooms do 
+not have a timer object and Normal rooms do. The game throws an 'object that does not exist' 
+error if timer is stopped in Lab room, therefore the duplicated code for both room types.
+*/ 
+
+if(keyboard_check_released(vk_up) &amp;&amp; instance_nearest(x, y, obj_door).doorExit &amp;&amp; global.room_type == -1) 
+{
+    //Set variables for size of lists
+    room_array_size = ds_list_size(global.room_list);
+    inventory_size = ds_list_size(global.inventory);
+    
+    //Boolean set to false by default
+    inventory_check = false;
+    
+    //Compare size of both lists
+    if(room_array_size == inventory_size) 
+    {
+        //Compare and match list by index, if content doesn't match then break loop
+        for(i = 0; i &lt; inventory_size; i++) 
+        {
+            if(ds_list_find_value(global.inventory, i) = ds_list_find_value(global.room_list, i))
+            {
+                inventory_check = true;
+            }
+            else
+            {
+                inventory_check = false;
+                break;
+            }            
+        }
+        
+        //Win
+        if(inventory_check)
+        {
+            is_winning = true;
+            instance_create(0, 0, obj_win);
+            global.totalPoints = global.points - round(global.roomPoints) + global.totalPoints + 100;
+            with(instance_nearest(x, y, obj_door)) doorExit = false;
+            obj_pause_control.toggle = -1;
+        }
+        
+        //Lose
+        else
+        {   
+            is_winning = false;
+            instance_create(0, 0, obj_gameover);
+            global.points -= 100;
+            global.totalPoints = global.points - round(global.roomPoints) + global.totalPoints;
+            obj_pause_control.toggle = -1;
+        }
+    }
+    
+    //Size does not match therefore lose
+    else 
+    {
+        is_winning = false;
+        instance_create(0, 0, obj_gameover);
+        global.points -= 100;
+        global.totalPoints = global.points - round(global.roomPoints) + global.totalPoints;
+        obj_pause_control.toggle = -1;
+    }
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Debug test code for room and output the debug messages.
+
+/*if (room_exists(room_next(room)) &amp;&amp; keyboard_check(vk_up))
+{
+    if(debug_mode)
+    {
+        room_goto_next();
+        x = 
+        show_debug_message("You have sucessfully moved to the next room");
+        show_message("You have sucessfully moved to the next room");
+    }
+}
+
+else if (!room_exists(room_next(room)) &amp;&amp; keyboard_check(vk_up) &amp;&amp; debug_mode)
+{
+    show_debug_message("Next room does not exist");
+    show_message("Next room does not exist");
+}
+
+else
+{
+
+}
+*/
+
 </string>
           </argument>
         </arguments>
@@ -613,6 +638,8 @@ for(i = 0; i &lt; ds_list_size(global.room_list); i++)
           <argument>
             <kind>1</kind>
             <string>///Press Spacebar after winning to continue
+
+/*
 
 if(is_winning &amp;&amp; room_exists(room_next(room)))
 {
@@ -686,77 +713,6 @@ for(i = 0; i &lt; ds_list_size(inventory); i++)
     draw_text(600, 160 + (15 * i), ds_list_find_value(inventory, i));
 }
 */
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="9" enumb="82">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Restart Room
-/*
-Checks if player has both collected the right atoms and checks if the inventory size is not 0
-*/
-
-if(!is_winning || (ds_list_size(global.inventory) != 0))
-{
-    x = 32;
-    y = 415;
-    ds_list_clear(global.inventory);
-    room_restart();
-    
-}
-
-if(!is_winning || (ds_list_size(global.inventory) != 0) &amp;&amp; global.room_type == -1)
-{
-    x = 32;
-    y = 300;
-    ds_list_clear(global.inventory);
-    room_restart();
-    
-}
-
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="9" enumb="36">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Go to Main Menu
-x = 32;
-y = 415;
-room_goto(rm_mainMenu);
 </string>
           </argument>
         </arguments>
