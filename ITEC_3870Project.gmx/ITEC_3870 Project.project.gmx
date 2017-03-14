@@ -108,9 +108,9 @@
     </scripts>
   </scripts>
   <fonts name="fonts">
+    <font>fonts\font_Default</font>
     <font>fonts\font_small</font>
     <font>fonts\font_large</font>
-    <font>fonts\font_Default</font>
   </fonts>
   <objects name="objects">
     <objects name="Player">
@@ -178,6 +178,7 @@
     </objects>
   </objects>
   <rooms name="rooms">
+    <room>rooms\rm_initialize</room>
     <room>rooms\rm_splashScreen</room>
     <room>rooms\rm_mainMenu</room>
     <room>rooms\rm_option</room>
