@@ -17,7 +17,8 @@
   <sprites name="sprites">
     <sprites name="Room">
       <sprite>sprites\spr_level_banner</sprite>
-      <sprite>sprites\spr_door_test1</sprite>
+      <sprite>sprites\spr_door</sprite>
+      <sprite>sprites\spr_title</sprite>
     </sprites>
     <sprites name="Player">
       <sprite>sprites\spr_boy1</sprite>
@@ -160,6 +161,7 @@
       <object>objects\obj_highScores</object>
       <object>objects\obj_splashTimer</object>
       <object>objects\obj_storeTime</object>
+      <object>objects\obj_title</object>
     </objects>
     <objects name="Testing">
       <object>objects\obj_passTest</object>
