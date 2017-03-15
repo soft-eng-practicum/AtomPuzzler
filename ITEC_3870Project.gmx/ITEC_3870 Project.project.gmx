@@ -50,6 +50,10 @@
       <sprite>sprites\spr_atom_fe</sprite>
       <sprite>sprites\spr_atom_Ti</sprite>
       <sprites name="Alkaline earth metal">
+        <sprite>sprites\spr_atom_Be</sprite>
+        <sprite>sprites\spr_atom_Mg</sprite>
+        <sprite>sprites\spr_atom_Ca</sprite>
+        <sprite>sprites\spr_atom_Sr</sprite>
         <sprite>sprites\spr_atom_Ba</sprite>
         <sprite>sprites\spr_atom_Ra</sprite>
       </sprites>
