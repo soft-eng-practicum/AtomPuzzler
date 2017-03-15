@@ -455,19 +455,6 @@ if(keyboard_check_released(vk_up) &amp;&amp; instance_nearest(x, y, obj_door).do
         attempts++;
     }
 }
-if(room = room_last)
-{
-    //stores the player name 
-    name = get_string("Please enter your name:","");
-    
-    //puts score in to the score board
-    highscore_add(name, global.totalPoints);
-    
-    //puts the player back to the main room
-    room_goto(rm_scoreBoard);
-    x = 32;
-    y = 320;
-}
 </string>
           </argument>
         </arguments>
@@ -662,7 +649,7 @@ for(i = 0; i &lt; ds_list_size(global.room_list); i++)
             <kind>1</kind>
             <string>///Press Spacebar after winning to continue
 
-if(is_winning &amp;&amp; room_exists(room_next(room)))
+if(is_winning)
 {
     ds_list_clear(global.inventory);
     global.points = 0;
@@ -672,7 +659,22 @@ if(is_winning &amp;&amp; room_exists(room_next(room)))
     x = 32;
     y = 320;
     is_winning = false;
+    
+    if(room = room_last)
+    {
+        //stores the player name 
+        name = get_string("Please enter your name:","");
+        
+        //puts score in to the score board
+        highscore_add(name, global.totalPoints);
+        
+        //puts the player back to the main room
+        room_goto(rm_scoreBoard);
+        x = 32;
+        y = 320;
+    }
 }
+
 </string>
           </argument>
         </arguments>

@@ -12,7 +12,8 @@
   <showcolour>-1</showcolour>
   <code>///Must be first room
 
-enum transition {
+enum transition 
+{
     stripe_hor,
     stripe_ver
 }

@@ -187,8 +187,8 @@
     <room>rooms\rm_initialize</room>
     <room>rooms\rm_splashScreen</room>
     <room>rooms\rm_mainMenu</room>
-    <room>rooms\rm_option</room>
     <room>rooms\rm_scoreBoard</room>
+    <room>rooms\rm_option</room>
     <room>rooms\rm1</room>
     <room>rooms\rm1_lab</room>
     <room>rooms\rm2</room>
