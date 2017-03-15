@@ -48,6 +48,11 @@
       <sprite>sprites\spr_lewis_naoh_incorrect1</sprite>
       <sprite>sprites\spr_lewis_naoh_incorrect2</sprite>
       <sprite>sprites\spr_atom_fe</sprite>
+      <sprite>sprites\spr_atom_Ti</sprite>
+      <sprites name="Alkaline earth metal">
+        <sprite>sprites\spr_atom_Ba</sprite>
+        <sprite>sprites\spr_atom_Ra</sprite>
+      </sprites>
     </sprites>
     <sprites name="Main Menu">
       <sprite>sprites\sp_startGame</sprite>
