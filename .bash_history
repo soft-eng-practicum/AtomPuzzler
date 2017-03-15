@@ -214,3 +214,22 @@ git status
 git add -A
 git commit -m "Changed dialogue for objectives in rooms 1 and 2."
 git push
+git status
+git pull
+git status
+git add -A
+git commit -m "Fixed H2O incorrect Lewis Structures."
+git push
+git add -A
+git status
+git commit -m "Made scoreboard room more legible."
+git push
+git pull
+git pull
+git push
+git status
+git pull
+git status
+git pull
+git pull
+git pull

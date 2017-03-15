@@ -639,7 +639,7 @@ else
         </arguments>
       </action>
     </event>
-    <event eventtype="4" ename="obj_atom_test1">
+    <event eventtype="4" ename="obj_atom1">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -658,13 +658,13 @@ else
             <kind>1</kind>
             <string>/// Adds Values from Received Atom
 
-total_charge += instance_nearest(x, y, obj_atom_test1).charge;
-ds_list_add(global.inventory, instance_nearest(x, y, obj_atom_test1).symbol);
+total_charge += instance_nearest(x, y, obj_atom1).charge;
+ds_list_add(global.inventory, instance_nearest(x, y, obj_atom1).symbol);
 complete = false;
 
 for(i = 0; i &lt; ds_list_size(global.room_list); i++)
 {
-    if(instance_nearest(x, y, obj_atom_test1).symbol == ds_list_find_value(global.room_list, i))
+    if(instance_nearest(x, y, obj_atom1).symbol == ds_list_find_value(global.room_list, i))
     {
         global.points += 200;
         complete = true;

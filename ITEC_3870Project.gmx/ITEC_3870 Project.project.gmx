@@ -129,8 +129,8 @@
       <object>objects\obj_atom_h</object>
       <object>objects\obj_atom_na</object>
       <object>objects\obj_atom_o</object>
-      <object>objects\obj_atom_test1</object>
-      <object>objects\obj_atom_test2</object>
+      <object>objects\obj_atom1</object>
+      <object>objects\obj_atom2</object>
       <object>objects\obj_lew_correct</object>
       <object>objects\obj_lew_h2o_correct</object>
       <object>objects\obj_lew_h2o_incorrect1</object>
