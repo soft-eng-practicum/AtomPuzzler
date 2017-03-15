@@ -17,4 +17,5 @@ else
 {
     failedTest();
 }
-depth = -100;
+
+depth = -10000;

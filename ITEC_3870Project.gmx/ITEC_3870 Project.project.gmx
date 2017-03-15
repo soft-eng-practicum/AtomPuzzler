@@ -173,10 +173,7 @@
       <object>objects\obj_title</object>
     </objects>
     <objects name="Testing">
-      <object>objects\obj_passTest</object>
       <object>objects\obj_unitTest</object>
-      <object>objects\obj_testingDialog</object>
-      <object>objects\obj_failedTest</object>
     </objects>
     <objects name="Text Feedback">
       <object>objects\obj_gameover</object>

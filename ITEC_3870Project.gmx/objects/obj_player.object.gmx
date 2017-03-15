@@ -34,6 +34,7 @@ hspd_platform = 0;
 vspd = 0;
 jspd = 6;
 mspd = 3;
+mvmt = 0;
 
 // Sprite Variables
 spr = "boy1"
@@ -84,6 +85,119 @@ audio_play_sound(music_AtomPuzzlerTheme, 1, true);
       </action>
     </event>
     <event eventtype="3" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Change Character
+
+// Checks Case for Character
+switch(spr)
+{
+    case "boy1":
+    {
+        spr_run = spr_boy1;
+        spr_jump = spr_boy1_jump;
+        spr_fall = spr_boy1_fall;
+        break;
+    }
+    case "girl1":
+    {
+        spr_run = spr_girl1;
+        spr_jump = spr_girl1_jump;
+        spr_fall = spr_girl1_fall;
+        break;
+    }
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Sprite Operations
+
+/* The player's sprite will turn left and right
+depending on whether or not 'mvmt' is -1 or 1.
+If the player is on the ground and moving, its 
+sprite_index will be set to his running animation
+(spr_boy1). If not, the player's sprite will be the 
+first frame of his running animation, standing still
+(frame 1 of spr_boy1). If the player is not on the ground,
+and their 'vspd' is less than 0 (jumping) then the
+player's sprite_index is set to 'spr_boy1_jump'.
+Otherwise, the player's sprite will be set to the
+'spr_boy1_fall' animation. Then, if the sprite_index is 
+one less than its image_number, then the image_speed becomes
+zero so the fall animation doesn't repeat.
+*/
+
+if(mvmt != 0)
+{
+    image_xscale = mvmt;
+}
+
+if(place_meeting(x, y + 1, obj_obstacle))
+{
+    if(mvmt != 0)
+    {
+        sprite_index = spr_run;
+        image_speed = 0.2;
+    }
+    else
+    {
+        sprite_index = spr_run;
+        image_speed = 0;
+        image_index = 0;
+    }
+}
+else
+{
+    if(vspd &lt; 0)
+    {
+        sprite_index = spr_jump;
+        image_speed = 0;
+    }
+    else
+    {
+        sprite_index = spr_fall;
+        image_speed = 0.2;
+        if(image_index = image_number - 1)
+        {
+            image_speed = 0;
+        }
+    }
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -207,119 +321,6 @@ y += vspd;
           </argument>
         </arguments>
       </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>/// Change Character
-
-// Checks Case for Character
-switch(spr)
-{
-    case "boy1":
-    {
-        spr_run = spr_boy1;
-        spr_jump = spr_boy1_jump;
-        spr_fall = spr_boy1_fall;
-        break;
-    }
-    case "girl1":
-    {
-        spr_run = spr_girl1;
-        spr_jump = spr_girl1_jump;
-        spr_fall = spr_girl1_fall;
-        break;
-    }
-}
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>/// Sprite Operations
-
-/* The player's sprite will turn left and right
-depending on whether or not 'mvmt' is -1 or 1.
-If the player is on the ground and moving, its 
-sprite_index will be set to his running animation
-(spr_boy1). If not, the player's sprite will be the 
-first frame of his running animation, standing still
-(frame 1 of spr_boy1). If the player is not on the ground,
-and their 'vspd' is less than 0 (jumping) then the
-player's sprite_index is set to 'spr_boy1_jump'.
-Otherwise, the player's sprite will be set to the
-'spr_boy1_fall' animation. Then, if the sprite_index is 
-one less than its image_number, then the image_speed becomes
-zero so the fall animation doesn't repeat.
-*/
-
-if(mvmt != 0)
-{
-    image_xscale = mvmt;
-}
-
-if(place_meeting(x, y + 1, obj_obstacle))
-{
-    if(mvmt != 0)
-    {
-        sprite_index = spr_run;
-        image_speed = 0.2;
-    }
-    else
-    {
-        sprite_index = spr_run;
-        image_speed = 0;
-        image_index = 0;
-    }
-}
-else
-{
-    if(vspd &lt; 0)
-    {
-        sprite_index = spr_jump;
-        image_speed = 0;
-    }
-    else
-    {
-        sprite_index = spr_fall;
-        image_speed = 0.2;
-        if(image_index = image_number - 1)
-        {
-            image_speed = 0;
-        }
-    }
-}
-</string>
-          </argument>
-        </arguments>
-      </action>
     </event>
     <event eventtype="4" ename="obj_door">
       <action>
@@ -408,12 +409,22 @@ if(keyboard_check_released(vk_up) &amp;&amp; instance_nearest(x, y, obj_door).do
         }
         
         //Lose
-        if(!inventory_check &amp;&amp; attempts == 0)
+        else
         {   
             is_winning = false;
             instance_create(0, 0, obj_gameover);
-            global.points -= 100;
-            global.totalPoints = global.points - round(global.roomPoints) + global.totalPoints;
+            /*if(global.totalPoints &lt; 0)
+            {
+                global.totalPoints = 0;
+            }
+            else if (global.totalPoints &gt; 0 &amp;&amp; attempts &lt; 3)
+            {
+                global.totalPoints = global.totalPoints - 100;
+            } 
+            else
+            {
+            
+            }*/
             obj_timer.stop = true;
             toggle = -1;
             attempts++;
@@ -421,12 +432,24 @@ if(keyboard_check_released(vk_up) &amp;&amp; instance_nearest(x, y, obj_door).do
     }
     
     //Size does not match therefore lose
-    if(!inventory_check &amp;&amp; attempts == 0) 
+    else
     {
         is_winning = false;
         instance_create(0, 0, obj_gameover);
-        global.points -= 100;
-        global.totalPoints = global.points - round(global.roomPoints) + global.totalPoints;
+       // global.points -= 100;
+      //  global.totalPoints = global.points - round(global.roomPoints) + global.totalPoints;
+        /*if(global.totalPoints &lt; 0)
+        {
+            global.totalPoints = 0;
+        }
+        else if (global.totalPoints &gt; 0 &amp;&amp; attempts &lt; 3)
+        {
+            global.totalPoints = global.totalPoints - 100;
+        } 
+        else
+        {
+            
+        }*/
         obj_timer.stop = true;
         toggle = -1;
         attempts++;
@@ -504,7 +527,7 @@ if(keyboard_check_released(vk_up) &amp;&amp; instance_nearest(x, y, obj_door).do
         {
             is_winning = true;
             instance_create(0, 0, obj_win);
-            global.totalPoints = global.points - round(global.roomPoints) + global.totalPoints + 100;
+            global.totalPoints = global.totalPoints + 100;
             with(instance_nearest(x, y, obj_door)) doorExit = false;
             toggle = -1;
         }
@@ -514,8 +537,8 @@ if(keyboard_check_released(vk_up) &amp;&amp; instance_nearest(x, y, obj_door).do
         {   
             is_winning = false;
             instance_create(0, 0, obj_gameover);
-            global.points -= 100;
-            global.totalPoints = global.points - round(global.roomPoints) + global.totalPoints;
+            //global.points -= 100;
+            global.totalPoints = global.totalPoints - 100;
             toggle = -1;
         }
     }
@@ -525,8 +548,8 @@ if(keyboard_check_released(vk_up) &amp;&amp; instance_nearest(x, y, obj_door).do
     {
         is_winning = false;
         instance_create(0, 0, obj_gameover);
-        global.points -= 100;
-        global.totalPoints = global.points - round(global.roomPoints) + global.totalPoints;
+        //global.points -= 100;
+        global.totalPoints = global.totalPoints - 100;
         toggle = -1;
     }
 }
@@ -744,6 +767,7 @@ if(!obj_player.is_winning || (ds_list_size(global.inventory) != 0))
     obj_player.x = 32;
     obj_player.y = 415;
     toggle = 0;
+    global.points = 0;
     ds_list_clear(global.inventory);
     room_restart();
     obj_player.attempts = 0;
@@ -754,6 +778,7 @@ if(!obj_player.is_winning || (ds_list_size(global.inventory) != 0) &amp;&amp; gl
     obj_player.x = 32;
     obj_player.y = 300;
     toggle = 0;
+    global.points = 0;
     ds_list_clear(global.inventory);
     room_restart();
     obj_player.attempts = 0;
