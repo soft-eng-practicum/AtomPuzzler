@@ -603,7 +603,7 @@ else
         </arguments>
       </action>
     </event>
-    <event eventtype="4" ename="obj_atom_test1">
+    <event eventtype="4" ename="obj_atom1">
       <action>
         <libid>1</libid>
         <id>603</id>

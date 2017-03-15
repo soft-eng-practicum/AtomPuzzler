@@ -39,6 +39,11 @@ switch(room)
         sprite_index = spr_tile2;
         break;
     }
+    /*case(rm1_lab || rm2_lab):
+    {
+        sprite_index = spr_tile3;
+        break;
+    }*/
 }
 </string>
           </argument>
