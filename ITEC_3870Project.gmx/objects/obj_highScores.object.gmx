@@ -27,7 +27,7 @@
             <kind>1</kind>
             <string>///Display the high scores
 
-draw_highscore(200, 200, room_width - 100, room_height - 100);
+draw_highscore(100, 50, room_width - 100, room_height - 100);
 </string>
           </argument>
         </arguments>

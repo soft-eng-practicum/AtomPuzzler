@@ -442,6 +442,8 @@ if(room = room_last)
     
     //puts the player back to the main room
     room_goto(rm_scoreBoard);
+    x = 32;
+    y = 320;
 }
 </string>
           </argument>
