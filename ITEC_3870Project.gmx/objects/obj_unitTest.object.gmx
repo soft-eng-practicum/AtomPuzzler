@@ -201,8 +201,20 @@ if(debug_mode)
     with(obj_player)
     {
         
-        if(place_meeting(x, y, obj_door)) 
+        if(place_meeting(x, y, obj_door) &amp;&amp; keyboard_check_released(vk_up) &amp;&amp; toggle == -1) 
+        { 
+            assertEquals("Lvl01 score", 0, global.totalPoints);
+        }
+        
+        else if(place_meeting(x, y, obj_atom1))
         {
+            assertEquals("Atom Points", 200, global.points);
+        }
+
+        
+        else
+        {
+        //do nothing
         }
     }
 }
