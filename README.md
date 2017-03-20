@@ -14,7 +14,7 @@
 
 **Communication Tool** [Slack] (https://ggc-dev.slack.com/messages/teambackrow/details/)
 
-**Game Link** (https://jlam1.github.io/AtomPuzzlerPages/)
+**Game Link** (https://teambackrow.itch.io/atompuzzler)
 
 ## Overview
 Placeholder
