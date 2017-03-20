@@ -8,4 +8,10 @@ pass_count = 0;
 fail_count = 0;
 
 testBoolean = false;
-test_lines = "";
+autoTest = false;
+pass_failed = "";
+
+//values for auto testing
+pass_failed2  = "";
+results = "";
+

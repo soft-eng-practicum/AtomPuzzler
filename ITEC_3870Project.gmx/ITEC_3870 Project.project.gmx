@@ -65,6 +65,9 @@
       <sprite>sprites\spr_gender</sprite>
       <sprite>sprites\spr_backToMain</sprite>
       <sprite>sprites\spr_test</sprite>
+      <sprites name="testing room sprite">
+        <sprite>sprites\spr_atomTesting</sprite>
+      </sprites>
     </sprites>
     <sprites name="Platforms and Obstacles">
       <sprite>sprites\spr_movingPlatform</sprite>
@@ -99,12 +102,20 @@
     </scripts>
     <scripts name="Testing">
       <script>scripts\intializeTestValues.gml</script>
-      <script>scripts\assertEquals.gml</script>
-      <script>scripts\pass.gml</script>
-      <script>scripts\fail.gml</script>
-      <script>scripts\draw_test.gml</script>
-      <script>scripts\failedTest.gml</script>
-      <script>scripts\passedTest.gml</script>
+      <scripts name="Automated Testing">
+        <script>scripts\assertEquals2.gml</script>
+        <script>scripts\pass2.gml</script>
+        <script>scripts\fail2.gml</script>
+        <script>scripts\draw_test2.gml</script>
+      </scripts>
+      <scripts name="system/user testing">
+        <script>scripts\assertEquals.gml</script>
+        <script>scripts\pass.gml</script>
+        <script>scripts\fail.gml</script>
+        <script>scripts\draw_test.gml</script>
+        <script>scripts\passedTest.gml</script>
+        <script>scripts\failedTest.gml</script>
+      </scripts>
     </scripts>
     <scripts name="Pause">
       <script>scripts\scr_draw_gui_pause.gml</script>
@@ -139,7 +150,6 @@
       <object>objects\obj_lew_naoh_correct</object>
       <object>objects\obj_lew_naoh_incorrect1</object>
       <object>objects\obj_lew_naoh_incorrect2</object>
-      <object>objects\object43</object>
     </objects>
     <objects name="Main Menu">
       <object>objects\obj_startGame</object>
@@ -174,6 +184,13 @@
     </objects>
     <objects name="Testing">
       <object>objects\obj_unitTest</object>
+      <object>objects\obj_unitTest2</object>
+      <objects name="testing objects">
+        <object>objects\obj_atomTesting_King</object>
+      </objects>
+      <objects name="Go to a Testing Room">
+        <object>objects\obj_atomTesting</object>
+      </objects>
     </objects>
     <objects name="Text Feedback">
       <object>objects\obj_gameover</object>
@@ -184,15 +201,23 @@
     </objects>
   </objects>
   <rooms name="rooms">
-    <room>rooms\rm_initialize</room>
-    <room>rooms\rm_splashScreen</room>
-    <room>rooms\rm_mainMenu</room>
-    <room>rooms\rm_scoreBoard</room>
-    <room>rooms\rm_option</room>
-    <room>rooms\rm1</room>
-    <room>rooms\rm1_lab</room>
-    <room>rooms\rm2</room>
-    <room>rooms\rm2_lab</room>
+    <rooms name="Main Menu Rooms">
+      <room>rooms\rm_initialize</room>
+      <room>rooms\rm_splashScreen</room>
+      <room>rooms\rm_mainMenu</room>
+      <room>rooms\rm_scoreBoard</room>
+      <room>rooms\rm_option</room>
+    </rooms>
+    <rooms name="Test Rooms">
+      <room>rooms\rm_test</room>
+      <room>rooms\rm_atomTest</room>
+    </rooms>
+    <rooms name="Play Game Room">
+      <room>rooms\rm1</room>
+      <room>rooms\rm1_lab</room>
+      <room>rooms\rm2</room>
+      <room>rooms\rm2_lab</room>
+    </rooms>
   </rooms>
   <constants number="10">
     <constant name="GMASSERT_MODE">GMASSERT_MODE_ENABLED</constant>

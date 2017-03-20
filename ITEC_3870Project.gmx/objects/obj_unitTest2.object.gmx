@@ -4,7 +4,7 @@
   <solid>0</solid>
   <visible>-1</visible>
   <depth>-5000</depth>
-  <persistent>-1</persistent>
+  <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
@@ -28,37 +28,16 @@
             <string>///info
 
 /*
-this object is used for testing as playing the game. 
-this seems more of system testing and user testing 
+this object is used for automated testing
+if you are creating ur test please create your room and
+put the this object and ur testing object in the room
+
+this object is responsible 
+for pulling the values 
+from the script and drawing 
+the GUI for the test
 
 */
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Initialize values for GUI
-if(debug_mode)
-{
-depth = -100;
-width_pane2 = 350;
-height_pane2 = 160;
-}
 </string>
           </argument>
         </arguments>
@@ -89,7 +68,7 @@ intializeTestValues();
         </arguments>
       </action>
     </event>
-    <event eventtype="3" enumb="0">
+    <event eventtype="2" enumb="0">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -106,133 +85,11 @@ intializeTestValues();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Test for picking up the correct atom
-if(debug_mode)
-{
-    with(obj_player) 
-    {
-        if(place_meeting(x,y, obj_atom_h))
-        {
-            assertEquals("H atom","H", obj_atom_h.symbol);
-        }
-    
-        else if(place_meeting(x,y, obj_atom_o))
-        {
-            assertEquals("O atom","O", obj_atom_o.symbol);
-        }
-    
-        else if(place_meeting(x,y, obj_atom_na))
-        {
-            assertEquals("Na atom","Na", obj_atom_na.symbol);
-        }
-        //add more atoms
-        
-        else
-        {
-        //do nothing
-        }
-    }
-}
-
-
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Test for the correct Lewis Structure
-
-if(debug_mode)
-{
-    with(obj_player)
-    {
-        //change obj_door to the lewis object
-        if(place_meeting(x, y, obj_door)) 
-        {
-        }
-    }
-}
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Test for the correct list to go through the next door
-if(debug_mode)
-{
-    with(obj_player)
-    { 
-    // incomplete test... need to look for the string value ex: HHO
-        if(place_meeting(x, y, obj_door) &amp;&amp; keyboard_check_released(vk_up))
-        {
-            assertEquals("Winning List", 
-                        ds_list_find_value(global.room_list, i), 
-                        ds_list_find_value(global.inventory, i));
-        }
-    }
-}
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>/// Test score calculation
-
-if(debug_mode)
-{
-    with(obj_player)
-    {
-        
-        if(place_meeting(x, y, obj_door)) 
-        {
-        }
-    }
-}
+            <string>///Wait for the test to finish before getting the results
+if(fail_count == 0)
+  {
+  results = "#All tests passed!";
+  }
 </string>
           </argument>
         </arguments>
@@ -255,12 +112,50 @@ if(debug_mode)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Display the test
-if(debug_mode &amp;&amp; !autoTest)
-{
-    draw_set_font(font_Default);
-    draw_test();
-}
+            <string>///draws the automated testing unit
+draw_set_font(font_Default);
+draw_test2();
+
+draw_text_colour(400, 32, "Press Home button #to exit", c_yellow, c_yellow, c_yellow,c_yellow, true);    
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="10" enumb="36">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///return to the testing room
+
+/*
+had to do it this way.. for some reason the create for 
+    if(keyboard_key_release(vk_home))
+
+isnt returning the player in the mainmenu
+*/
+
+
+    room_goto(rm_test);
+    obj_player.x = 64;
+    obj_player.y = 400;
+
+
+
+
 </string>
           </argument>
         </arguments>
