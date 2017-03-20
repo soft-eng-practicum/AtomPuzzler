@@ -32,7 +32,7 @@ charge = 0;
 symbol = "";
 
 // Sprite Variables
-image_speed = 0.003;
+image_speed = 0.007;
 </string>
           </argument>
         </arguments>

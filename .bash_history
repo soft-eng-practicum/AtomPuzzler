@@ -233,3 +233,20 @@ git status
 git pull
 git pull
 git pull
+git pull
+git status
+git add -A
+git commit -m "Changed the name of the testing atoms to obj_atom1 and obj_atom2."
+git push
+git add -A
+git commit -m "Fixed bug for creating second atom"
+git push
+git add -A
+git commit -m "Fixed some sprites of atoms."
+git push
+git add -A
+git commit -m "Fixed the last room bug, now the player can see if they won the last level before continuing to the score board room."
+git push
+git pull
+git push
+git status
