@@ -758,21 +758,9 @@ move_wrap(true, false, rm1);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Draw Self and Charge
+            <string>/// Draw Self
 
 draw_self();
-
-/*
-//Temporary, prints out list size for testing purposes
-draw_set_color(c_blue);
-draw_text(450, 100, "inventory size: " + string(ds_list_size(inventory)));
-
-//Prints array of values in inventory list
-for(i = 0; i &lt; ds_list_size(inventory); i++) 
-{
-    draw_text(600, 160 + (15 * i), ds_list_find_value(inventory, i));
-}
-*/
 </string>
           </argument>
         </arguments>

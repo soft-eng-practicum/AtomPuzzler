@@ -250,3 +250,5 @@ git push
 git pull
 git push
 git status
+git status
+git pull
