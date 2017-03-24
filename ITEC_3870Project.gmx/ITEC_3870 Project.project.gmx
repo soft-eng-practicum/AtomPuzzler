@@ -30,25 +30,38 @@
       <sprite>sprites\spr_girl1_jump</sprite>
     </sprites>
     <sprites name="Atom">
+      <sprites name="Lewis Structure">
+        <sprite>sprites\spr_lewis_blank</sprite>
+        <sprite>sprites\spr_lewis_correct</sprite>
+        <sprite>sprites\spr_lewis_incorrect</sprite>
+        <sprites name="h2o">
+          <sprite>sprites\spr_lewis_h2o_correct</sprite>
+          <sprite>sprites\spr_lewis_h2o_incorrect1</sprite>
+          <sprite>sprites\spr_lewis_h2o_incorrect2</sprite>
+        </sprites>
+        <sprites name="naoh">
+          <sprite>sprites\spr_lewis_naoh_correct</sprite>
+          <sprite>sprites\spr_lewis_naoh_incorrect1</sprite>
+          <sprite>sprites\spr_lewis_naoh_incorrect2</sprite>
+        </sprites>
+      </sprites>
       <sprite>sprites\spr_atom_c</sprite>
       <sprite>sprites\spr_atom_f</sprite>
       <sprite>sprites\spr_atom_h</sprite>
       <sprite>sprites\spr_atom_n</sprite>
-      <sprite>sprites\spr_atom_na</sprite>
       <sprite>sprites\spr_atom_o</sprite>
       <sprite>sprites\spr_atom_test1</sprite>
       <sprite>sprites\spr_atom_test2</sprite>
-      <sprite>sprites\spr_lewis_correct</sprite>
-      <sprite>sprites\spr_lewis_incorrect</sprite>
-      <sprite>sprites\spr_lewis_h2o_incorrect1</sprite>
-      <sprite>sprites\spr_lewis_h2o_incorrect2</sprite>
-      <sprite>sprites\spr_lewis_h2o_correct</sprite>
-      <sprite>sprites\spr_lewis_blank</sprite>
-      <sprite>sprites\spr_lewis_naoh_correct</sprite>
-      <sprite>sprites\spr_lewis_naoh_incorrect1</sprite>
-      <sprite>sprites\spr_lewis_naoh_incorrect2</sprite>
-      <sprite>sprites\spr_atom_fe</sprite>
       <sprite>sprites\spr_atom_Ti</sprite>
+      <sprite>sprites\spr_atom_fe</sprite>
+      <sprites name="Alkali metal">
+        <sprite>sprites\spr_atom_li</sprite>
+        <sprite>sprites\spr_atom_na</sprite>
+        <sprite>sprites\spr_atom_k</sprite>
+        <sprite>sprites\spr_atom_rb</sprite>
+        <sprite>sprites\spr_atom_cs</sprite>
+        <sprite>sprites\spr_atom_fr</sprite>
+      </sprites>
       <sprites name="Alkaline earth metal">
         <sprite>sprites\spr_atom_Be</sprite>
         <sprite>sprites\spr_atom_Mg</sprite>
