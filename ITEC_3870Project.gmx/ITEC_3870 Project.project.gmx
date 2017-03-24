@@ -212,6 +212,11 @@
       <object>objects\obj_room_list</object>
       <object>objects\obj_lewis_text</object>
     </objects>
+    <objects name="Vitrual keys">
+      <object>objects\obj_leftKey</object>
+      <object>objects\obj_rightKey</object>
+      <object>objects\obj_jumpKey</object>
+    </objects>
   </objects>
   <rooms name="rooms">
     <rooms name="Main Menu Rooms">
