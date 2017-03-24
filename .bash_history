@@ -252,3 +252,7 @@ git push
 git status
 git status
 git pull
+git pull
+git add -A
+git commit -m "Added some new animations for atom sprites and upped the image_speed for more user-friendly gameplay."
+git push
