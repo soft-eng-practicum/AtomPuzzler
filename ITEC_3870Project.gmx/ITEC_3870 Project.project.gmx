@@ -5,6 +5,7 @@
   </Configs>
   <NewExtensions>
     <extension index="0">extensions\Essential Scripts</extension>
+    <extension index="1">extensions\StaticCube - Log Console</extension>
   </NewExtensions>
   <sounds name="sound">
     <sound>sound\sfx_Select</sound>
@@ -106,6 +107,10 @@
     <path>paths\path1</path>
   </paths>
   <scripts name="scripts">
+    <scripts name="Console">
+      <script>scripts\log.gml</script>
+      <script>scripts\log_list.gml</script>
+    </scripts>
     <scripts name="Drawing">
       <script>scripts\draw_text_outlined.gml</script>
       <script>scripts\draw_text_shadow.gml</script>
@@ -141,6 +146,7 @@
     </scripts>
   </scripts>
   <fonts name="fonts">
+    <font>fonts\fntScLogFont</font>
     <font>fonts\font_Default</font>
     <font>fonts\font_small</font>
     <font>fonts\font_large</font>
@@ -211,6 +217,9 @@
       <object>objects\obj_inventory</object>
       <object>objects\obj_room_list</object>
       <object>objects\obj_lewis_text</object>
+      <objects name="LogConsole">
+        <object>objects\objScLogConsole</object>
+      </objects>
     </objects>
     <objects name="Vitrual keys">
       <object>objects\obj_leftKey</object>
