@@ -409,6 +409,9 @@ If the content within the player's inventory matches the room's list, then give 
 if(keyboard_check_released(vk_up) &amp;&amp; instance_nearest(x, y, obj_door).doorExit &amp;&amp; global.room_type == 1) 
 {
 
+    log_list(0, "Inventory List: ", global.inventory);
+    log_list(0, "Room List: ", global.room_list);
+
     //Set variables for size of lists
     room_array_size = ds_list_size(global.room_list);
     inventory_size = ds_list_size(global.inventory);
@@ -438,6 +441,7 @@ if(keyboard_check_released(vk_up) &amp;&amp; instance_nearest(x, y, obj_door).do
         {
             is_winning = true;
             instance_create(0, 0, obj_win);
+            log(1, "obj_player: Door Collide Event: Correct Atoms: instance_create: obj_win");
             global.totalPoints = global.points - round(global.roomPoints) + global.totalPoints;
             obj_timer.stop = true;
             with(instance_nearest(x, y, obj_door)) doorExit = false;
@@ -449,18 +453,7 @@ if(keyboard_check_released(vk_up) &amp;&amp; instance_nearest(x, y, obj_door).do
         {   
             is_winning = false;
             instance_create(0, 0, obj_gameover);
-            /*if(global.totalPoints &lt; 0)
-            {
-                global.totalPoints = 0;
-            }
-            else if (global.totalPoints &gt; 0 &amp;&amp; attempts &lt; 3)
-            {
-                global.totalPoints = global.totalPoints - 100;
-            } 
-            else
-            {
-            
-            }*/
+            log(1, "obj_player: Door Collide Event: Incorrect Atoms: instance_create: obj_gameover");
             obj_timer.stop = true;
             toggle = -1;
             attempts++;
@@ -472,23 +465,12 @@ if(keyboard_check_released(vk_up) &amp;&amp; instance_nearest(x, y, obj_door).do
     {
         is_winning = false;
         instance_create(0, 0, obj_gameover);
-       // global.points -= 100;
-      //  global.totalPoints = global.points - round(global.roomPoints) + global.totalPoints;
-        /*if(global.totalPoints &lt; 0)
-        {
-            global.totalPoints = 0;
-        }
-        else if (global.totalPoints &gt; 0 &amp;&amp; attempts &lt; 3)
-        {
-            global.totalPoints = global.totalPoints - 100;
-        } 
-        else
-        {
-            
-        }*/
+        log(1, "obj_player: Door Collide Event: Incorect List Size: instance_create: obj_gameover");
         obj_timer.stop = true;
         toggle = -1;
         attempts++;
+        
+        log(1, "");
     }
 }
 </string>
@@ -521,6 +503,10 @@ error if timer is stopped in Lab room, therefore the duplicated code for both ro
 
 if(keyboard_check_released(vk_up) &amp;&amp; instance_nearest(x, y, obj_door).doorExit &amp;&amp; global.room_type == -1) 
 {
+
+    log_list(0, "Inventory List: ", global.inventory);
+    log_list(0, "Room List: ", global.room_list);
+
     //Set variables for size of lists
     room_array_size = ds_list_size(global.room_list);
     inventory_size = ds_list_size(global.inventory);
@@ -647,6 +633,7 @@ else
 
 total_charge += instance_nearest(x, y, obj_atom1).charge;
 ds_list_add(global.inventory, instance_nearest(x, y, obj_atom1).symbol);
+log(0, "Add to Inventory: " + string(instance_nearest(x, y, obj_atom1).symbol));
 complete = false;
 
 for(i = 0; i &lt; ds_list_size(global.room_list); i++)
@@ -687,6 +674,8 @@ for(i = 0; i &lt; ds_list_size(global.room_list); i++)
 
 if(is_winning)
 {
+    log(1, "Spacebar event: obj_player.is_winning: " + string(is_winning));
+    
     ds_list_clear(global.inventory);
     global.points = 0;
     global.roomPoints = 0;
@@ -698,6 +687,8 @@ if(is_winning)
     
     if(room = room_last)
     {
+        log(0, "Last room");
+    
         //stores the player name 
         name = get_string("Please enter your name:","");
         
@@ -735,6 +726,7 @@ if(is_winning)
             <kind>1</kind>
             <string>/// Wrap the Room for Player
 
+log(1, "obj_player: Outside Room Event: move_wrap initialize");
 move_wrap(true, false, rm1);
 </string>
           </argument>
@@ -788,21 +780,34 @@ draw_self();
 Checks if player has both collected the right atoms and checks if the inventory size is not 0
 */
 
-if(!obj_player.is_winning || (ds_list_size(global.inventory) != 0))
+if(!obj_player.is_winning || (ds_list_size(global.inventory) != 0) &amp;&amp; global.room_type == 1)
 {
+    log(1, "obj_player.is_winning == " + string(obj_player.is_winning));
+    log(1, "obj_player: OnKeyPress Event [R]: Restart Room");
+    
     obj_player.x = 32;
     obj_player.y = 415;
+    log(1, "obj_player.x: " + string(obj_player.x));
+    log(1, "obj_player.y: " + string(obj_player.y));
+    
     toggle = 0;
     global.points = 0;
     ds_list_clear(global.inventory);
     room_restart();
     obj_player.attempts = 0;
+    log(1, "obj_player.attempts: " + string(obj_player.attempts));
 }
 
 if(!obj_player.is_winning || (ds_list_size(global.inventory) != 0) &amp;&amp; global.room_type == -1)
 {
+    log(1, "obj_player.is_winning == " + string(obj_player.is_winning));
+    log(1, "obj_player: OnKeyPress Event [R]: Restart Room");
+    
     obj_player.x = 32;
     obj_player.y = 300;
+    log(1, "obj_player.x: " + string(obj_player.x));
+    log(1, "obj_player.y: " + string(obj_player.y));
+    
     toggle = 0;
     global.points = 0;
     ds_list_clear(global.inventory);
