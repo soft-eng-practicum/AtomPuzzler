@@ -51,7 +51,12 @@ attempts = obj_player.attempts;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Event where depending on the number of attempts, display the appropriate message when player loses
+            <string>///On attempt event
+
+/*
+Event where depending on the number of attempts, 
+display the appropriate message when player loses
+*/
 
 if(attempts &gt; 1) {
     log(0, "Player attempts: " + attempts);
