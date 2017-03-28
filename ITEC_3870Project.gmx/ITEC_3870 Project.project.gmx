@@ -64,22 +64,24 @@
           <sprite>sprites\spr_lewis_naoh_incorrect2</sprite>
         </sprites>
       </sprites>
-      <sprite>sprites\spr_atom_c</sprite>
-      <sprite>sprites\spr_atom_f</sprite>
-      <sprite>sprites\spr_atom_h</sprite>
-      <sprite>sprites\spr_atom_n</sprite>
-      <sprite>sprites\spr_atom_o</sprite>
+      <sprite>sprites\spr_atom_C</sprite>
+      <sprite>sprites\spr_atom_S</sprite>
+      <sprite>sprites\spr_atom_Cl</sprite>
+      <sprite>sprites\spr_atom_F</sprite>
+      <sprite>sprites\spr_atom_H</sprite>
+      <sprite>sprites\spr_atom_N</sprite>
+      <sprite>sprites\spr_atom_O</sprite>
       <sprite>sprites\spr_atom_test1</sprite>
       <sprite>sprites\spr_atom_test2</sprite>
       <sprite>sprites\spr_atom_Ti</sprite>
-      <sprite>sprites\spr_atom_fe</sprite>
+      <sprite>sprites\spr_atom_Fe</sprite>
       <sprites name="Alkali metal">
-        <sprite>sprites\spr_atom_li</sprite>
-        <sprite>sprites\spr_atom_na</sprite>
-        <sprite>sprites\spr_atom_k</sprite>
-        <sprite>sprites\spr_atom_rb</sprite>
-        <sprite>sprites\spr_atom_cs</sprite>
-        <sprite>sprites\spr_atom_fr</sprite>
+        <sprite>sprites\spr_atom_Li</sprite>
+        <sprite>sprites\spr_atom_Na</sprite>
+        <sprite>sprites\spr_atom_K</sprite>
+        <sprite>sprites\spr_atom_Rb</sprite>
+        <sprite>sprites\spr_atom_Cs</sprite>
+        <sprite>sprites\spr_atom_Fr</sprite>
       </sprites>
       <sprites name="Alkaline earth metal">
         <sprite>sprites\spr_atom_Be</sprite>
@@ -178,6 +180,9 @@
     </objects>
     <objects name="Atom">
       <object>objects\obj_atom_h</object>
+      <object>objects\obj_atom_n</object>
+      <object>objects\obj_atom_s</object>
+      <object>objects\obj_atom_cl</object>
       <object>objects\obj_atom_na</object>
       <object>objects\obj_atom_o</object>
       <object>objects\obj_atom1</object>
@@ -210,7 +215,6 @@
     <objects name="Pausing">
       <object>objects\obj_pause</object>
       <object>objects\par_pausable</object>
-      <object>objects\obj_pause_control</object>
     </objects>
     <objects name="Room">
       <object>objects\obj_door</object>
@@ -265,6 +269,9 @@
       <room>rooms\rm1_lab</room>
       <room>rooms\rm2</room>
       <room>rooms\rm2_lab</room>
+      <room>rooms\rm3</room>
+      <room>rooms\rm4</room>
+      <room>rooms\rm5</room>
     </rooms>
   </rooms>
   <constants number="10">
