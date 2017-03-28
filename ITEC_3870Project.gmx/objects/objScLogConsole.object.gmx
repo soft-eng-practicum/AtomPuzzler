@@ -81,7 +81,7 @@ if( self.visible ){
     // Actually draw the log lines (color is based on first part of the message
     // not the nicest way but else we need to store additional data which takes
     // up additional memory (it's just not worth it).
-    draw_set_color(c_white);
+    draw_set_colour(c_white);
     
     for( var i = 0; i &lt; self.maxLines; i++ ){
         // First determine the color (using position 2 as it starts counting at 1)
@@ -92,18 +92,18 @@ if( self.visible ){
                 
             // Setup Color based and output type
             if( string_char_at(self.lines[i], checkPos) == 'D' ){       // DEBUG
-                draw_set_color(c_ltgray);
+                draw_set_colour(c_ltgray);
             }else if( string_char_at(self.lines[i], checkPos) == 'I' ){ // INFO
-                draw_set_color(c_white);
+                draw_set_colour(c_white);
             }else if( string_char_at(self.lines[i], checkPos) == 'W' ){ // WARNING
-                draw_set_color(c_yellow);
+                draw_set_colour(c_yellow);
             }else if( string_char_at(self.lines[i], checkPos) == 'E' ){ // ERROR
-                draw_set_color(c_red);
+                draw_set_colour(c_red);
             }else if( string_char_at(self.lines[i], checkPos) == ' ' ){ // OVERFLOW
                 // Don't Change Anything and retain old color
             }else{
                 // Should never happen just to be safe
-                draw_set_color(c_purple);
+                draw_set_colour(c_white);
             }
         }
         
