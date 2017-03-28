@@ -12,16 +12,13 @@
   <showcolour>-1</showcolour>
   <code>/// Initialize Variables
 global.room_type = -1;
-global.message[0] = "Solve the Lewis Structure";
+global.message[0] = "Choose the correct Lewis Structure";
 
 // Create list
 global.room_list = ds_list_create();
 
 // Add values to list
-ds_list_add(global.room_list, "1");
-
-//Logging
-log_list(0, room_get_name(room) + " list: ", global.room_list);</code>
+ds_list_add(global.room_list, "1");</code>
   <enableViews>0</enableViews>
   <clearViewBackground>-1</clearViewBackground>
   <clearDisplayBuffer>-1</clearDisplayBuffer>
