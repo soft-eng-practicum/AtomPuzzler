@@ -16,7 +16,7 @@ var file = working_directory + filename;
 
 //Open File
 ini_open(file);
-log(0, "Reading file: " + file);
+show_debug_message("Reading file: " + file);
 
 //Reads and stores room property into variables
 var message = ini_read_string(rm_name, 'message', "Message Unavailable");
@@ -31,16 +31,13 @@ array[2] = solution;
 array[3] = hint;
 
 //Log Debug Info
-log(1, "List of properties in " + rm_name);
-log(1, "msg: " + message);
-log(1, "type: " + string(type));
-log(1, "solution: " + solution);
-log(1, "hint: " + hint);
-    
+for(i = 0; i < array_length_1d(array); i++) {
+    show_debug_message("Array[" + string(i) + "] = " + string(array[i]));
+}
+
 //Close File
 ini_close();
-log(0, "Closing file...");
+show_debug_message("Closing file...");
 
-//Return array stored with room properties
-log(1, "scr_read_file: " + string(array));
+//Return array
 return array;
