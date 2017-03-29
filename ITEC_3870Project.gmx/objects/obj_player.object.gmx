@@ -41,8 +41,6 @@ spr = "boy1"
 spr_run = spr_boy1;
 spr_jump = spr_boy1_jump;
 spr_fall = spr_boy1_fall;
-idle = false;
-idle_count = 0;
 image_speed = 0;
 depth = -3;
 
@@ -103,6 +101,46 @@ audio_play_sound(music_AtomPuzzlerTheme, 1, true);
         <arguments>
           <argument>
             <kind>1</kind>
+            <string>/// Change Character
+
+// Checks Case for Character
+switch(spr)
+{
+    case "boy1":
+    {
+        spr_run = spr_boy1;
+        spr_jump = spr_boy1_jump;
+        spr_fall = spr_boy1_fall;
+        break;
+    }
+    case "girl1":
+    {
+        spr_run = spr_girl1;
+        spr_jump = spr_girl1_jump;
+        spr_fall = spr_girl1_fall;
+        break;
+    }
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
             <string>/// Sprite Operations
 
 /* The player's sprite will turn left and right
@@ -129,29 +167,14 @@ if(place_meeting(x, y + 1, obj_obstacle))
 {
     if(mvmt != 0)
     {
-        sprite_index = spr_idle;
+        sprite_index = spr_run;
         image_speed = 0.2;
-        idle_count = 0;
-        idle = false;
     }
     else
     {
-        if(idle)
-        {
-            sprite_index = spr_idle;
-            image_speed = 0.2;
-        }
-        else
-        {
-            idle_count++;
-            sprite_index = spr_run;
-            image_speed = 0;
-            image_index = 0;
-            if(idle_count == 600)
-            {
-                idle = true;
-            }
-        }
+        sprite_index = spr_run;
+        image_speed = 0;
+        image_index = 0;
     }
 }
 else
@@ -350,26 +373,26 @@ hspd = mvmt * mspd;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Change Character
+            <string>///On Key Press Z, drops previous atom picked
 
-// Checks Case for Character
-switch(spr)
+//  Notes: Deleting from ds_list does not change list size.
+//  TODO: Remove last item from list, clear list, put leftover items into list again, this will require two lists maybe
+
+if(keyboard_check_pressed(ord("X")))
 {
-    case "boy1":
+
+    var inv = global.inventory;
+    var inv_size = ds_list_size(inv);
+    
+    if(inv_size &gt; 1) 
     {
-        spr_run = spr_boy1;
-        spr_jump = spr_boy1_jump;
-        spr_fall = spr_boy1_fall;
-        spr_idle = spr_boy1_idle;
-        break;
-    }
-    case "girl1":
-    {
-        spr_run = spr_girl1;
-        spr_jump = spr_girl1_jump;
-        spr_fall = spr_girl1_fall;
-        spr_idle = spr_girl1_idle
-        break;
+        show_debug_message( "Size BEFORE drop: " + string(inv_size) );
+        show_debug_message( "Dropped from Inventory: " + string(ds_list_find_value(inv, inv_size - 1)) );
+        
+        instance_create( obj_player.x, obj_player.y, obj_atom_na);          //needs to drop the last item in list
+        ds_list_delete( inv, inv_size );
+        
+        show_debug_message( "Size AFTER drop: " + string(inv_size) );
     }
 }
 </string>
@@ -397,7 +420,6 @@ switch(spr)
             <string>///Sorts list on door collide
 scr_sort_list(global.inventory);
 scr_sort_list(global.room_list);
-
 </string>
           </argument>
         </arguments>
@@ -428,9 +450,6 @@ If the content within the player's inventory matches the room's list, then give 
 if(keyboard_check_released(vk_up) &amp;&amp; instance_nearest(x, y, obj_door).doorExit &amp;&amp; global.room_type == 1) 
 {
 
-    log_list(0, "Inventory List: ", global.inventory);
-    log_list(0, "Room List: ", global.room_list);
-
     //Set variables for size of lists
     room_array_size = ds_list_size(global.room_list);
     inventory_size = ds_list_size(global.inventory);
@@ -460,7 +479,7 @@ if(keyboard_check_released(vk_up) &amp;&amp; instance_nearest(x, y, obj_door).do
         {
             is_winning = true;
             instance_create(0, 0, obj_win);
-            log(1, "obj_player: Door Collide Event: Correct Atoms: instance_create: obj_win");
+            show_debug_message("obj_player: Event Collide: obj_door:  instance_create: obj_win");
             global.totalPoints = global.points - round(global.roomPoints) + global.totalPoints;
             obj_timer.stop = true;
             with(instance_nearest(x, y, obj_door)) doorExit = false;
@@ -472,7 +491,7 @@ if(keyboard_check_released(vk_up) &amp;&amp; instance_nearest(x, y, obj_door).do
         {   
             is_winning = false;
             instance_create(0, 0, obj_gameover);
-            log(1, "obj_player: Door Collide Event: Incorrect Atoms: instance_create: obj_gameover");
+            show_debug_message("obj_player: Event Collide: obj_door: On Lose: instance_create: obj_gameover");
             obj_timer.stop = true;
             toggle = -1;
             attempts++;
@@ -484,12 +503,10 @@ if(keyboard_check_released(vk_up) &amp;&amp; instance_nearest(x, y, obj_door).do
     {
         is_winning = false;
         instance_create(0, 0, obj_gameover);
-        log(1, "obj_player: Door Collide Event: Incorect List Size: instance_create: obj_gameover");
+        show_debug_message("obj_player: Event Collide: obj_door: Incorrect List Size: instance_create: obj_gameover");
         obj_timer.stop = true;
         toggle = -1;
         attempts++;
-        
-        log(1, "");
     }
 }
 </string>
@@ -522,9 +539,6 @@ error if timer is stopped in Lab room, therefore the duplicated code for both ro
 
 if(keyboard_check_released(vk_up) &amp;&amp; instance_nearest(x, y, obj_door).doorExit &amp;&amp; global.room_type == -1) 
 {
-
-    log_list(0, "Inventory List: ", global.inventory);
-    log_list(0, "Room List: ", global.room_list);
 
     //Set variables for size of lists
     room_array_size = ds_list_size(global.room_list);
@@ -650,22 +664,26 @@ else
             <kind>1</kind>
             <string>/// Adds Values from Received Atom
 
-total_charge += instance_nearest(x, y, obj_atom1).charge;
-ds_list_add(global.inventory, instance_nearest(x, y, obj_atom1).symbol);
-log(0, "Add to Inventory: " + string(instance_nearest(x, y, obj_atom1).symbol));
-complete = false;
-
-for(i = 0; i &lt; ds_list_size(global.room_list); i++)
+if(keyboard_check_pressed(ord("Z")))
 {
-    if(instance_nearest(x, y, obj_atom1).symbol == ds_list_find_value(global.room_list, i))
+    total_charge += instance_nearest(x, y, obj_atom1).charge;
+    ds_list_add(global.inventory, instance_nearest(x, y, obj_atom1).symbol);
+    show_debug_message("Add to Inventory: " + string(instance_nearest(x, y, obj_atom1).symbol));
+    complete = false;
+    
+    for(i = 0; i &lt; ds_list_size(global.room_list); i++)
     {
-        global.points += 200;
-        complete = true;
+        if(instance_nearest(x, y, obj_atom1).symbol == ds_list_find_value(global.room_list, i))
+        {
+            global.points += 200;
+            complete = true;
+        }
+        if(complete)
+        {
+            break;
+        }
     }
-    if(complete)
-    {
-        break;
-    }
+
 }
 </string>
           </argument>
@@ -693,20 +711,18 @@ for(i = 0; i &lt; ds_list_size(global.room_list); i++)
 
 if(is_winning)
 {
-    log(1, "Spacebar event: obj_player.is_winning: " + string(is_winning));
+    show_debug_message("obj_player: Event &lt;Space&gt;: is_winning: " + string(is_winning));
     
     ds_list_clear(global.inventory);
     global.points = 0;
     global.roomPoints = 0;
-    room_goto_next();
     toggle = 0;
-    x = 32;
-    y = 320;
     is_winning = false;
     
+    //Check if the current room is the last room
     if(room = room_last)
     {
-        log(0, "Last room");
+        show_debug_message("obj_player: Event &lt;Space&gt;: Highscore Input");
     
         //stores the player name 
         name = get_string("Please enter your name:","");
@@ -719,6 +735,13 @@ if(is_winning)
         x = 32;
         y = 320;
     }
+    else 
+    {
+        room_goto_next();
+        x = 32;
+        y = 320;
+    }
+    
 }
 
 </string>
@@ -745,7 +768,7 @@ if(is_winning)
             <kind>1</kind>
             <string>/// Wrap the Room for Player
 
-log(1, "obj_player: Outside Room Event: move_wrap initialize");
+show_debug_message("obj_player: Event Outside Room: move_wrap");
 move_wrap(true, false, rm1);
 </string>
           </argument>
@@ -801,31 +824,31 @@ Checks if player has both collected the right atoms and checks if the inventory 
 
 if(!obj_player.is_winning || (ds_list_size(global.inventory) != 0) &amp;&amp; global.room_type == 1)
 {
-    log(1, "obj_player.is_winning == " + string(obj_player.is_winning));
-    log(1, "obj_player: OnKeyPress Event [R]: Restart Room");
+    show_debug_message("obj_player.is_winning == " + string(obj_player.is_winning));
+    show_debug_message("obj_player: OnKeyPress Event [R]: Restart Room");
     
     obj_player.x = 32;
     obj_player.y = 415;
-    log(1, "obj_player.x: " + string(obj_player.x));
-    log(1, "obj_player.y: " + string(obj_player.y));
+    show_debug_message("obj_player.x: " + string(obj_player.x));
+    show_debug_message("obj_player.y: " + string(obj_player.y));
     
     toggle = 0;
     global.points = 0;
     ds_list_clear(global.inventory);
     room_restart();
     obj_player.attempts = 0;
-    log(1, "obj_player.attempts: " + string(obj_player.attempts));
+    show_debug_message("obj_player.attempts: " + string(obj_player.attempts));
 }
 
 if(!obj_player.is_winning || (ds_list_size(global.inventory) != 0) &amp;&amp; global.room_type == -1)
 {
-    log(1, "obj_player.is_winning == " + string(obj_player.is_winning));
-    log(1, "obj_player: OnKeyPress Event [R]: Restart Room");
+    show_debug_message("obj_player.is_winning == " + string(obj_player.is_winning));
+    show_debug_message("obj_player: OnKeyPress Event [R]: Restart Room");
     
     obj_player.x = 32;
     obj_player.y = 300;
-    log(1, "obj_player.x: " + string(obj_player.x));
-    log(1, "obj_player.y: " + string(obj_player.y));
+    show_debug_message("obj_player.x: " + string(obj_player.x));
+    show_debug_message("obj_player.y: " + string(obj_player.y));
     
     toggle = 0;
     global.points = 0;
