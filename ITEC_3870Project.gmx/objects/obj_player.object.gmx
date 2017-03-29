@@ -26,6 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>/// Initialize Player Variables
+name = "Atom";
 
 // Physics Variables
 grav = 0.2;
@@ -43,6 +44,8 @@ spr_jump = spr_boy1_jump;
 spr_fall = spr_boy1_fall;
 image_speed = 0;
 depth = -3;
+idle = false;
+idle_count = 0;
 
 // Mechanic Variables
 total_charge = 0;
@@ -106,20 +109,22 @@ audio_play_sound(music_AtomPuzzlerTheme, 1, true);
 // Checks Case for Character
 switch(spr)
 {
-    case "boy1":
-    {
-        spr_run = spr_boy1;
-        spr_jump = spr_boy1_jump;
-        spr_fall = spr_boy1_fall;
-        break;
-    }
-    case "girl1":
-    {
-        spr_run = spr_girl1;
-        spr_jump = spr_girl1_jump;
-        spr_fall = spr_girl1_fall;
-        break;
-    }
+   case "boy1":
+   {
+       spr_run = spr_boy1;
+       spr_jump = spr_boy1_jump;
+       spr_fall = spr_boy1_fall;
+       spr_idle = spr_boy1_idle;
+       break;
+   }
+   case "girl1":
+   {
+       spr_run = spr_girl1;
+       spr_jump = spr_girl1_jump;
+       spr_fall = spr_girl1_fall;
+       spr_idle = spr_girl1_idle
+       break;
+   }
 }
 </string>
           </argument>
@@ -158,41 +163,56 @@ one less than its image_number, then the image_speed becomes
 zero so the fall animation doesn't repeat.
 */
 
+
 if(mvmt != 0)
 {
-    image_xscale = mvmt;
+   image_xscale = mvmt;
 }
-
 if(place_meeting(x, y + 1, obj_obstacle))
 {
-    if(mvmt != 0)
-    {
-        sprite_index = spr_run;
-        image_speed = 0.2;
-    }
-    else
-    {
-        sprite_index = spr_run;
-        image_speed = 0;
-        image_index = 0;
-    }
+   if(mvmt != 0)
+   {
+       sprite_index = spr_idle;
+       image_speed = 0.2;
+       idle_count = 0;
+       idle = false;
+   }
+   else
+   {
+       if(idle)
+       {
+           sprite_index = spr_idle;
+           image_speed = 0.2;
+       }
+       else
+       {
+           idle_count++;
+           sprite_index = spr_run;
+           image_speed = 0;
+           image_index = 0;
+           if(idle_count == 600)
+           {
+               idle = true;
+           }
+       }
+   }
 }
 else
 {
-    if(vspd &lt; 0)
-    {
-        sprite_index = spr_jump;
-        image_speed = 0;
-    }
-    else
-    {
-        sprite_index = spr_fall;
-        image_speed = 0.2;
-        if(image_index = image_number - 1)
-        {
-            image_speed = 0;
-        }
-    }
+   if(vspd == 0)
+   {
+       sprite_index = spr_jump;
+       image_speed = 0;
+   }
+   else
+   {
+       sprite_index = spr_fall;
+       image_speed = 0.2;
+       if(image_index = image_number - 1)
+       {
+           image_speed = 0;
+       }
+   }
 }
 </string>
           </argument>
@@ -373,7 +393,7 @@ hspd = mvmt * mspd;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///On Key Press Z, drops previous atom picked
+            <string>///On Key Press X, drops previous atom picked
 
 //  Notes: Deleting from ds_list does not change list size.
 //  TODO: Remove last item from list, clear list, put leftover items into list again, this will require two lists maybe
@@ -663,6 +683,8 @@ else
           <argument>
             <kind>1</kind>
             <string>/// Adds Values from Received Atom
+
+// On Key Press Z, picks up atom
 
 if(keyboard_check_pressed(ord("Z")))
 {

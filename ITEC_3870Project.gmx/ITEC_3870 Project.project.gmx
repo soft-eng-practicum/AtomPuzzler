@@ -24,6 +24,7 @@
   </datafiles>
   <NewExtensions>
     <extension index="0">extensions\Essential Scripts</extension>
+    <extension index="1">extensions\StaticCube - Log Console</extension>
   </NewExtensions>
   <sounds name="sound">
     <sound>sound\sfx_Select</sound>
@@ -165,12 +166,16 @@
       <script>scripts\scr_get_message.gml</script>
       <script>scripts\scr_get_type.gml</script>
       <script>scripts\scr_get_solution.gml</script>
-      <script>scripts\scr_get_hint.gml</script>
       <script>scripts\scr_array_to_list.gml</script>
+      <script>scripts\scr_get_hint.gml</script>
+      <script>scripts\scr_get_difficulty.gml</script>
     </scripts>
     <scripts name="Atom">
       <script>scripts\scr_drop_atom.gml</script>
+      <script>scripts\scr_create_room_atoms.gml</script>
+      <script>scripts\scr_get_array_of_atoms.gml</script>
       <script>scripts\scr_get_atom.gml</script>
+      <script>scripts\scr_get_random_atom.gml</script>
     </scripts>
   </scripts>
   <fonts name="fonts">

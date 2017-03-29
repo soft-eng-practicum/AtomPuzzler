@@ -1,19 +1,30 @@
-///scr_get_atom(array)
+///scr_get_atom(String symbol)
 /*
-    Gets the array from scr_get_solution
-    E.g. (Given)
-        array[0] = "Na"
-        array[1] = "O"
-        array[2] = "H"
+    Gets the symbol of an atom (a String value)
+    E.g.
+        scr_get_atom("Na");
+        returns obj_atom_Na;
         
-    Take array and return an array of objects associated with the symbol.
-    
-    If given an array of {"Na", "O", "H"}
-        new_array[0] = obj_atom_na
-        new_array[1] = obj_atom_o
-        new_array[2] = obj_atom_h
+    Script: Takes the symbol and returns an object
+    @return obj_atom
 */
 
-var array = argument[0];
+var symbol = argument[0];
+var obj;
 
-
+switch(symbol)
+{
+    case "H":
+        obj = obj_atom_H;
+        break;
+    case "O":
+        obj = obj_atom_O;
+        break;
+    case "Na":
+        obj = obj_atom_Na;
+        break;
+    default:
+        obj = "No Object Found";
+    
+    return obj;
+}
