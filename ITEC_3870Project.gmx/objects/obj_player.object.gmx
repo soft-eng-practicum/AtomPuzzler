@@ -41,6 +41,8 @@ spr = "boy1"
 spr_run = spr_boy1;
 spr_jump = spr_boy1_jump;
 spr_fall = spr_boy1_fall;
+idle = false;
+idle_count = 0;
 image_speed = 0;
 depth = -3;
 
@@ -101,46 +103,6 @@ audio_play_sound(music_AtomPuzzlerTheme, 1, true);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Change Character
-
-// Checks Case for Character
-switch(spr)
-{
-    case "boy1":
-    {
-        spr_run = spr_boy1;
-        spr_jump = spr_boy1_jump;
-        spr_fall = spr_boy1_fall;
-        break;
-    }
-    case "girl1":
-    {
-        spr_run = spr_girl1;
-        spr_jump = spr_girl1_jump;
-        spr_fall = spr_girl1_fall;
-        break;
-    }
-}
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
             <string>/// Sprite Operations
 
 /* The player's sprite will turn left and right
@@ -167,14 +129,29 @@ if(place_meeting(x, y + 1, obj_obstacle))
 {
     if(mvmt != 0)
     {
-        sprite_index = spr_run;
+        sprite_index = spr_idle;
         image_speed = 0.2;
+        idle_count = 0;
+        idle = false;
     }
     else
     {
-        sprite_index = spr_run;
-        image_speed = 0;
-        image_index = 0;
+        if(idle)
+        {
+            sprite_index = spr_idle;
+            image_speed = 0.2;
+        }
+        else
+        {
+            idle_count++;
+            sprite_index = spr_run;
+            image_speed = 0;
+            image_index = 0;
+            if(idle_count == 600)
+            {
+                idle = true;
+            }
+        }
     }
 }
 else
@@ -353,6 +330,48 @@ if(toggle != 0)
 }
 
 hspd = mvmt * mspd;
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Change Character
+
+// Checks Case for Character
+switch(spr)
+{
+    case "boy1":
+    {
+        spr_run = spr_boy1;
+        spr_jump = spr_boy1_jump;
+        spr_fall = spr_boy1_fall;
+        spr_idle = spr_boy1_idle;
+        break;
+    }
+    case "girl1":
+    {
+        spr_run = spr_girl1;
+        spr_jump = spr_girl1_jump;
+        spr_fall = spr_girl1_fall;
+        spr_idle = spr_girl1_idle
+        break;
+    }
+}
 </string>
           </argument>
         </arguments>
