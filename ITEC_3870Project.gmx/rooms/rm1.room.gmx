@@ -18,8 +18,8 @@ global.message[0] = scr_get_message(array);
 global.room_type = scr_get_type(array);
 global.correct_charge = 0;
 
-// Create list
-global.room_list = ds_list_create();
+// Clear the previous list
+ds_list_clear(global.room_list);
 
 // Add values to list
 var s_array = scr_get_solution(array);

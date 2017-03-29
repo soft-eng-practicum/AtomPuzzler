@@ -664,7 +664,7 @@ else
             <kind>1</kind>
             <string>/// Adds Values from Received Atom
 
-if(keyboard_check(ord("Z")))
+if(keyboard_check_pressed(ord("Z")))
 {
     total_charge += instance_nearest(x, y, obj_atom1).charge;
     ds_list_add(global.inventory, instance_nearest(x, y, obj_atom1).symbol);

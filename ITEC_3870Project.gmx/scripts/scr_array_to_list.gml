@@ -1,4 +1,6 @@
 ///scr_array_to_list(array, list)
+// Gets array from scr_get_solution
+// Gets list from global.room_list
 /*
     Takes given array of strings and adds it to the list
 */

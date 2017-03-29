@@ -12,18 +12,22 @@
   <showcolour>-1</showcolour>
   <code>///Must be first room
 
+//Constant States for transition (WIP)
 enum transition 
 {
     stripe_hor,
     stripe_ver
 }
 
-
+//Randomize values for testing irandom vs random
 for(i = 0; i &lt; 10; i++) 
 {
     var n = irandom(10);
     show_debug_message(string(i) + ": " + string(n));
 }
+
+// Create list, this list will store all correct atoms
+global.room_list = ds_list_create();
 
 room_goto_next();</code>
   <enableViews>0</enableViews>

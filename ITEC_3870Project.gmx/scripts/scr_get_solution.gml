@@ -1,11 +1,12 @@
 ///scr_get_solution(array)
+// Gets array from scr_read_file
 /*
     The param array contains a complete String for the solution. e.g. "HOH"
     Separates array and stores into new array of String and return array.
     
     E.g.
-        Given:      ["NaOH"]
-        Result:     ["Na", "O", "H"]
+        Given:      {"Na, O, H"}
+        Result:     {"Na", "O", "H"}
     
     @return array
 */
