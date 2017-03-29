@@ -168,6 +168,10 @@
       <script>scripts\scr_get_hint.gml</script>
       <script>scripts\scr_array_to_list.gml</script>
     </scripts>
+    <scripts name="Atom">
+      <script>scripts\scr_drop_atom.gml</script>
+      <script>scripts\scr_get_atom.gml</script>
+    </scripts>
   </scripts>
   <fonts name="fonts">
     <font>fonts\font_large</font>

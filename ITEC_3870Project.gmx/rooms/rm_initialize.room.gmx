@@ -18,6 +18,13 @@ enum transition
     stripe_ver
 }
 
+
+for(i = 0; i &lt; 10; i++) 
+{
+    var n = irandom(10);
+    show_debug_message(string(i) + ": " + string(n));
+}
+
 room_goto_next();</code>
   <enableViews>0</enableViews>
   <clearViewBackground>-1</clearViewBackground>

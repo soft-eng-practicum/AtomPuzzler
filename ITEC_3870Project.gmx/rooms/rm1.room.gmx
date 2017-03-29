@@ -10,7 +10,7 @@
   <persistent>0</persistent>
   <colour>12632256</colour>
   <showcolour>-1</showcolour>
-  <code>//Read file, needs to be initiated first
+  <code>// Read file, needs to be initiated first
 var array = scr_read_file("settings.ini", room_get_name(room));
 
 // Initialize Variables
@@ -25,10 +25,7 @@ global.room_list = ds_list_create();
 var s_array = scr_get_solution(array);
 scr_array_to_list(s_array, global.room_list);
 
-//ds_list_add(global.room_list, s_array[0], s_array[1], s_array[2]);
-//ds_list_add(global.room_list, "H", "O", "H",);
-
-//Stop timer
+// Stop timer
 obj_timer.stop = true;</code>
   <enableViews>0</enableViews>
   <clearViewBackground>-1</clearViewBackground>
