@@ -48,6 +48,8 @@
       <sprite>sprites\spr_playertest</sprite>
       <sprite>sprites\spr_girl1_fall</sprite>
       <sprite>sprites\spr_girl1_jump</sprite>
+      <sprite>sprites\spr_boy1_idle</sprite>
+      <sprite>sprites\spr_girl1_idle</sprite>
     </sprites>
     <sprites name="Atom">
       <sprites name="Lewis Structure">
