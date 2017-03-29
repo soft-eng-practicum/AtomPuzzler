@@ -3,6 +3,25 @@
   <Configs name="configs">
     <Config>Configs\Default</Config>
   </Configs>
+  <datafiles number="2" name="datafiles">
+    <datafile>
+      <name>settings.ini</name>
+      <exists>-1</exists>
+      <size>0</size>
+      <exportAction>2</exportAction>
+      <exportDir></exportDir>
+      <overwrite>0</overwrite>
+      <freeData>-1</freeData>
+      <removeEnd>0</removeEnd>
+      <store>0</store>
+      <ConfigOptions>
+        <Config name="Default">
+          <CopyToMask>615726525288686</CopyToMask>
+        </Config>
+      </ConfigOptions>
+      <filename>settings.ini</filename>
+    </datafile>
+  </datafiles>
   <NewExtensions>
     <extension index="0">extensions\Essential Scripts</extension>
     <extension index="1">extensions\StaticCube - Log Console</extension>
@@ -29,6 +48,8 @@
       <sprite>sprites\spr_playertest</sprite>
       <sprite>sprites\spr_girl1_fall</sprite>
       <sprite>sprites\spr_girl1_jump</sprite>
+      <sprite>sprites\spr_boy1_idle</sprite>
+      <sprite>sprites\spr_girl1_idle</sprite>
     </sprites>
     <sprites name="Atom">
       <sprites name="Lewis Structure">
@@ -46,22 +67,24 @@
           <sprite>sprites\spr_lewis_naoh_incorrect2</sprite>
         </sprites>
       </sprites>
-      <sprite>sprites\spr_atom_c</sprite>
-      <sprite>sprites\spr_atom_f</sprite>
-      <sprite>sprites\spr_atom_h</sprite>
-      <sprite>sprites\spr_atom_n</sprite>
-      <sprite>sprites\spr_atom_o</sprite>
+      <sprite>sprites\spr_atom_C</sprite>
+      <sprite>sprites\spr_atom_S</sprite>
+      <sprite>sprites\spr_atom_Cl</sprite>
+      <sprite>sprites\spr_atom_F</sprite>
+      <sprite>sprites\spr_atom_H</sprite>
+      <sprite>sprites\spr_atom_N</sprite>
+      <sprite>sprites\spr_atom_O</sprite>
       <sprite>sprites\spr_atom_test1</sprite>
       <sprite>sprites\spr_atom_test2</sprite>
       <sprite>sprites\spr_atom_Ti</sprite>
-      <sprite>sprites\spr_atom_fe</sprite>
+      <sprite>sprites\spr_atom_Fe</sprite>
       <sprites name="Alkali metal">
-        <sprite>sprites\spr_atom_li</sprite>
-        <sprite>sprites\spr_atom_na</sprite>
-        <sprite>sprites\spr_atom_k</sprite>
-        <sprite>sprites\spr_atom_rb</sprite>
-        <sprite>sprites\spr_atom_cs</sprite>
-        <sprite>sprites\spr_atom_fr</sprite>
+        <sprite>sprites\spr_atom_Li</sprite>
+        <sprite>sprites\spr_atom_Na</sprite>
+        <sprite>sprites\spr_atom_K</sprite>
+        <sprite>sprites\spr_atom_Rb</sprite>
+        <sprite>sprites\spr_atom_Cs</sprite>
+        <sprite>sprites\spr_atom_Fr</sprite>
       </sprites>
       <sprites name="Alkaline earth metal">
         <sprite>sprites\spr_atom_Be</sprite>
@@ -107,10 +130,6 @@
     <path>paths\path1</path>
   </paths>
   <scripts name="scripts">
-    <scripts name="Console">
-      <script>scripts\log.gml</script>
-      <script>scripts\log_list.gml</script>
-    </scripts>
     <scripts name="Drawing">
       <script>scripts\draw_text_outlined.gml</script>
       <script>scripts\draw_text_shadow.gml</script>
@@ -144,12 +163,27 @@
       <script>scripts\scr_compare_string.gml</script>
       <script>scripts\scr_sort_list.gml</script>
     </scripts>
+    <scripts name="FileIO">
+      <script>scripts\scr_read_file.gml</script>
+      <script>scripts\scr_get_message.gml</script>
+      <script>scripts\scr_get_type.gml</script>
+      <script>scripts\scr_get_solution.gml</script>
+      <script>scripts\scr_array_to_list.gml</script>
+      <script>scripts\scr_get_hint.gml</script>
+      <script>scripts\scr_get_difficulty.gml</script>
+    </scripts>
+    <scripts name="Atom">
+      <script>scripts\scr_drop_atom.gml</script>
+      <script>scripts\scr_create_room_atoms.gml</script>
+      <script>scripts\scr_get_array_of_atoms.gml</script>
+      <script>scripts\scr_get_atom.gml</script>
+      <script>scripts\scr_get_random_atom.gml</script>
+    </scripts>
   </scripts>
   <fonts name="fonts">
-    <font>fonts\fntScLogFont</font>
-    <font>fonts\font_Default</font>
-    <font>fonts\font_small</font>
     <font>fonts\font_large</font>
+    <font>fonts\font_small</font>
+    <font>fonts\font_Default</font>
   </fonts>
   <objects name="objects">
     <objects name="Player">
@@ -157,6 +191,9 @@
     </objects>
     <objects name="Atom">
       <object>objects\obj_atom_h</object>
+      <object>objects\obj_atom_n</object>
+      <object>objects\obj_atom_s</object>
+      <object>objects\obj_atom_cl</object>
       <object>objects\obj_atom_na</object>
       <object>objects\obj_atom_o</object>
       <object>objects\obj_atom1</object>
@@ -189,7 +226,6 @@
     <objects name="Pausing">
       <object>objects\obj_pause</object>
       <object>objects\par_pausable</object>
-      <object>objects\obj_pause_control</object>
     </objects>
     <objects name="Room">
       <object>objects\obj_door</object>
@@ -217,14 +253,14 @@
       <object>objects\obj_inventory</object>
       <object>objects\obj_room_list</object>
       <object>objects\obj_lewis_text</object>
-      <objects name="LogConsole">
-        <object>objects\objScLogConsole</object>
-      </objects>
     </objects>
     <objects name="Vitrual keys">
       <object>objects\obj_leftKey</object>
       <object>objects\obj_rightKey</object>
       <object>objects\obj_jumpKey</object>
+    </objects>
+    <objects name="FileIO">
+      <object>objects\obj_file_io</object>
     </objects>
   </objects>
   <rooms name="rooms">
@@ -244,6 +280,9 @@
       <room>rooms\rm1_lab</room>
       <room>rooms\rm2</room>
       <room>rooms\rm2_lab</room>
+      <room>rooms\rm3</room>
+      <room>rooms\rm4</room>
+      <room>rooms\rm5</room>
     </rooms>
   </rooms>
   <constants number="10">

@@ -1,4 +1,4 @@
-///scr_sort_list(argument0)
+///scr_sort_list(list)
 /*
     @params: ds_list
     @scripts: scr_compare_string

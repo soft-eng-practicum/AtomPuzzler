@@ -256,3 +256,17 @@ git pull
 git add -A
 git commit -m "Added some new animations for atom sprites and upped the image_speed for more user-friendly gameplay."
 git push
+git pull
+git add -A
+git commit -m "Took out right mouse click for jump."
+git push
+git pull
+git status
+git pull
+git status
+git pull
+git pull
+git status
+git pull
+git status
+git pull

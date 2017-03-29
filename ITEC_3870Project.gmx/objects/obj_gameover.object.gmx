@@ -59,7 +59,7 @@ display the appropriate message when player loses
 */
 
 if(attempts &gt; 1) {
-    log(0, "Player attempts: " + attempts);
+    show_debug_message("Player attempts: " + attempts);
 }
 </string>
           </argument>
