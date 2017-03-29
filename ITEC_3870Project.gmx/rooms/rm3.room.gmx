@@ -11,7 +11,7 @@
   <colour>12632256</colour>
   <showcolour>-1</showcolour>
   <code>//Read file, needs to be initiated first
-var array = scr_read_file("settings.ini", room_get_name(room));
+var array = scr_read_file("room_settings.ini", room_get_name(room));
 
 // Initialize Variables
 global.message[0] = scr_get_message(array);
