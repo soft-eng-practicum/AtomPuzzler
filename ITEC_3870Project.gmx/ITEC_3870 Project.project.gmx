@@ -170,6 +170,9 @@
         <script>scripts\passedTest.gml</script>
         <script>scripts\failedTest.gml</script>
       </scripts>
+      <scripts name="Debug Console">
+        <script>scripts\scr_debug_list.gml</script>
+      </scripts>
     </scripts>
     <scripts name="Pause">
       <script>scripts\scr_draw_gui_pause.gml</script>

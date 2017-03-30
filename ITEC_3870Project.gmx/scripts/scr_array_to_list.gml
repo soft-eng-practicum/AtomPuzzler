@@ -15,4 +15,4 @@ for(i = 0; i < array_length_1d(array); i++)
     ds_list_add(list, array[i]);
 }
 
-show_debug_message("scr_array_to_list: Final List: " + debug_string);
+//show_debug_message("scr_array_to_list: Final List: " + debug_string);
