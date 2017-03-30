@@ -37,5 +37,5 @@ switch(symbol)
         break;
 }
 
-show_debug_message("scr_get_atom: " + string(obj.symbol));
+//show_debug_message("scr_get_atom: " + string(obj.symbol));
 return obj;
