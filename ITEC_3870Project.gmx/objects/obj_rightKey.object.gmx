@@ -27,7 +27,7 @@
             <kind>1</kind>
             <string>///right virtual key
 
-key_right= virtual_key_add(x,y,32,32,vk_right);
+    key_right= virtual_key_add(x,y,32,32,vk_right);
 </string>
           </argument>
         </arguments>

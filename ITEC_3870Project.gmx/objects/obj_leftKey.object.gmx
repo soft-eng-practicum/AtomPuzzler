@@ -25,9 +25,9 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///left virtual key
+            <string>
+        key_left= virtual_key_add(x,y,32,32,vk_left);
 
-key_left= virtual_key_add(x,y,32,32,vk_left);
 </string>
           </argument>
         </arguments>
