@@ -6,11 +6,13 @@
   <vsnap>32</vsnap>
   <hsnap>32</hsnap>
   <isometric>0</isometric>
-  <speed>30</speed>
+  <speed>60</speed>
   <persistent>0</persistent>
   <colour>12632256</colour>
   <showcolour>-1</showcolour>
   <code>///Must be first room
+
+global.alarm_controller = -1;
 
 //Constant States for transition (WIP)
 enum transition 
@@ -19,12 +21,14 @@ enum transition
     stripe_ver
 }
 
+/*
 //Randomize values for testing irandom vs random
 for(i = 0; i &lt; 10; i++) 
 {
     var n = irandom(10);
     show_debug_message(string(i) + ": " + string(n));
 }
+*/
 
 // Create list, this list will store all correct atoms
 global.room_list = ds_list_create();
@@ -69,7 +73,12 @@ room_goto_next();</code>
     <view visible="0" objName="&lt;undefined&gt;" xview="0" yview="0" wview="1024" hview="768" xport="0" yport="0" wport="1024" hport="768" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
     <view visible="0" objName="&lt;undefined&gt;" xview="0" yview="0" wview="1024" hview="768" xport="0" yport="0" wport="1024" hport="768" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
   </views>
-  <instances/>
+  <instances>
+    <instance objName="obj_atom_H" x="32" y="512" name="inst_F5DAD8D3" locked="-1" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_atom_O" x="64" y="32" name="inst_235449A8" locked="-1" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_atom_N" x="96" y="32" name="inst_E92E0128" locked="-1" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_atom_Na" x="128" y="32" name="inst_69F24DC9" locked="-1" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+  </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>
   <PhysicsWorldTop>0</PhysicsWorldTop>

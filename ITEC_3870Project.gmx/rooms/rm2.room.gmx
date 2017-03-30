@@ -10,23 +10,7 @@
   <persistent>0</persistent>
   <colour>12632256</colour>
   <showcolour>-1</showcolour>
-  <code>//Read file, needs to be initiated first
-var array = scr_read_file("room_settings.ini", room_get_name(room));
-
-// Initialize Variables
-global.message[0] = scr_get_message(array);
-global.room_type = scr_get_type(array);
-global.correct_charge = 0;
-
-// Clear the previous list
-ds_list_clear(global.room_list);
-
-// Add values to list
-var s_array = scr_get_solution(array);
-scr_array_to_list(s_array, global.room_list);
-
-//Stop timer
-obj_timer.stop = true;</code>
+  <code>scr_initialize_room_properties();</code>
   <enableViews>0</enableViews>
   <clearViewBackground>-1</clearViewBackground>
   <clearDisplayBuffer>-1</clearDisplayBuffer>
@@ -97,7 +81,6 @@ obj_timer.stop = true;</code>
     <instance objName="obj_obstacle" x="196" y="128" name="inst_5370EAC2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_obstacle" x="224" y="128" name="inst_CAB65609" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_obstacle" x="256" y="128" name="inst_638F67EF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_atom_h" x="184" y="68" name="inst_71248B58" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_obstacle" x="416" y="192" name="inst_F0FF6022" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_obstacle" x="444" y="192" name="inst_0A94E251" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_obstacle" x="280" y="128" name="inst_676B3D44" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -107,10 +90,11 @@ obj_timer.stop = true;</code>
     <instance objName="obj_door" x="605" y="201" name="inst_41FEE7D2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_obstacle" x="468" y="344" name="inst_BC48A889" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_obstacle" x="496" y="344" name="inst_126C5B43" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_atom_na" x="352" y="412" name="inst_89AFFE42" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_atom_o" x="428" y="136" name="inst_DB8FDE17" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_atom_h" x="268" y="68" name="inst_47453CA3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_atom_O" x="108" y="504" name="inst_DB8FDE17" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_atom_H" x="44" y="504" name="inst_47453CA3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_dialogue" x="304" y="20" name="inst_82FF5677" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_atom_Na" x="12" y="504" name="inst_39D57FFB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_atom_N" x="76" y="504" name="inst_56D3BA77" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

@@ -191,7 +191,6 @@
     </scripts>
     <scripts name="Atom">
       <script>scripts\scr_drop_atom.gml</script>
-      <script>scripts\scr_create_room_atoms.gml</script>
       <script>scripts\scr_get_array_of_atoms.gml</script>
       <script>scripts\scr_get_atom.gml</script>
       <script>scripts\scr_get_random_atom.gml</script>
@@ -199,6 +198,8 @@
     <scripts name="Room">
       <script>scripts\scr_randomize_rooms.gml</script>
       <script>scripts\scr_get_all_rooms.gml</script>
+      <script>scripts\scr_initialize_room_properties.gml</script>
+      <script>scripts\scr_create_room_atoms.gml</script>
     </scripts>
   </scripts>
   <fonts name="fonts">
@@ -211,12 +212,12 @@
       <object>objects\obj_player</object>
     </objects>
     <objects name="Atom">
-      <object>objects\obj_atom_h</object>
-      <object>objects\obj_atom_n</object>
-      <object>objects\obj_atom_s</object>
-      <object>objects\obj_atom_cl</object>
-      <object>objects\obj_atom_na</object>
-      <object>objects\obj_atom_o</object>
+      <object>objects\obj_atom_H</object>
+      <object>objects\obj_atom_N</object>
+      <object>objects\obj_atom_S</object>
+      <object>objects\obj_atom_Cl</object>
+      <object>objects\obj_atom_Na</object>
+      <object>objects\obj_atom_O</object>
       <object>objects\obj_atom1</object>
       <object>objects\obj_atom2</object>
       <object>objects\obj_lew_correct</object>
@@ -279,9 +280,6 @@
       <object>objects\obj_leftKey</object>
       <object>objects\obj_rightKey</object>
       <object>objects\obj_jumpKey</object>
-    </objects>
-    <objects name="FileIO">
-      <object>objects\obj_file_io</object>
     </objects>
   </objects>
   <rooms name="rooms">

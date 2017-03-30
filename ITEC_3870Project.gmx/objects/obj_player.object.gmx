@@ -104,48 +104,6 @@ audio_play_sound(music_AtomPuzzlerTheme, 1, true);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Change Character
-
-// Checks Case for Character
-switch(spr)
-{
-   case "boy1":
-   {
-       spr_run = spr_boy1;
-       spr_jump = spr_boy1_jump;
-       spr_fall = spr_boy1_fall;
-       spr_idle = spr_boy1_idle;
-       break;
-   }
-   case "girl1":
-   {
-       spr_run = spr_girl1;
-       spr_jump = spr_girl1_jump;
-       spr_fall = spr_girl1_fall;
-       spr_idle = spr_girl1_idle
-       break;
-   }
-}
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
             <string>/// Sprite Operations
 
 /* The player's sprite will turn left and right
@@ -212,6 +170,48 @@ else
        {
            image_speed = 0;
        }
+   }
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Change Character
+
+// Checks Case for Character
+switch(spr)
+{
+   case "boy1":
+   {
+       spr_run = spr_boy1;
+       spr_jump = spr_boy1_jump;
+       spr_fall = spr_boy1_fall;
+       spr_idle = spr_boy1_idle;
+       break;
+   }
+   case "girl1":
+   {
+       spr_run = spr_girl1;
+       spr_jump = spr_girl1_jump;
+       spr_fall = spr_girl1_fall;
+       spr_idle = spr_girl1_idle
+       break;
    }
 }
 </string>
@@ -397,7 +397,7 @@ hspd = mvmt * mspd;
 
 //  Notes: Deleting from ds_list does not change list size.
 //  TODO: Remove last item from list, clear list, put leftover items into list again, this will require two lists maybe
-
+/*
 if(keyboard_check_pressed(ord("X")))
 {
 
@@ -409,7 +409,7 @@ if(keyboard_check_pressed(ord("X")))
         show_debug_message( "Size BEFORE drop: " + string(inv_size) );
         show_debug_message( "Dropped from Inventory: " + string(ds_list_find_value(inv, inv_size - 1)) );
         
-        instance_create( obj_player.x, obj_player.y, obj_atom_na);          //needs to drop the last item in list
+        instance_create( obj_player.x, obj_player.y, obj_atom_Na);          //needs to drop the last item in list
         ds_list_delete( inv, inv_size );
         
         show_debug_message( "Size AFTER drop: " + string(inv_size) );
