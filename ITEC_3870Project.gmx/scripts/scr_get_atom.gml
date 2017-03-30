@@ -15,23 +15,27 @@ var obj;
 switch(symbol)
 {
     case "H":
-        obj = obj_atom_h;
+        obj = obj_atom_H;
         break;
     case "O":
-        obj = obj_atom_o;
+        obj = obj_atom_O;
         break;
     case "Na":
-        obj = obj_atom_na;
+        obj = obj_atom_Na;
         break;
     case "S":
-        obj = obj_atom_s;
+        obj = obj_atom_S;
         break;
     case "N":
-        obj = obj_atom_n;
+        obj = obj_atom_N;
+        break;
+    case "Cl":
+        obj = obj_atom_Cl;
         break;
     default:
         obj = -999;     // this should never happen(CHANGE TO AN ERROR OBJECT)
         break;
 }
 
+show_debug_message("scr_get_atom: " + string(obj.symbol));
 return obj;

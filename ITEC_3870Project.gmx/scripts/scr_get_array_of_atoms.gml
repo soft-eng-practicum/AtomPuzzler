@@ -27,7 +27,7 @@ for(i = 0; i < array_size; i++)
     show_debug_message("scr_get_array_of_atoms: Add Object: " + string(new_array[i].symbol));
 }
 
-show_debug_message("Room name: " + string(room_get_name(rm1)));
+show_debug_message("Room name: " + string(room_get_name(room)));
 
 
 return new_array;
