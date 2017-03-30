@@ -261,6 +261,7 @@
       <object>objects\obj_splashTimer</object>
       <object>objects\obj_storeTime</object>
       <object>objects\obj_title</object>
+      <object>objects\init_room_properties</object>
     </objects>
     <objects name="Testing">
       <object>objects\obj_unitTest</object>
