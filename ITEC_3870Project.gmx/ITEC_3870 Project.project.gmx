@@ -73,29 +73,25 @@
         <sprite>sprites\spr_lewis_blank</sprite>
         <sprite>sprites\spr_lewis_correct</sprite>
         <sprite>sprites\spr_lewis_incorrect</sprite>
-        <sprites name="h2o">
+        <sprites name="H2O">
           <sprite>sprites\spr_lewis_h2o_correct</sprite>
           <sprite>sprites\spr_lewis_h2o_incorrect1</sprite>
           <sprite>sprites\spr_lewis_h2o_incorrect2</sprite>
         </sprites>
-        <sprites name="naoh">
+        <sprites name="NaOH">
           <sprite>sprites\spr_lewis_naoh_correct</sprite>
           <sprite>sprites\spr_lewis_naoh_incorrect1</sprite>
           <sprite>sprites\spr_lewis_naoh_incorrect2</sprite>
         </sprites>
       </sprites>
-      <sprite>sprites\spr_atom_C</sprite>
-      <sprite>sprites\spr_atom_S</sprite>
-      <sprite>sprites\spr_atom_Cl</sprite>
-      <sprite>sprites\spr_atom_F</sprite>
-      <sprite>sprites\spr_atom_H</sprite>
-      <sprite>sprites\spr_atom_N</sprite>
-      <sprite>sprites\spr_atom_O</sprite>
-      <sprite>sprites\spr_atom_test1</sprite>
-      <sprite>sprites\spr_atom_test2</sprite>
-      <sprite>sprites\spr_atom_Ti</sprite>
-      <sprite>sprites\spr_atom_Fe</sprite>
-      <sprites name="Alkali metal">
+      <sprites name="Noble Gases">
+        <sprite>sprites\spr_atom_Ar</sprite>
+        <sprite>sprites\spr_atom_He</sprite>
+        <sprite>sprites\spr_atom_Kr</sprite>
+        <sprite>sprites\spr_atom_Ne</sprite>
+        <sprite>sprites\spr_atom_Xe</sprite>
+      </sprites>
+      <sprites name="Alkali Metals">
         <sprite>sprites\spr_atom_Li</sprite>
         <sprite>sprites\spr_atom_Na</sprite>
         <sprite>sprites\spr_atom_K</sprite>
@@ -103,7 +99,7 @@
         <sprite>sprites\spr_atom_Cs</sprite>
         <sprite>sprites\spr_atom_Fr</sprite>
       </sprites>
-      <sprites name="Alkaline earth metal">
+      <sprites name="Alkaline Earth Metals">
         <sprite>sprites\spr_atom_Be</sprite>
         <sprite>sprites\spr_atom_Mg</sprite>
         <sprite>sprites\spr_atom_Ca</sprite>
@@ -111,6 +107,23 @@
         <sprite>sprites\spr_atom_Ba</sprite>
         <sprite>sprites\spr_atom_Ra</sprite>
       </sprites>
+      <sprites name="Various Elements">
+        <sprite>sprites\spr_atom_P</sprite>
+        <sprite>sprites\spr_atom_I</sprite>
+        <sprite>sprites\spr_atom_Fe</sprite>
+        <sprite>sprites\spr_atom_O</sprite>
+        <sprite>sprites\spr_atom_B</sprite>
+        <sprite>sprites\spr_atom_C</sprite>
+        <sprite>sprites\spr_atom_Br</sprite>
+        <sprite>sprites\spr_atom_S</sprite>
+        <sprite>sprites\spr_atom_Cl</sprite>
+        <sprite>sprites\spr_atom_F</sprite>
+        <sprite>sprites\spr_atom_H</sprite>
+        <sprite>sprites\spr_atom_N</sprite>
+        <sprite>sprites\spr_atom_Ti</sprite>
+      </sprites>
+      <sprite>sprites\spr_atom1</sprite>
+      <sprite>sprites\spr_atom2</sprite>
     </sprites>
     <sprites name="Main Menu">
       <sprite>sprites\sp_startGame</sprite>
@@ -220,14 +233,20 @@
       <object>objects\obj_atom_O</object>
       <object>objects\obj_atom1</object>
       <object>objects\obj_atom2</object>
-      <object>objects\obj_lew_correct</object>
-      <object>objects\obj_lew_h2o_correct</object>
-      <object>objects\obj_lew_h2o_incorrect1</object>
-      <object>objects\obj_lew_h2o_incorrect2</object>
-      <object>objects\obj_lew_incorrect</object>
-      <object>objects\obj_lew_naoh_correct</object>
-      <object>objects\obj_lew_naoh_incorrect1</object>
-      <object>objects\obj_lew_naoh_incorrect2</object>
+      <objects name="Lewis Structures">
+        <object>objects\obj_lew_correct</object>
+        <object>objects\obj_lew_incorrect</object>
+        <objects name="NaOH">
+          <object>objects\obj_lew_naoh_correct</object>
+          <object>objects\obj_lew_naoh_incorrect2</object>
+          <object>objects\obj_lew_naoh_incorrect1</object>
+        </objects>
+        <objects name="H2O">
+          <object>objects\obj_lew_h2o_incorrect2</object>
+          <object>objects\obj_lew_h2o_correct</object>
+          <object>objects\obj_lew_h2o_incorrect1</object>
+        </objects>
+      </objects>
     </objects>
     <objects name="Main Menu">
       <object>objects\obj_startGame</object>

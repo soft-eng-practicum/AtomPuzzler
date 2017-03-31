@@ -270,3 +270,17 @@ git status
 git pull
 git status
 git pull
+git pull
+git pull
+git add -A
+git commit -m "Added functionality for the player to have an idle animation."
+git pull
+git pull
+git status
+git add -A
+git commit -m "Functionality for changing sprites removed because of merge conflicts."
+git push
+git pull
+git pull
+git pull
+git pull

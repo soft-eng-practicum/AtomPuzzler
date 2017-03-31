@@ -124,53 +124,57 @@ zero so the fall animation doesn't repeat.
 
 if(mvmt != 0)
 {
-   image_xscale = mvmt;
+    image_xscale = mvmt;
 }
 if(place_meeting(x, y + 1, obj_obstacle))
 {
-   if(mvmt != 0)
-   {
-       sprite_index = spr_idle;
-       image_speed = 0.2;
-       idle_count = 0;
-       idle = false;
-   }
-   else
-   {
-       if(idle)
-       {
-           sprite_index = spr_idle;
-           image_speed = 0.2;
-       }
-       else
-       {
-           idle_count++;
-           sprite_index = spr_run;
-           image_speed = 0;
-           image_index = 0;
-           if(idle_count == 600)
-           {
-               idle = true;
-           }
-       }
-   }
+    if(mvmt != 0)
+    {
+        sprite_index = spr_run;
+        image_speed = 0.2;
+        idle_count = 0;
+        idle = false;
+    }
+    else
+    {
+        if(idle)
+        {
+            sprite_index = spr_idle;
+            image_speed = 0.2;
+        }
+        else
+        {
+            idle_count++;
+            sprite_index = spr_run;
+            image_speed = 0;
+            image_index = 0;
+            if(idle_count == 600)
+            {
+                idle = true;
+            }
+        }
+    }
 }
 else
 {
-   if(vspd == 0)
-   {
-       sprite_index = spr_jump;
-       image_speed = 0;
-   }
-   else
-   {
-       sprite_index = spr_fall;
-       image_speed = 0.2;
-       if(image_index = image_number - 1)
-       {
-           image_speed = 0;
-       }
-   }
+
+    if(vspd &lt;= 0)
+    {
+        sprite_index = spr_jump;
+        image_speed = 0;
+    }
+    else
+    {
+        sprite_index = spr_fall;
+        if(image_index &lt; image_number - 2)
+        {
+            image_speed = 0.2;
+        }
+        else
+        {
+            image_speed = 0;
+        }
+    }
 }
 </string>
           </argument>
