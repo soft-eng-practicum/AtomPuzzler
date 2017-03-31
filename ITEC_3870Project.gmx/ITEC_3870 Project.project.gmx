@@ -285,6 +285,7 @@
       <object>objects\obj_rightKey</object>
       <object>objects\obj_jumpKey</object>
     </objects>
+    <object>objects\obj_operatingSystem</object>
   </objects>
   <rooms name="rooms">
     <rooms name="Main Menu Rooms">
