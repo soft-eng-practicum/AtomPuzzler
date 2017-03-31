@@ -92,34 +92,34 @@
         <sprite>sprites\spr_atom_Xe</sprite>
       </sprites>
       <sprites name="Alkali Metals">
-        <sprite>sprites\spr_atom_Li</sprite>
-        <sprite>sprites\spr_atom_Na</sprite>
-        <sprite>sprites\spr_atom_K</sprite>
-        <sprite>sprites\spr_atom_Rb</sprite>
         <sprite>sprites\spr_atom_Cs</sprite>
         <sprite>sprites\spr_atom_Fr</sprite>
+        <sprite>sprites\spr_atom_K</sprite>
+        <sprite>sprites\spr_atom_Li</sprite>
+        <sprite>sprites\spr_atom_Na</sprite>
+        <sprite>sprites\spr_atom_Rb</sprite>
       </sprites>
       <sprites name="Alkaline Earth Metals">
-        <sprite>sprites\spr_atom_Be</sprite>
-        <sprite>sprites\spr_atom_Mg</sprite>
-        <sprite>sprites\spr_atom_Ca</sprite>
-        <sprite>sprites\spr_atom_Sr</sprite>
         <sprite>sprites\spr_atom_Ba</sprite>
+        <sprite>sprites\spr_atom_Be</sprite>
+        <sprite>sprites\spr_atom_Ca</sprite>
+        <sprite>sprites\spr_atom_Mg</sprite>
         <sprite>sprites\spr_atom_Ra</sprite>
+        <sprite>sprites\spr_atom_Sr</sprite>
       </sprites>
       <sprites name="Various Elements">
-        <sprite>sprites\spr_atom_P</sprite>
-        <sprite>sprites\spr_atom_I</sprite>
-        <sprite>sprites\spr_atom_Fe</sprite>
-        <sprite>sprites\spr_atom_O</sprite>
         <sprite>sprites\spr_atom_B</sprite>
-        <sprite>sprites\spr_atom_C</sprite>
         <sprite>sprites\spr_atom_Br</sprite>
-        <sprite>sprites\spr_atom_S</sprite>
+        <sprite>sprites\spr_atom_C</sprite>
         <sprite>sprites\spr_atom_Cl</sprite>
         <sprite>sprites\spr_atom_F</sprite>
+        <sprite>sprites\spr_atom_Fe</sprite>
         <sprite>sprites\spr_atom_H</sprite>
+        <sprite>sprites\spr_atom_I</sprite>
         <sprite>sprites\spr_atom_N</sprite>
+        <sprite>sprites\spr_atom_O</sprite>
+        <sprite>sprites\spr_atom_P</sprite>
+        <sprite>sprites\spr_atom_S</sprite>
         <sprite>sprites\spr_atom_Ti</sprite>
       </sprites>
       <sprite>sprites\spr_atom1</sprite>

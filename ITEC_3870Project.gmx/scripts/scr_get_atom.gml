@@ -14,28 +14,108 @@ var obj;
 
 switch(symbol)
 {
-    case "H":
-        obj = obj_atom_H;
+    //VARIOUS ELEMENTS (13)
+    case "B":
+        obj = obj_atom_B;
         break;
-    case "O":
-        obj = obj_atom_O;
+    case "Br":
+        obj = obj_atom_Br;
         break;
-    case "Na":
-        obj = obj_atom_Na;
-        break;
-    case "S":
-        obj = obj_atom_S;
-        break;
-    case "N":
-        obj = obj_atom_N;
+    case "C":
+        obj = obj_atom_C;
         break;
     case "Cl":
         obj = obj_atom_Cl;
         break;
+    case "F":
+        obj = obj_atom_F;
+        break;
+    case "Fe":
+        obj = obj_atom_Fe;
+        break;
+    case "H":
+        obj = obj_atom_H;
+        break;
+    case "I":
+        obj = obj_atom_I;
+        break;
+    case "N":
+        obj = obj_atom_N;
+        break;
+    case "O":
+        obj = obj_atom_O;
+        break;
+    case "P":
+        obj = obj_atom_P;
+        break;
+    case "S":
+        obj = obj_atom_S;
+        break;
+    case "Ti":
+        obj = obj_atom_Ti;
+        break;
+    
+    //NOBLE GASES (5)
+    case "Ar":
+        obj = obj_atom_Ar;
+        break;
+    case "He":
+        obj = obj_atom_He;
+        break;
+    case "Kr":
+        obj = obj_atom_Kr;
+        break;
+    case "Ne":
+        obj = obj_atom_Ne;
+        break;
+    case "Xe":
+        obj = obj_atom_Xe;
+        break;
+    
+    //ALKALI METALS (6)
+    case "Cs":
+        obj = obj_atom_Cs;
+        break;
+    case "Fr":
+        obj = obj_atom_Fr;
+        break;
+    case "K":
+        obj = obj_atom_K;
+        break;
+    case "Li":
+        obj = obj_atom_Li;
+        break;
+    case "Na":
+        obj = obj_atom_Na;
+        break;
+    case "Rb":
+        obj = obj_atom_Rb;
+        break;
+    
+    //ALKALINE EARTH METALS (6)
+    case "Ba":
+        obj = obj_atom_Ba;
+        break;
+    case "Be":
+        obj = obj_atom_Be;
+        break;
+    case "Ca":
+        obj = obj_atom_Ca;
+        break;
+    case "Mg":
+        obj = obj_atom_Mg;
+        break;
+    case "Ra":
+        obj = obj_atom_Ra;
+        break;
+    case "Sr":
+        obj = obj_atom_Sr;
+        break;
+    
+    //ATOM SYMBOL DOES NOT EXIST THEREFORE THIS SHOULD NEVER OCCUR
     default:
-        obj = -999;     // this should never happen(CHANGE TO AN ERROR OBJECT)
+        obj = -999;
         break;
 }
 
-//show_debug_message("scr_get_atom: " + string(obj.symbol));
 return obj;
