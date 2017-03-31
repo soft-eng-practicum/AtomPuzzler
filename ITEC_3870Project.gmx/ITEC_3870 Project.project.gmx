@@ -139,7 +139,6 @@
       <script>scripts\scr_compare_string.gml</script>
       <script>scripts\scr_sort_list.gml</script>
     </scripts>
-    <script>scripts\scr_OperatingSystem.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\font_Default</font>
@@ -218,7 +217,6 @@
       <object>objects\obj_rightKey</object>
       <object>objects\obj_jumpKey</object>
     </objects>
-    <object>objects\obj_operatingSystem</object>
   </objects>
   <rooms name="rooms">
     <rooms name="Main Menu Rooms">
