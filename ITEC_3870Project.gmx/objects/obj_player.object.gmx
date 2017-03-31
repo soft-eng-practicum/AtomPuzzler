@@ -434,6 +434,7 @@ if(keyboard_check_pressed(ord("X")))
             <string>/*
 scr_sort_list(global.inventory);
 scr_sort_list(global.room_list);
+*/
 </string>
           </argument>
         </arguments>
