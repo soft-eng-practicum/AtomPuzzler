@@ -3,6 +3,42 @@
   <Configs name="configs">
     <Config>Configs\Default</Config>
   </Configs>
+  <datafiles number="3" name="datafiles">
+    <datafile>
+      <name>settings.ini</name>
+      <exists>-1</exists>
+      <size>0</size>
+      <exportAction>2</exportAction>
+      <exportDir></exportDir>
+      <overwrite>0</overwrite>
+      <freeData>-1</freeData>
+      <removeEnd>0</removeEnd>
+      <store>0</store>
+      <ConfigOptions>
+        <Config name="Default">
+          <CopyToMask>615726525288686</CopyToMask>
+        </Config>
+      </ConfigOptions>
+      <filename>settings.ini</filename>
+    </datafile>
+    <datafile>
+      <name>room_settings.ini</name>
+      <exists>-1</exists>
+      <size>1987</size>
+      <exportAction>2</exportAction>
+      <exportDir></exportDir>
+      <overwrite>0</overwrite>
+      <freeData>-1</freeData>
+      <removeEnd>0</removeEnd>
+      <store>0</store>
+      <ConfigOptions>
+        <Config name="Default">
+          <CopyToMask>9223372036854775807</CopyToMask>
+        </Config>
+      </ConfigOptions>
+      <filename>room_settings.ini</filename>
+    </datafile>
+  </datafiles>
   <NewExtensions>
     <extension index="0">extensions\Essential Scripts</extension>
   </NewExtensions>
@@ -28,6 +64,8 @@
       <sprite>sprites\spr_playertest</sprite>
       <sprite>sprites\spr_girl1_fall</sprite>
       <sprite>sprites\spr_girl1_jump</sprite>
+      <sprite>sprites\spr_boy1_idle</sprite>
+      <sprite>sprites\spr_girl1_idle</sprite>
     </sprites>
     <sprites name="Atom">
       <sprites name="Lewis Structure">
@@ -45,22 +83,24 @@
           <sprite>sprites\spr_lewis_naoh_incorrect2</sprite>
         </sprites>
       </sprites>
-      <sprite>sprites\spr_atom_c</sprite>
-      <sprite>sprites\spr_atom_f</sprite>
-      <sprite>sprites\spr_atom_h</sprite>
-      <sprite>sprites\spr_atom_n</sprite>
-      <sprite>sprites\spr_atom_o</sprite>
+      <sprite>sprites\spr_atom_C</sprite>
+      <sprite>sprites\spr_atom_S</sprite>
+      <sprite>sprites\spr_atom_Cl</sprite>
+      <sprite>sprites\spr_atom_F</sprite>
+      <sprite>sprites\spr_atom_H</sprite>
+      <sprite>sprites\spr_atom_N</sprite>
+      <sprite>sprites\spr_atom_O</sprite>
       <sprite>sprites\spr_atom_test1</sprite>
       <sprite>sprites\spr_atom_test2</sprite>
       <sprite>sprites\spr_atom_Ti</sprite>
-      <sprite>sprites\spr_atom_fe</sprite>
+      <sprite>sprites\spr_atom_Fe</sprite>
       <sprites name="Alkali metal">
-        <sprite>sprites\spr_atom_li</sprite>
-        <sprite>sprites\spr_atom_na</sprite>
-        <sprite>sprites\spr_atom_k</sprite>
-        <sprite>sprites\spr_atom_rb</sprite>
-        <sprite>sprites\spr_atom_cs</sprite>
-        <sprite>sprites\spr_atom_fr</sprite>
+        <sprite>sprites\spr_atom_Li</sprite>
+        <sprite>sprites\spr_atom_Na</sprite>
+        <sprite>sprites\spr_atom_K</sprite>
+        <sprite>sprites\spr_atom_Rb</sprite>
+        <sprite>sprites\spr_atom_Cs</sprite>
+        <sprite>sprites\spr_atom_Fr</sprite>
       </sprites>
       <sprites name="Alkaline earth metal">
         <sprite>sprites\spr_atom_Be</sprite>
@@ -129,6 +169,9 @@
         <script>scripts\passedTest.gml</script>
         <script>scripts\failedTest.gml</script>
       </scripts>
+      <scripts name="Debug Console">
+        <script>scripts\scr_debug_list.gml</script>
+      </scripts>
     </scripts>
     <scripts name="Pause">
       <script>scripts\scr_draw_gui_pause.gml</script>
@@ -139,20 +182,45 @@
       <script>scripts\scr_compare_string.gml</script>
       <script>scripts\scr_sort_list.gml</script>
     </scripts>
+    <scripts name="FileIO">
+      <script>scripts\scr_read_file.gml</script>
+      <script>scripts\scr_get_message.gml</script>
+      <script>scripts\scr_get_type.gml</script>
+      <script>scripts\scr_get_solution.gml</script>
+      <script>scripts\scr_array_to_list.gml</script>
+      <script>scripts\scr_get_hint.gml</script>
+      <script>scripts\scr_get_difficulty.gml</script>
+    </scripts>
+    <scripts name="Atom">
+      <script>scripts\scr_drop_atom.gml</script>
+      <script>scripts\scr_get_array_of_atoms.gml</script>
+      <script>scripts\scr_get_atom.gml</script>
+      <script>scripts\scr_get_random_atom.gml</script>
+    </scripts>
+    <scripts name="Room">
+      <script>scripts\scr_randomize_rooms.gml</script>
+      <script>scripts\scr_get_all_rooms.gml</script>
+      <script>scripts\scr_initialize_room_properties.gml</script>
+      <script>scripts\scr_create_room_atoms.gml</script>
+    </scripts>
+    <script>scripts\scr_OperatingSystem.gml</script>
   </scripts>
   <fonts name="fonts">
-    <font>fonts\font_Default</font>
-    <font>fonts\font_small</font>
     <font>fonts\font_large</font>
+    <font>fonts\font_small</font>
+    <font>fonts\font_Default</font>
   </fonts>
   <objects name="objects">
     <objects name="Player">
       <object>objects\obj_player</object>
     </objects>
     <objects name="Atom">
-      <object>objects\obj_atom_h</object>
-      <object>objects\obj_atom_na</object>
-      <object>objects\obj_atom_o</object>
+      <object>objects\obj_atom_H</object>
+      <object>objects\obj_atom_N</object>
+      <object>objects\obj_atom_S</object>
+      <object>objects\obj_atom_Cl</object>
+      <object>objects\obj_atom_Na</object>
+      <object>objects\obj_atom_O</object>
       <object>objects\obj_atom1</object>
       <object>objects\obj_atom2</object>
       <object>objects\obj_lew_correct</object>
@@ -183,7 +251,6 @@
     <objects name="Pausing">
       <object>objects\obj_pause</object>
       <object>objects\par_pausable</object>
-      <object>objects\obj_pause_control</object>
     </objects>
     <objects name="Room">
       <object>objects\obj_door</object>
@@ -194,6 +261,7 @@
       <object>objects\obj_splashTimer</object>
       <object>objects\obj_storeTime</object>
       <object>objects\obj_title</object>
+      <object>objects\init_room_properties</object>
     </objects>
     <objects name="Testing">
       <object>objects\obj_unitTest</object>
@@ -235,6 +303,9 @@
       <room>rooms\rm1_lab</room>
       <room>rooms\rm2</room>
       <room>rooms\rm2_lab</room>
+      <room>rooms\rm3</room>
+      <room>rooms\rm4</room>
+      <room>rooms\rm5</room>
     </rooms>
   </rooms>
   <constants number="10">
