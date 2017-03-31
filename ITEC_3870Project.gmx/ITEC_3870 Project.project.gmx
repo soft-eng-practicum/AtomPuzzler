@@ -41,7 +41,6 @@
   </datafiles>
   <NewExtensions>
     <extension index="0">extensions\Essential Scripts</extension>
-    <extension index="1">extensions\StaticCube - Log Console</extension>
   </NewExtensions>
   <sounds name="sound">
     <sound>sound\sfx_Select</sound>
@@ -183,6 +182,9 @@
         <script>scripts\passedTest.gml</script>
         <script>scripts\failedTest.gml</script>
       </scripts>
+      <scripts name="Debug Console">
+        <script>scripts\scr_debug_list.gml</script>
+      </scripts>
     </scripts>
     <scripts name="Pause">
       <script>scripts\scr_draw_gui_pause.gml</script>
@@ -214,6 +216,7 @@
       <script>scripts\scr_initialize_room_properties.gml</script>
       <script>scripts\scr_create_room_atoms.gml</script>
     </scripts>
+    <script>scripts\scr_OperatingSystem.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\font_large</font>
@@ -277,6 +280,7 @@
       <object>objects\obj_splashTimer</object>
       <object>objects\obj_storeTime</object>
       <object>objects\obj_title</object>
+      <object>objects\init_room_properties</object>
     </objects>
     <objects name="Testing">
       <object>objects\obj_unitTest</object>
@@ -300,6 +304,7 @@
       <object>objects\obj_rightKey</object>
       <object>objects\obj_jumpKey</object>
     </objects>
+    <object>objects\obj_operatingSystem</object>
   </objects>
   <rooms name="rooms">
     <rooms name="Main Menu Rooms">
