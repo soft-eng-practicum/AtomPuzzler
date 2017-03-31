@@ -401,22 +401,12 @@ hspd = mvmt * mspd;
 
 //  Notes: Deleting from ds_list does not change list size.
 //  TODO: Remove last item from list, clear list, put leftover items into list again, this will require two lists maybe
-/*
+
 if(keyboard_check_pressed(ord("X")))
 {
-
-    var inv = global.inventory;
-    var inv_size = ds_list_size(inv);
-    
-    if(inv_size &gt; 1) 
+    if(ds_list_size(global.inventory) &gt; 0) 
     {
-        show_debug_message( "Size BEFORE drop: " + string(inv_size) );
-        show_debug_message( "Dropped from Inventory: " + string(ds_list_find_value(inv, inv_size - 1)) );
-        
-        instance_create( obj_player.x, obj_player.y, obj_atom_Na);          //needs to drop the last item in list
-        ds_list_delete( inv, inv_size );
-        
-        show_debug_message( "Size AFTER drop: " + string(inv_size) );
+        scr_drop_atom(global.inventory);
     }
 }
 </string>
@@ -441,7 +431,7 @@ if(keyboard_check_pressed(ord("X")))
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Sorts list on door collide
+            <string>/*
 scr_sort_list(global.inventory);
 scr_sort_list(global.room_list);
 </string>
@@ -475,6 +465,9 @@ if(keyboard_check_released(vk_up) &amp;&amp; instance_nearest(x, y, obj_door).do
 {
 
     scr_debug_list();
+    
+    scr_sort_list(global.inventory);
+    scr_sort_list(global.room_list);
 
     //Set variables for size of lists
     room_array_size = ds_list_size(global.room_list);
@@ -567,6 +560,9 @@ if(keyboard_check_released(vk_up) &amp;&amp; instance_nearest(x, y, obj_door).do
 {
 
     scr_debug_list();
+    
+    scr_sort_list(global.inventory);
+    scr_sort_list(global.room_list);
 
     //Set variables for size of lists
     room_array_size = ds_list_size(global.room_list);

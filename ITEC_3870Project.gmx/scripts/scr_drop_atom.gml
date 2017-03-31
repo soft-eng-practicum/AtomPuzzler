@@ -13,10 +13,6 @@
         except the last value.
         Check list size before and after and set boolean value.
         
-    Problem:
-        The script will run independently and return a boolean value.
-        The list will clear and re-add
-        
     @return boolean
 */
 
