@@ -26,6 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>/// Initialize Player Variables
+name = "Atom";
 
 // Physics Variables
 grav = 0.2;
@@ -43,6 +44,8 @@ spr_jump = spr_boy1_jump;
 spr_fall = spr_boy1_fall;
 image_speed = 0;
 depth = -3;
+idle = false;
+idle_count = 0;
 
 // Mechanic Variables
 total_charge = 0;
@@ -101,25 +104,73 @@ audio_play_sound(music_AtomPuzzlerTheme, 1, true);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Change Character
+            <string>/// Sprite Operations
 
-// Checks Case for Character
-switch(spr)
+/* The player's sprite will turn left and right
+depending on whether or not 'mvmt' is -1 or 1.
+If the player is on the ground and moving, its 
+sprite_index will be set to his running animation
+(spr_boy1). If not, the player's sprite will be the 
+first frame of his running animation, standing still
+(frame 1 of spr_boy1). If the player is not on the ground,
+and their 'vspd' is less than 0 (jumping) then the
+player's sprite_index is set to 'spr_boy1_jump'.
+Otherwise, the player's sprite will be set to the
+'spr_boy1_fall' animation. Then, if the sprite_index is 
+one less than its image_number, then the image_speed becomes
+zero so the fall animation doesn't repeat.
+*/
+
+
+if(mvmt != 0)
 {
-    case "boy1":
-    {
-        spr_run = spr_boy1;
-        spr_jump = spr_boy1_jump;
-        spr_fall = spr_boy1_fall;
-        break;
-    }
-    case "girl1":
-    {
-        spr_run = spr_girl1;
-        spr_jump = spr_girl1_jump;
-        spr_fall = spr_girl1_fall;
-        break;
-    }
+   image_xscale = mvmt;
+}
+if(place_meeting(x, y + 1, obj_obstacle))
+{
+   if(mvmt != 0)
+   {
+       sprite_index = spr_idle;
+       image_speed = 0.2;
+       idle_count = 0;
+       idle = false;
+   }
+   else
+   {
+       if(idle)
+       {
+           sprite_index = spr_idle;
+           image_speed = 0.2;
+       }
+       else
+       {
+           idle_count++;
+           sprite_index = spr_run;
+           image_speed = 0;
+           image_index = 0;
+           if(idle_count == 600)
+           {
+               idle = true;
+           }
+       }
+   }
+}
+else
+{
+   if(vspd == 0)
+   {
+       sprite_index = spr_jump;
+       image_speed = 0;
+   }
+   else
+   {
+       sprite_index = spr_fall;
+       image_speed = 0.2;
+       if(image_index = image_number - 1)
+       {
+           image_speed = 0;
+       }
+   }
 }
 </string>
           </argument>
@@ -141,58 +192,27 @@ switch(spr)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Sprite Operations
+            <string>/// Change Character
 
-/* The player's sprite will turn left and right
-depending on whether or not 'mvmt' is -1 or 1.
-If the player is on the ground and moving, its 
-sprite_index will be set to his running animation
-(spr_boy1). If not, the player's sprite will be the 
-first frame of his running animation, standing still
-(frame 1 of spr_boy1). If the player is not on the ground,
-and their 'vspd' is less than 0 (jumping) then the
-player's sprite_index is set to 'spr_boy1_jump'.
-Otherwise, the player's sprite will be set to the
-'spr_boy1_fall' animation. Then, if the sprite_index is 
-one less than its image_number, then the image_speed becomes
-zero so the fall animation doesn't repeat.
-*/
-
-if(mvmt != 0)
+// Checks Case for Character
+switch(spr)
 {
-    image_xscale = mvmt;
-}
-
-if(place_meeting(x, y + 1, obj_obstacle))
-{
-    if(mvmt != 0)
-    {
-        sprite_index = spr_run;
-        image_speed = 0.2;
-    }
-    else
-    {
-        sprite_index = spr_run;
-        image_speed = 0;
-        image_index = 0;
-    }
-}
-else
-{
-    if(vspd &lt; 0)
-    {
-        sprite_index = spr_jump;
-        image_speed = 0;
-    }
-    else
-    {
-        sprite_index = spr_fall;
-        image_speed = 0.2;
-        if(image_index = image_number - 1)
-        {
-            image_speed = 0;
-        }
-    }
+   case "boy1":
+   {
+       spr_run = spr_boy1;
+       spr_jump = spr_boy1_jump;
+       spr_fall = spr_boy1_fall;
+       spr_idle = spr_boy1_idle;
+       break;
+   }
+   case "girl1":
+   {
+       spr_run = spr_girl1;
+       spr_jump = spr_girl1_jump;
+       spr_fall = spr_girl1_fall;
+       spr_idle = spr_girl1_idle
+       break;
+   }
 }
 </string>
           </argument>
@@ -357,6 +377,48 @@ hspd = mvmt * mspd;
           </argument>
         </arguments>
       </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///On Key Press X, drops previous atom picked
+
+//  Notes: Deleting from ds_list does not change list size.
+//  TODO: Remove last item from list, clear list, put leftover items into list again, this will require two lists maybe
+/*
+if(keyboard_check_pressed(ord("X")))
+{
+
+    var inv = global.inventory;
+    var inv_size = ds_list_size(inv);
+    
+    if(inv_size &gt; 1) 
+    {
+        show_debug_message( "Size BEFORE drop: " + string(inv_size) );
+        show_debug_message( "Dropped from Inventory: " + string(ds_list_find_value(inv, inv_size - 1)) );
+        
+        instance_create( obj_player.x, obj_player.y, obj_atom_Na);          //needs to drop the last item in list
+        ds_list_delete( inv, inv_size );
+        
+        show_debug_message( "Size AFTER drop: " + string(inv_size) );
+    }
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
     </event>
     <event eventtype="4" ename="obj_door">
       <action>
@@ -378,7 +440,6 @@ hspd = mvmt * mspd;
             <string>///Sorts list on door collide
 scr_sort_list(global.inventory);
 scr_sort_list(global.room_list);
-
 </string>
           </argument>
         </arguments>
@@ -409,6 +470,8 @@ If the content within the player's inventory matches the room's list, then give 
 if(keyboard_check_released(vk_up) &amp;&amp; instance_nearest(x, y, obj_door).doorExit &amp;&amp; global.room_type == 1) 
 {
 
+    scr_debug_list();
+
     //Set variables for size of lists
     room_array_size = ds_list_size(global.room_list);
     inventory_size = ds_list_size(global.inventory);
@@ -438,6 +501,7 @@ if(keyboard_check_released(vk_up) &amp;&amp; instance_nearest(x, y, obj_door).do
         {
             is_winning = true;
             instance_create(0, 0, obj_win);
+            //show_debug_message("obj_player: Event Collide: obj_door:  instance_create: obj_win");
             global.totalPoints = global.points - round(global.roomPoints) + global.totalPoints;
             obj_timer.stop = true;
             with(instance_nearest(x, y, obj_door)) doorExit = false;
@@ -449,18 +513,7 @@ if(keyboard_check_released(vk_up) &amp;&amp; instance_nearest(x, y, obj_door).do
         {   
             is_winning = false;
             instance_create(0, 0, obj_gameover);
-            /*if(global.totalPoints &lt; 0)
-            {
-                global.totalPoints = 0;
-            }
-            else if (global.totalPoints &gt; 0 &amp;&amp; attempts &lt; 3)
-            {
-                global.totalPoints = global.totalPoints - 100;
-            } 
-            else
-            {
-            
-            }*/
+            //show_debug_message("obj_player: Event Collide: obj_door: On Lose: instance_create: obj_gameover");
             obj_timer.stop = true;
             toggle = -1;
             attempts++;
@@ -472,20 +525,7 @@ if(keyboard_check_released(vk_up) &amp;&amp; instance_nearest(x, y, obj_door).do
     {
         is_winning = false;
         instance_create(0, 0, obj_gameover);
-       // global.points -= 100;
-      //  global.totalPoints = global.points - round(global.roomPoints) + global.totalPoints;
-        /*if(global.totalPoints &lt; 0)
-        {
-            global.totalPoints = 0;
-        }
-        else if (global.totalPoints &gt; 0 &amp;&amp; attempts &lt; 3)
-        {
-            global.totalPoints = global.totalPoints - 100;
-        } 
-        else
-        {
-            
-        }*/
+        //show_debug_message("obj_player: Event Collide: obj_door: Incorrect List Size: instance_create: obj_gameover");
         obj_timer.stop = true;
         toggle = -1;
         attempts++;
@@ -521,6 +561,9 @@ error if timer is stopped in Lab room, therefore the duplicated code for both ro
 
 if(keyboard_check_released(vk_up) &amp;&amp; instance_nearest(x, y, obj_door).doorExit &amp;&amp; global.room_type == -1) 
 {
+
+    scr_debug_list();
+
     //Set variables for size of lists
     room_array_size = ds_list_size(global.room_list);
     inventory_size = ds_list_size(global.inventory);
@@ -645,21 +688,28 @@ else
             <kind>1</kind>
             <string>/// Adds Values from Received Atom
 
-total_charge += instance_nearest(x, y, obj_atom1).charge;
-ds_list_add(global.inventory, instance_nearest(x, y, obj_atom1).symbol);
-complete = false;
+// On Key Press Z, picks up atom
 
-for(i = 0; i &lt; ds_list_size(global.room_list); i++)
+if(keyboard_check_pressed(ord("Z")))
 {
-    if(instance_nearest(x, y, obj_atom1).symbol == ds_list_find_value(global.room_list, i))
+    total_charge += instance_nearest(x, y, obj_atom1).charge;
+    ds_list_add(global.inventory, instance_nearest(x, y, obj_atom1).symbol);
+    show_debug_message("Add to Inventory: " + string(instance_nearest(x, y, obj_atom1).symbol));
+    complete = false;
+    
+    for(i = 0; i &lt; ds_list_size(global.room_list); i++)
     {
-        global.points += 200;
-        complete = true;
+        if(instance_nearest(x, y, obj_atom1).symbol == ds_list_find_value(global.room_list, i))
+        {
+            global.points += 200;
+            complete = true;
+        }
+        if(complete)
+        {
+            break;
+        }
     }
-    if(complete)
-    {
-        break;
-    }
+
 }
 </string>
           </argument>
@@ -690,12 +740,10 @@ if(is_winning)
     ds_list_clear(global.inventory);
     global.points = 0;
     global.roomPoints = 0;
-    room_goto_next();
     toggle = 0;
-    x = 32;
-    y = 320;
     is_winning = false;
     
+    //Check if the current room is the last room
     if(room = room_last)
     {
         //stores the player name 
@@ -709,6 +757,13 @@ if(is_winning)
         x = 32;
         y = 320;
     }
+    else 
+    {
+        room_goto_next();
+        x = 32;
+        y = 320;
+    }
+    
 }
 
 </string>
@@ -788,8 +843,8 @@ draw_self();
 Checks if player has both collected the right atoms and checks if the inventory size is not 0
 */
 
-if(!obj_player.is_winning || (ds_list_size(global.inventory) != 0))
-{
+if(!obj_player.is_winning || (ds_list_size(global.inventory) != 0) &amp;&amp; global.room_type == 1)
+{   
     obj_player.x = 32;
     obj_player.y = 415;
     toggle = 0;
