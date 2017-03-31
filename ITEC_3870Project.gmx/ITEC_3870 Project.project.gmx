@@ -41,6 +41,7 @@
   </datafiles>
   <NewExtensions>
     <extension index="0">extensions\Essential Scripts</extension>
+    <extension index="1">extensions\StaticCube - Log Console</extension>
   </NewExtensions>
   <sounds name="sound">
     <sound>sound\sfx_Select</sound>
@@ -228,12 +229,6 @@
       <object>objects\obj_player</object>
     </objects>
     <objects name="Atom">
-      <object>objects\obj_atom_H</object>
-      <object>objects\obj_atom_N</object>
-      <object>objects\obj_atom_S</object>
-      <object>objects\obj_atom_Cl</object>
-      <object>objects\obj_atom_Na</object>
-      <object>objects\obj_atom_O</object>
       <object>objects\obj_atom1</object>
       <object>objects\obj_atom2</object>
       <objects name="Lewis Structures">
@@ -249,6 +244,44 @@
           <object>objects\obj_lew_h2o_correct</object>
           <object>objects\obj_lew_h2o_incorrect1</object>
         </objects>
+      </objects>
+      <objects name="Noble Gases">
+        <object>objects\obj_atom_Ar</object>
+        <object>objects\obj_atom_He</object>
+        <object>objects\obj_atom_Xe</object>
+        <object>objects\obj_atom_Kr</object>
+        <object>objects\obj_atom_Ne</object>
+      </objects>
+      <objects name="Alkali Metals">
+        <object>objects\obj_atom_Na</object>
+        <object>objects\obj_atom_Li</object>
+        <object>objects\obj_atom_K</object>
+        <object>objects\obj_atom_Rb</object>
+        <object>objects\obj_atom_Cs</object>
+        <object>objects\obj_atom_Fr</object>
+      </objects>
+      <objects name="Alkaline Earth Metals">
+        <object>objects\obj_atom_Be</object>
+        <object>objects\obj_atom_Mg</object>
+        <object>objects\obj_atom_Ra</object>
+        <object>objects\obj_atom_Ba</object>
+        <object>objects\obj_atom_Ca</object>
+        <object>objects\obj_atom_Sr</object>
+      </objects>
+      <objects name="Various Elements">
+        <object>objects\obj_atom_P</object>
+        <object>objects\obj_atom_I</object>
+        <object>objects\obj_atom_Fe</object>
+        <object>objects\obj_atom_O</object>
+        <object>objects\obj_atom_B</object>
+        <object>objects\obj_atom_C</object>
+        <object>objects\obj_atom_Br</object>
+        <object>objects\obj_atom_S</object>
+        <object>objects\obj_atom_Cl</object>
+        <object>objects\obj_atom_F</object>
+        <object>objects\obj_atom_H</object>
+        <object>objects\obj_atom_N</object>
+        <object>objects\obj_atom_Ti</object>
       </objects>
     </objects>
     <objects name="Main Menu">

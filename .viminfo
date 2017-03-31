@@ -11,6 +11,8 @@
 # hlsearch on (H) or off (h):
 ~h
 # Command Line History (newest to oldest):
+:wq
+|2,0,1490978095,,"wq"
 
 # Search String History (newest to oldest):
 
@@ -23,28 +25,32 @@
 # Registers:
 
 # File marks:
-'0  3  57  ~/.git/MERGE_MSG
-|4,48,3,57,1489617217,"~/.git/MERGE_MSG"
+'0  7  12  ~/.git/MERGE_MSG
+|4,48,7,12,1490978095,"~/.git/MERGE_MSG"
 '1  3  57  ~/.git/MERGE_MSG
-|4,49,3,57,1489438596,"~/.git/MERGE_MSG"
+|4,49,3,57,1489617217,"~/.git/MERGE_MSG"
 '2  3  57  ~/.git/MERGE_MSG
-|4,50,3,57,1488565047,"~/.git/MERGE_MSG"
+|4,50,3,57,1489617217,"~/.git/MERGE_MSG"
 '3  3  57  ~/.git/MERGE_MSG
-|4,51,3,57,1488565047,"~/.git/MERGE_MSG"
+|4,51,3,57,1489438596,"~/.git/MERGE_MSG"
 '4  3  57  ~/.git/MERGE_MSG
-|4,52,3,57,1488241205,"~/.git/MERGE_MSG"
+|4,52,3,57,1489438596,"~/.git/MERGE_MSG"
 '5  3  57  ~/.git/MERGE_MSG
-|4,53,3,57,1488241205,"~/.git/MERGE_MSG"
+|4,53,3,57,1488565047,"~/.git/MERGE_MSG"
 '6  3  57  ~/.git/MERGE_MSG
-|4,54,3,57,1488241205,"~/.git/MERGE_MSG"
+|4,54,3,57,1488565047,"~/.git/MERGE_MSG"
 '7  3  57  ~/.git/MERGE_MSG
-|4,55,3,57,1488241205,"~/.git/MERGE_MSG"
+|4,55,3,57,1488565047,"~/.git/MERGE_MSG"
 '8  3  57  ~/.git/MERGE_MSG
-|4,56,3,57,1488218884,"~/.git/MERGE_MSG"
+|4,56,3,57,1488565047,"~/.git/MERGE_MSG"
 '9  3  57  ~/.git/MERGE_MSG
-|4,57,3,57,1488218884,"~/.git/MERGE_MSG"
+|4,57,3,57,1488241205,"~/.git/MERGE_MSG"
 
 # Jumplist (newest first):
+-'  7  12  ~/.git/MERGE_MSG
+|4,39,7,12,1490978095,"~/.git/MERGE_MSG"
+-'  3  57  ~/.git/MERGE_MSG
+|4,39,3,57,1490977994,"~/.git/MERGE_MSG"
 -'  3  57  ~/.git/MERGE_MSG
 |4,39,3,57,1489617217,"~/.git/MERGE_MSG"
 -'  3  57  ~/.git/MERGE_MSG
@@ -59,6 +65,8 @@
 |4,39,3,57,1487904989,"~/.git/MERGE_MSG"
 -'  3  57  ~/.git/MERGE_MSG
 |4,39,3,57,1487799435,"~/.git/MERGE_MSG"
+-'  2  0  ~/.git/MERGE_MSG
+|4,39,2,0,1487799395,"~/.git/MERGE_MSG"
 -'  2  0  ~/.git/MERGE_MSG
 |4,39,2,0,1487799395,"~/.git/MERGE_MSG"
 -'  2  0  ~/.git/MERGE_MSG
@@ -91,9 +99,11 @@
 |4,39,1,0,1486148602,"~/.git/MERGE_MSG"
 -'  1  0  ~/.git/MERGE_MSG
 |4,39,1,0,1486148602,"~/.git/MERGE_MSG"
+-'  1  0  ~/.git/MERGE_MSG
+|4,39,1,0,1486148602,"~/.git/MERGE_MSG"
 
 # History of marks within files (newest to oldest):
 
 > ~/.git/MERGE_MSG
-	*	1489617203	0
-	"	3	57
+	*	1490978084	0
+	"	7	12
