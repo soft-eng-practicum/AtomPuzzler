@@ -26,10 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>/// virtual key jump
-
 key_jump= virtual_key_add(x,y,32,32,vk_space);
-
-
 </string>
           </argument>
         </arguments>
