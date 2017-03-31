@@ -28,7 +28,7 @@
             <string>/// Initialize Variables
 
 event_inherited();
-charge = 1;
+charge = -3;
 symbol = "P";
 </string>
           </argument>
