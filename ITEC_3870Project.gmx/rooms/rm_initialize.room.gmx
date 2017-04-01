@@ -12,8 +12,6 @@
   <showcolour>-1</showcolour>
   <code>///Must be first room
 
-global.xyz = -1;
-
 //Constant States for transition (WIP)
 enum transition 
 {
@@ -21,17 +19,11 @@ enum transition
     stripe_ver
 }
 
-/*
-//Randomize values for testing irandom vs random
-for(i = 0; i &lt; 10; i++) 
-{
-    var n = irandom(10);
-    show_debug_message(string(i) + ": " + string(n));
-}
-*/
-
 // Create list, this list will store all correct atoms
 global.room_list = ds_list_create();
+
+global.room_pool = scr_get_room_pool(0);
+global.room_pool_index = 0;
 
 room_goto_next();</code>
   <enableViews>0</enableViews>
@@ -75,6 +67,8 @@ room_goto_next();</code>
   </views>
   <instances>
     <instance objName="obj_operatingSystem" x="128" y="192" name="inst_C88BBA80" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_pause" x="288" y="96" name="inst_4EF300A0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_score" x="576" y="32" name="inst_98C34B3D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>
