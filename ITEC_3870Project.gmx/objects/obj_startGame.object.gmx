@@ -26,8 +26,10 @@
           <argument>
             <kind>1</kind>
             <string>/// Go to the first level
-ds_list_clear(global.inventory);
-room_goto(rm1);
+var next_room = ds_list_find_value(global.room_pool, global.room_pool_index);
+global.room_pool_index++;
+
+room_goto(next_room);
 
 // Play the select sound effect
 
