@@ -1,4 +1,4 @@
-///scr_drop_atom(ds_list global.inventory)
+///scr_drop_atom(ds_list)
 /*
     Takes the player's inventory and drop the last index in the list.
     
