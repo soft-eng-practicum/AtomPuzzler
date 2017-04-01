@@ -10,7 +10,12 @@
   <persistent>0</persistent>
   <colour>12632256</colour>
   <showcolour>-1</showcolour>
-  <code>global.message[0] = "Welcome to Atom Puzzler!";
+  <code>// Randomize seed
+randomize();
+
+// Create a global list of unordered rooms based on difficulty
+global.room_pool = scr_get_room_pool(0);
+global.room_pool_index = 0;
 
 scr_read_file("settings.ini", room_get_name(room));</code>
   <enableViews>0</enableViews>

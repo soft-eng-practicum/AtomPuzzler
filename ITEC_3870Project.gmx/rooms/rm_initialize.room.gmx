@@ -22,9 +22,6 @@ enum transition
 // Create list, this list will store all correct atoms
 global.room_list = ds_list_create();
 
-global.room_pool = scr_get_room_pool(0);
-global.room_pool_index = 0;
-
 room_goto_next();</code>
   <enableViews>0</enableViews>
   <clearViewBackground>-1</clearViewBackground>

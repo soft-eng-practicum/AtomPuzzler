@@ -213,7 +213,6 @@
     </scripts>
     <scripts name="Room">
       <script>scripts\scr_get_room_pool.gml</script>
-      <script>scripts\scr_get_all_rooms.gml</script>
       <script>scripts\scr_initialize_room_properties.gml</script>
       <script>scripts\scr_create_room_atoms.gml</script>
     </scripts>
