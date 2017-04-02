@@ -11,22 +11,32 @@
         Taking the contents in player's inventory and store in array.
         Clear the inventory list(empty it) and use stored array to put back into list
         except the last value.
-        Check list size before and after and set boolean value.
         
-    @return boolean
+    @return Atom Object
 */
 
 var current_list = argument[0];
+var obj;
 var list_size = ds_list_size(current_list);
-var drop_finished = false;
 var str_before = "";
 var str_after = "";
+var obj_str = "";
+var array;
+
+//var empty_list = ds_list_create();
 
 // Store values of inventory into an array
 for(i = 0; i < list_size; i++) {
     array[i] = ds_list_find_value(current_list, i);
     str_before += string(ds_list_find_value(current_list, i));
+    
+    if(i == (list_size - 1)) {
+        obj_str = ds_list_find_value(current_list, i);
+        obj = scr_get_atom(obj_str);
+    }
 }
+
+show_debug_message("scr_drop_atom: atom_obj =" + string(obj_str));
 
 // Debug print size before and list before
 show_debug_message("scr_drop_atom: Inventory size before: " + string(list_size));
@@ -51,23 +61,8 @@ for(i = 0; i < list_size_new; i++) {
 // Debug print list after and size after
 show_debug_message("scr_drop_atom: Inventory size after: " + string(ds_list_size(current_list)));
 show_debug_message("scr_drop_atom: list after: " + str_after);
+show_debug_message("");
 
-// If the size from before and after are not the same, set to true other wise still false
-if(list_size != list_size_new) drop_finished = true;
-
-var boolean = "";
-
-// Debug boolean
-if(drop_finished){
-    boolean = "true";
-}
-else{
-    boolean = "false";
-}
-
-// Debug return boolean value
-show_debug_message("scr_drop_atom: return bool: " + string(boolean));
-
-// Return boolean variable
-return drop_finished;
+// Return Atom Object
+return obj;
 

@@ -111,19 +111,19 @@ if(debug_mode)
 {
     with(obj_player) 
     {
-        if(place_meeting(x,y, obj_atom_h))
+        if(place_meeting(x,y, obj_atom_H))
         {
-            assertEquals("H atom","H", obj_atom_h.symbol);
+            assertEquals("H atom","H", obj_atom_H.symbol);
         }
     
-        else if(place_meeting(x,y, obj_atom_o))
+        else if(place_meeting(x,y, obj_atom_O))
         {
-            assertEquals("O atom","O", obj_atom_o.symbol);
+            assertEquals("O atom","O", obj_atom_O.symbol);
         }
     
-        else if(place_meeting(x,y, obj_atom_na))
+        else if(place_meeting(x,y, obj_atom_Na))
         {
-            assertEquals("Na atom","Na", obj_atom_na.symbol);
+            assertEquals("Na atom","Na", obj_atom_Na.symbol);
         }
         //add more atoms
         

@@ -16,7 +16,6 @@ var file = working_directory + filename;
 
 //Open File
 ini_open(file);
-//show_debug_message("Reading file: " + file);
 
 //Reads and stores room property into variables
 var message = ini_read_string(rm_name, 'message', "Message Unavailable");
@@ -32,17 +31,18 @@ array[2] = solution;
 array[3] = hint;
 array[4] = difficulty;
 
-/*
+
 //Debug
 for(i = 0; i < array_length_1d(array); i++) 
 {
     show_debug_message("Array[" + string(i) + "] = " + string(array[i]));
 }
-*/
+
+show_debug_message("");
+
 
 //Close File
 ini_close();
-//show_debug_message("Closing file...");
 
 //Return array
 return array;
