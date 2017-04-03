@@ -98,7 +98,7 @@ audio_play_sound(music_AtomPuzzlerTheme, 1, true);
         <exetype>2</exetype>
         <functionname></functionname>
         <codestring></codestring>
-        <whoName>self</whoName>
+        <whoName>other</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
         <arguments>
@@ -285,9 +285,10 @@ if(vspd &lt; 10)
     vspd += grav;
 }
 
-if(place_meeting(x, y + 1, obj_obstacle))
+//if(place_meeting(x, y + 1, obj_obstacle))
+if(key_jump &amp;&amp; jump &amp;&amp; place_meeting(x, y + 1, obj_obstacle))
 {
-    vspd = key_jump * -jspd;
+    vspd = -jspd;
 }
 
 // Pixel Perfect Horizontal Collisions
@@ -336,6 +337,14 @@ if(place_meeting(x, y + vspd, obj_obstacle))
     while(!place_meeting(x, y + sign(vspd), obj_obstacle))
     {
         y += sign(vspd);
+    }
+    if(sign(vspd) == 1)
+    {
+        jump = 1
+    }
+    else
+    {
+        jump = 0;
     }
     vspd = 0;
 }
@@ -397,8 +406,8 @@ hspd = mvmt * mspd;
 
 //  Notes: Deleting from ds_list does not change list size.
 //  TODO: Remove last item from list, clear list, put leftover items into list again, this will require two lists maybe
-/*
-if(keyboard_check_pressed(ord("X")))
+
+/*if(keyboard_check_pressed(ord("X")))
 {
 
     var inv = global.inventory;
@@ -421,29 +430,6 @@ if(keyboard_check_pressed(ord("X")))
       </action>
     </event>
     <event eventtype="4" ename="obj_door">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Sorts list on door collide
-scr_sort_list(global.inventory);
-scr_sort_list(global.room_list);
-</string>
-          </argument>
-        </arguments>
-      </action>
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -668,6 +654,29 @@ else
           </argument>
         </arguments>
       </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Sorts list on door collide
+scr_sort_list(global.inventory);
+scr_sort_list(global.room_list);
+</string>
+          </argument>
+        </arguments>
+      </action>
     </event>
     <event eventtype="4" ename="obj_atom1">
       <action>
@@ -766,6 +775,36 @@ if(is_winning)
     
 }
 
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="6" enumb="53">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///when the mouse button is pressed create the obj_swipe
+
+//checks for mobile version
+
+if(mobile)
+{
+    instance_create(mouse_x, mouse_y, obj_swipe);
+}
 </string>
           </argument>
         </arguments>
