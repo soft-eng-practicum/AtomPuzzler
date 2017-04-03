@@ -41,6 +41,7 @@
   </datafiles>
   <NewExtensions>
     <extension index="0">extensions\Essential Scripts</extension>
+    <extension index="1">extensions\StaticCube - Log Console</extension>
   </NewExtensions>
   <sounds name="sound">
     <sound>sound\sfx_Select</sound>
@@ -72,44 +73,57 @@
         <sprite>sprites\spr_lewis_blank</sprite>
         <sprite>sprites\spr_lewis_correct</sprite>
         <sprite>sprites\spr_lewis_incorrect</sprite>
-        <sprites name="h2o">
+        <sprites name="H2O">
           <sprite>sprites\spr_lewis_h2o_correct</sprite>
           <sprite>sprites\spr_lewis_h2o_incorrect1</sprite>
           <sprite>sprites\spr_lewis_h2o_incorrect2</sprite>
         </sprites>
-        <sprites name="naoh">
+        <sprites name="NaOH">
           <sprite>sprites\spr_lewis_naoh_correct</sprite>
           <sprite>sprites\spr_lewis_naoh_incorrect1</sprite>
           <sprite>sprites\spr_lewis_naoh_incorrect2</sprite>
         </sprites>
       </sprites>
-      <sprite>sprites\spr_atom_C</sprite>
-      <sprite>sprites\spr_atom_S</sprite>
-      <sprite>sprites\spr_atom_Cl</sprite>
-      <sprite>sprites\spr_atom_F</sprite>
-      <sprite>sprites\spr_atom_H</sprite>
-      <sprite>sprites\spr_atom_N</sprite>
-      <sprite>sprites\spr_atom_O</sprite>
-      <sprite>sprites\spr_atom_test1</sprite>
-      <sprite>sprites\spr_atom_test2</sprite>
-      <sprite>sprites\spr_atom_Ti</sprite>
-      <sprite>sprites\spr_atom_Fe</sprite>
-      <sprites name="Alkali metal">
-        <sprite>sprites\spr_atom_Li</sprite>
-        <sprite>sprites\spr_atom_Na</sprite>
-        <sprite>sprites\spr_atom_K</sprite>
-        <sprite>sprites\spr_atom_Rb</sprite>
+      <sprites name="Noble Gases">
+        <sprite>sprites\spr_atom_Ar</sprite>
+        <sprite>sprites\spr_atom_He</sprite>
+        <sprite>sprites\spr_atom_Kr</sprite>
+        <sprite>sprites\spr_atom_Ne</sprite>
+        <sprite>sprites\spr_atom_Xe</sprite>
+      </sprites>
+      <sprites name="Alkali Metals">
         <sprite>sprites\spr_atom_Cs</sprite>
         <sprite>sprites\spr_atom_Fr</sprite>
+        <sprite>sprites\spr_atom_K</sprite>
+        <sprite>sprites\spr_atom_Li</sprite>
+        <sprite>sprites\spr_atom_Na</sprite>
+        <sprite>sprites\spr_atom_Rb</sprite>
       </sprites>
-      <sprites name="Alkaline earth metal">
-        <sprite>sprites\spr_atom_Be</sprite>
-        <sprite>sprites\spr_atom_Mg</sprite>
-        <sprite>sprites\spr_atom_Ca</sprite>
-        <sprite>sprites\spr_atom_Sr</sprite>
+      <sprites name="Alkaline Earth Metals">
         <sprite>sprites\spr_atom_Ba</sprite>
+        <sprite>sprites\spr_atom_Be</sprite>
+        <sprite>sprites\spr_atom_Ca</sprite>
+        <sprite>sprites\spr_atom_Mg</sprite>
         <sprite>sprites\spr_atom_Ra</sprite>
+        <sprite>sprites\spr_atom_Sr</sprite>
       </sprites>
+      <sprites name="Various Elements">
+        <sprite>sprites\spr_atom_B</sprite>
+        <sprite>sprites\spr_atom_Br</sprite>
+        <sprite>sprites\spr_atom_C</sprite>
+        <sprite>sprites\spr_atom_Cl</sprite>
+        <sprite>sprites\spr_atom_F</sprite>
+        <sprite>sprites\spr_atom_Fe</sprite>
+        <sprite>sprites\spr_atom_H</sprite>
+        <sprite>sprites\spr_atom_I</sprite>
+        <sprite>sprites\spr_atom_N</sprite>
+        <sprite>sprites\spr_atom_O</sprite>
+        <sprite>sprites\spr_atom_P</sprite>
+        <sprite>sprites\spr_atom_S</sprite>
+        <sprite>sprites\spr_atom_Ti</sprite>
+      </sprites>
+      <sprite>sprites\spr_atom1</sprite>
+      <sprite>sprites\spr_atom2</sprite>
     </sprites>
     <sprites name="Main Menu">
       <sprite>sprites\sp_startGame</sprite>
@@ -138,6 +152,9 @@
   <backgrounds name="background">
     <background>background\labBackground</background>
     <background>background\bg_rock1</background>
+    <background>background\bg_nightRoom</background>
+    <background>background\Bg_Clouds</background>
+    <background>background\Bg_Desert</background>
     <background>background\bg_mainMenu</background>
     <background>background\bg_rock2</background>
     <background>background\splash_moc2</background>
@@ -199,8 +216,7 @@
       <script>scripts\scr_get_random_atom.gml</script>
     </scripts>
     <scripts name="Room">
-      <script>scripts\scr_randomize_rooms.gml</script>
-      <script>scripts\scr_get_all_rooms.gml</script>
+      <script>scripts\scr_get_room_pool.gml</script>
       <script>scripts\scr_initialize_room_properties.gml</script>
       <script>scripts\scr_create_room_atoms.gml</script>
     </scripts>
@@ -216,22 +232,60 @@
       <object>objects\obj_player</object>
     </objects>
     <objects name="Atom">
-      <object>objects\obj_atom_H</object>
-      <object>objects\obj_atom_N</object>
-      <object>objects\obj_atom_S</object>
-      <object>objects\obj_atom_Cl</object>
-      <object>objects\obj_atom_Na</object>
-      <object>objects\obj_atom_O</object>
       <object>objects\obj_atom1</object>
       <object>objects\obj_atom2</object>
-      <object>objects\obj_lew_correct</object>
-      <object>objects\obj_lew_h2o_correct</object>
-      <object>objects\obj_lew_h2o_incorrect1</object>
-      <object>objects\obj_lew_h2o_incorrect2</object>
-      <object>objects\obj_lew_incorrect</object>
-      <object>objects\obj_lew_naoh_correct</object>
-      <object>objects\obj_lew_naoh_incorrect1</object>
-      <object>objects\obj_lew_naoh_incorrect2</object>
+      <objects name="Lewis Structures">
+        <object>objects\obj_lew_correct</object>
+        <object>objects\obj_lew_incorrect</object>
+        <objects name="NaOH">
+          <object>objects\obj_lew_naoh_correct</object>
+          <object>objects\obj_lew_naoh_incorrect2</object>
+          <object>objects\obj_lew_naoh_incorrect1</object>
+        </objects>
+        <objects name="H2O">
+          <object>objects\obj_lew_h2o_incorrect2</object>
+          <object>objects\obj_lew_h2o_correct</object>
+          <object>objects\obj_lew_h2o_incorrect1</object>
+        </objects>
+      </objects>
+      <objects name="Noble Gases">
+        <object>objects\obj_atom_Ar</object>
+        <object>objects\obj_atom_He</object>
+        <object>objects\obj_atom_Xe</object>
+        <object>objects\obj_atom_Kr</object>
+        <object>objects\obj_atom_Ne</object>
+      </objects>
+      <objects name="Alkali Metals">
+        <object>objects\obj_atom_Na</object>
+        <object>objects\obj_atom_Li</object>
+        <object>objects\obj_atom_K</object>
+        <object>objects\obj_atom_Rb</object>
+        <object>objects\obj_atom_Cs</object>
+        <object>objects\obj_atom_Fr</object>
+      </objects>
+      <objects name="Alkaline Earth Metals">
+        <object>objects\obj_atom_Be</object>
+        <object>objects\obj_atom_Mg</object>
+        <object>objects\obj_atom_Ra</object>
+        <object>objects\obj_atom_Ba</object>
+        <object>objects\obj_atom_Ca</object>
+        <object>objects\obj_atom_Sr</object>
+      </objects>
+      <objects name="Various Elements">
+        <object>objects\obj_atom_P</object>
+        <object>objects\obj_atom_I</object>
+        <object>objects\obj_atom_Fe</object>
+        <object>objects\obj_atom_O</object>
+        <object>objects\obj_atom_B</object>
+        <object>objects\obj_atom_C</object>
+        <object>objects\obj_atom_Br</object>
+        <object>objects\obj_atom_S</object>
+        <object>objects\obj_atom_Cl</object>
+        <object>objects\obj_atom_F</object>
+        <object>objects\obj_atom_H</object>
+        <object>objects\obj_atom_N</object>
+        <object>objects\obj_atom_Ti</object>
+      </objects>
     </objects>
     <objects name="Main Menu">
       <object>objects\obj_startGame</object>
@@ -263,6 +317,7 @@
       <object>objects\obj_storeTime</object>
       <object>objects\obj_title</object>
       <object>objects\init_room_properties</object>
+      <object>objects\ini_rooms</object>
     </objects>
     <objects name="Testing">
       <object>objects\obj_unitTest</object>
@@ -305,12 +360,15 @@
     </rooms>
     <rooms name="Play Game Room">
       <room>rooms\rm1</room>
-      <room>rooms\rm1_lab</room>
+      <room>rooms\lab1</room>
       <room>rooms\rm2</room>
-      <room>rooms\rm2_lab</room>
+      <room>rooms\lab2</room>
       <room>rooms\rm3</room>
+      <room>rooms\lab3</room>
       <room>rooms\rm4</room>
+      <room>rooms\lab4</room>
       <room>rooms\rm5</room>
+      <room>rooms\lab5</room>
     </rooms>
   </rooms>
   <constants number="10">
