@@ -154,6 +154,8 @@
     <background>background\bg_mainMenu</background>
     <background>background\bg_rock2</background>
     <background>background\splash_moc2</background>
+    <background>background\bg_cloudRoom</background>
+    <background>background\bg_desert</background>
   </backgrounds>
   <paths name="paths">
     <path>paths\atom</path>
@@ -212,7 +214,8 @@
       <script>scripts\scr_get_random_atom.gml</script>
     </scripts>
     <scripts name="Room">
-      <script>scripts\scr_get_room_pool.gml</script>
+      <script>scripts\scr_randomize_rooms.gml</script>
+      <script>scripts\scr_get_all_rooms.gml</script>
       <script>scripts\scr_initialize_room_properties.gml</script>
       <script>scripts\scr_create_room_atoms.gml</script>
     </scripts>
@@ -262,7 +265,6 @@
       <objects name="Alkaline Earth Metals">
         <object>objects\obj_atom_Be</object>
         <object>objects\obj_atom_Mg</object>
-        <object>objects\obj_atom_Ra</object>
         <object>objects\obj_atom_Ba</object>
         <object>objects\obj_atom_Ca</object>
         <object>objects\obj_atom_Sr</object>
@@ -313,7 +315,6 @@
       <object>objects\obj_storeTime</object>
       <object>objects\obj_title</object>
       <object>objects\init_room_properties</object>
-      <object>objects\ini_rooms</object>
     </objects>
     <objects name="Testing">
       <object>objects\obj_unitTest</object>
@@ -353,15 +354,10 @@
     </rooms>
     <rooms name="Play Game Room">
       <room>rooms\rm1</room>
-      <room>rooms\lab1</room>
       <room>rooms\rm2</room>
-      <room>rooms\lab2</room>
       <room>rooms\rm3</room>
-      <room>rooms\lab3</room>
       <room>rooms\rm4</room>
-      <room>rooms\lab4</room>
       <room>rooms\rm5</room>
-      <room>rooms\lab5</room>
     </rooms>
   </rooms>
   <constants number="10">
