@@ -151,6 +151,9 @@
   <backgrounds name="background">
     <background>background\labBackground</background>
     <background>background\bg_rock1</background>
+    <background>background\bg_nightRoom</background>
+    <background>background\Bg_Clouds</background>
+    <background>background\Bg_Desert</background>
     <background>background\bg_mainMenu</background>
     <background>background\bg_rock2</background>
     <background>background\splash_moc2</background>
