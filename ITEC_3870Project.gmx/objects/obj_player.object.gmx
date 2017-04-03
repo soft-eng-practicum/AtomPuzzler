@@ -125,6 +125,9 @@ zero so the fall animation doesn't repeat.
 if(mvmt != 0)
 {
     image_xscale = mvmt;
+    
+    if(mvmt == 1) facing_forward = true;
+    if(mvmt == -1) facing_forward = false;
 }
 if(place_meeting(x, y + 1, obj_obstacle))
 {
@@ -401,22 +404,20 @@ hspd = mvmt * mspd;
 
 //  Notes: Deleting from ds_list does not change list size.
 //  TODO: Remove last item from list, clear list, put leftover items into list again, this will require two lists maybe
-/*
+
 if(keyboard_check_pressed(ord("X")))
 {
-
-    var inv = global.inventory;
-    var inv_size = ds_list_size(inv);
-    
-    if(inv_size &gt; 1) 
+    if(ds_list_size(global.inventory) &gt; 0) 
     {
-        show_debug_message( "Size BEFORE drop: " + string(inv_size) );
-        show_debug_message( "Dropped from Inventory: " + string(ds_list_find_value(inv, inv_size - 1)) );
-        
-        instance_create( obj_player.x, obj_player.y, obj_atom_Na);          //needs to drop the last item in list
-        ds_list_delete( inv, inv_size );
-        
-        show_debug_message( "Size AFTER drop: " + string(inv_size) );
+        obj = scr_drop_atom(global.inventory);
+        if(!facing_forward)
+        {
+            instance_create(obj_player.x - 50, obj_player.y - 10, obj);
+        }
+        if(facing_forward)
+        {
+            instance_create(obj_player.x + 50, obj_player.y - 10, obj);
+        }
     }
 }
 </string>
@@ -425,29 +426,6 @@ if(keyboard_check_pressed(ord("X")))
       </action>
     </event>
     <event eventtype="4" ename="obj_door">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Sorts list on door collide
-scr_sort_list(global.inventory);
-scr_sort_list(global.room_list);
-</string>
-          </argument>
-        </arguments>
-      </action>
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -475,6 +453,9 @@ if(keyboard_check_released(vk_up) &amp;&amp; instance_nearest(x, y, obj_door).do
 {
 
     scr_debug_list();
+    
+    scr_sort_list(global.inventory);
+    scr_sort_list(global.room_list);
 
     //Set variables for size of lists
     room_array_size = ds_list_size(global.room_list);
@@ -557,16 +538,19 @@ if(keyboard_check_released(vk_up) &amp;&amp; instance_nearest(x, y, obj_door).do
             <kind>1</kind>
             <string>///Door Collision Event for Room Type Lab
 
-/* 
-The reason why there is duplicate code for separate room types is that Lab rooms do 
-not have a timer object and Normal rooms do. The game throws an 'object that does not exist' 
+/*
+The reason why there is duplicate code for separate room types is that Lab rooms do
+not have a timer object and Normal rooms do. The game throws an 'object that does not exist'
 error if timer is stopped in Lab room, therefore the duplicated code for both room types.
-*/ 
+*/
 
-if(keyboard_check_released(vk_up) &amp;&amp; instance_nearest(x, y, obj_door).doorExit &amp;&amp; global.room_type == -1) 
+if(keyboard_check_released(vk_up) &amp;&amp; instance_nearest(x, y, obj_door).doorExit &amp;&amp; global.room_type == -1)
 {
 
     scr_debug_list();
+    
+    scr_sort_list(global.inventory);
+    scr_sort_list(global.room_list);
 
     //Set variables for size of lists
     room_array_size = ds_list_size(global.room_list);
@@ -576,10 +560,10 @@ if(keyboard_check_released(vk_up) &amp;&amp; instance_nearest(x, y, obj_door).do
     inventory_check = false;
     
     //Compare size of both lists
-    if(room_array_size == inventory_size) 
+    if(room_array_size == inventory_size)
     {
         //Compare and match list by index, if content doesn't match then break loop
-        for(i = 0; i &lt; inventory_size; i++) 
+        for(i = 0; i &lt; inventory_size; i++)
         {
             if(ds_list_find_value(global.inventory, i) = ds_list_find_value(global.room_list, i))
             {
@@ -614,7 +598,7 @@ if(keyboard_check_released(vk_up) &amp;&amp; instance_nearest(x, y, obj_door).do
     }
     
     //Size does not match therefore lose
-    else 
+    else
     {
         is_winning = false;
         instance_create(0, 0, obj_gameover);
@@ -623,6 +607,7 @@ if(keyboard_check_released(vk_up) &amp;&amp; instance_nearest(x, y, obj_door).do
         toggle = -1;
     }
 }
+
 </string>
           </argument>
         </arguments>
@@ -694,8 +679,8 @@ else
 
 // On Key Press Z, picks up atom
 
-if(keyboard_check_pressed(ord("Z")))
-{
+//if(keyboard_check_pressed(ord("Z")))
+//{
     total_charge += instance_nearest(x, y, obj_atom1).charge;
     ds_list_add(global.inventory, instance_nearest(x, y, obj_atom1).symbol);
     show_debug_message("Add to Inventory: " + string(instance_nearest(x, y, obj_atom1).symbol));
@@ -714,7 +699,7 @@ if(keyboard_check_pressed(ord("Z")))
         }
     }
 
-}
+//}
 </string>
           </argument>
         </arguments>
@@ -747,8 +732,10 @@ if(is_winning)
     toggle = 0;
     is_winning = false;
     
-    //Check if the current room is the last room
-    if(room = room_last)
+    var next_room = ds_list_find_value(global.room_pool, global.room_pool_index);
+    
+    //Check if the next_room is the last index in room pool
+    if(next_room = ds_list_find_value(global.room_pool, ds_list_size(global.room_pool)))
     {
         //stores the player name 
         name = get_string("Please enter your name:","");
@@ -760,10 +747,16 @@ if(is_winning)
         room_goto(rm_scoreBoard);
         x = 32;
         y = 320;
+        
+        //reset the room pool index, incase the player wants to play
+        //again goes back to room index 0 in the global.room_pool
+        global.room_pool_index = 0;
+        
     }
     else 
     {
-        room_goto_next();
+        room_goto(next_room);
+        global.room_pool_index++;
         x = 32;
         y = 320;
     }
