@@ -147,6 +147,14 @@
         <sprite>sprites\spr_right</sprite>
       </sprites>
     </sprites>
+    <sprite>sprites\spr_bg_night</sprite>
+    <sprite>sprites\spr_bg_desert</sprite>
+    <sprite>sprites\spr_bg_rock1</sprite>
+    <sprite>sprites\spr_bg_mainMenu</sprite>
+    <sprite>sprites\spr_bg_lab</sprite>
+    <sprite>sprites\spr_bg_rock2</sprite>
+    <sprite>sprites\spr_bg_splash</sprite>
+    <sprite>sprites\spr_bg_clouds</sprite>
     <sprite>sprites\spr_bak</sprite>
   </sprites>
   <backgrounds name="background">
@@ -344,7 +352,15 @@
     </objects>
     <object>objects\obj_operatingSystem</object>
     <object>objects\obj_mobile</object>
+    <object>objects\obj_bg_lab</object>
+    <object>objects\obj_bg_clouds</object>
+    <object>objects\obj_bg_dessert</object>
+    <object>objects\obj_bg_night</object>
     <object>objects\obj_bak</object>
+    <object>objects\obj_bg_splash</object>
+    <object>objects\obj_bg_rock1</object>
+    <object>objects\obj_bg_rock2</object>
+    <object>objects\obj_bg_mainMenu</object>
   </objects>
   <rooms name="rooms">
     <rooms name="Main Menu Rooms">
