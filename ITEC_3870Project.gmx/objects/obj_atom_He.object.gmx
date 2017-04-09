@@ -27,9 +27,7 @@
             <kind>1</kind>
             <string>/// Initialize Variables
 
-event_inherited();
-charge = 0;
-symbol = "He";
+scr_init_atom(0, "He", period1, period1);
 </string>
           </argument>
         </arguments>

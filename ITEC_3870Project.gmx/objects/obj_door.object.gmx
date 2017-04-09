@@ -3,7 +3,7 @@
   <spriteName>spr_door</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>0</depth>
+  <depth>-10</depth>
   <persistent>0</persistent>
   <parentName>par_pausable</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -32,9 +32,6 @@ image_speed = 0;
 
 // Mechanic Variables
 doorExit = true;
-
-// Sprite Variables
-depth = 5;
 </string>
           </argument>
         </arguments>

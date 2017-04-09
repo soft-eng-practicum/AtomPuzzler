@@ -27,9 +27,14 @@
             <kind>1</kind>
             <string>/// Initialize Variables
 
+// Mechanic Variables
 event_inherited();
 charge = -1;
 symbol = "I";
+
+// Sprite Variables
+image_xscale = period5;
+image_yscale = period5;
 </string>
           </argument>
         </arguments>

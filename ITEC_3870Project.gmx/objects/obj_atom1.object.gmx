@@ -3,7 +3,7 @@
   <spriteName>spr_atom1</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>0</depth>
+  <depth>-50</depth>
   <persistent>0</persistent>
   <parentName>par_pausable</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -34,6 +34,13 @@ symbol = "";
 // Sprite Variables
 image_speed = 0.01;
 orbBoolean = true;
+period1 = 1.00;
+period2 = 1.08;
+period3 = 1.16;
+period4 = 1.24;
+period5 = 1.32;
+period6 = 1.40;
+period7 = 1.50;
 </string>
           </argument>
         </arguments>
@@ -58,7 +65,7 @@ orbBoolean = true;
             <kind>1</kind>
             <string>/// Creates an Aesthetic Atom
 
-instance_create(x, y, obj_atom2)
+instance_create(x, y, obj_atom2);
 </string>
           </argument>
         </arguments>
@@ -120,6 +127,7 @@ else
           <argument>
             <kind>1</kind>
             <string>/// Atom on Collion Destroy and play sound Effect
+
 instance_destroy();
 audio_play_sound(sfx_atomCollide, 0, false);
 </string>

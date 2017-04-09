@@ -290,3 +290,11 @@ git pull
 git status
 git pull
 git pull
+git pull
+git status
+git add -A
+git commit -m "Finished animation and animation logic for the boy player's idle stance."
+git push
+git status
+git pull
+git pull
