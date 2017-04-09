@@ -366,7 +366,6 @@
       <object>objects\obj_bak</object>
       <object>objects\obj_bg_rock1</object>
       <object>objects\obj_bg_rock2</object>
-      <object>objects\obj_bgParent</object>
       <object>objects\obj_bg_mainMenu</object>
     </objects>
   </objects>

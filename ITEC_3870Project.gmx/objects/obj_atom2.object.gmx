@@ -3,7 +3,7 @@
   <spriteName>spr_atom2</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>-20</depth>
+  <depth>-50</depth>
   <persistent>0</persistent>
   <parentName>par_pausable</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -37,9 +37,6 @@ place = irandom(359);
 myspeed = irandom(5) + 1;
 target = obj_player;
 length = 32;
-
-// Sprite Variables
-depth = -5;
 </string>
           </argument>
         </arguments>
