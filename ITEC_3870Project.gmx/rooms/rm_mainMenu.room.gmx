@@ -38,7 +38,7 @@ scr_read_file("settings.ini", room_get_name(room));</code>
     <yoffset>0</yoffset>
   </makerSettings>
   <backgrounds>
-    <background visible="-1" foreground="0" name="bg_mainMenu" x="0" y="0" htiled="-1" vtiled="-1" hspeed="0" vspeed="0" stretch="0"/>
+    <background visible="-1" foreground="0" name="" x="0" y="0" htiled="-1" vtiled="-1" hspeed="0" vspeed="0" stretch="0"/>
     <background visible="0" foreground="0" name="" x="0" y="0" htiled="-1" vtiled="-1" hspeed="0" vspeed="0" stretch="0"/>
     <background visible="0" foreground="0" name="" x="0" y="0" htiled="-1" vtiled="-1" hspeed="0" vspeed="0" stretch="0"/>
     <background visible="0" foreground="0" name="" x="0" y="0" htiled="-1" vtiled="-1" hspeed="0" vspeed="0" stretch="0"/>
@@ -87,6 +87,7 @@ scr_read_file("settings.ini", room_get_name(room));</code>
     <instance objName="obj_unitTest" x="17" y="20" name="inst_4D4AEC74" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_title" x="314" y="192" name="inst_817FCF30" locked="0" code="" scaleX="1.32857143878937" scaleY="2.33999991416931" colour="4294967295" rotation="0"/>
     <instance objName="obj_player" x="59" y="403" name="inst_4B62F330" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_bg_mainMenu" x="-2" y="-6" name="inst_0D8A6A1F" locked="0" code="" scaleX="20.5599994659424" scaleY="15.709677696228" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

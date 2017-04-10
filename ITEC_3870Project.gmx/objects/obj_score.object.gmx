@@ -3,7 +3,7 @@
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>0</depth>
+  <depth>-50</depth>
   <persistent>-1</persistent>
   <parentName>par_pausable</parentName>
   <maskName>&lt;undefined&gt;</maskName>

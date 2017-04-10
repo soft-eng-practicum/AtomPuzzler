@@ -39,7 +39,7 @@ ds_list_add(global.room_list, "1");</code>
     <yoffset>0</yoffset>
   </makerSettings>
   <backgrounds>
-    <background visible="-1" foreground="0" name="labBackground" x="0" y="-5" htiled="-1" vtiled="-1" hspeed="0" vspeed="0" stretch="0"/>
+    <background visible="-1" foreground="0" name="" x="0" y="-5" htiled="-1" vtiled="-1" hspeed="0" vspeed="0" stretch="0"/>
     <background visible="0" foreground="0" name="" x="0" y="0" htiled="-1" vtiled="-1" hspeed="0" vspeed="0" stretch="0"/>
     <background visible="0" foreground="0" name="" x="0" y="0" htiled="-1" vtiled="-1" hspeed="0" vspeed="0" stretch="0"/>
     <background visible="0" foreground="0" name="" x="0" y="0" htiled="-1" vtiled="-1" hspeed="0" vspeed="0" stretch="0"/>
@@ -59,6 +59,7 @@ ds_list_add(global.room_list, "1");</code>
     <view visible="0" objName="&lt;undefined&gt;" xview="0" yview="0" wview="1024" hview="768" xport="0" yport="0" wport="1024" hport="768" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
   </views>
   <instances>
+    <instance objName="obj_bg_lab" x="1" y="-2" name="inst_459BE518" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_obstacle" x="0" y="384" name="inst_164BCBD3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_obstacle" x="0" y="384" name="inst_2DEB506D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_obstacle" x="32" y="384" name="inst_6C98A805" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -91,13 +92,13 @@ ds_list_add(global.room_list, "1");</code>
     <instance objName="obj_obstacle" x="608" y="384" name="inst_84CED446" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_obstacle" x="608" y="384" name="inst_93253949" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_obstacle" x="640" y="384" name="inst_632E8BFE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_door" x="605" y="320" name="inst_0EB1C2F1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_door" x="616" y="325" name="inst_0EB1C2F1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_lew_incorrect" x="160" y="224" name="inst_12B728BC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_lew_incorrect" x="480" y="224" name="inst_B3090890" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_lew_correct" x="320" y="224" name="inst_DC5CAAFE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_lew_h2o_correct" x="320" y="241" name="inst_82EF92A0" locked="0" code="" scaleX="0.993749976158142" scaleY="0.97484278678894" colour="4294967295" rotation="0"/>
     <instance objName="obj_lew_h2o_incorrect1" x="155" y="242" name="inst_FE5F5B71" locked="0" code="" scaleX="0.993749976158142" scaleY="0.968944072723389" colour="4294967295" rotation="0"/>
-    <instance objName="obj_lew_h2o_incorrect2" x="486" y="241" name="inst_6C7CE150" locked="0" code="" scaleX="1.01250004768372" scaleY="0.98742139339447" colour="4294967295" rotation="0"/>
+    <instance objName="obj_lew_h2o_incorrect2" x="488" y="248" name="inst_6C7CE150" locked="0" code="" scaleX="1.01250004768372" scaleY="0.98742139339447" colour="4294967295" rotation="0"/>
     <instance objName="obj_dialogue" x="297" y="18" name="inst_468689C2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
