@@ -298,3 +298,20 @@ git push
 git status
 git pull
 git pull
+git pull
+git add -A
+git add -A
+git commit -m "Fully added functionality for idle animation (girl animation not finished yet, boy only). Partially fixed depth problem to solve the visual bug stopping atoms and other various objects from being seen."
+git push
+git add -A
+git status
+git commit -m "Accidentally added a GMS tutorial project into the Documenation folder last commit, removing it on this push."
+git push
+git add -a
+git add -A
+git commit -m "Fixed the atoms not appearing in the rooms specified in Trello."
+git push
+git add -A
+git commit -m "Fixed all background proportions and background objects."
+git push
+git status
