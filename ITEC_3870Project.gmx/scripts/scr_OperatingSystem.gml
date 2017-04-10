@@ -38,13 +38,11 @@ globalvar aspect;
     view_hport[0] = max_h;
     aspect = (max_w / max_h);
     
-    //portrait
     if (aspect < 1)
     {
         view_hview[0] = base;
         view_wview[0] = (base * aspect);
     }
-    //landscape
     else
     {
         view_hview[0] = (base / aspect);
@@ -79,39 +77,3 @@ base_size = room_height;
 width = browser_width;
 height = browser_height;
 scr_mobileScaling(base_size, width, height);
-#define scr_mobileControl
-///scr_mobileControl(pointDirection);
-/* put this in the step event
-   return a value between 1 - 4*/
-
-/*set the dpad initial value to return 0 
-  when dpad isnt being used and switching between point of direction
-*/
-var dpad = 0;
-pointDirection = argument0;
-right = 1;
-up    = 2;
-left  = 3;
-down  = 4;
-
-// look for a value in a 360 degree circle
-if((pointDirection < 45 && pointDirection >= 0) || pointDirection > 315)
-{
-    dpad = right;
-}
-if(pointDirection > 45 && pointDirection < 135)
-{   
-    dpad = up;
-}
-if(pointDirection > 135 && pointDirection < 225)
-{
-    dpad = left;
-
-}
-if(pointDirection > 225 && pointDirection < 315)
-{
-    dpad = down;
-}
-
-return dpad;
-    

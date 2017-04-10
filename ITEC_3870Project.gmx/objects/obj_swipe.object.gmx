@@ -76,15 +76,12 @@ swipe = true;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///checks the direction in a 360 degree
-//"end step" = "do while" loop
-
-//set the mouse postion 
+            <string>///set the mouse postion 
 
 x = mouse_x;
 y = mouse_y;
 
-
+//checks the direction
 if(swipe){
     //get the direction to which the user is swiping
     pointDirection = point_direction(xstart,ystart,x,y);
@@ -110,6 +107,8 @@ if(swipe){
         with(obj_player)
         {
             //player jumps when swiping up
+            //put jump calculation here
+            //should set the player verticle spd
             if(jump = 1 &amp;&amp; place_meeting(x, y + 1, obj_obstacle))
             {
                 vspd = -jspd;
@@ -138,19 +137,7 @@ if(swipe){
         //swiping down
         with(obj_player)
         {
-            //drops atoms
-            if(ds_list_size(global.inventory) &gt; 0) 
-            {
-                obj = scr_drop_atom(global.inventory);
-                if(!facing_forward)
-                {
-                    instance_create(obj_player.x - 50, obj_player.y - 10, obj);
-                }
-                if(facing_forward)
-                {
-                    instance_create(obj_player.x + 50, obj_player.y - 10, obj);
-                }
-            }
+            //put code here
         }
         //destroy the object after a swipe
         instance_destroy();

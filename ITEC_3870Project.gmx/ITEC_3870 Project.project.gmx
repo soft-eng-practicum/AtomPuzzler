@@ -351,16 +351,12 @@
       <object>objects\obj_room_list</object>
       <object>objects\obj_lewis_text</object>
     </objects>
-    <objects name="mobile controls">
-      <object>objects\obj_mobile</object>
-      <object>objects\obj_mobileControl</object>
+    <objects name="Vitrual keys">
+      <object>objects\obj_leftKey</object>
+      <object>objects\obj_rightKey</object>
+      <object>objects\obj_jumpKey</object>
+      <object>objects\obj_swipe</object>
     </objects>
-<<<<<<< HEAD
-    <object>objects\obj_operatingSystem</object>
-    <objects name="mobileBackground">
-      <object>objects\obj_background</object>
-      <object>objects\obj_splashScreen</object>
-=======
     <objects name="Backgrounds">
       <object>objects\obj_bg_dessert</object>
       <object>objects\obj_bg_lab</object>
@@ -371,7 +367,6 @@
       <object>objects\obj_bg_rock1</object>
       <object>objects\obj_bg_rock2</object>
       <object>objects\obj_bg_mainMenu</object>
->>>>>>> eb4ebe0c2d20beee7eb2e81205f2eb26f7634017
     </objects>
   </objects>
   <rooms name="rooms">
