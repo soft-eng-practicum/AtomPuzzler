@@ -315,3 +315,8 @@ git add -A
 git commit -m "Fixed all background proportions and background objects."
 git push
 git status
+git status
+git pull
+git add -A
+git commit -m "Various text changes and clean up."
+git push

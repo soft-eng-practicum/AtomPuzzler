@@ -393,6 +393,10 @@
       <room>rooms\rm5</room>
       <room>rooms\lab5</room>
     </rooms>
+    <rooms name="In Development Rooms">
+      <room>rooms\rm_playTest1</room>
+      <room>rooms\rm_playTest2</room>
+    </rooms>
   </rooms>
   <constants number="10">
     <constant name="GMASSERT_MODE">GMASSERT_MODE_ENABLED</constant>
