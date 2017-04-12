@@ -82,7 +82,7 @@
     <instance objName="obj_timer" x="36" y="28" name="inst_4413AEF2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_dialogue" x="292" y="132" name="inst_602FB0E7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="init_room_properties" x="296" y="28" name="inst_AF83C25E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_bg_night" x="0" y="-4" name="inst_4D94ADB1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_bg_night2" x="0" y="0" name="inst_8E675A41" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

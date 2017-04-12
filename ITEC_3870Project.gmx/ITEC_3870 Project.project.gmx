@@ -54,6 +54,7 @@
   <sprites name="sprites">
     <sprites name="Room">
       <sprite>sprites\spr_level_banner</sprite>
+      <sprite>sprites\spr_cloud</sprite>
       <sprite>sprites\spr_door</sprite>
       <sprite>sprites\spr_title</sprite>
     </sprites>
@@ -140,6 +141,8 @@
       <sprite>sprites\spr_movingPlatform</sprite>
       <sprite>sprites\spr_obstacletest</sprite>
       <sprite>sprites\spr_tile3</sprite>
+      <sprite>sprites\spr_tile5</sprite>
+      <sprite>sprites\spr_tile4</sprite>
       <sprite>sprites\spr_tile1</sprite>
       <sprite>sprites\spr_tile2</sprite>
       <sprites name="movingDirection">
@@ -154,23 +157,13 @@
       <sprite>sprites\spr_bg_mainMenu</sprite>
       <sprite>sprites\spr_bg_rock2</sprite>
       <sprite>sprites\spr_bg_clouds</sprite>
-      <sprite>sprites\spr_bak</sprite>
       <sprite>sprites\spr_bg_splash</sprite>
       <sprite>sprites\spr_bg_rock1</sprite>
       <sprite>sprites\spr_bg_lab</sprite>
-      <sprite>sprites\spr_bg_night</sprite>
+      <sprite>sprites\spr_bg_nightRoom2</sprite>
     </sprites>
   </sprites>
-  <backgrounds name="background">
-    <background>background\labBackground</background>
-    <background>background\bg_rock1</background>
-    <background>background\bg_nightRoom</background>
-    <background>background\Bg_Clouds</background>
-    <background>background\Bg_Desert</background>
-    <background>background\bg_mainMenu</background>
-    <background>background\bg_rock2</background>
-    <background>background\splash_moc2</background>
-  </backgrounds>
+  <backgrounds name="background"/>
   <paths name="paths">
     <path>paths\atom</path>
     <path>paths\pth_platformCircle</path>
@@ -366,11 +359,10 @@
       <object>objects\obj_bg_lab</object>
       <object>objects\obj_bg_clouds</object>
       <object>objects\obj_bg_splash</object>
-      <object>objects\obj_bg_night</object>
-      <object>objects\obj_bak</object>
       <object>objects\obj_bg_rock1</object>
       <object>objects\obj_bg_rock2</object>
       <object>objects\obj_bg_mainMenu</object>
+      <object>objects\obj_bg_night2</object>
     </objects>
   </objects>
   <rooms name="rooms">
