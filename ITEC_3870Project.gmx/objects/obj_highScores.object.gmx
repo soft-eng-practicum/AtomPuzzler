@@ -27,8 +27,8 @@
             <kind>1</kind>
             <string>///Display the high scores
 
-draw_set_color(c_black);
-draw_highscore(100, 100, room_width - 100, room_height - 100);
+//draw_set_color(c_black);
+//draw_highscore(100, 100, room_width - 100, room_height - 100);
 </string>
           </argument>
         </arguments>
