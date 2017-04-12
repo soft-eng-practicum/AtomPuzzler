@@ -144,7 +144,9 @@
       <sprite>sprites\spr_tile2</sprite>
       <sprites name="movingDirection">
         <sprite>sprites\spr_left</sprite>
+        <sprite>sprites\spr_up</sprite>
         <sprite>sprites\spr_right</sprite>
+        <sprite>sprites\spr_down</sprite>
       </sprites>
     </sprites>
     <sprites name="Backgrounds">
@@ -171,7 +173,7 @@
   </backgrounds>
   <paths name="paths">
     <path>paths\atom</path>
-    <path>paths\path1</path>
+    <path>paths\pth_platformCircle</path>
   </paths>
   <scripts name="scripts">
     <scripts name="Drawing">
@@ -311,11 +313,13 @@
       <object>objects\obj_backToMain</object>
     </objects>
     <objects name="Obstacle">
-      <object>objects\obj_obstacle</object>
       <object>objects\obj_movingPlatform</object>
+      <object>objects\obj_obstacle</object>
       <objects name="direction_obj">
         <object>objects\obj_left</object>
+        <object>objects\obj_up</object>
         <object>objects\obj_right</object>
+        <object>objects\obj_down</object>
       </objects>
     </objects>
     <objects name="Pausing">
@@ -370,6 +374,7 @@
     </objects>
   </objects>
   <rooms name="rooms">
+    <room>rooms\rm_playTest6</room>
     <rooms name="Main Menu Rooms">
       <room>rooms\rm_initialize</room>
       <room>rooms\rm_splashScreen</room>
@@ -396,6 +401,9 @@
     <rooms name="In Development Rooms">
       <room>rooms\rm_playTest1</room>
       <room>rooms\rm_playTest2</room>
+      <room>rooms\rm_playTest3</room>
+      <room>rooms\rm_playTest4</room>
+      <room>rooms\rm_playTest5</room>
     </rooms>
   </rooms>
   <constants number="10">
