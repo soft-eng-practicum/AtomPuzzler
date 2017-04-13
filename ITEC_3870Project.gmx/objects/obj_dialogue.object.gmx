@@ -212,7 +212,7 @@ draw_set_valign(fa_middle);
 draw_set_font(font_Default);
 draw_set_color(c_yellow);
 
-draw_text_ext(width/2, 135, global.message, 20, width/2 - 50);
+draw_text_ext(width/2, 135, global.message, 20, 600);
 
 }
 </string>
@@ -356,7 +356,11 @@ draw_set_valign(fa_middle);
 
 draw_set_color(c_yellow);
 
-draw_text_ext(width/2, 215, "Press ENTER to continue", 18, width/2 - 50);
+if(global.attempts &gt; 1)
+{
+    draw_text_ext(width/2, 230, "Press P for hints", 18, width/2);
+}
+draw_text_ext(width/2, 210, "Press ENTER to continue", 18, width/2 - 50);
 
 }
 </string>
