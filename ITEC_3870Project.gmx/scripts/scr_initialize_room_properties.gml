@@ -4,9 +4,10 @@
 var array = scr_read_file("room_settings.ini", room_get_name(room));
 
 // Initialize Variables
-global.message[0] = scr_get_message(array);
+global.message = scr_get_message(array);
 global.room_type = scr_get_type(array);
 global.room_difficulty = scr_get_difficulty(array);
+global.room_hint = scr_get_hint(array);
 global.correct_charge = 0;
 
 // Clear the previous list

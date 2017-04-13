@@ -111,6 +111,14 @@ switch(symbol)
     case "Sr":
         obj = obj_atom_Sr;
         break;
+        
+    //Lab Room Atoms
+    case "1":
+        obj = obj_lew_correct;
+        break;
+    case "-1":
+        obj = obj_lew_incorrect;
+        break;
     
     //ATOM SYMBOL DOES NOT EXIST THEREFORE THIS SHOULD NEVER OCCUR
     default:
