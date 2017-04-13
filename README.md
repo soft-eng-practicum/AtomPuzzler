@@ -20,7 +20,7 @@
 Placeholder
 
 ## Documentation
-Placeholder
+[Client](https://github.com/soft-eng-practicum/AtomPuzzler/wiki/Client-Documentation)
 
 ## Team
 
