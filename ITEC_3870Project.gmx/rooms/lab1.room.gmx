@@ -12,7 +12,7 @@
   <showcolour>-1</showcolour>
   <code>/// Initialize Variables
 global.room_type = -1;
-global.message[0] = "Choose the correct Lewis Structure";
+global.message = "Choose the correct Lewis Structure";
 
 // Create list
 global.room_list = ds_list_create();
