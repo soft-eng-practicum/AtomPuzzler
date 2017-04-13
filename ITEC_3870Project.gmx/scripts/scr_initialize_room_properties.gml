@@ -17,9 +17,5 @@ ds_list_clear(global.room_list);
 global.s_array = scr_get_solution(array);
 scr_array_to_list(global.s_array, global.room_list);
 
-// Create instances of Atom objects in room
-//var array_atom_objs = scr_get_array_of_atoms(s_array);
-//scr_create_room_atoms(room_get_name(room), array_atom_objs);
-
 // Stop timer
 obj_timer.stop = true;

@@ -23,9 +23,9 @@ if(difficulty == 0) {
     
     ds_list_add(lab_list, lab1);
     ds_list_add(lab_list, lab2);
-    //ds_list_add(lab_list, lab3);
-    //ds_list_add(lab_list, lab4);
-    //ds_list_add(lab_list, lab5);
+    ds_list_add(lab_list, lab3);
+    ds_list_add(lab_list, lab4);
+    ds_list_add(lab_list, lab5);
     ds_list_shuffle(lab_list);
 }
 

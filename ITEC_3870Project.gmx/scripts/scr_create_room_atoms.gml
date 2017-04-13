@@ -1,4 +1,4 @@
-/// scr_create_room_atoms(room, atoms)
+/// scr_create_room_atoms("room name", atoms)
 // Uses scr_get_array_of_atoms
 /*
     Takes in an array of atoms and puts them into a room
@@ -15,7 +15,7 @@ switch(rm_name)
         instance_create(188, 324, array[0] );
         instance_create(284, 296, array[1] );
         instance_create(380, 324, array[2] );
-        instance_create(284, 420, obj_atom_He );
+        instance_create(284, 420, scr_get_random_atom() );
         break;
     case "rm2":
         instance_create(200, 324, array[0] );
