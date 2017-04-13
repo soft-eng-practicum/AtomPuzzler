@@ -57,6 +57,7 @@
       <sprite>sprites\spr_cloud</sprite>
       <sprite>sprites\spr_door</sprite>
       <sprite>sprites\spr_title</sprite>
+      <sprite>sprites\spr_signpost</sprite>
     </sprites>
     <sprites name="Player">
       <sprite>sprites\spr_boy1</sprite>
@@ -175,6 +176,7 @@
       <script>scripts\draw_text_shadow_ext.gml</script>
       <script>scripts\draw_sprite_outlined.gml</script>
       <script>scripts\draw_sprite_shadow.gml</script>
+      <script>scripts\scr_text.gml</script>
     </scripts>
     <scripts name="Testing">
       <script>scripts\intializeTestValues.gml</script>
@@ -344,9 +346,8 @@
     <objects name="Text Feedback">
       <object>objects\obj_gameover</object>
       <object>objects\obj_win</object>
-      <object>objects\obj_inventory</object>
-      <object>objects\obj_room_list</object>
-      <object>objects\obj_lewis_text</object>
+      <object>objects\obj_hint</object>
+      <object>objects\obj_text</object>
     </objects>
     <objects name="Vitrual keys">
       <object>objects\obj_leftKey</object>
@@ -366,7 +367,6 @@
     </objects>
   </objects>
   <rooms name="rooms">
-    <room>rooms\rm_playTest6</room>
     <rooms name="Main Menu Rooms">
       <room>rooms\rm_initialize</room>
       <room>rooms\rm_splashScreen</room>
@@ -384,18 +384,13 @@
       <room>rooms\rm2</room>
       <room>rooms\lab2</room>
       <room>rooms\rm3</room>
-      <room>rooms\lab3</room>
       <room>rooms\rm4</room>
-      <room>rooms\lab4</room>
       <room>rooms\rm5</room>
-      <room>rooms\lab5</room>
     </rooms>
     <rooms name="In Development Rooms">
-      <room>rooms\rm_playTest1</room>
-      <room>rooms\rm_playTest2</room>
-      <room>rooms\rm_playTest3</room>
       <room>rooms\rm_playTest4</room>
       <room>rooms\rm_playTest5</room>
+      <room>rooms\rm_playTest6</room>
     </rooms>
   </rooms>
   <constants number="10">
