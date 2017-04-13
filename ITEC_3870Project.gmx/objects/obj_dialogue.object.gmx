@@ -196,14 +196,25 @@ if(alarm[2] == -1 &amp;&amp; global.room_type == -1)
           <argument>
             <kind>1</kind>
             <string>///Draw tinted box for problem text
-
+if(alarm[0] = -1) 
+{
 width = display_get_gui_width();
 height = display_get_gui_height();
 
 draw_set_alpha(0.7);
     draw_set_color(c_black);
-    draw_rectangle(0, 100, width, 150, false);
+    draw_rectangle(0, 100, width, 175, false);
 draw_set_alpha(1);
+
+
+draw_set_halign(fa_center);
+draw_set_valign(fa_middle);
+draw_set_font(font_Default);
+draw_set_color(c_yellow);
+
+draw_text_ext(width/2, 135, global.message, 20, width/2 - 50);
+
+}
 </string>
           </argument>
         </arguments>
@@ -239,7 +250,7 @@ line        -&gt; changes line position. The higher the value the more the line 
 
 */
 
-
+/*
 
 // Declare font traits
 draw_set_font(font_Default);
@@ -337,10 +348,15 @@ height = display_get_gui_height();
 
 draw_set_alpha(0.7);
     draw_set_color(c_black);
-    draw_rectangle(0, 150, width, 200, false);
+    draw_rectangle(0, 176, width, 250, false);
 draw_set_alpha(1);
 
-draw_text_outlined(width/2, 175, "Press ENTER to continue", c_white, c_black);
+draw_set_halign(fa_center);
+draw_set_valign(fa_middle);
+
+draw_set_color(c_yellow);
+
+draw_text_ext(width/2, 215, "Press ENTER to continue", 18, width/2 - 50);
 
 }
 </string>

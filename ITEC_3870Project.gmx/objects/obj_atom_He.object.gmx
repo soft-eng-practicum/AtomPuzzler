@@ -27,7 +27,16 @@
             <kind>1</kind>
             <string>/// Initialize Variables
 
-scr_init_atom(0, "He", period1, period1);
+// Mechanic Variables
+event_inherited();
+charge = 0;
+symbol = "He";
+
+// Sprite Variables
+image_xscale = period1;
+image_yscale = period1;
+
+//scr_init_atom(0, "He", period1, period1);
 </string>
           </argument>
         </arguments>
