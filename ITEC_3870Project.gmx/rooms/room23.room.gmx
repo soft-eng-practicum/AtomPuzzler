@@ -12,7 +12,7 @@
   <showcolour>-1</showcolour>
   <code>/// Initialize Variables
 global.room_type = -1;
-global.message = "Choose the molecular geometry: Tetrahedral";
+global.message = "Choose the molecular geometry: Seesaw";
 
 // Create list
 global.room_list = ds_list_create();
@@ -97,9 +97,9 @@ ds_list_add(global.room_list, "1");</code>
     <instance objName="obj_lew_incorrect" x="490" y="270" name="inst_B3090890" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_lew_correct" x="320" y="270" name="inst_DC5CAAFE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_dialogue" x="297" y="18" name="inst_468689C2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_tetrahedral" x="322" y="234" name="inst_50F3D265" locked="0" code="" scaleX="0.579999983310699" scaleY="0.544554471969604" colour="4294967295" rotation="0"/>
-    <instance objName="obj_square_planar" x="489" y="235" name="inst_23C8B187" locked="0" code="" scaleX="0.629999995231628" scaleY="0.621118009090424" colour="4294967295" rotation="0"/>
-    <instance objName="obj_trigonal_pyramidal" x="156" y="233" name="inst_E629C0A9" locked="0" code="" scaleX="0.660000026226044" scaleY="0.623529434204102" colour="4294967295" rotation="0"/>
+    <instance objName="obj_linear" x="319" y="224" name="inst_7B306BEF" locked="0" code="" scaleX="0.709999978542328" scaleY="0.683333337306976" colour="4294967295" rotation="0"/>
+    <instance objName="obj_pentagonal_planar" x="152" y="230" name="inst_554989BB" locked="0" code="" scaleX="0.675000011920929" scaleY="0.671232879161835" colour="4294967295" rotation="0"/>
+    <instance objName="obj_bent" x="489" y="232" name="inst_4BD1019F" locked="0" code="" scaleX="0.653266310691833" scaleY="0.639999985694885" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>
