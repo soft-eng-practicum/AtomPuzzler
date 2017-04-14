@@ -242,7 +242,7 @@
       <script>scripts\scr_get_room_pool.gml</script>
       <script>scripts\scr_initialize_room_properties.gml</script>
       <script>scripts\scr_create_room_atoms.gml</script>
-      <script>scripts\scr_get_random_position.gml</script>
+      <script>scripts\scr_randomize_room_atoms.gml</script>
     </scripts>
     <script>scripts\scr_OperatingSystem.gml</script>
   </scripts>
@@ -254,6 +254,7 @@
       <object>objects\obj_player</object>
     </objects>
     <objects name="Operations">
+      <object>objects\obj_mobileControl</object>
       <object>objects\obj_mobile</object>
       <object>objects\obj_operatingSystem</object>
     </objects>
@@ -377,12 +378,6 @@
       <object>objects\obj_gameover</object>
       <object>objects\obj_win</object>
       <object>objects\obj_hint</object>
-    </objects>
-    <objects name="Vitrual keys">
-      <object>objects\obj_leftKey</object>
-      <object>objects\obj_rightKey</object>
-      <object>objects\obj_jumpKey</object>
-      <object>objects\obj_swipe</object>
     </objects>
     <objects name="Backgrounds">
       <object>objects\obj_bg_dessert</object>

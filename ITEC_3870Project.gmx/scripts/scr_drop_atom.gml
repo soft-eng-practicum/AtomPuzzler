@@ -1,6 +1,7 @@
 ///scr_drop_atom(ds_list)
 /*
-    Takes the player's inventory and drops the last index in the list.
+    Purpose:
+        Takes the player's inventory and drops the last index in the list.
     
     Programmer's Note: 
         Using GML's ds functions, the list size will not stay the same

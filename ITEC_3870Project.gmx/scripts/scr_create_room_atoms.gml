@@ -1,5 +1,5 @@
 /// scr_create_room_atoms("room name", atoms)
-// Uses scr_get_array_of_atoms
+// Uses scr_get_array_of_atom in Objects/Room/init_room_properties
 /*
     Takes in an array of atoms and puts them into a room
     Create instances of atom objects and fill them inside a room
