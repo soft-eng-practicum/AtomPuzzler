@@ -320,3 +320,5 @@ git pull
 git add -A
 git commit -m "Various text changes and clean up."
 git push
+git status
+git pull

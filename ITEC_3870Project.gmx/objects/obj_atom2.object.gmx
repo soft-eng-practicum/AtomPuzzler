@@ -37,6 +37,7 @@ place = irandom(359);
 myspeed = irandom(5) + 1;
 target = obj_player;
 length = 32;
+atomNo = ds_list_size(global.inventory) - 1;
 </string>
           </argument>
         </arguments>
@@ -86,10 +87,9 @@ place += myspeed;
             <kind>1</kind>
             <string>/// Destroy on player dropped
 
-/*
-if(keyboard_check_pressed(ord("X")))
+
+if(keyboard_check_pressed(ord("X")) &amp;&amp; atomNo == ds_list_size(global.inventory))
 {
-    with(obj_atom2)
         instance_destroy();
 }
 </string>

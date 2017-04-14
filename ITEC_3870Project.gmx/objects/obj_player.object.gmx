@@ -25,32 +25,6 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Play Music
-
-// This will play the audio and set its priorty level to be higher than all other sounds
-// because the player is persistant, the audio will continue to play.
-
-audio_play_sound(music_AtomPuzzlerTheme, 1, true);
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
             <string>/// Initialize Player Variables
 name = "Atom";
 
@@ -83,6 +57,32 @@ paused = false;
 scrn = -1;
 global.attempts = 0;
 toggle = 0;
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Play Music
+
+// This will play the audio and set its priorty level to be higher than all other sounds
+// because the player is persistant, the audio will continue to play.
+
+audio_play_sound(music_AtomPuzzlerTheme, 1, true);
 </string>
           </argument>
         </arguments>
