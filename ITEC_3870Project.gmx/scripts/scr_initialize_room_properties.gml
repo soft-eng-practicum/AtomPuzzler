@@ -1,6 +1,7 @@
 /// scr_initialize_room_properties()
 
 // Read file, needs to be initiated first
+// Array contains all room properties with types Real and String (will be parsed using other scripts)
 var array = scr_read_file("room_settings.ini", room_get_name(room));
 
 // Initialize Variables
@@ -14,8 +15,8 @@ global.correct_charge = 0;
 ds_list_clear(global.room_list);
 
 // Add values to room's list
-global.s_array = scr_get_solution(array);
-scr_array_to_list(global.s_array, global.room_list);
+global.s_array = scr_get_solution(array);   // scr_get_solution parses the string into an array of atom symbols(string array)
+scr_array_to_list(global.s_array, global.room_list);    // takes the parsed array and adds to a ds_list
 
 // Stop timer
 obj_timer.stop = true;

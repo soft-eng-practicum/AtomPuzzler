@@ -8,7 +8,7 @@
         Given:      {"Na, O, H"}
         Result:     {"Na", "O", "H"}
     
-    @return array
+    @return new_array
 */
 
 var array = argument[0];
@@ -23,7 +23,7 @@ var result = "";
 //New Array's Index
 var index = 0;
 
-//Loops through entire string for each character, char index starts at 1
+//Loops through entire string for each character, char index STARTS at 1 and NOT 0 (GML WTF!?)
 for(i = 1; i <= length; i++) {
 
     //show_debug_message("scr_get_solution: char_at: " + string(string_char_at(solution, i)));
