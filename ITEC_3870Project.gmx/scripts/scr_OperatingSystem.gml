@@ -77,3 +77,40 @@ base_size = room_height;
 width = browser_width;
 height = browser_height;
 scr_mobileScaling(base_size, width, height);
+#define scr_mobileControl
+///scr_tab(pointDirection);
+//get the direction to which the player is moving
+pointDirection = argument0;
+
+direct = 0;
+right  = 1;
+up     = 2;
+left   = 3;
+down   = 4;
+// look for a value in a 360 degree circle
+
+//right degree 0
+if(pointDirection < 45 || pointDirection > 315)
+{
+    direct = right;
+}
+
+//up    degree 90
+if(pointDirection > 45 && pointDirection < 135)
+{
+    direct = up;
+}
+
+//left  degree 180
+if(pointDirection > 135 && pointDirection < 225)
+{
+    direct = left;
+}
+
+//down  degree 270
+if(pointDirection > 225 && pointDirection < 315)
+{
+    direct = down;
+}
+
+return direct;

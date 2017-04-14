@@ -243,6 +243,7 @@
       <object>objects\obj_player</object>
     </objects>
     <objects name="Operations">
+      <object>objects\obj_mobileControl</object>
       <object>objects\obj_mobile</object>
       <object>objects\obj_operatingSystem</object>
     </objects>
@@ -350,12 +351,6 @@
       <object>objects\obj_inventory</object>
       <object>objects\obj_room_list</object>
       <object>objects\obj_lewis_text</object>
-    </objects>
-    <objects name="Vitrual keys">
-      <object>objects\obj_leftKey</object>
-      <object>objects\obj_rightKey</object>
-      <object>objects\obj_jumpKey</object>
-      <object>objects\obj_swipe</object>
     </objects>
     <objects name="Backgrounds">
       <object>objects\obj_bg_dessert</object>

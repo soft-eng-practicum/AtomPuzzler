@@ -82,6 +82,16 @@ paused = false;
 scrn = -1;
 attempts = 0;
 toggle = 0;
+
+//Atom placement when droping
+atomX = 50;
+atomY = 10;
+
+// mobile input
+if(mobile)
+{
+    input = global.input;
+}
 </string>
           </argument>
         </arguments>
@@ -294,14 +304,11 @@ upwards.
 
 mvmt = key_left + key_right;
 
-//hspd = mvmt * mspd;
-
 if(vspd &lt; 10)
 {
     vspd += grav;
 }
 
-//if(place_meeting(x, y + 1, obj_obstacle))
 if(key_jump &amp;&amp; jump &amp;&amp; place_meeting(x, y + 1, obj_obstacle))
 {
     vspd = -jspd;
@@ -423,20 +430,130 @@ hspd = mvmt * mspd;
 //  Notes: Deleting from ds_list does not change list size.
 //  TODO: Remove last item from list, clear list, put leftover items into list again, this will require two lists maybe
 
-
 if(keyboard_check_pressed(ord("X")))
-
 {
+
     if(ds_list_size(global.inventory) &gt; 0) 
     {
         obj = scr_drop_atom(global.inventory);
-        if(!facing_forward)
+        //move the atom 
+        if(instance_exists(obj_atom1))
         {
-            instance_create(obj_player.x - 50, obj_player.y - 10, obj);
+            atomX += 25;
+        }
+        else
+        {
+            atomX = 50;
+        }
+
+        if(!facing_forward)
+        {   
+            instance_create(obj_player.x - atomX, obj_player.y - atomY, obj);
+            
         }
         if(facing_forward)
         {
-            instance_create(obj_player.x + 50, obj_player.y - 10, obj);
+            instance_create(obj_player.x + atomX, obj_player.y - atomY, obj);
+        }
+                            
+        global.points -= 200;
+        if(global.points &lt; 0)
+        {
+            global.points = 0;
+        }
+        
+    }
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///mobile operations
+
+//key_tap = input.tap;
+//move_x = input.joy_x;
+//move_y = input.joy_y;
+
+//swipe operation
+if(mobile){
+    if (input.swipe &amp;&amp; input.swipe_spd &gt; 20)
+    {
+    
+        switch ( scr_mobileControl(floor(input.swipe_dir )))
+        {
+            case 1: // right
+                break;
+            case 2: // up
+                if(jump &amp;&amp; place_meeting(x, y + 1, obj_obstacle))
+                {
+                    vspd = -jspd - 1;
+                }
+                break
+            case 3: // left
+
+                break;
+            case 4: // down: Drop atoms
+                if(ds_list_size(global.inventory) &gt; 0) 
+                {
+                    obj = scr_drop_atom(global.inventory);
+                    if(!facing_forward)
+                    {
+                        instance_create(obj_player.x - 50, obj_player.y - 10, obj);
+                        
+                    }
+                    if(facing_forward)
+                    {
+                        instance_create(obj_player.x + 50, obj_player.y - 10, obj);
+                    }
+                    
+                    if(ds_list_size(global.inventory) &gt; 0)
+                    {
+                        global.points -= 200;
+                        if(global.points &lt; 0)
+                        {
+                            global.points = 0;
+                        }
+                    }
+                }
+                break; 
+        }
+    }
+    
+    if (input.joy_active)
+    {   //show_debug_message(floor((((radtodeg(input.joy_dir)+ 45)mod 360 )/90)));
+        //show_debug_message(floor(radtodeg(input.joy_dir)));
+        switch ( scr_mobileControl(floor(radtodeg(input.joy_dir))))
+        {
+            case 1: // right
+                mvmt = 1;
+                hspd = mvmt * mspd
+                break;
+            case 2: // up
+
+                break;
+            case 3: // left
+                mvmt = -1;
+                hspd = mvmt * mspd;
+                break;
+            case 4: // down
+                break;
+                
         }
     }
 }
@@ -806,36 +923,6 @@ if(is_winning)
     
 }
 
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="6" enumb="53">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///when the mouse button is pressed create the obj_swipe
-
-//checks for mobile version
-
-if(mobile)
-{
-    instance_create(mouse_x, mouse_y, obj_swipe);
-}
 </string>
           </argument>
         </arguments>
