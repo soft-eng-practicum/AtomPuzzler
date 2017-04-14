@@ -776,31 +776,25 @@ if(keyboard_check_released(vk_up) &amp;&amp; instance_nearest(x, y, obj_door).do
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Debug test code for room and output the debug messages.
-
-/*if (room_exists(room_next(room)) &amp;&amp; keyboard_check(vk_up))
-{
-    if(debug_mode)
-    {
-        room_goto_next();
-        x = 
-        show_debug_message("You have sucessfully moved to the next room");
-        show_message("You have sucessfully moved to the next room");
-    }
-}
-
-else if (!room_exists(room_next(room)) &amp;&amp; keyboard_check(vk_up) &amp;&amp; debug_mode)
-{
-    show_debug_message("Next room does not exist");
-    show_message("Next room does not exist");
-}
-
-else
-{
-
-}
+            <string>///Toggles on_start_level variable
+/*
+    Pauses timer and player actions on level start
+    Destroys dialogue object when player presses 'ENTER'
 */
 
+if(global.room_type != -1)
+{
+    obj_timer.stop = true;
+    obj_player.toggle = -1;
+}
+
+// On spacebar continue level
+if(keyboard_check_pressed(vk_space) &amp;&amp; global.room_type != -1 &amp;&amp; alarm[2] == -1)
+{
+    with(obj_dialogue) instance_destroy();
+    obj_timer.stop = false;
+    obj_player.toggle = 0;
+}
 </string>
           </argument>
         </arguments>

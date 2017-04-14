@@ -40,7 +40,7 @@ if(difficulty == 2) {
 }
 
 // Lists are already shuffled, add to new list in order of normal than lab
-for(i = 0; i < 5; i++) {
+for(i = 0; i < 1; i++) {
     ds_list_add(final_list, ds_list_find_value(rm_list, i));
     ds_list_add(final_list, ds_list_find_value(lab_list, i));
 }
