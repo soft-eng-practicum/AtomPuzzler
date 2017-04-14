@@ -54,8 +54,10 @@
   <sprites name="sprites">
     <sprites name="Room">
       <sprite>sprites\spr_level_banner</sprite>
+      <sprite>sprites\spr_cloud</sprite>
       <sprite>sprites\spr_door</sprite>
       <sprite>sprites\spr_title</sprite>
+      <sprite>sprites\spr_signpost</sprite>
     </sprites>
     <sprites name="Player">
       <sprite>sprites\spr_boy1</sprite>
@@ -140,11 +142,15 @@
       <sprite>sprites\spr_movingPlatform</sprite>
       <sprite>sprites\spr_obstacletest</sprite>
       <sprite>sprites\spr_tile3</sprite>
+      <sprite>sprites\spr_tile5</sprite>
+      <sprite>sprites\spr_tile4</sprite>
       <sprite>sprites\spr_tile1</sprite>
       <sprite>sprites\spr_tile2</sprite>
       <sprites name="movingDirection">
         <sprite>sprites\spr_left</sprite>
+        <sprite>sprites\spr_up</sprite>
         <sprite>sprites\spr_right</sprite>
+        <sprite>sprites\spr_down</sprite>
       </sprites>
     </sprites>
     <sprites name="Backgrounds">
@@ -152,26 +158,32 @@
       <sprite>sprites\spr_bg_mainMenu</sprite>
       <sprite>sprites\spr_bg_rock2</sprite>
       <sprite>sprites\spr_bg_clouds</sprite>
-      <sprite>sprites\spr_bak</sprite>
       <sprite>sprites\spr_bg_splash</sprite>
       <sprite>sprites\spr_bg_rock1</sprite>
       <sprite>sprites\spr_bg_lab</sprite>
-      <sprite>sprites\spr_bg_night</sprite>
+      <sprite>sprites\spr_bg_nightRoom2</sprite>
+    </sprites>
+    <sprites name="Molecular Geometry">
+      <sprite>sprites\spr_linear</sprite>
+      <sprite>sprites\spr_bent</sprite>
+      <sprite>sprites\spr_octahedral</sprite>
+      <sprite>sprites\spr_pentagonal_bipyramidal</sprite>
+      <sprite>sprites\spr_pentagonal_planar</sprite>
+      <sprite>sprites\spr_seesaw</sprite>
+      <sprite>sprites\spr_square_antiprismatic</sprite>
+      <sprite>sprites\spr_square_planar</sprite>
+      <sprite>sprites\spr_t_shaped</sprite>
+      <sprite>sprites\spr_tetrahedral</sprite>
+      <sprite>sprites\spr_tricapped_trigonal_prismatic</sprite>
+      <sprite>sprites\spr_trigonal_bipyramidal</sprite>
+      <sprite>sprites\spr_trigonal_planar</sprite>
+      <sprite>sprites\spr_trigonal_pyramidal</sprite>
     </sprites>
   </sprites>
-  <backgrounds name="background">
-    <background>background\labBackground</background>
-    <background>background\bg_rock1</background>
-    <background>background\bg_nightRoom</background>
-    <background>background\Bg_Clouds</background>
-    <background>background\Bg_Desert</background>
-    <background>background\bg_mainMenu</background>
-    <background>background\bg_rock2</background>
-    <background>background\splash_moc2</background>
-  </backgrounds>
+  <backgrounds name="background"/>
   <paths name="paths">
     <path>paths\atom</path>
-    <path>paths\path1</path>
+    <path>paths\pth_platformCircle</path>
   </paths>
   <scripts name="scripts">
     <scripts name="Drawing">
@@ -230,12 +242,11 @@
       <script>scripts\scr_get_room_pool.gml</script>
       <script>scripts\scr_initialize_room_properties.gml</script>
       <script>scripts\scr_create_room_atoms.gml</script>
+      <script>scripts\scr_randomize_room_atoms.gml</script>
     </scripts>
     <script>scripts\scr_OperatingSystem.gml</script>
   </scripts>
   <fonts name="fonts">
-    <font>fonts\font_large</font>
-    <font>fonts\font_small</font>
     <font>fonts\font_Default</font>
   </fonts>
   <objects name="objects">
@@ -303,6 +314,22 @@
         <object>objects\obj_atom_Ti</object>
       </objects>
     </objects>
+    <objects name="Molecular Geometry">
+      <object>objects\obj_linear</object>
+      <object>objects\obj_bent</object>
+      <object>objects\obj_octahedral</object>
+      <object>objects\obj_pentagonal_bipyramidal</object>
+      <object>objects\obj_pentagonal_planar</object>
+      <object>objects\obj_seesaw</object>
+      <object>objects\obj_square_antiprismatic</object>
+      <object>objects\obj_square_planar</object>
+      <object>objects\obj_t_shaped</object>
+      <object>objects\obj_tetrahedral</object>
+      <object>objects\obj_tricapped_trigonal_prismatic</object>
+      <object>objects\obj_trigonal_bipyramidal</object>
+      <object>objects\obj_trigonal_planar</object>
+      <object>objects\obj_trigonal_pyramidal</object>
+    </objects>
     <objects name="Main Menu">
       <object>objects\obj_startGame</object>
       <object>objects\obj_option</object>
@@ -312,11 +339,13 @@
       <object>objects\obj_backToMain</object>
     </objects>
     <objects name="Obstacle">
-      <object>objects\obj_obstacle</object>
       <object>objects\obj_movingPlatform</object>
+      <object>objects\obj_obstacle</object>
       <objects name="direction_obj">
         <object>objects\obj_left</object>
+        <object>objects\obj_up</object>
         <object>objects\obj_right</object>
+        <object>objects\obj_down</object>
       </objects>
     </objects>
     <objects name="Pausing">
@@ -348,20 +377,17 @@
     <objects name="Text Feedback">
       <object>objects\obj_gameover</object>
       <object>objects\obj_win</object>
-      <object>objects\obj_inventory</object>
-      <object>objects\obj_room_list</object>
-      <object>objects\obj_lewis_text</object>
+      <object>objects\obj_hint</object>
     </objects>
     <objects name="Backgrounds">
       <object>objects\obj_bg_dessert</object>
       <object>objects\obj_bg_lab</object>
       <object>objects\obj_bg_clouds</object>
       <object>objects\obj_bg_splash</object>
-      <object>objects\obj_bg_night</object>
-      <object>objects\obj_bak</object>
       <object>objects\obj_bg_rock1</object>
       <object>objects\obj_bg_rock2</object>
       <object>objects\obj_bg_mainMenu</object>
+      <object>objects\obj_bg_night2</object>
     </objects>
   </objects>
   <rooms name="rooms">
@@ -377,16 +403,23 @@
       <room>rooms\rm_atomTest</room>
     </rooms>
     <rooms name="Play Game Room">
-      <room>rooms\rm1</room>
-      <room>rooms\lab1</room>
-      <room>rooms\rm2</room>
-      <room>rooms\lab2</room>
-      <room>rooms\rm3</room>
-      <room>rooms\lab3</room>
-      <room>rooms\rm4</room>
-      <room>rooms\lab4</room>
-      <room>rooms\rm5</room>
-      <room>rooms\lab5</room>
+      <rooms name="Easy">
+        <room>rooms\rm1</room>
+        <room>rooms\lab1</room>
+        <room>rooms\rm2</room>
+        <room>rooms\lab2</room>
+        <room>rooms\rm3</room>
+        <room>rooms\lab3</room>
+        <room>rooms\rm4</room>
+        <room>rooms\lab4</room>
+        <room>rooms\rm5</room>
+        <room>rooms\lab5</room>
+      </rooms>
+    </rooms>
+    <rooms name="In Development Rooms">
+      <room>rooms\rm_playTest4</room>
+      <room>rooms\rm_playTest5</room>
+      <room>rooms\rm_playTest6</room>
     </rooms>
   </rooms>
   <constants number="10">

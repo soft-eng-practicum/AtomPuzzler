@@ -1,6 +1,7 @@
 ///scr_drop_atom(ds_list)
 /*
-    Takes the player's inventory and drop the last index in the list.
+    Purpose:
+        Takes the player's inventory and drops the last index in the list.
     
     Programmer's Note: 
         Using GML's ds functions, the list size will not stay the same
@@ -12,7 +13,7 @@
         Clear the inventory list(empty it) and use stored array to put back into list
         except the last value.
         
-    @return Atom Object
+    @return obj_atom
 */
 
 var current_list = argument[0];

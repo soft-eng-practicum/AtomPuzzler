@@ -12,7 +12,7 @@
   <showcolour>-1</showcolour>
   <code>/// Initialize Variables
 global.room_type = -1;
-global.message[0] = "Choose the correct Lewis Structure";
+global.message = "Choose the molecular geometry: Octahedral";
 
 // Create list
 global.room_list = ds_list_create();
@@ -59,6 +59,7 @@ ds_list_add(global.room_list, "1");</code>
     <view visible="0" objName="&lt;undefined&gt;" xview="0" yview="0" wview="1024" hview="768" xport="0" yport="0" wport="1024" hport="768" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
   </views>
   <instances>
+    <instance objName="obj_bg_lab" x="-1" y="2" name="inst_459BE518" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_obstacle" x="0" y="384" name="inst_164BCBD3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_obstacle" x="0" y="384" name="inst_2DEB506D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_obstacle" x="32" y="384" name="inst_6C98A805" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -91,15 +92,14 @@ ds_list_add(global.room_list, "1");</code>
     <instance objName="obj_obstacle" x="608" y="384" name="inst_84CED446" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_obstacle" x="608" y="384" name="inst_93253949" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_obstacle" x="640" y="384" name="inst_632E8BFE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_door" x="615" y="325" name="inst_0EB1C2F1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_lew_incorrect" x="320" y="224" name="inst_12B728BC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_lew_incorrect" x="480" y="224" name="inst_B3090890" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_lew_correct" x="160" y="224" name="inst_DC5CAAFE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_lew_naoh_correct" x="159" y="158" name="inst_793BA9E8" locked="0" code="" scaleX="0.949999988079071" scaleY="0.943750023841858" colour="4294967295" rotation="0"/>
-    <instance objName="obj_lew_naoh_incorrect1" x="321" y="156" name="inst_C8CE45CC" locked="0" code="" scaleX="0.931249976158142" scaleY="0.949999988079071" colour="4294967295" rotation="0"/>
-    <instance objName="obj_lew_naoh_incorrect2" x="483" y="158" name="inst_56687209" locked="0" code="" scaleX="0.949999988079071" scaleY="0.943750023841858" colour="4294967295" rotation="0"/>
-    <instance objName="obj_dialogue" x="248" y="40" name="inst_DE33DDED" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_bg_lab" x="0" y="-1" name="inst_61759160" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_door" x="616" y="325" name="inst_0EB1C2F1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_lew_incorrect" x="320" y="270" name="inst_12B728BC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_lew_incorrect" x="490" y="270" name="inst_B3090890" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_lew_correct" x="150" y="270" name="inst_DC5CAAFE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_dialogue" x="297" y="18" name="inst_468689C2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_octahedral" x="88" y="181" name="inst_47D0A71E" locked="0" code="" scaleX="0.649999976158142" scaleY="0.544600963592529" colour="4294967295" rotation="0"/>
+    <instance objName="obj_trigonal_pyramidal" x="321" y="238" name="inst_0ACFAC3F" locked="0" code="" scaleX="0.644999980926514" scaleY="0.688235282897949" colour="4294967295" rotation="0"/>
+    <instance objName="obj_tricapped_trigonal_prismatic" x="486" y="242" name="inst_49817145" locked="0" code="" scaleX="0.600000023841858" scaleY="0.529660999774933" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

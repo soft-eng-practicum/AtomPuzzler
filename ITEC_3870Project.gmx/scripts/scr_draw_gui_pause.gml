@@ -15,8 +15,14 @@ draw_set_halign(fa_center);
     draw_set_valign(fa_middle);
         //instance_create(x, y, obj_banner);
         //instance_create(x - 120, y - 120, obj_pause_menu);
-        draw_text_outlined(width/2, height/7, "PAUSED", c_yellow, c_black);
-        draw_text_outlined(width/2, height/2, global.message[0], c_yellow, c_black);
+        //draw_text_outlined(width/2, height/7, "PAUSED", c_yellow, c_black);
+        draw_set_color(c_yellow);
+        draw_text_ext(width/2, height/7, global.message, 20, 600);
+        if(global.attempts > 1)
+        {
+            draw_set_color(c_yellow);
+            draw_text_ext(width/2, height/2 + 50, global.room_hint, 18, 600);
+        }
         //draw_text(x, y + 25, "[C]ontinue [R]estart [M]ain Menu [Q]uit");
     draw_set_valign(-1);
 draw_set_halign(-1);

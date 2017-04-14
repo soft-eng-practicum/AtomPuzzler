@@ -1,4 +1,4 @@
-///scr_get_atom(String symbol)
+///scr_get_atom("atom_symbol")
 /*
     Gets the symbol of an atom (a String value)
     E.g.
@@ -111,8 +111,17 @@ switch(symbol)
     case "Sr":
         obj = obj_atom_Sr;
         break;
+        
+    //Lab Room Atoms
+    case "1":
+        obj = obj_lew_correct;
+        break;
+    case "-1":
+        obj = obj_lew_incorrect;
+        break;
     
-    //ATOM SYMBOL DOES NOT EXIST THEREFORE THIS SHOULD NEVER OCCUR
+    //ATOM SYMBOL DOES NOT EXIST THEREFORE DEFAULT SHOULD NEVER OCCUR
+    //ANY UPDATES OR CREATION OF EXISTING OR NEW ATOM OBJECTS NEED TO UPDATE THIS SCRIPT
     default:
         obj = -999;
         break;

@@ -31,7 +31,7 @@ array[2] = solution;
 array[3] = hint;
 array[4] = difficulty;
 
-
+/*
 //Debug
 for(i = 0; i < array_length_1d(array); i++) 
 {
@@ -39,6 +39,7 @@ for(i = 0; i < array_length_1d(array); i++)
 }
 
 show_debug_message("");
+*/
 
 
 //Close File

@@ -25,32 +25,6 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Play Music
-
-// This will play the audio and set its priorty level to be higher than all other sounds
-// because the player is persistant, the audio will continue to play.
-
-audio_play_sound(music_AtomPuzzlerTheme, 1, true);
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
             <string>/// Initialize Player Variables
 name = "Atom";
 
@@ -58,6 +32,7 @@ name = "Atom";
 grav = 0.2;
 hspd = 0;
 hspd_platform = 0;
+vspd_platform = 0;
 vspd = 0;
 jspd = 6;
 mspd = 3;
@@ -80,7 +55,7 @@ is_winning = false;
 complete = false;
 paused = false;
 scrn = -1;
-attempts = 0;
+global.attempts = 0;
 toggle = 0;
 
 //Atom placement when droping
@@ -92,6 +67,32 @@ if(mobile)
 {
     input = global.input;
 }
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Play Music
+
+// This will play the audio and set its priorty level to be higher than all other sounds
+// because the player is persistant, the audio will continue to play.
+
+audio_play_sound(music_AtomPuzzlerTheme, 1, true);
 </string>
           </argument>
         </arguments>
@@ -355,13 +356,16 @@ plus their 'vspd'. This ensures we get as close to the obstacle as possible,
 without going into the obstacle.
 */
 
-if(place_meeting(x, y + vspd, obj_obstacle))
+/*var vspd_final = vspd + vspd_platform;
+vspd_platform = 0;*/
+var vspd_final = vspd;
+if(place_meeting(x, y + vspd_final, obj_obstacle))
 {
-    while(!place_meeting(x, y + sign(vspd), obj_obstacle))
+    while(!place_meeting(x, y + sign(vspd_final), obj_obstacle))
     {
-        y += sign(vspd);
+        y += sign(vspd_final);
     }
-    if(sign(vspd) == 1)
+    if(sign(vspd_final) == 1)
     {
         jump = 1
     }
@@ -370,8 +374,13 @@ if(place_meeting(x, y + vspd, obj_obstacle))
         jump = 0;
     }
     vspd = 0;
+    vspd_final = 0;
 }
-y += vspd;
+/*if(place_meeting(x, y + sign(vspd_final), obj_movingPlatform))
+{
+    vspd_final = 0;
+}*/
+y += vspd_final;
 </string>
           </argument>
         </arguments>
@@ -638,7 +647,7 @@ if(keyboard_check_released(vk_up) &amp;&amp; instance_nearest(x, y, obj_door).do
             //show_debug_message("obj_player: Event Collide: obj_door: On Lose: instance_create: obj_gameover");
             obj_timer.stop = true;
             toggle = -1;
-            attempts++;
+            global.attempts++;
         }
     }
     
@@ -650,7 +659,7 @@ if(keyboard_check_released(vk_up) &amp;&amp; instance_nearest(x, y, obj_door).do
         //show_debug_message("obj_player: Event Collide: obj_door: Incorrect List Size: instance_create: obj_gameover");
         obj_timer.stop = true;
         toggle = -1;
-        attempts++;
+        global.attempts++;
     }
 }
 </string>
@@ -731,6 +740,7 @@ if(keyboard_check_released(vk_up) &amp;&amp; instance_nearest(x, y, obj_door).do
             //global.points -= 100;
             global.totalPoints = global.totalPoints - 100;
             toggle = -1;
+            global.attempts++;
         }
     }
     
@@ -742,6 +752,7 @@ if(keyboard_check_released(vk_up) &amp;&amp; instance_nearest(x, y, obj_door).do
         //global.points -= 100;
         global.totalPoints = global.totalPoints - 100;
         toggle = -1;
+        global.attempts++;
     }
 }
 
@@ -891,6 +902,7 @@ if(is_winning)
     global.roomPoints = 0;
     toggle = 0;
     is_winning = false;
+    global.attempts = 0;
     
     var next_room = ds_list_find_value(global.room_pool, global.room_pool_index);
     

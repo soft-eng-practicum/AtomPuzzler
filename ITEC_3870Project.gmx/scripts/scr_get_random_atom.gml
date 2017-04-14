@@ -1,10 +1,5 @@
 /// scr_get_random_atom()
-// Use to fill left over atoms in a room
-/*
-    Using irandom() to return back a random Atom object
-    
-    @return void
-*/
+// Returns a random atom
 
 var random_roll = irandom(29);  //Starts from 0 to n
 var obj;
@@ -110,6 +105,7 @@ switch(random_roll)
         break;
     
     //ATOM SYMBOL DOES NOT EXIST THEREFORE THIS SHOULD NEVER OCCUR
+    //CHECK IF ANY ATOM OBJECTS HAVE BEEN UPDATED OR CREATED AND ADD THEM TO THIS LIST
     default:
         obj = -999;
         break;
