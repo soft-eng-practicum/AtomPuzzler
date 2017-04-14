@@ -1,21 +1,20 @@
-/// scr_create_room_atoms("room name", atoms)
+/// scr_create_room_atoms("room name", ds_list)
 // Uses scr_get_array_of_atom in Objects/Room/init_room_properties
 /*
-    Takes in an array of atoms and puts them into a room
+    Takes in an list of atoms and puts them into a room
     Create instances of atom objects and fill them inside a room
 */
 
 var rm_name = argument[0];  //room name (String)
-var array = argument[1];    //array of atom objects
-var array_size = array_length_1d(array);
+var list = argument[1];    //array of atom objects
 
 switch(rm_name)
 {
     case "rm1":
-        instance_create(188, 324, array[0] );
-        instance_create(284, 296, array[1] );
-        instance_create(380, 324, array[2] );
-        instance_create(284, 420, array[3] );
+        instance_create(188, 324, ds_list_find_value(list, 0) );
+        instance_create(284, 296, ds_list_find_value(list, 1) );
+        instance_create(380, 324, ds_list_find_value(list, 2) );
+        instance_create(284, 420, ds_list_find_value(list, 3) );
         break;
     case "rm2":
         instance_create(200, 324, array[0] );

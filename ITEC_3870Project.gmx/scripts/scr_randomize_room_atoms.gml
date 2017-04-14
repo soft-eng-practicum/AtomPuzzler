@@ -22,28 +22,10 @@ switch(rm_name)
 {
     case "rm1":
         array[3] = scr_get_random_atom();
-        show_debug_message( "The total size is now: " + string(array_length_1d(array)) );
-        
-        /*
-        dice = irandom(1);
-        
-        for(i = array_length_1d(array) - 1; i > 0; i++ )
-        {
-            var index = dice + i + 1;
-            
-            var a = array[index];
-            array[index] = array[i];
-            array[i] = a;
-        }
-        */
-        
-        /*
-        for(i = 0, i < array_length_1d(array); i++)
+        for(i = 0; i < array_length_1d(array); i++)
         {
             ds_list_add(list, array[i]);
         }
-        */
-        
         break;
     case "rm2":
 
@@ -62,4 +44,6 @@ switch(rm_name)
 
 }
 
-return array;
+ds_list_shuffle(list);
+
+return list;
