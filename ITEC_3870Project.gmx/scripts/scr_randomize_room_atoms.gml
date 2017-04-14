@@ -1,4 +1,4 @@
-///scr_randomize_room_atoms(1D-array, "rm_name", int correct_amount_of_atoms, int extra_atoms)
+///scr_randomize_room_atoms(1D-array, "rm_name")
 /*
     Purpose:
         To randomize the order of room atoms containing the correct and incorrect atom objects.
@@ -13,21 +13,37 @@
 
 var array = argument[0];
 var rm_name = argument[1];
-var correct_amount = argument[2];
-var extra_atoms = argument[3];
-var unsorted_array;
+var list = ds_list_create();
+var dice;
 
 show_debug_message("scr_randomize_room_atoms: Room Name: " + string(rm_name));
-show_debug_message("scr_randomize_room_atoms: Correct amount of atoms: " + string(correct_amount));
-show_debug_message("scr_randomize_room_atoms: Room Name: " + string(extra_atoms));
 
 switch(rm_name)
 {
     case "rm1":
-        for(i = 0; i < correct_amount_of_atoms + extra_atoms; i++)
+        array[3] = scr_get_random_atom();
+        show_debug_message( "The total size is now: " + string(array_length_1d(array)) );
+        
+        /*
+        dice = irandom(1);
+        
+        for(i = array_length_1d(array) - 1; i > 0; i++ )
         {
-            var dice_roll = irandom(3);
+            var index = dice + i + 1;
+            
+            var a = array[index];
+            array[index] = array[i];
+            array[i] = a;
         }
+        */
+        
+        /*
+        for(i = 0, i < array_length_1d(array); i++)
+        {
+            ds_list_add(list, array[i]);
+        }
+        */
+        
         break;
     case "rm2":
 
@@ -45,3 +61,5 @@ switch(rm_name)
         break;
 
 }
+
+return array;

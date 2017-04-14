@@ -141,7 +141,8 @@ if(global.room_type != -1)
     obj_player.toggle = -1;
 }
 
-if(keyboard_check_pressed(vk_enter) &amp;&amp; global.room_type != -1 &amp;&amp; alarm[2] == -1)
+// On spacebar continue level
+if(keyboard_check_pressed(vk_space) &amp;&amp; global.room_type != -1 &amp;&amp; alarm[2] == -1)
 {
     with(obj_dialogue) instance_destroy();
     obj_timer.stop = false;

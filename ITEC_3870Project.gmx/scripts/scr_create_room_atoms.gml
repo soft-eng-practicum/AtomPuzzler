@@ -15,7 +15,7 @@ switch(rm_name)
         instance_create(188, 324, array[0] );
         instance_create(284, 296, array[1] );
         instance_create(380, 324, array[2] );
-        instance_create(284, 420, scr_get_random_atom() );
+        instance_create(284, 420, array[3] );
         break;
     case "rm2":
         instance_create(200, 324, array[0] );
