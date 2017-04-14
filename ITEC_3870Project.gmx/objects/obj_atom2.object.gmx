@@ -37,7 +37,14 @@ place = irandom(359);
 myspeed = irandom(5) + 1;
 target = obj_player;
 length = 32;
-atomNo = ds_list_size(global.inventory) - 1;
+if(!browser)
+{
+    atomNo = ds_list_size(global.inventory) - 1;
+}
+else
+{
+    atomNo = ds_list_size(global.inventory);
+}
 </string>
           </argument>
         </arguments>
