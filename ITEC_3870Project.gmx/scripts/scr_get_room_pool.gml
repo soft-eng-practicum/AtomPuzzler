@@ -2,7 +2,7 @@
 /*
     Puts all rooms, unordered, in a list.
     
-    @params: Takes a real(integer) from 0, 1, or 2 in terms from easy, normal, or hard
+    @params: Takes a real(int) from 0, 1, or 2 in terms from easy, normal, or hard
     
     @return ds_list
 */
