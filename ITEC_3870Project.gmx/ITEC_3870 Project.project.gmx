@@ -242,7 +242,7 @@
       <script>scripts\scr_get_room_pool.gml</script>
       <script>scripts\scr_initialize_room_properties.gml</script>
       <script>scripts\scr_create_room_atoms.gml</script>
-      <script>scripts\scr_get_random_position.gml</script>
+      <script>scripts\scr_randomize_room_atoms.gml</script>
     </scripts>
     <script>scripts\scr_OperatingSystem.gml</script>
   </scripts>
