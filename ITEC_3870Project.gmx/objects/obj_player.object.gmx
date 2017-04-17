@@ -632,6 +632,8 @@ if(keyboard_check_released(vk_up) &amp;&amp; instance_nearest(x, y, obj_door).do
         {
             is_winning = true;
             instance_create(0, 0, obj_win);
+            //play level complete sound.
+            audio_play_sound(sfx_next_Level, 1, false);
             //show_debug_message("obj_player: Event Collide: obj_door:  instance_create: obj_win");
             global.totalPoints = global.points - round(global.roomPoints) + global.totalPoints;
             obj_timer.stop = true;
@@ -644,6 +646,8 @@ if(keyboard_check_released(vk_up) &amp;&amp; instance_nearest(x, y, obj_door).do
         {   
             is_winning = false;
             instance_create(0, 0, obj_gameover);
+            //play level failed sound.
+            audio_play_sound(sfx_F_Alarm, 1, false);
             //show_debug_message("obj_player: Event Collide: obj_door: On Lose: instance_create: obj_gameover");
             obj_timer.stop = true;
             toggle = -1;
@@ -727,6 +731,8 @@ if(keyboard_check_released(vk_up) &amp;&amp; instance_nearest(x, y, obj_door).do
         {
             is_winning = true;
             instance_create(0, 0, obj_win);
+            //play level complete sound.
+            audio_play_sound(sfx_next_Level, 1, false);
             global.totalPoints = global.totalPoints + 100;
             with(instance_nearest(x, y, obj_door)) doorExit = false;
             toggle = -1;
@@ -737,6 +743,8 @@ if(keyboard_check_released(vk_up) &amp;&amp; instance_nearest(x, y, obj_door).do
         {   
             is_winning = false;
             instance_create(0, 0, obj_gameover);
+            //play level failed sound.
+            audio_play_sound(sfx_F_Alarm, 1, false);
             //global.points -= 100;
             global.totalPoints = global.totalPoints - 100;
             toggle = -1;
