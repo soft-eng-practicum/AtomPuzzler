@@ -34,7 +34,6 @@ switch(room)
     case rm_option:
     case rm1:
     case rm4:
-    case rm5:
         sprite_index = spr_tile1;
         break;
     
@@ -46,6 +45,11 @@ switch(room)
     //Rock Tile
     case rm3:
         sprite_index = spr_tile2;
+        break;
+        
+    //Dirt Tile
+    case rm5:
+        sprite_index = spr_tile6_dirt;
         break;
         
     //Lab Tile
