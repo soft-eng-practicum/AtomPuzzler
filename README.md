@@ -8,16 +8,16 @@
 
 **Team Name:** teamBackRow
 
-**Repository** [Repository] (https://github.com/soft-eng-practicum/AtomPuzzler)
+**Repository** [Repository](https://github.com/soft-eng-practicum/AtomPuzzler)
 
-**Process Tool** [Trello] (https://trello.com/b/u1L4gjcd)
+**Process Tool** [Trello](https://trello.com/b/u1L4gjcd)
 
-**Communication Tool** [Slack] (https://ggc-dev.slack.com/messages/teambackrow/details/)
+**Communication Tool** [Slack](https://ggc-dev.slack.com/messages/teambackrow/details/)
 
 **Game Link** (https://teambackrow.itch.io/atompuzzler)
 
 ## Overview
-Placeholder
+AtomPuzzler is developed with GameMaker Studio and deployed for HTML5. It's a puzzler platformer game that enable students to learn about chemical bonding and molecular geometry. Available for any devices with a web browser.
 
 ## Documentation
 * [Wiki](https://github.com/soft-eng-practicum/AtomPuzzler/wiki)
