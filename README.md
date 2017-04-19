@@ -3,7 +3,6 @@
 </p>
 
 # AtomPuzzler
-[![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://opensource.org/licenses/MIT)
 
 
 **Team Name:** teamBackRow
@@ -14,7 +13,7 @@
 
 **Communication Tool** [Slack](https://ggc-dev.slack.com/messages/teambackrow/details/)
 
-**Game Link** (https://teambackrow.itch.io/atompuzzler)
+**Game Link** [itch.io Game Link](https://teambackrow.itch.io/atompuzzler)
 
 ## Overview
 AtomPuzzler is developed with GameMaker Studio and deployed for HTML5. It's a puzzler platformer game that enable students to learn about chemical bonding and molecular geometry. Available for any devices with a web browser.
