@@ -1,5 +1,5 @@
 <p align="center">
-<img src ="https://github.com/soft-eng-practicum/AtomPuzzler/tree/master/ITEC_3870Project.gmx/background/images/splash_moc2.png">
+<img src ="ITEC_3870Project.gmx/sprites/images/spr_bg_splash_0.png" width="400" >
 </p>
 
 # AtomPuzzler
@@ -20,7 +20,9 @@
 Placeholder
 
 ## Documentation
-[Client](https://github.com/soft-eng-practicum/AtomPuzzler/wiki/Client-Documentation)
+* [Wiki](https://github.com/soft-eng-practicum/AtomPuzzler/wiki)
+* [Requirements](https://github.com/soft-eng-practicum/AtomPuzzler/wiki/Requirements-Documentation)
+* [Client](https://github.com/soft-eng-practicum/AtomPuzzler/wiki/Client-Documentation)
 
 ## Team
 
