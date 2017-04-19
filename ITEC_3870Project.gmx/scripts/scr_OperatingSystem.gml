@@ -2,8 +2,10 @@
 // this script will check for the operating system
 
 globalvar mobile;
+globalvar browser;
 
-switch (os_type) {
+switch (os_type) 
+{
   // desktop
     case os_windows:
     case os_linux:
@@ -22,9 +24,16 @@ switch (os_type) {
         mobile = true;
         
         break;
-    }
+}
 
-
+if(os_browser == browser_not_a_browser)
+{
+    browser = false;
+}
+else
+{
+    browser = true;
+}
 
 
 #define scr_mobileScaling

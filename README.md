@@ -1,26 +1,27 @@
 <p align="center">
-<img src ="https://github.com/soft-eng-practicum/AtomPuzzler/tree/master/ITEC_3870Project.gmx/background/images/splash_moc2.png">
+<img src ="ITEC_3870Project.gmx/sprites/images/spr_bg_splash_0.png" width="400" >
 </p>
 
 # AtomPuzzler
-[![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://opensource.org/licenses/MIT)
 
 
 **Team Name:** teamBackRow
 
-**Repository** [Repository] (https://github.com/soft-eng-practicum/AtomPuzzler)
+**Repository** [Repository](https://github.com/soft-eng-practicum/AtomPuzzler)
 
-**Process Tool** [Trello] (https://trello.com/b/u1L4gjcd)
+**Process Tool** [Trello](https://trello.com/b/u1L4gjcd)
 
-**Communication Tool** [Slack] (https://ggc-dev.slack.com/messages/teambackrow/details/)
+**Communication Tool** [Slack](https://ggc-dev.slack.com/messages/teambackrow/details/)
 
-**Game Link** (https://teambackrow.itch.io/atompuzzler)
+**Game Link** [itch.io Game Link](https://teambackrow.itch.io/atompuzzler)
 
 ## Overview
-Placeholder
+AtomPuzzler is developed with GameMaker Studio and deployed for HTML5. It's a puzzler platformer game that enable students to learn about chemical bonding and molecular geometry. Available for any devices with a web browser.
 
 ## Documentation
-[Client](https://github.com/soft-eng-practicum/AtomPuzzler/wiki/Client-Documentation)
+* [Wiki](https://github.com/soft-eng-practicum/AtomPuzzler/wiki)
+* [Requirements](https://github.com/soft-eng-practicum/AtomPuzzler/wiki/Requirements-Documentation)
+* [Client](https://github.com/soft-eng-practicum/AtomPuzzler/wiki/Client-Documentation)
 
 ## Team
 
