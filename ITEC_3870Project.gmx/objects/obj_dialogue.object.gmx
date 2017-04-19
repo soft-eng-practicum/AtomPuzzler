@@ -141,8 +141,9 @@ if(global.room_type != -1)
     obj_player.toggle = -1;
 }
 
-// On spacebar continue level
-if(keyboard_check_pressed(vk_space) &amp;&amp; global.room_type != -1 &amp;&amp; alarm[2] == -1)
+if((( mouse_check_button_pressed(mb_left) &amp;&amp; mobile)
+    || keyboard_check_pressed(vk_space)) 
+    &amp;&amp; global.room_type != -1 &amp;&amp; alarm[2] == -1)
 {
     with(obj_dialogue) instance_destroy();
     obj_timer.stop = false;
@@ -357,12 +358,22 @@ draw_set_valign(fa_middle);
 
 draw_set_color(c_yellow);
 
-if(global.attempts &gt; 1)
-{
-    draw_text_ext(width/2, 230, "Press P for hints", 18, width/2);
-}
-draw_text_ext(width/2, 210, "Press SPACE to continue", 18, width/2 - 50);
-
+    if(mobile)
+    {
+        if(global.attempts &gt; 1)
+        {
+            draw_text_ext(width/2, 230, "Tap ? for hints", 18, width/2);
+        }    
+        draw_text_ext(width/2, 210, "Tap here to continue", 18, width/2 - 50);
+    }
+    else
+    {
+        if(global.attempts &gt; 1)
+        {
+            draw_text_ext(width/2, 230, "Press P for hints", 18, width/2);
+        }
+        draw_text_ext(width/2, 210, "Press ENTER to continue", 18, width/2 - 50);
+    }
 }
 </string>
           </argument>

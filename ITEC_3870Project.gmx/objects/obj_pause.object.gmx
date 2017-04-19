@@ -50,15 +50,53 @@ scrn = -1;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Pause on Key Press "P"
+            <string>/// set the object sprite when running in mobile and not one of these rooms
+if(mobile &amp;&amp; !(room == rm_initialize 
+            || room == rm_splashScreen 
+            || room == rm_mainMenu 
+            || room == rm_scoreBoard 
+            || room == rm_option))
+{
+    sprite_index = spr_mobliePause;
+    image_xscale = .75
+    image_yscale = .75
+}
+else
+{
+    sprite_index = -1;
+
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Pause on Key Press "P" or in mobile click on the object
 
 /*
 When paused, it creates a screenshot of the game and 
 deactivates object "par_pausable".
 */
 
-if(keyboard_check_pressed(ord('P'))) 
+if(keyboard_check_pressed(ord('P')) 
+  || (mobile &amp;&amp; mouse_check_button_pressed(mb_left))) 
 {
+    
     if(room == rm_mainMenu || room == rm_scoreBoard || room == rm_option)
     {
         //Don't pause
@@ -66,16 +104,38 @@ if(keyboard_check_pressed(ord('P')))
     
     else
     {
-        paused = !paused;
-        
-        if(paused) 
-        {
-            scr_pause()
-        }
     
+        if (mobile &amp;&amp;  mouse_check_button_pressed( mb_left ) )
+        {
+            with ( instance_position( mouse_x, mouse_y, obj_pause ) )
+            {
+                paused = !paused;
+            
+                if(paused) 
+                {
+                    scr_pause()    
+                }
+                
+                else
+                {
+                    scr_unpause()
+                }
+            }
+            
+        }
         else
         {
-            scr_unpause()
+            paused = !paused;
+            
+            if(paused) 
+            {
+                scr_pause()
+            }
+        
+            else
+            {
+                scr_unpause()
+            }
         }
     }
 }

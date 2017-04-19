@@ -51,6 +51,7 @@ scr_mobileInitialVaribles();
             <kind>1</kind>
             <string>///step event to change scale the game base on the mobile orientation
 scr_mobileStep();
+
 </string>
           </argument>
         </arguments>
