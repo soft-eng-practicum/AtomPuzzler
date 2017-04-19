@@ -322,3 +322,10 @@ git commit -m "Various text changes and clean up."
 git push
 git status
 git pull
+git add -A
+git commit -m "Fixed lab rooms and all tiles to properly match the correct backgrounds."
+git pull
+git status
+git push
+git pull
+git pull
