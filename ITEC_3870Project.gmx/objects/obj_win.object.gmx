@@ -25,7 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>depth = -1000;
+            <string>///set the depth
+depth = -1000;
 </string>
           </argument>
         </arguments>
@@ -68,8 +69,18 @@ draw_text_outlined(room_width/2, room_height/2 - 30, "You Win!", c_yellow, c_bla
 draw_set_font(font_Default);
 draw_text_outlined(room_width/2, room_height/2 + 10, "Score: " + string(global.totalPoints), c_yellow, c_black);
 
+if(mobile)
+{
+draw_set_font(font_Default);
+draw_text_outlined(room_width/2, room_height/2 + 50, "Tap here to continue", c_yellow, c_black);
+}
+
+else
+{
 draw_set_font(font_Default);
 draw_text_outlined(room_width/2, room_height/2 + 50, "Press SPACEBAR to continue", c_yellow, c_black);
+}
+
 </string>
           </argument>
         </arguments>

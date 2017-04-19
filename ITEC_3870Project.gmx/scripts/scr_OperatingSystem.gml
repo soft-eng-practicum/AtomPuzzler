@@ -13,10 +13,14 @@ switch (os_type) {
   
   // mobile
     case os_android:
+        keyboard_key_press(vk_f11);
+        mobile = true;
+        break;
     case os_ios:
     case os_winphone:
     case os_tizen:
         mobile = true;
+        
         break;
     }
 
@@ -48,7 +52,7 @@ globalvar aspect;
         view_hview[0] = (base / aspect);
         view_wview[0] = base;
     }
-    
+    //display_set_gui_size(view_wport[0],view_hport[0])
     surface_resize(application_surface, view_wview[0], view_hview[0]);
 
 

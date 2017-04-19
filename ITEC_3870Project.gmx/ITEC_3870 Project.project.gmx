@@ -3,7 +3,7 @@
   <Configs name="configs">
     <Config>Configs\Default</Config>
   </Configs>
-  <datafiles number="3" name="datafiles">
+  <datafiles number="5" name="datafiles">
     <datafile>
       <name>settings.ini</name>
       <exists>-1</exists>
@@ -133,6 +133,8 @@
       <sprite>sprites\spr_option</sprite>
       <sprite>sprites\spr_gender</sprite>
       <sprite>sprites\spr_backToMain</sprite>
+      <sprite>sprites\spr_mobileReset</sprite>
+      <sprite>sprites\spr_mobliePause</sprite>
       <sprite>sprites\spr_test</sprite>
       <sprites name="testing room sprite">
         <sprite>sprites\spr_atomTesting</sprite>
@@ -351,6 +353,7 @@
     <objects name="Pausing">
       <object>objects\obj_pause</object>
       <object>objects\par_pausable</object>
+      <object>objects\obj_mobileReset</object>
     </objects>
     <objects name="Room">
       <object>objects\obj_door</object>
