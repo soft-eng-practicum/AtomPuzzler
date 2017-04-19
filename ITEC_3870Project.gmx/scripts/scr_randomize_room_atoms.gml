@@ -28,16 +28,33 @@ switch(rm_name)
         }
         break;
     case "rm2":
-
+        array[3] = scr_get_random_atom();
+        for(i = 0; i < array_length_1d(array); i++)
+        {
+            ds_list_add(list, array[i]);
+        }
         break;
     case "rm3":
-
+        array[3] = scr_get_random_atom();
+        array[4] = scr_get_random_atom();
+        for(i = 0; i < array_length_1d(array); i++)
+        {
+            ds_list_add(list, array[i]);
+        }
         break;
     case "rm4":
-
+        array[3] = scr_get_random_atom();
+        for(i = 0; i < array_length_1d(array); i++)
+        {
+            ds_list_add(list, array[i]);
+        }
         break;
     case "rm5":
-
+        array[3] = scr_get_random_atom();
+        for(i = 0; i < array_length_1d(array); i++)
+        {
+            ds_list_add(list, array[i]);
+        }
         break;
     default:
         break;

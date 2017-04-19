@@ -15,17 +15,17 @@ var lab_list = ds_list_create();
 // Easy difficulty rooms
 if(difficulty == 0) {
     ds_list_add(rm_list, rm1);
-    //ds_list_add(rm_list, rm2);
-    //ds_list_add(rm_list, rm3);
-    //ds_list_add(rm_list, rm4);
-    //ds_list_add(rm_list, rm5);
+    ds_list_add(rm_list, rm2);
+    ds_list_add(rm_list, rm3);
+    ds_list_add(rm_list, rm4);
+    ds_list_add(rm_list, rm5);
     ds_list_shuffle(rm_list);
     
     ds_list_add(lab_list, lab1);
-    //ds_list_add(lab_list, lab2);
-    //ds_list_add(lab_list, lab3);
-    //ds_list_add(lab_list, lab4);
-    //ds_list_add(lab_list, lab5);
+    ds_list_add(lab_list, lab2);
+    ds_list_add(lab_list, lab3);
+    ds_list_add(lab_list, lab4);
+    ds_list_add(lab_list, lab5);
     ds_list_shuffle(lab_list);
 }
 
@@ -40,7 +40,7 @@ if(difficulty == 2) {
 }
 
 // Lists are already shuffled, add to new list in order of normal than lab
-for(i = 0; i < 1; i++) {
+for(i = 0; i < 5; i++) {
     ds_list_add(final_list, ds_list_find_value(rm_list, i));
     ds_list_add(final_list, ds_list_find_value(lab_list, i));
 }

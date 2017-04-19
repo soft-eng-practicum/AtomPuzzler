@@ -17,29 +17,29 @@ switch(rm_name)
         instance_create(284, 420, ds_list_find_value(list, 3) );
         break;
     case "rm2":
-        instance_create(200, 324, array[0] );
-        instance_create(480, 300, array[1] );
-        instance_create(208, 84, array[2] );
-        instance_create(264, 84, scr_get_random_atom() );
+        instance_create(200, 324, ds_list_find_value(list, 0) );
+        instance_create(480, 300, ds_list_find_value(list, 1) );
+        instance_create(208, 84, ds_list_find_value(list, 2) );
+        instance_create(264, 84, ds_list_find_value(list, 3) );
         break;
     case "rm3":
-        instance_create(88, 120, array[0] );
-        instance_create(616, 192, array[1] );
-        instance_create(504, 312, array[2] );
-        instance_create(24, 240, scr_get_random_atom() );
-        instance_create(372, 328, scr_get_random_atom() );
+        instance_create(88, 120, ds_list_find_value(list, 0) );
+        instance_create(616, 192, ds_list_find_value(list, 1) );
+        instance_create(504, 312, ds_list_find_value(list, 2) );
+        instance_create(24, 240, ds_list_find_value(list, 3) );
+        instance_create(372, 328, ds_list_find_value(list, 4) );
         break;
     case "rm4":
-        instance_create(328, 88, array[0] );
-        instance_create(600, 112, array[1] );
-        instance_create(512, 216, array[2] );
-        instance_create(224, 320, scr_get_random_atom() );
+        instance_create(328, 88, ds_list_find_value(list, 0) );
+        instance_create(600, 112, ds_list_find_value(list, 1) );
+        instance_create(512, 216, ds_list_find_value(list, 2) );
+        instance_create(224, 320, ds_list_find_value(list, 3) );
         break;
     case "rm5":
-        instance_create(32, 40, array[0] );
-        instance_create(368, 64, array[1] );
-        instance_create(320, 400, array[2] );
-        instance_create(352, 296, scr_get_random_atom() );
+        instance_create(32, 40, ds_list_find_value(list, 0) );
+        instance_create(368, 64, ds_list_find_value(list, 1) );
+        instance_create(320, 400, ds_list_find_value(list, 2) );
+        instance_create(352, 296, ds_list_find_value(list, 3) );
         break;
     default:
         break;
