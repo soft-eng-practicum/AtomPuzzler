@@ -115,8 +115,6 @@ audio_play_sound(music_AtomPuzzlerTheme, 1, true);
             <kind>1</kind>
             <string>/// Initialize Transition Variables
 kind = transition.stripe_ver;
-xx = -1;
-yy = -1;
 </string>
           </argument>
         </arguments>
