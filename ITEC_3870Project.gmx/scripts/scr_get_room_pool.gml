@@ -51,8 +51,8 @@ if(difficulty == 2) {
     ds_list_add(rm_list, rm11);
     ds_list_add(rm_list, rm12);
     ds_list_add(rm_list, rm13);
-    ds_list_add(rm_list, rm9);
-    ds_list_add(rm_list, rm10);
+    ds_list_add(rm_list, rm14);
+    ds_list_add(rm_list, rm15);
     ds_list_shuffle(rm_list);
     
     ds_list_add(lab_list, lab1);
@@ -66,7 +66,7 @@ if(difficulty == 2) {
 // Lists are already shuffled, add to new list in order of normal than lab
 for(i = 0; i < 5; i++) {
     ds_list_add(final_list, ds_list_find_value(rm_list, i));
-    ds_list_add(final_list, ds_list_find_value(lab_list, i));
+    //ds_list_add(final_list, ds_list_find_value(lab_list, i));
 }
 
 show_debug_message("scr_get_room_pool: final_list size: " + string(ds_list_size(final_list)));

@@ -86,15 +86,58 @@ switch(rm_name)
         instance_create(616, 416, ds_list_find_value(list, 6) );
         instance_create(408, 64, ds_list_find_value(list, 7) );
         break;
-    case "rm11":
+    case "rm11": // 5
+        instance_create(56, 40, ds_list_find_value(list, 0) );
+        instance_create(216, 40, ds_list_find_value(list, 1) );
+        instance_create(304, 40, ds_list_find_value(list, 2) );
+        instance_create(512, 48, ds_list_find_value(list, 3) );
+        instance_create(600, 80, ds_list_find_value(list, 4) );
+        instance_create(80, 224, ds_list_find_value(list, 5) );
+        instance_create(224, 248, ds_list_find_value(list, 6) );
+        instance_create(336, 256, ds_list_find_value(list, 7) );
+        instance_create(568, 352, ds_list_find_value(list, 8) );
         break;
-    case "rm12":
+    case "rm12": // 5
+        instance_create(24, 200, ds_list_find_value(list, 0) );
+        instance_create(80, 96, ds_list_find_value(list, 1) );
+        instance_create(248, 160, ds_list_find_value(list, 2) );
+        instance_create(224, 248, ds_list_find_value(list, 3) );
+        instance_create(224, 384, ds_list_find_value(list, 4) );
+        instance_create(408, 392, ds_list_find_value(list, 5) );
+        instance_create(400, 248, ds_list_find_value(list, 6) );
+        instance_create(488, 160, ds_list_find_value(list, 7) );
+        instance_create(600, 80, ds_list_find_value(list, 8) );
+        instance_create(616, 200, ds_list_find_value(list, 9) );
         break;
-    case "rm13":
+    case "rm13": // 6
+        instance_create(80, 72, ds_list_find_value(list, 0) );
+        instance_create(184, 184, ds_list_find_value(list, 1) );
+        instance_create(120, 240, ds_list_find_value(list, 2) );
+        instance_create(320, 24, ds_list_find_value(list, 3) );
+        instance_create(560, 80, ds_list_find_value(list, 4) );
+        instance_create(488, 184, ds_list_find_value(list, 5) );
+        instance_create(552, 248, ds_list_find_value(list, 6) );
+        instance_create(616, 200, ds_list_find_value(list, 7) );
         break;
-    case "rm14":
+    case "rm14": // 6
+        instance_create(88, 120, ds_list_find_value(list, 0) );
+        instance_create(192, 120, ds_list_find_value(list, 1) );
+        instance_create(384, 120, ds_list_find_value(list, 2) );
+        instance_create(224, 224, ds_list_find_value(list, 3) );
+        instance_create(352, 224, ds_list_find_value(list, 4) );
+        instance_create(480, 224, ds_list_find_value(list, 5) );
+        instance_create(208, 304, ds_list_find_value(list, 6) );
+        instance_create(328, 304, ds_list_find_value(list, 7) );
         break;
-    case "rm15":
+    case "rm15": // 6
+        instance_create(128, 176, ds_list_find_value(list, 0) );
+        instance_create(216, 176, ds_list_find_value(list, 1) );
+        instance_create(304, 176, ds_list_find_value(list, 2) );
+        instance_create(392, 176, ds_list_find_value(list, 3) );
+        instance_create(480, 176, ds_list_find_value(list, 4) );
+        instance_create(216, 288, ds_list_find_value(list, 5) );
+        instance_create(304, 288, ds_list_find_value(list, 6) );
+        instance_create(392, 288, ds_list_find_value(list, 7) );
         break;
     
     default:

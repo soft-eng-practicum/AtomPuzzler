@@ -98,6 +98,54 @@ switch(rm_name)
             ds_list_add(list, array[i]);
         }
         break;
+    case "rm11":
+        array[5] = scr_get_random_atom();
+        array[6] = scr_get_random_atom();
+        array[7] = scr_get_random_atom();
+        array[8] = scr_get_random_atom();
+        for(i = 0; i < array_length_1d(array); i++)
+        {
+            ds_list_add(list, array[i]);
+        }
+        break;
+    
+    case "rm12":
+        array[5] = scr_get_random_atom();
+        array[6] = scr_get_random_atom();
+        array[7] = scr_get_random_atom();
+        array[8] = scr_get_random_atom();
+        array[9] = scr_get_random_atom();
+        for(i = 0; i < array_length_1d(array); i++)
+        {
+            ds_list_add(list, array[i]);
+        }
+        break;
+    
+    case "rm13":
+        array[5] = scr_get_random_atom();
+        array[6] = scr_get_random_atom();
+        array[7] = scr_get_random_atom();
+        for(i = 0; i < array_length_1d(array); i++)
+        {
+            ds_list_add(list, array[i]);
+        }
+        break;
+    case "rm14":
+        array[6] = scr_get_random_atom();
+        array[7] = scr_get_random_atom();
+        for(i = 0; i < array_length_1d(array); i++)
+        {
+            ds_list_add(list, array[i]);
+        }
+        break;
+    case "rm15":
+        array[6] = scr_get_random_atom();
+        array[7] = scr_get_random_atom();
+        for(i = 0; i < array_length_1d(array); i++)
+        {
+            ds_list_add(list, array[i]);
+        }
+        break;
     
     default:
         break;
