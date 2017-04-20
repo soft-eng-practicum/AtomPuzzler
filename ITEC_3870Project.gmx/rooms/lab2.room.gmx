@@ -13,6 +13,7 @@
   <code>/// Initialize Variables
 global.room_type = -1;
 global.message = "Choose the molecular geometry: Seesaw";
+global.room_hint = "Seesaw is a type of molecular geometry where there are four bonds to a central atom with overall C2v symmetry.";
 
 // Create list
 global.room_list = ds_list_create();

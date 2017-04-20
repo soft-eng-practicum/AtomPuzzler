@@ -13,6 +13,7 @@
   <code>/// Initialize Variables
 global.room_type = -1;
 global.message = "Choose the molecular geometry: Linear";
+global.room_hint = "The linear molecular geometry describes the geometry around a central atom bonded to two other atoms placed at a bond-angle of 180°."
 
 // Create list
 global.room_list = ds_list_create();

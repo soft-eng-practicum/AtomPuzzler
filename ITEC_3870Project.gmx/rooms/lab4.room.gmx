@@ -13,6 +13,7 @@
   <code>/// Initialize Variables
 global.room_type = -1;
 global.message = "Choose the molecular geometry: Octahedral";
+global.room_hint = "In chemistry, octahedral molecular geometry describes the shape of compounds with six atoms or groups of atoms or ligands symmetrically arranged around a central atom, defining the vertices of an octahedron. The octahedron has eight faces, hence the prefix octa.";
 
 // Create list
 global.room_list = ds_list_create();

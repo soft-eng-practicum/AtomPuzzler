@@ -13,6 +13,7 @@
   <code>/// Initialize Variables
 global.room_type = -1;
 global.message = "Choose the molecular geometry: Square Planar";
+global.room_hint = "The square planar molecular geometry in chemistry describes the stereochemistry (spatial arrangement of atoms) that is adopted by certain chemical compounds. As the name suggests, molecules of this geometry have their atoms positioned at the corners of a square on the same plane about a central atom.";
 
 // Create list
 global.room_list = ds_list_create();

@@ -13,6 +13,7 @@
   <code>/// Initialize Variables
 global.room_type = -1;
 global.message = "Choose the molecular geometry: Tetrahedral";
+global.room_hint = "In a tetrahedral molecular geometry, a central atom is located at the center with four substituents that are located at the corners of a tetrahedron.";
 
 // Create list
 global.room_list = ds_list_create();
