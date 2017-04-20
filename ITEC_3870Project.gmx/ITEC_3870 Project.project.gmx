@@ -432,6 +432,13 @@
         <room>rooms\rm8</room>
       </rooms>
     </rooms>
+    <rooms name="In Development Rooms">
+      <room>rooms\rm9</room>
+      <room>rooms\rm10</room>
+      <room>rooms\rm11</room>
+      <room>rooms\rm12</room>
+      <room>rooms\rm13</room>
+    </rooms>
   </rooms>
   <constants number="10">
     <constant name="GMASSERT_MODE">GMASSERT_MODE_ENABLED</constant>
