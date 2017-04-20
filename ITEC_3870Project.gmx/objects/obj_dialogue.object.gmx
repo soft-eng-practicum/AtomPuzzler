@@ -298,20 +298,19 @@ if(alarm[1] = -1 &amp;&amp; global.room_type == -1)
 width = display_get_gui_width();
 height = display_get_gui_height();
 
-draw_set_alpha(0.7);
-    draw_set_color(c_black);
-    draw_rectangle(0, 176, width, 250, false);
-draw_set_alpha(1);
-
-draw_set_halign(fa_center);
-draw_set_valign(fa_middle);
-
-draw_set_color(c_yellow);
-
     if(mobile)
     {
         if(global.attempts &gt; 1)
         {
+            draw_set_alpha(0.7);
+            draw_set_color(c_black);
+            draw_rectangle(0, 176, width, 250, false);
+            draw_set_alpha(1);
+            
+            draw_set_halign(fa_center);
+            draw_set_valign(fa_middle);
+            
+            draw_set_color(c_yellow);
             draw_text_ext(width/2, 230, "Tap ? for hints", 18, width/2);
         }    
         draw_text_ext(width/2, 210, "Tap here to continue", 18, width/2 - 50);
@@ -320,6 +319,15 @@ draw_set_color(c_yellow);
     {
         if(global.attempts &gt; 1)
         {
+            draw_set_alpha(0.7);
+            draw_set_color(c_black);
+            draw_rectangle(0, 176, width, 250, false);
+            draw_set_alpha(1);
+            
+            draw_set_halign(fa_center);
+            draw_set_valign(fa_middle);
+            
+            draw_set_color(c_yellow);
             draw_text_ext(width/2, 230, "Press P for hints", 18, width/2);
         }
     }

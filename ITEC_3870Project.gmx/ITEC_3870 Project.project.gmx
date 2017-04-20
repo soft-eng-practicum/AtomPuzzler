@@ -5,23 +5,6 @@
   </Configs>
   <datafiles number="5" name="datafiles">
     <datafile>
-      <name>settings.ini</name>
-      <exists>-1</exists>
-      <size>0</size>
-      <exportAction>2</exportAction>
-      <exportDir></exportDir>
-      <overwrite>0</overwrite>
-      <freeData>-1</freeData>
-      <removeEnd>0</removeEnd>
-      <store>0</store>
-      <ConfigOptions>
-        <Config name="Default">
-          <CopyToMask>615726525288686</CopyToMask>
-        </Config>
-      </ConfigOptions>
-      <filename>settings.ini</filename>
-    </datafile>
-    <datafile>
       <name>room_settings.ini</name>
       <exists>-1</exists>
       <size>1987</size>
@@ -417,15 +400,10 @@
     <rooms name="Play Game Room">
       <rooms name="Easy">
         <room>rooms\rm1</room>
-        <room>rooms\lab1</room>
         <room>rooms\rm2</room>
-        <room>rooms\lab2</room>
         <room>rooms\rm3</room>
-        <room>rooms\lab3</room>
         <room>rooms\rm4</room>
-        <room>rooms\lab4</room>
         <room>rooms\rm5</room>
-        <room>rooms\lab5</room>
       </rooms>
       <rooms name="Normal">
         <room>rooms\rm6</room>
@@ -440,6 +418,22 @@
         <room>rooms\rm13</room>
         <room>rooms\rm14</room>
         <room>rooms\rm15</room>
+      </rooms>
+      <rooms name="Lab Rooms">
+        <room>rooms\lab1</room>
+        <room>rooms\lab2</room>
+        <room>rooms\lab3</room>
+        <room>rooms\lab4</room>
+        <room>rooms\lab5</room>
+        <room>rooms\lab6</room>
+        <room>rooms\lab7</room>
+        <room>rooms\lab8</room>
+        <room>rooms\lab9</room>
+        <room>rooms\lab10</room>
+        <room>rooms\lab11</room>
+        <room>rooms\lab12</room>
+        <room>rooms\lab13</room>
+        <room>rooms\lab14</room>
       </rooms>
     </rooms>
   </rooms>
