@@ -12,7 +12,7 @@
   <showcolour>0</showcolour>
   <code>///Must be first room
 
-//Constant States for transition (WIP)
+//Constant States for transition
 enum transition 
 {
     stripe_hor,

@@ -233,6 +233,7 @@
       <script>scripts\scr_initialize_room_properties.gml</script>
       <script>scripts\scr_create_room_atoms.gml</script>
       <script>scripts\scr_randomize_room_atoms.gml</script>
+      <script>scripts\room_goto_transition.gml</script>
     </scripts>
     <script>scripts\scr_OperatingSystem.gml</script>
   </scripts>
@@ -357,6 +358,7 @@
       <object>objects\obj_title</object>
       <object>objects\init_room_properties</object>
       <object>objects\ini_rooms</object>
+      <object>objects\sys_transition</object>
     </objects>
     <objects name="Testing">
       <object>objects\obj_unitTest</object>
