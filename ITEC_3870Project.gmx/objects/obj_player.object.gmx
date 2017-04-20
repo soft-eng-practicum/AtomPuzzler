@@ -159,7 +159,14 @@ if(place_meeting(x, y + 1, obj_obstacle))
             
             if((image_index &gt; 7 &amp;&amp; image_index &lt; 8) || kicking)
             {
-                image_speed = 0.15;
+                if(spr_idle == spr_boy1_idle)
+                {
+                    image_speed = 0.15;
+                }
+                else if(spr_idle == spr_girl1_idle)
+                {
+                    image_speed = 0.125;
+                }
             }
         }
         else
