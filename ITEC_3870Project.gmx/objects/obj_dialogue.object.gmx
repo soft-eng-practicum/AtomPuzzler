@@ -237,110 +237,6 @@ draw_text_ext(width/2, 135, global.message, 20, 600);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Delayed char by char event on alarm[0]
-
-/*
-Alarm is placed before message appears to create a delay.
-Gets the message array and outputs words with a delay per character.
-On spacebar press, iterates message index and outputs message.
-
-***** (Var_CE01) Variable Change Effect *****
-charWidth   -&gt; changes spacing between each character, this will vary depending on font size used.
-delay       -&gt; changes speed for character output, the lower the number the quicker.
-space       -&gt; changes the padding space.
-line        -&gt; changes line position. The higher the value the more the line will descend and vice versa.
-
-*/
-
-/*
-
-// Declare font traits
-draw_set_font(font_Default);
-draw_set_halign(fa_center);
-draw_set_valign(fa_middle);
-
-//Width and Height Variables
-width = display_get_gui_width();
-height = display_get_gui_height();
-
-// Get array length
-message_end = array_length_1d(global.message);
-
-// Alarm activates
-if(alarm[0] = -1) 
-{
-
-    //if message exists
-    if (message_end &gt; 0) 
-    {
-        
-        //(Var_CE01)
-        var charWidth = 14;
-        var delay = 1;
-        var lineEnd = 35;
-        var line = 0;
-        var space = 5;
-        var i = 1;
-        
-        if (cutoff &lt; string_length(global.message[message_current])) 
-        {
-            if (timer &gt;= delay) 
-            {
-                cutoff++;
-                timer = 0;
-            }
-            else 
-            {
-                timer++;
-            }
-        }
-        
-        // Iterates each chars and displays them until none left.
-        while (i &lt;= string_length(global.message[message_current]) &amp;&amp; i &lt;= cutoff) 
-        {
-            var length = 0;
-            
-            while (string_char_at(global.message[message_current], i) != " " &amp;&amp; i &lt;= string_length(global.message[message_current])) 
-            {
-                i++;
-                length++;
-            }
-            
-            if (space+length &gt; lineEnd) 
-            {
-                space = 0;
-                line++;
-            }
-            
-            i -= length;
-            
-            draw_text_outlined(width/6 + (space*charWidth), 125, string_char_at(global.message[message_current], i), c_white, c_black);
-            
-            space++;
-            i++;
-        }
-    }
-}
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
             <string>///Draw message and tinted box for normal room
 
 if(alarm[1] = -1 &amp;&amp; global.room_type == 1)
@@ -373,6 +269,59 @@ draw_set_color(c_yellow);
             draw_text_ext(width/2, 230, "Press P for hints", 18, width/2);
         }
         draw_text_ext(width/2, 210, "Press SPACE to continue", 18, width/2 - 50);
+    }
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Draw message and tinted box for lab room
+
+if(alarm[1] = -1 &amp;&amp; global.room_type == -1)
+{
+width = display_get_gui_width();
+height = display_get_gui_height();
+
+draw_set_alpha(0.7);
+    draw_set_color(c_black);
+    draw_rectangle(0, 176, width, 250, false);
+draw_set_alpha(1);
+
+draw_set_halign(fa_center);
+draw_set_valign(fa_middle);
+
+draw_set_color(c_yellow);
+
+    if(mobile)
+    {
+        if(global.attempts &gt; 1)
+        {
+            draw_text_ext(width/2, 230, "Tap ? for hints", 18, width/2);
+        }    
+        draw_text_ext(width/2, 210, "Tap here to continue", 18, width/2 - 50);
+    }
+    else
+    {
+        if(global.attempts &gt; 1)
+        {
+            draw_text_ext(width/2, 230, "Press P for hints", 18, width/2);
+        }
     }
 }
 </string>
