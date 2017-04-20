@@ -139,6 +139,9 @@
       <sprites name="testing room sprite">
         <sprite>sprites\spr_atomTesting</sprite>
       </sprites>
+      <sprite>sprites\spr_easy</sprite>
+      <sprite>sprites\spr_normal</sprite>
+      <sprite>sprites\spr_hard</sprite>
     </sprites>
     <sprites name="Platforms and Obstacles">
       <sprite>sprites\spr_movingPlatform</sprite>
@@ -340,6 +343,9 @@
       <object>objects\obj_test</object>
       <object>objects\obj_gender</object>
       <object>objects\obj_backToMain</object>
+      <object>objects\obj_easy</object>
+      <object>objects\obj_normal</object>
+      <object>objects\obj_hard</object>
     </objects>
     <objects name="Obstacle">
       <object>objects\obj_movingPlatform</object>
@@ -399,6 +405,7 @@
       <room>rooms\rm_initialize</room>
       <room>rooms\rm_splashScreen</room>
       <room>rooms\rm_mainMenu</room>
+      <room>rooms\rm_difficulty</room>
       <room>rooms\rm_scoreBoard</room>
       <room>rooms\rm_option</room>
     </rooms>
@@ -419,11 +426,11 @@
         <room>rooms\rm5</room>
         <room>rooms\lab5</room>
       </rooms>
-    </rooms>
-    <rooms name="In Development Rooms">
-      <room>rooms\rm_playTest4</room>
-      <room>rooms\rm_playTest5</room>
-      <room>rooms\rm_playTest6</room>
+      <rooms name="Normal">
+        <room>rooms\rm6</room>
+        <room>rooms\rm7</room>
+        <room>rooms\rm8</room>
+      </rooms>
     </rooms>
   </rooms>
   <constants number="10">
