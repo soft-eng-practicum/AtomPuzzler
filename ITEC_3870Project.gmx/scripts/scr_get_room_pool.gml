@@ -4,7 +4,7 @@
     
     @params: Takes a real(int) from 0, 1, or 2 in terms from easy, normal, or hard
     
-    @return ds_list
+    @return ds_list (shuffled and randomized in order of normal room then lab room)
 */
 
 var difficulty = argument[0];

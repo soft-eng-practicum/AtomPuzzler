@@ -1,14 +1,9 @@
 ///scr_randomize_room_atoms(1D-array, "rm_name")
 /*
-    Purpose:
-        To randomize the order of room atoms containing the correct and incorrect atom objects.
-        
-    Implementation:
-        By using the Fisher-Yates shuffle algorithm.
+    Purpose: Adds the leftover atoms(randomly generated) to original array
     
-    Reference:
-        https://en.wikipedia.org/wiki/Fisher-Yates_shuffle
-        
+    Why: If rm5 contains 4 correct atoms, we need to generate additional atoms so the player can lose    
+    
 */
 
 var array = argument[0];

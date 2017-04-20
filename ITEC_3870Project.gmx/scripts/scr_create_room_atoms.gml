@@ -6,7 +6,7 @@
 */
 
 var rm_name = argument[0];  //room name (String)
-var list = argument[1];    //array of atom objects
+var list = argument[1];    //ds_list of atom objects
 
 switch(rm_name)
 {
