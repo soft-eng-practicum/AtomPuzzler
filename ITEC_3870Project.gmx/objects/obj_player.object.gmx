@@ -97,6 +97,30 @@ audio_play_sound(music_AtomPuzzlerTheme, 1, true);
           </argument>
         </arguments>
       </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Initialize Transition Variables
+kind = transition.stripe_ver;
+xx = -1;
+yy = -1;
+</string>
+          </argument>
+        </arguments>
+      </action>
     </event>
     <event eventtype="3" enumb="0">
       <action>
@@ -738,7 +762,8 @@ if(is_winning &amp;&amp; keyboard_check_pressed(vk_space))
     }
     else 
     {
-        room_goto(next_room);
+        //room_goto(next_room);
+        room_goto_transition(next_room, kind, 60);
         global.room_pool_index++;
         x = 32;
         y = 320;
