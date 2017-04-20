@@ -72,8 +72,10 @@
     <instance objName="obj_obstacle" x="576" y="480" name="inst_B133680E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_obstacle" x="608" y="480" name="inst_5D2702FB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_obstacle" x="640" y="480" name="inst_00F5BC3A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_bg_mainMenu" x="0" y="0" name="inst_0D8A6A1F" locked="0" code="" scaleX="20.5599994659424" scaleY="15.709677696228" colour="4294967295" rotation="0"/>
+    <instance objName="obj_bg_mainMenu" x="-16" y="0" name="inst_0D8A6A1F" locked="0" code="" scaleX="20.5599994659424" scaleY="15.709677696228" colour="4294967295" rotation="0"/>
     <instance objName="obj_easy" x="152" y="352" name="inst_9DB3F857" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_normal" x="280" y="352" name="inst_D743700E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_hard" x="408" y="352" name="inst_FFC5F2FB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

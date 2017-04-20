@@ -10,7 +10,10 @@
   <persistent>0</persistent>
   <colour>12632256</colour>
   <showcolour>-1</showcolour>
-  <code>scr_initialize_room_properties();</code>
+  <code>scr_initialize_room_properties();
+
+obj_player.x = 63;
+obj_player.y = 416;</code>
   <enableViews>0</enableViews>
   <clearViewBackground>-1</clearViewBackground>
   <clearDisplayBuffer>-1</clearDisplayBuffer>
@@ -84,7 +87,6 @@
     <instance objName="obj_obstacle" x="360" y="64" name="inst_089E2B68" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_obstacle" x="272" y="232" name="inst_A58900CC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_door" x="320" y="176" name="inst_BA11592D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_player" x="32" y="352" name="inst_022D66C3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_obstacle" x="656" y="464" name="inst_92A6D541" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_obstacle" x="-16" y="464" name="inst_B1BA8AF8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_obstacle" x="320" y="376" name="inst_C8ACD550" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
