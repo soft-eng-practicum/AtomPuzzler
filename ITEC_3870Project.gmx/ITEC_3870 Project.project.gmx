@@ -133,7 +133,7 @@
       <sprite>sprites\spr_tile3</sprite>
       <sprite>sprites\spr_tile5</sprite>
       <sprite>sprites\spr_tile4</sprite>
-      <sprite>sprites\spr_tile6_dirt</sprite>
+      <sprite>sprites\spr_tile6</sprite>
       <sprite>sprites\spr_tile1</sprite>
       <sprite>sprites\spr_tile2</sprite>
       <sprites name="movingDirection">

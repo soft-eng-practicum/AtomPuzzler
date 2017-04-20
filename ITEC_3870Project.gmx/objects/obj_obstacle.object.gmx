@@ -33,23 +33,33 @@ switch(room)
     case rm_splashScreen:
     case rm_option:
     case rm1:
-    case rm4:
+    case rm6:
+    case rm11:
         sprite_index = spr_tile1;
         break;
     
     //Desert Tile
     case rm2:
+    case rm7:
+    case rm12:
         sprite_index = spr_tile4;
         break;
     
     //Rock Tile
     case rm3:
+    case rm8:
+    case rm13:
         sprite_index = spr_tile2;
         break;
         
     //Dirt Tile
+    case rm4:
     case rm5:
-        sprite_index = spr_tile6_dirt;
+    case rm9:
+    case rm10:
+    case rm14:
+    case rm15:
+        sprite_index = spr_tile6;
         break;
         
     //Lab Tile
@@ -58,6 +68,16 @@ switch(room)
     case lab3:
     case lab4:
     case lab5:
+    case lab6:
+    case lab7:
+    case lab8:
+    case lab9:
+    case lab10:
+    case lab11:
+    case lab12:
+    case lab13:
+    case lab14:
+    //case lab15:
         sprite_index = spr_tile5;
         break;
 }

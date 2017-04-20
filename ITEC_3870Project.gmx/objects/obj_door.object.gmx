@@ -97,8 +97,8 @@ switch(room)
     case rm11:
     case rm12:
     case rm13:
-    //case rm14:
-    //case rm15:
+    case rm14:
+    case rm15:
         sprite_index = spr_door1;
         break;
     
@@ -108,7 +108,7 @@ switch(room)
     case lab3:
     case lab4:
     case lab5:
-    /*case lab6:
+    case lab6:
     case lab7:
     case lab8:
     case lab9:
@@ -117,7 +117,7 @@ switch(room)
     case lab12:
     case lab13:
     case lab14:
-    case lab15:*/
+    //case lab15:
         sprite_index = spr_door2;
         break;
 }
