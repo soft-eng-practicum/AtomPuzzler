@@ -430,11 +430,11 @@
         <room>rooms\rm6</room>
         <room>rooms\rm7</room>
         <room>rooms\rm8</room>
+        <room>rooms\rm9</room>
+        <room>rooms\rm10</room>
       </rooms>
     </rooms>
     <rooms name="In Development Rooms">
-      <room>rooms\rm9</room>
-      <room>rooms\rm10</room>
       <room>rooms\rm11</room>
       <room>rooms\rm12</room>
       <room>rooms\rm13</room>
