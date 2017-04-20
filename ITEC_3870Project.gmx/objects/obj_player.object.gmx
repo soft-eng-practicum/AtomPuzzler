@@ -305,7 +305,7 @@ if(toggle == 0)
 {
     key_right = keyboard_check(vk_right);
     key_left = -keyboard_check(vk_left);
-    key_jump = keyboard_check_pressed(vk_space) || device_mouse_check_button_pressed(0, mb_right);
+    key_jump = keyboard_check_pressed(vk_space);
 }
 
 /* If key_jump is true, then the sound effect for jumping will be played.
@@ -801,7 +801,7 @@ if(mobile)
         with(obj_door)
         {
             keyboard_key_release(vk_up);
-            show_debug_message("enter door");
+            //show_debug_message("enter door");
         }
         
     }

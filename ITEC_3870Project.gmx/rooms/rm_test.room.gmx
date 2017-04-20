@@ -73,8 +73,8 @@
     <instance objName="obj_obstacle" x="608" y="480" name="inst_5D2702FB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_obstacle" x="640" y="480" name="inst_00F5BC3A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_atomTesting" x="123" y="312" name="inst_FF434F52" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_backToMain" x="487" y="331" name="inst_9F2F0370" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_bg_mainMenu" x="-2" y="-3" name="inst_3A2E7F82" locked="0" code="" scaleX="20.53125" scaleY="15.5500001907349" colour="4294967295" rotation="0"/>
+    <instance objName="obj_backToMain" x="598" y="418" name="inst_9F2F0370" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_bg_mainMenu" x="-14" y="-15" name="inst_3A2E7F82" locked="0" code="" scaleX="20.53125" scaleY="15.5500001907349" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>
