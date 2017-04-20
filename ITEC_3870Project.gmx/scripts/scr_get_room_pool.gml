@@ -31,12 +31,36 @@ if(difficulty == 0) {
 
 // Normal difficulty rooms
 if(difficulty == 1) {
-
+    ds_list_add(rm_list, rm6);
+    ds_list_add(rm_list, rm7);
+    ds_list_add(rm_list, rm8);
+    ds_list_add(rm_list, rm9);
+    ds_list_add(rm_list, rm10);
+    ds_list_shuffle(rm_list);
+    
+    ds_list_add(lab_list, lab1);
+    ds_list_add(lab_list, lab2);
+    ds_list_add(lab_list, lab3);
+    ds_list_add(lab_list, lab4);
+    ds_list_add(lab_list, lab5);
+    ds_list_shuffle(lab_list);
 }
 
 // Hard difficulty rooms
 if(difficulty == 2) {
-
+    ds_list_add(rm_list, rm11);
+    ds_list_add(rm_list, rm12);
+    ds_list_add(rm_list, rm13);
+    ds_list_add(rm_list, rm9);
+    ds_list_add(rm_list, rm10);
+    ds_list_shuffle(rm_list);
+    
+    ds_list_add(lab_list, lab1);
+    ds_list_add(lab_list, lab2);
+    ds_list_add(lab_list, lab3);
+    ds_list_add(lab_list, lab4);
+    ds_list_add(lab_list, lab5);
+    ds_list_shuffle(lab_list);
 }
 
 // Lists are already shuffled, add to new list in order of normal than lab

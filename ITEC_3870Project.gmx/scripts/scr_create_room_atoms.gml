@@ -68,8 +68,23 @@ switch(rm_name)
         instance_create(600, 152, ds_list_find_value(list, 6) );
         break;
     case "rm9": //  5
+        instance_create(56, 56, ds_list_find_value(list, 0) );
+        instance_create(48, 152, ds_list_find_value(list, 1) );
+        instance_create(288, 48, ds_list_find_value(list, 2) );
+        instance_create(600, 40, ds_list_find_value(list, 3) );
+        instance_create(600, 152, ds_list_find_value(list, 4) );
+        instance_create(192, 424, ds_list_find_value(list, 5) );
+        instance_create(424, 424, ds_list_find_value(list, 6) );
         break;
     case "rm10": // 5
+        instance_create(72, 264, ds_list_find_value(list, 0) );
+        instance_create(192, 424, ds_list_find_value(list, 1) );
+        instance_create(336, 256, ds_list_find_value(list, 2) );
+        instance_create(224, 136, ds_list_find_value(list, 3) );
+        instance_create(592, 176, ds_list_find_value(list, 4) );
+        instance_create(608, 312, ds_list_find_value(list, 5) );
+        instance_create(616, 416, ds_list_find_value(list, 6) );
+        instance_create(408, 64, ds_list_find_value(list, 7) );
         break;
     case "rm11":
         break;
