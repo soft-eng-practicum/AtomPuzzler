@@ -76,7 +76,6 @@ switch(rm_name)
         }
         break;
     case "rm9":
-        array[4] = scr_get_random_atom();
         array[5] = scr_get_random_atom();
         array[6] = scr_get_random_atom();
         for(i = 0; i < array_length_1d(array); i++)
