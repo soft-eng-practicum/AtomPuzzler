@@ -4,7 +4,6 @@
 
 # AtomPuzzler
 
-
 **Team Name:** teamBackRow
 
 **Repository** [Repository](https://github.com/soft-eng-practicum/AtomPuzzler)
@@ -22,6 +21,12 @@ AtomPuzzler is developed with GameMaker Studio and deployed for HTML5. It's a pu
 * [Wiki](https://github.com/soft-eng-practicum/AtomPuzzler/wiki)
 * [Requirements](https://github.com/soft-eng-practicum/AtomPuzzler/wiki/Requirements-Documentation)
 * [Client](https://github.com/soft-eng-practicum/AtomPuzzler/wiki/Client-Documentation)
+
+## License
+<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">Creative Commons Attribution-NonCommercial 4.0 International License</a>.
+
+[View License Deed](https://creativecommons.org/licenses/by-nc/4.0/)<br/>
+[View Legal Code](https://creativecommons.org/licenses/by-nc/4.0/legalcode)
 
 ## Team
 
