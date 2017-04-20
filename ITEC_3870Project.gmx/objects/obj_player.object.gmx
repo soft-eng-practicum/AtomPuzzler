@@ -187,7 +187,7 @@ if(place_meeting(x, y + 1, obj_obstacle))
                 }
                 else if(spr_idle == spr_girl1_idle)
                 {
-                    image_speed = 0.125;
+                    image_speed = 0.14;
                 }
             }
         }
@@ -303,9 +303,10 @@ REMEMBER: these checks happen every frame of the game.
 
 if(toggle == 0)
 {
-    key_right = keyboard_check(vk_right);
-    key_left = -keyboard_check(vk_left);
-    key_jump = keyboard_check_pressed(vk_space) || device_mouse_check_button_pressed(0, mb_right);
+    key_right = keyboard_check(vk_right) || keyboard_check(ord('D'));
+    key_left = keyboard_check(vk_left) || keyboard_check(ord('A'));
+    key_jump = keyboard_check_pressed(vk_space);
+    key_left *= -1;
 }
 
 /* If key_jump is true, then the sound effect for jumping will be played.
@@ -468,7 +469,9 @@ hspd = mvmt * mspd;
 //  Notes: Deleting from ds_list does not change list size.
 //  TODO: Remove last item from list, clear list, put leftover items into list again, this will require two lists maybe
 
-if(keyboard_check_pressed(ord("X")))
+atomDrop = keyboard_check_pressed(ord('X')) || keyboard_check_pressed(ord('M'));
+
+if(atomDrop)
 {
 
     if(ds_list_size(global.inventory) &gt; 0) 
@@ -832,8 +835,9 @@ Checks for both lists: room and player's inventory.
 Checks sizes of both lists, then checks for the content within list.
 If the content within the player's inventory matches the room's list, then give correct feedback and move to next room and vice versa.
 */
+doorPass = (keyboard_check_released(vk_up) || keyboard_check_released(ord('W')))
 
-if(keyboard_check_released(vk_up) &amp;&amp; instance_nearest(x, y, obj_door).doorExit &amp;&amp; global.room_type == 1) 
+if(doorPass &amp;&amp; instance_nearest(x, y, obj_door).doorExit &amp;&amp; global.room_type == 1) 
 {
 
     scr_debug_list();
@@ -931,8 +935,8 @@ The reason why there is duplicate code for separate room types is that Lab rooms
 not have a timer object and Normal rooms do. The game throws an 'object that does not exist'
 error if timer is stopped in Lab room, therefore the duplicated code for both room types.
 */
-
-if(keyboard_check_released(vk_up) &amp;&amp; instance_nearest(x, y, obj_door).doorExit &amp;&amp; global.room_type == -1)
+doorPass = (keyboard_check_released(vk_up) || keyboard_check_released(ord('W')))
+if(doorPass &amp;&amp; instance_nearest(x, y, obj_door).doorExit &amp;&amp; global.room_type == -1)
 {
 
     scr_debug_list();

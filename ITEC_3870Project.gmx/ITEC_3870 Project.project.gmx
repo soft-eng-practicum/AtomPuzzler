@@ -332,6 +332,7 @@
       <object>objects\obj_easy</object>
       <object>objects\obj_normal</object>
       <object>objects\obj_hard</object>
+      <object>objects\obj_mainMenuParent</object>
     </objects>
     <objects name="Obstacle">
       <object>objects\obj_movingPlatform</object>
