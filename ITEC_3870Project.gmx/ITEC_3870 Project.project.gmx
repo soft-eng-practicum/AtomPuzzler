@@ -55,9 +55,10 @@
     <sprites name="Room">
       <sprite>sprites\spr_level_banner</sprite>
       <sprite>sprites\spr_cloud</sprite>
-      <sprite>sprites\spr_door</sprite>
+      <sprite>sprites\spr_door1</sprite>
       <sprite>sprites\spr_title</sprite>
       <sprite>sprites\spr_signpost</sprite>
+      <sprite>sprites\spr_door2</sprite>
     </sprites>
     <sprites name="Player">
       <sprite>sprites\spr_boy1</sprite>
