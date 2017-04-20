@@ -136,6 +136,22 @@ their sprites accordingly and set the touch
 variable to false. It will also play the select sound effect.
 */
 
+// emulate a tap/click as the up key
+if(mobile)
+{
+    with(obj_player)
+    {
+        if(input.tap &amp;&amp; mouse_check_button_released(mb_left))
+        {
+            with(obj_gender)
+            {
+                    keyboard_key_press(vk_up);
+            } 
+            keyboard_key_release(vk_up);
+        }
+    }
+}
+
 if(touch &amp;&amp; mainPass)
 {
     

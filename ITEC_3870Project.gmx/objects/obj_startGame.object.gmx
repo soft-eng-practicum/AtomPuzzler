@@ -99,6 +99,22 @@ event_inherited();
             <kind>1</kind>
             <string>/// Goto Difficulty Room
 
+// emulate a tap/click as the up key
+if(mobile)
+{
+    with(obj_player)
+    {
+        if(input.tap &amp;&amp; mouse_check_button_released(mb_left))
+        {
+            with(obj_startGame)
+            {
+                    keyboard_key_press(vk_up);
+            } 
+            keyboard_key_release(vk_up);
+        }
+    }
+}
+
 if(mainPass)
 {
     //room_goto(rm_difficulty);

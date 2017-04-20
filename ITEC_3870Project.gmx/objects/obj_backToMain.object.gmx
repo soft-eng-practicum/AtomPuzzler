@@ -99,6 +99,22 @@ event_inherited();
             <kind>1</kind>
             <string>/// Return the Player to Main Menu
 
+// emulate a tap/click as the up key
+if(mobile)
+{
+    with(obj_player)
+    {
+        if(input.tap &amp;&amp; mouse_check_button_released(mb_left))
+        {
+            with(obj_gender)
+            {
+                    keyboard_key_press(vk_up);
+            } 
+            keyboard_key_release(vk_up);
+        }
+    }
+}
+
 if(mainPass)
 {
     global.totalPoints = 0;
