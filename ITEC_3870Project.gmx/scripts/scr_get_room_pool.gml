@@ -38,11 +38,11 @@ if(difficulty == 1) {
     ds_list_add(rm_list, rm10);
     ds_list_shuffle(rm_list);
     
-    ds_list_add(lab_list, lab1);
-    ds_list_add(lab_list, lab2);
-    ds_list_add(lab_list, lab3);
-    ds_list_add(lab_list, lab4);
-    ds_list_add(lab_list, lab5);
+    ds_list_add(lab_list, lab6);
+    ds_list_add(lab_list, lab7);
+    ds_list_add(lab_list, lab8);
+    ds_list_add(lab_list, lab9);
+    ds_list_add(lab_list, lab10);
     ds_list_shuffle(lab_list);
 }
 
@@ -55,11 +55,11 @@ if(difficulty == 2) {
     ds_list_add(rm_list, rm15);
     ds_list_shuffle(rm_list);
     
-    ds_list_add(lab_list, lab1);
-    ds_list_add(lab_list, lab2);
-    ds_list_add(lab_list, lab3);
-    ds_list_add(lab_list, lab4);
-    ds_list_add(lab_list, lab5);
+    ds_list_add(lab_list, lab11);
+    ds_list_add(lab_list, lab12);
+    ds_list_add(lab_list, lab13);
+    ds_list_add(lab_list, lab14);
+    ds_list_add(lab_list, lab10);
     ds_list_shuffle(lab_list);
 }
 
