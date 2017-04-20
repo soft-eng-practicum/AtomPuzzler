@@ -93,7 +93,7 @@ variable to false. It will also play the select sound effect.
 if(touch &amp;&amp; keyboard_check_released(vk_up))
 {
     
-    room_goto_transition(rm_mainMenu, transition.stripe_ver, 60);
+    room_goto_transition(rm_mainMenu, transition.stripe_ver, 45);
     
     switch(obj_player.spr)
     {
@@ -150,7 +150,11 @@ if(touch &amp;&amp; keyboard_check_released(vk_up))
 
 draw_self();
 
-draw_text_outlined(x - 30, y - 60, "GENDER", c_yellow, c_black);
+draw_set_halign(fa_center);
+draw_set_valign(fa_middle);
+draw_set_font(font_Default);
+
+draw_text_outlined(x, y - 60, "GENDER", c_yellow, c_black);
 </string>
           </argument>
         </arguments>
