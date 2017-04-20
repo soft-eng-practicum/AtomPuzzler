@@ -434,11 +434,13 @@
         <room>rooms\rm9</room>
         <room>rooms\rm10</room>
       </rooms>
-    </rooms>
-    <rooms name="In Development Rooms">
-      <room>rooms\rm11</room>
-      <room>rooms\rm12</room>
-      <room>rooms\rm13</room>
+      <rooms name="Hard">
+        <room>rooms\rm11</room>
+        <room>rooms\rm12</room>
+        <room>rooms\rm13</room>
+        <room>rooms\rm14</room>
+        <room>rooms\rm15</room>
+      </rooms>
     </rooms>
   </rooms>
   <constants number="10">
