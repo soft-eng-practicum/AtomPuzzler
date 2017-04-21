@@ -87,32 +87,6 @@ if(mobile)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Play Music
-
-// This will play the audio and set its priorty level to be higher than all other sounds
-// because the player is persistant, the audio will continue to play.
-
-//audio_play_sound(music_AtomPuzzlerTheme, 1, true);
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
             <string>/// Initialize Transition Variables
 kind = transition.stripe_ver;
 </string>
@@ -480,6 +454,7 @@ if( mobile &amp;&amp; !instance_exists(obj_dialogue)){
                 if(jump &amp;&amp; place_meeting(x, y + 1, obj_obstacle))
                 {
                     vspd = -jspd - .5;
+                    audio_play_sound(sfx_jump, 0, false);
                 }
                 break
             case 3: // left
