@@ -92,7 +92,7 @@ if(mobile)
 // This will play the audio and set its priorty level to be higher than all other sounds
 // because the player is persistant, the audio will continue to play.
 
-audio_play_sound(music_AtomPuzzlerTheme, 1, true);
+//audio_play_sound(music_AtomPuzzlerTheme, 1, true);
 </string>
           </argument>
         </arguments>
@@ -312,7 +312,7 @@ if(toggle == 0)
 /* If key_jump is true, then the sound effect for jumping will be played.
 */
 
-if (key_jump == true &amp;&amp; vspd == 0) 
+if ((key_jump == true &amp;&amp; jump) &amp;&amp; vspd == 0) 
 {
     audio_play_sound(sfx_jump, 0, false);
 }
@@ -464,6 +464,77 @@ hspd = mvmt * mspd;
         <arguments>
           <argument>
             <kind>1</kind>
+            <string>///mobile operations
+
+if( mobile &amp;&amp; !instance_exists(obj_dialogue)){
+
+    //swipe operation
+    if (input.swipe &amp;&amp; input.swipe_spd &gt; 20)
+    {
+    
+        switch ( scr_mobileControl(floor(input.swipe_dir )))
+        {
+            case 1: // right
+                break;
+            case 2: // up
+                if(jump &amp;&amp; place_meeting(x, y + 1, obj_obstacle))
+                {
+                    vspd = -jspd - .5;
+                }
+                break
+            case 3: // left
+
+                break;
+            case 4: // down: Drop atoms
+                    keyboard_key_press(ord('X'));
+                    keyboard_key_release(ord('X'));
+
+                break; 
+        }
+    }
+    
+    if (input.joy_active)
+    {   //show_debug_message(floor((((radtodeg(input.joy_dir)+ 45)mod 360 )/90)));
+        //show_debug_message(floor(radtodeg(input.joy_dir)));
+        switch ( scr_mobileControl(floor(radtodeg(input.joy_dir))))
+        {
+            case 1: // right
+                mvmt = 1;
+                hspd = mvmt * mspd
+                break;
+            case 2: // up
+
+                break;
+            case 3: // left
+                mvmt = -1;
+                hspd = mvmt * mspd;
+                break;
+            case 4: // down
+                break;
+                
+        }
+    }
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
             <string>///On Key Press X, drops previous atom picked
 
 //  Notes: Deleting from ds_list does not change list size.
@@ -507,109 +578,6 @@ if(atomDrop)
             global.points = 0;
         }
         
-    }
-}
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///mobile operations
-
-if( mobile &amp;&amp; !instance_exists(obj_dialogue)){
-
-    //swipe operation
-    if (input.swipe &amp;&amp; input.swipe_spd &gt; 20)
-    {
-    
-        switch ( scr_mobileControl(floor(input.swipe_dir )))
-        {
-            case 1: // right
-                break;
-            case 2: // up
-                if(jump &amp;&amp; place_meeting(x, y + 1, obj_obstacle))
-                {
-                    vspd = -jspd - 1;
-                }
-                break
-            case 3: // left
-
-                break;
-            case 4: // down: Drop atoms
-                if(ds_list_size(global.inventory) &gt; 0) 
-                {
-                    obj = scr_drop_atom(global.inventory);
-                    //Checks the nearest postion atom from the player and move the atom if there is an atom there
-                    if((instance_nearest(obj_player.x + atomX, obj_player.y - atomY, obj_atom1)
-                        &amp;&amp;  instance_position(obj_player.x + atomX, obj_player.y - atomY, obj_atom1))
-                        || (instance_nearest(obj_player.x - atomX, obj_player.y - atomY, obj_atom1)
-                        &amp;&amp;  instance_position(obj_player.x - atomX, obj_player.y - atomY, obj_atom1)))
-                    {
-                        atomX += 25;
-                    }
-                    else
-                    {
-                        atomX = 50;
-                    }
-
-                    if(!facing_forward)
-                    {
-                        instance_create(obj_player.x - atomX, obj_player.y - atomY, obj);
-                        
-                    }
-                    if(facing_forward)
-                    {
-                        instance_create(obj_player.x + atomX, obj_player.y - atomY, obj);
-                    }
-                    
-                    if(ds_list_size(global.inventory) &gt; 0)
-                    {
-                        global.points -= 200;
-                        if(global.points &lt; 0)
-                        {
-                            global.points = 0;
-                        }
-                    }
-                }
-                break; 
-        }
-    }
-    
-    if (input.joy_active)
-    {   //show_debug_message(floor((((radtodeg(input.joy_dir)+ 45)mod 360 )/90)));
-        //show_debug_message(floor(radtodeg(input.joy_dir)));
-        switch ( scr_mobileControl(floor(radtodeg(input.joy_dir))))
-        {
-            case 1: // right
-                mvmt = 1;
-                hspd = mvmt * mspd
-                break;
-            case 2: // up
-
-                break;
-            case 3: // left
-                mvmt = -1;
-                hspd = mvmt * mspd;
-                break;
-            case 4: // down
-                break;
-                
-        }
     }
 }
 </string>
@@ -772,6 +740,35 @@ if(is_winning &amp;&amp; keyboard_check_pressed(vk_space))
     
 }
 
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Play Music
+
+// This will play the audio and set its priorty level to be higher than all other sounds
+// because the player is persistant, the audio will continue to play.
+
+if(!audio_is_playing(music_AtomPuzzlerTheme))
+{
+    audio_play_sound(music_AtomPuzzlerTheme, 1, true);
+}
 </string>
           </argument>
         </arguments>
