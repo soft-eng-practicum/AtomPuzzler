@@ -22,7 +22,7 @@
   </bitDepths>
   <preload>-1</preload>
   <data>sfx_next_Level.wav</data>
-  <compressed>1</compressed>
+  <compressed>0</compressed>
   <streamed>0</streamed>
   <uncompressOnLoad>0</uncompressOnLoad>
   <audioGroup>0</audioGroup>

@@ -105,6 +105,35 @@ kind = transition.stripe_ver;
         <exetype>2</exetype>
         <functionname></functionname>
         <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Play Music
+
+// This will play the audio and set its priorty level to be higher than all other sounds
+// because the player is persistant, the audio will continue to play.
+
+if(!audio_is_playing(music_AtomPuzzlerTheme))
+{
+    audio_play_sound(music_AtomPuzzlerTheme, 1, true);
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
         <whoName>other</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
@@ -584,7 +613,8 @@ if(mobile &amp;&amp; !(room == rm_initialize
             || room == rm_splashScreen 
             || room == rm_mainMenu 
             || room == rm_scoreBoard 
-            || room == rm_option))
+            || room == rm_option
+            || room == rm_difficulty))
 {
     with(obj_mobileReset)
     {
@@ -603,7 +633,7 @@ else
     }
 }
 
-//when the mose click it will emulate as if the player press the key "R"
+//when the mouse clicks, it will emulate as if the player press the key "R"
 if ( (mouse_check_button_pressed( mb_left )) &amp;&amp; mobile)
 {
     if(mouse_check_button_pressed( mb_left ) &amp;&amp; instance_exists(obj_gameover))
@@ -715,35 +745,6 @@ if(is_winning &amp;&amp; keyboard_check_pressed(vk_space))
     
 }
 
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>/// Play Music
-
-// This will play the audio and set its priorty level to be higher than all other sounds
-// because the player is persistant, the audio will continue to play.
-
-if(!audio_is_playing(music_AtomPuzzlerTheme))
-{
-    audio_play_sound(music_AtomPuzzlerTheme, 1, true);
-}
 </string>
           </argument>
         </arguments>

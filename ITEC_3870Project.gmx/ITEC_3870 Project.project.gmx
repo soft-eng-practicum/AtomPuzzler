@@ -27,12 +27,12 @@
     <extension index="1">extensions\StaticCube - Log Console</extension>
   </NewExtensions>
   <sounds name="sound">
+    <sound>sound\music_AtomPuzzlerTheme</sound>
     <sound>sound\sfx_Select</sound>
     <sound>sound\sfx_atomCollide</sound>
     <sound>sound\sfx_jump</sound>
     <sound>sound\sfx_next_Level</sound>
     <sound>sound\sfx_F_Alarm</sound>
-    <sound>sound\music_AtomPuzzlerTheme</sound>
   </sounds>
   <sprites name="sprites">
     <sprites name="Room">
