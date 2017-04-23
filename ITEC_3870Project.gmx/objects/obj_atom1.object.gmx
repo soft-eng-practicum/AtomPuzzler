@@ -254,10 +254,20 @@ hspd = -abs(mspd);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Atom on Collion Destroy and play sound Effect
+            <string>/// Atom on Collision Destroy and play sound Effect
 
 instance_destroy();
-audio_play_sound(sfx_atomCollide, 0, false);
+if (sound_isplaying(sfx_jump) || sound_isplaying(sfx_Select) || sound_isplaying(sfx_atomCollide))
+{
+    sound_stop(sfx_Select);
+    sound_stop(sfx_atomCollide);
+    sound_stop(sfx_jump);
+    sound_play(sfx_atomCollide);
+}
+else
+{
+    sound_play(sfx_atomCollide);
+}
 </string>
           </argument>
         </arguments>
