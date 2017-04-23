@@ -63,7 +63,7 @@ highscore_add("", "");
 draw_set_halign(fa_left);
 draw_set_valign(fa_middle);
 
-if(room != rm_splashScreen &amp;&amp; room != rm_scoreBoard &amp;&amp; room != rm_mainMenu &amp;&amp; room != rm_option)
+if(room != rm_splashScreen &amp;&amp; room != rm_scoreBoard &amp;&amp; room != rm_mainMenu &amp;&amp; room != rm_option &amp;&amp; room != rm_difficulty)
 {
     draw_set_color(c_blue);
     draw_text_outlined(room_width - 150, 50, "Points: " + string(global.totalPoints), c_white, c_black);
