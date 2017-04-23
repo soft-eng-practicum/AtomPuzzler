@@ -98,7 +98,7 @@ if(keyboard_check_pressed(ord('P'))
   || (mobile &amp;&amp; mouse_check_button_pressed(mb_left))) 
 {
     
-    if(room == rm_mainMenu || room == rm_scoreBoard || room == rm_option || room = rm_difficulty)
+    if(room == rm_mainMenu || room == rm_scoreBoard || room == rm_option || room == rm_difficulty)
     {
         //Don't pause
     }

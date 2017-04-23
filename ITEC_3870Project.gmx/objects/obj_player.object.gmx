@@ -116,9 +116,9 @@ kind = transition.stripe_ver;
 // This will play the audio and set its priorty level to be higher than all other sounds
 // because the player is persistant, the audio will continue to play.
 
-if(!audio_is_playing(music_AtomPuzzlerTheme))
+if(!sound_isplaying(music_AtomPuzzlerTheme))
 {
-    audio_play_sound(music_AtomPuzzlerTheme, 1, true);
+    sound_loop(music_AtomPuzzlerTheme);
 }
 </string>
           </argument>
