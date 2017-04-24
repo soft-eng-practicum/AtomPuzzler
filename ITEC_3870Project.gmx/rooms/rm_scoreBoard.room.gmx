@@ -3,8 +3,8 @@
   <caption></caption>
   <width>640</width>
   <height>480</height>
-  <vsnap>32</vsnap>
-  <hsnap>32</hsnap>
+  <vsnap>8</vsnap>
+  <hsnap>8</hsnap>
   <isometric>0</isometric>
   <speed>60</speed>
   <persistent>0</persistent>
@@ -76,9 +76,9 @@
     <instance objName="obj_obstacle" x="608" y="480" name="inst_EBA552A9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_obstacle" x="608" y="480" name="inst_A863A84A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_obstacle" x="640" y="480" name="inst_7140ECD8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_backToMain" x="576" y="420" name="inst_3381EE5F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_backToMain" x="576" y="421" name="inst_3381EE5F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_highScores" x="288" y="32" name="inst_9D7C05F2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_bg_mainMenu" x="0" y="0" name="inst_E19551A2" locked="0" code="" scaleX="20.6451606750488" scaleY="15" colour="4294967295" rotation="0"/>
+    <instance objName="obj_bg_mainMenu" x="-21" y="5" name="inst_E19551A2" locked="0" code="" scaleX="20.6451606750488" scaleY="15" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>
