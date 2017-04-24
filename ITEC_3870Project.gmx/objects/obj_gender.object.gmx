@@ -155,7 +155,7 @@ if(mobile)
 if(touch &amp;&amp; mainPass)
 {
     
-    room_goto_transition(rm_mainMenu, transition.stripe_ver, 45);
+    room_goto_transition(rm_mainMenu, transition.stripe_ver, 60);
     
     switch(obj_player.spr)
     {

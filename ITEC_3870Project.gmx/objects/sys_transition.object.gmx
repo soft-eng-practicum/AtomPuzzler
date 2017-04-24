@@ -26,10 +26,10 @@
           <argument>
             <kind>1</kind>
             <string>/// Stripe Effect Transition
-stripes = 100;                              // Total amount of stripes
+stripes = 1;                              // Total amount of stripes
 anim = false;                               // Used to change the time if needed
-height = window_get_height() / stripes;     // Height of each stripe
-width = window_get_width() + (window_get_width() / 5);// The width of each stripe
+height = window_get_height() + 10 / stripes;     // Height of each stripe
+width = window_get_width() + 10 + (window_get_width() / 5);// The width of each stripe
 timer = -width;                             // Timer will work as the slowest stripe
 roomChange = false;                         // True when half time has passed
 maxTimer = window_get_width();              // How long the timer will last
