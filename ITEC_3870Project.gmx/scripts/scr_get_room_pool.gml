@@ -64,16 +64,18 @@ if(difficulty == 2) {
 }
 
 // Lists are already shuffled, add to new list in order of normal than lab
-for(i = 0; i < 1; i++) {
+for(i = 0; i < 2; i++) {
     ds_list_add(final_list, ds_list_find_value(rm_list, i));
-    //ds_list_add(final_list, ds_list_find_value(lab_list, i));
+    ds_list_add(final_list, ds_list_find_value(lab_list, i));
 }
 
 show_debug_message("scr_get_room_pool: final_list size: " + string(ds_list_size(final_list)));
+
 
 // Debug: Should print out final_list unordered
 for(i = 0; i < ds_list_size(final_list); i++) {
     show_debug_message("scr_get_room_pool: List[" + string(i) + "]: " + string(ds_list_find_value(final_list, i)) );
 }
+
 
 return final_list;

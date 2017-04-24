@@ -386,6 +386,9 @@
       <object>objects\obj_bg_rock2</object>
       <object>objects\obj_bg_mainMenu</object>
       <object>objects\obj_bg_night2</object>
+      <object>objects\obj_cloud</object>
+      <object>objects\obj_cloud1</object>
+      <object>objects\obj_cloud2</object>
     </objects>
   </objects>
   <rooms name="rooms">
