@@ -552,6 +552,8 @@ if(atomDrop)
 
     if(ds_list_size(global.inventory) &gt; 0) 
     {
+        //Audio played
+        audio_play_sound(sfx_Select, 2, false);
         obj = scr_drop_atom(global.inventory);
         //move the atom 
         if((instance_nearest(obj_player.x + atomX, obj_player.y - atomY, obj_atom1)
@@ -584,9 +586,7 @@ if(atomDrop)
         }
         
     }
-    
-    //Audio played
-    audio_play_sound(sfx_Select, 2, false);
+
 }
 </string>
           </argument>
