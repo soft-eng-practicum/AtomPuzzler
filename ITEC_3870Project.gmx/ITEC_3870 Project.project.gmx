@@ -25,6 +25,7 @@
   <NewExtensions>
     <extension index="0">extensions\Essential Scripts</extension>
     <extension index="1">extensions\StaticCube - Log Console</extension>
+    <extension index="2">extensions\Cloud Background</extension>
   </NewExtensions>
   <sounds name="sound">
     <sound>sound\music_AtomPuzzlerTheme</sound>
@@ -153,6 +154,7 @@
       <sprite>sprites\spr_bg_rock1</sprite>
       <sprite>sprites\spr_bg_lab</sprite>
       <sprite>sprites\spr_bg_nightRoom2</sprite>
+      <sprite>sprites\spr_bg_cloud_green</sprite>
     </sprites>
     <sprites name="Molecular Geometry">
       <sprite>sprites\spr_linear</sprite>
@@ -389,6 +391,8 @@
       <object>objects\obj_cloud</object>
       <object>objects\obj_cloud1</object>
       <object>objects\obj_cloud2</object>
+      <object>objects\obj_bg_cloud_blue</object>
+      <object>objects\obj_bg_cloud_green</object>
     </objects>
   </objects>
   <rooms name="rooms">
