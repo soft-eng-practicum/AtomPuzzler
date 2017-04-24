@@ -116,9 +116,9 @@ kind = transition.stripe_ver;
 // This will play the audio and set its priorty level to be higher than all other sounds
 // because the player is persistant, the audio will continue to play.
 
-if(!sound_isplaying(music_AtomPuzzlerTheme))
+if(!audio_is_playing(music_AtomPuzzlerTheme))
 {
-    sound_loop(music_AtomPuzzlerTheme);
+    audio_play_sound(music_AtomPuzzlerTheme, 1, true);
 }
 </string>
           </argument>
@@ -317,17 +317,7 @@ if(toggle == 0)
 
 if ((key_jump == true &amp;&amp; jump) &amp;&amp; vspd == 0) 
 {
-    if (sound_isplaying(sfx_jump) || sound_isplaying(sfx_Select) || sound_isplaying(sfx_atomCollide))
-    {
-        sound_stop(sfx_Select);
-        sound_stop(sfx_atomCollide);
-        sound_stop(sfx_jump);
-        sound_play(sfx_jump);
-    }
-    else
-    {
-        sound_play(sfx_jump);
-    }
+    audio_play_sound(sfx_jump, 2, false);
 }
 
 
@@ -493,17 +483,7 @@ if( mobile &amp;&amp; !instance_exists(obj_dialogue)){
                 if(jump &amp;&amp; place_meeting(x, y + 1, obj_obstacle))
                 {
                     vspd = -jspd - .5;
-                    if (sound_isplaying(sfx_jump) || sound_isplaying(sfx_Select) || sound_isplaying(sfx_atomCollide))
-                    {
-                        sound_stop(sfx_Select);
-                        sound_stop(sfx_atomCollide);
-                        sound_stop(sfx_jump);
-                        sound_play(sfx_jump);
-                    }
-                    else
-                    {
-                        sound_play(sfx_jump);
-                    }
+                    audio_play_sound(sfx_jump, 2, false);
                 }
                 break
             case 3: // left
@@ -512,17 +492,7 @@ if( mobile &amp;&amp; !instance_exists(obj_dialogue)){
             case 4: // down: Drop atoms
                     keyboard_key_press(ord('X'));
                     keyboard_key_release(ord('X'));
-                    if (sound_isplaying(sfx_jump) || sound_isplaying(sfx_Select) || sound_isplaying(sfx_atomCollide))
-                    {
-                        sound_stop(sfx_Select);
-                        sound_stop(sfx_atomCollide);
-                        sound_stop(sfx_jump);
-                        sound_play(sfx_Select);
-                    }
-                    else
-                    {
-                        sound_play(sfx_Select);
-                    }
+                    audio_play_sound(sfx_Select, 2, false);
 
                 break; 
         }
@@ -616,17 +586,7 @@ if(atomDrop)
     }
     
     //Audio played
-    if (sound_isplaying(sfx_jump) || sound_isplaying(sfx_Select) || sound_isplaying(sfx_atomCollide))
-    {
-        sound_stop(sfx_Select);
-        sound_stop(sfx_atomCollide);
-        sound_stop(sfx_jump);
-        sound_play(sfx_Select);
-    }
-    else
-    {
-        sound_play(sfx_Select);
-    }
+    audio_play_sound(sfx_Select, 2, false);
 }
 </string>
           </argument>
@@ -892,17 +852,7 @@ if(doorPass &amp;&amp; instance_nearest(x, y, obj_door).doorExit &amp;&amp; glob
             is_winning = true;
             instance_create(0, 0, obj_win);
             //play level complete sound.
-            if (sound_isplaying(sfx_jump) || sound_isplaying(sfx_Select) || sound_isplaying(sfx_atomCollide))
-            {
-                sound_stop(sfx_Select);
-                sound_stop(sfx_atomCollide);
-                sound_stop(sfx_jump);
-                sound_play(sfx_next_Level);
-            }
-            else
-            {
-                sound_play(sfx_next_Level);
-            }
+           audio_play_sound(sfx_next_Level, 2, false);
             //show_debug_message("obj_player: Event Collide: obj_door:  instance_create: obj_win");
             global.totalPoints = global.points - round(global.roomPoints) + global.totalPoints;
             obj_timer.stop = true;
@@ -916,17 +866,7 @@ if(doorPass &amp;&amp; instance_nearest(x, y, obj_door).doorExit &amp;&amp; glob
             is_winning = false;
             instance_create(0, 0, obj_gameover);
             //play level failed sound.
-            if (sound_isplaying(sfx_jump) || sound_isplaying(sfx_Select) || sound_isplaying(sfx_atomCollide))
-            {
-                sound_stop(sfx_Select);
-                sound_stop(sfx_atomCollide);
-                sound_stop(sfx_jump);
-                sound_play(sfx_F_Alarm);
-             }
-             else
-             {
-                sound_play(sfx_F_Alarm);
-             }
+            audio_play_sound(sfx_F_Alarm, 2, false);
             //show_debug_message("obj_player: Event Collide: obj_door: On Lose: instance_create: obj_gameover");
             obj_timer.stop = true;
             toggle = -1;
@@ -1011,17 +951,7 @@ if(doorPass &amp;&amp; instance_nearest(x, y, obj_door).doorExit &amp;&amp; glob
             is_winning = true;
             instance_create(0, 0, obj_win);
             //play level complete sound.
-            if (sound_isplaying(sfx_jump) || sound_isplaying(sfx_Select) || sound_isplaying(sfx_atomCollide))
-            {
-                sound_stop(sfx_Select);
-                sound_stop(sfx_atomCollide);
-                sound_stop(sfx_jump);
-                sound_play(sfx_next_Level);
-            }
-            else
-            {
-                sound_play(sfx_next_Level);
-            }
+            audio_play_sound(sfx_next_Level, 2, false);
             global.totalPoints = global.totalPoints + 100;
             with(instance_nearest(x, y, obj_door)) doorExit = false;
             toggle = -1;
@@ -1033,17 +963,7 @@ if(doorPass &amp;&amp; instance_nearest(x, y, obj_door).doorExit &amp;&amp; glob
             is_winning = false;
             instance_create(0, 0, obj_gameover);
             //play level failed sound.
-            if (sound_isplaying(sfx_jump) || sound_isplaying(sfx_Select) || sound_isplaying(sfx_atomCollide))
-            {
-                sound_stop(sfx_Select);
-                sound_stop(sfx_atomCollide);
-                sound_stop(sfx_jump);
-                sound_play(sfx_F_Alarm);
-            }
-            else
-            {
-                sound_play(sfx_F_Alarm);
-            }
+            audio_play_sound(sfx_F_Alarm, 2, false);
             //global.points -= 100;
             global.totalPoints = global.totalPoints - 100;
             toggle = -1;
