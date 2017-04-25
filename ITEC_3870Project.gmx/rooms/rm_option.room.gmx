@@ -77,7 +77,6 @@
     <instance objName="obj_obstacle" x="608" y="480" name="inst_A863A84A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_obstacle" x="640" y="480" name="inst_7140ECD8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_backToMain" x="544" y="420" name="inst_5F3BDB17" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_bg_mainMenu" x="320" y="240" name="inst_86766320" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>
