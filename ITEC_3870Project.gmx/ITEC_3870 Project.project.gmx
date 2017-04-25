@@ -377,6 +377,7 @@
     <objects name="Text Feedback">
       <object>objects\obj_gameover</object>
       <object>objects\obj_win</object>
+      <object>objects\obj_score_feedback</object>
       <object>objects\obj_hint</object>
     </objects>
     <objects name="Backgrounds">

@@ -79,6 +79,18 @@
     <instance objName="obj_backToMain" x="576" y="421" name="inst_3381EE5F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_highScores" x="288" y="32" name="inst_9D7C05F2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_bg_cloud_green" x="0" y="0" name="inst_5A77A386" locked="0" code="" scaleX="0.5" scaleY="0.688888907432556" colour="4294967295" rotation="0"/>
+    <instance objName="obj_cloud" x="0" y="0" name="inst_6635AA00" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_cloud" x="208" y="128" name="inst_19498348" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_cloud" x="520" y="24" name="inst_FBEB4C94" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_cloud1" x="16" y="96" name="inst_CD5A951B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_cloud1" x="424" y="64" name="inst_2D2042B0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_cloud2" x="160" y="40" name="inst_16966795" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_cloud2" x="504" y="80" name="inst_4A1EDF40" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_score_feedback" x="296" y="72" name="inst_7C8B95E9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_grass" x="128" y="448" name="inst_8F034B01" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_grass" x="304" y="448" name="inst_BE00C6F1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_grass" x="488" y="448" name="inst_C6A014AA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_grass" x="672" y="448" name="inst_5E265C47" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>
