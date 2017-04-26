@@ -119,7 +119,7 @@ if(mainPass)
 {
     global.totalPoints = 0;
     //room_goto(rm_mainMenu);
-    room_goto_transition(rm_mainMenu, transition.stripe_ver, 60);
+    room_goto_transition(rm_mainMenu, transition.stripe_hor, 60);
     
     // Play the select sound effect
     

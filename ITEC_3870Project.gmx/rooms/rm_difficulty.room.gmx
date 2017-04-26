@@ -94,8 +94,6 @@ obj_player.y = 432;</code>
     <instance objName="obj_grass" x="144" y="448" name="inst_78BC9F79" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_grass" x="360" y="448" name="inst_5564DC6A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_grass" x="616" y="448" name="inst_A79CEDF6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_grass_small" x="244" y="360" name="inst_A1252CAF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_grass_small" x="340" y="337" name="inst_0C68A98E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>
