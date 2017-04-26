@@ -172,6 +172,10 @@
       <sprite>sprites\spr_trigonal_planar</sprite>
       <sprite>sprites\spr_trigonal_pyramidal</sprite>
     </sprites>
+    <sprites name="Lab">
+      <sprite>sprites\spr_Button</sprite>
+      <sprite>sprites\spr_Selected</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths">
