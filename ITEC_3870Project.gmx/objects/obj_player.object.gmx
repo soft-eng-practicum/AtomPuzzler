@@ -287,7 +287,6 @@ if(toggle == 0)
     key_right = keyboard_check(vk_right) || keyboard_check(ord('D'));
     key_left = keyboard_check(vk_left) || keyboard_check(ord('A'));
     key_jump = keyboard_check_pressed(vk_space);
-    key_left *= -1;
 }
 
 /* If key_jump is true, then the sound effect for jumping will be played.
@@ -314,7 +313,8 @@ ehecks to see if the player is on an 'obj_obstacle' object and sets the
 upwards. 
 */
 
-mvmt = key_left + key_right;
+mvmt = key_right - key_left;
+hspd = mvmt * mspd;
 
 if(vspd &lt; 10)
 {
@@ -424,7 +424,7 @@ if(toggle != 0)
     hspd = 0;
 }
 
-hspd = mvmt * mspd;
+//hspd = mvmt * mspd;
 </string>
           </argument>
         </arguments>
